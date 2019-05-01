@@ -240,7 +240,6 @@ var Greeting = function Greeting(_ref) {
     }, "Log Out"));
   };
 
-  debugger;
   return currentUser ? personalGreeting() : sessionLinks();
 };
 
@@ -427,13 +426,9 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      // debugger
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user); // this.setState({
-      // 	username: '',
-      // 	password: ''
-      // })
+      this.props.processForm(user);
     }
   }, {
     key: "renderErrors",
