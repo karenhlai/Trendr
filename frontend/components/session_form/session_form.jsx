@@ -6,7 +6,7 @@ class SessionForm extends React.Component {
 		super(props);
 		// this.state = this.props.user;
 		this.state = {
-			username: '',
+			email: '',
 			password: ''
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,9 +19,14 @@ class SessionForm extends React.Component {
 	}
 
 	handleSubmit(e) {
+		// debugger
 		e.preventDefault();
 		const user = Object.assign({}, this.state);
 		this.props.processForm(user);
+		// this.setState({
+		// 	username: '',
+		// 	password: ''
+		// })
 	}
 
 	renderErrors() {
@@ -40,9 +45,7 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-				{/* insert tumblr logo image here */}
-					Come for what you love.
-					Stay for what you discover.
+					
           <br />
 					Please {this.props.formType} or {this.props.navLink}
 					{this.renderErrors()}

@@ -8,13 +8,16 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
     <div>
         <header>
-            <h1>Tumblr Project (app)</h1>
+            <h1>Tumblr Project</h1>
             <GreetingContainer />
         </header>
 
-
+    <Switch>
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
+        <Route exact path="/" component={GreetingContainer} />
+        <Redirect to="/" />
+    </Switch>
     </div>
 );
 
