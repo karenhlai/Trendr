@@ -13,29 +13,27 @@ class SplashPage extends React.Component {
       <div> 
 
         <div className="navbarSplash">
-        <NavBarSplash />        
+          <NavBarSplash />        
         </div>
 
 
         <section>
-          <img className="section1img"/>
-          <h1>Page 1</h1>
-
           <div className="loginform">
-          <Switch>
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
-            {/* <ProtectedRoute path="/" component={GreetingContainer} /> */}
-            <Redirect to="/" />
-          </Switch>
+            <Switch>
+              <AuthRoute path="/login" component={LoginFormContainer} />
+              <AuthRoute path="/signup" component={SignupFormContainer} />
+              {/* <ProtectedRoute path="/" component={GreetingContainer} /> */}
+              <Redirect to="/" />
+            </Switch>
           </div>
         </section>
 
 
-        <section><h1>Page 2</h1></section>
-        <section><h1>Page 3</h1></section>
-        <section><h1>Page 4</h1></section>
-        <section><h1>Page 5</h1></section>
+        <section><h1>Tumblr is so easy to use that it's hard to explain.</h1></section>
+        <section><h1>Tumblr is blogs.</h1></section>
+        <section><h1>You already know how this works.</h1></section>
+        <section><h1>Seriously, put anything you want here.</h1></section>
+        <section><h1>Okay, it's not actually hard to explain.</h1></section>
       </div>
     )
   }

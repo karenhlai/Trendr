@@ -14,9 +14,12 @@ section {
 
 section h1 {
   text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: bold;
-  font-size: 50px;
+  font-family: Bookman Old Style Bold;
+  // background: purple;
+  color: black;
+  font-weight: 5000;
+  font-size: 70px;
+  line-height: 1.8;
 }
 
 section img {
@@ -45,5 +48,13 @@ input[type=password] {
   border: 2px solid plum;
 }
 
+a {
+  color: hotpink;
+}
 
-
+// login form container h1 - logo tumblr
+//session form - style input to white backgrounf and space the inputs and Login(submit) button
+//change the width height of the input boxes, as well as login button
+//session form errors have a background that is sort of transparent
+//put sessionform error buttons
+//might need a footer in sessionform

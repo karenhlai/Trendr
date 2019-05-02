@@ -43,10 +43,11 @@ class SessionForm extends React.Component {
 
 	render() {
 		let username;
-		if (this.props.formType === 'signup') {
+		if (this.props.formType === 'Sign Up') {
 			username = <label>
-				Username:
-              <input type="text"
+				{/* Username: */}
+				<input type="text"
+					placeholder="Username"
 					value={this.state.username}
 					onChange={this.update('username')}
 					className="login-input"
@@ -58,16 +59,21 @@ class SessionForm extends React.Component {
 		//button sign in demo (onClick, callback)
 		return (
 			<div className="login-form-container">
+				
+				<div className="sessionOptButtons">
+					{/* Please {this.props.formType} or  */}
+					{this.props.navLink}
+				</div>
+
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					
           <br />
-					Please {this.props.formType} or {this.props.navLink}
-					{this.renderErrors()}
 					<div className="login-form">
+						<h1>tumblr</h1>
 						<br />
 						<label>
-							Email:
-              <input type="text"
+							{/* Email: */}
+							<input type="text"
+								placeholder="Email"
 								value={this.state.email}
 								onChange={this.update('email')}
 								className="login-input"
@@ -76,14 +82,22 @@ class SessionForm extends React.Component {
 						<br />
 						{ username }
 						<label>
-							Password:
-              <input type="password"
+							{/* Password: */}
+							<input type="password"
+								placeholder="Password"
 								value={this.state.password}
 								onChange={this.update('password')}
 								className="login-input"
 							/>
 						</label>
 						<br />
+
+
+						<div className="renderErrors">
+							{this.renderErrors()}
+						</div>
+
+
 						<input className="session-submit" type="submit" value={this.props.formType} />
 					</div>
 				</form>
