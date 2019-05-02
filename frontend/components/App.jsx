@@ -4,7 +4,7 @@ import React from 'react';
 // import SignupFormContainer from './session_form/signup_form_container';
 // import { Route, Redirect, Switch, Link } from 'react-router-dom';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import SplashPage from './splash_page_everything/splash_page';
+import SplashPage from './splash_page/splash_page';
 
 const App = () => (
     <div>
@@ -14,7 +14,7 @@ const App = () => (
         </header>
 
     <SplashPage />
-    
+
     </div>
 );
 

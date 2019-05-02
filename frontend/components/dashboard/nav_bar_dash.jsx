@@ -1,6 +1,12 @@
-import React from './node_modules/react';
+import React from 'react';
 
+class NavBarDash extends React.Component {
+  render () {
+    return (
 
+    )
+  }
+}
 const navBar = () => (
   <div>
     <ul className="nav justify-content-end">
@@ -20,4 +26,4 @@ const navBar = () => (
   </div>
 )
 
-export default navBar;
+export default NarBarDash;

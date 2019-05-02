@@ -25,6 +25,10 @@ class SessionForm extends React.Component {
 		this.props.processForm(user);
 	}
 
+	loginDemo() {
+		// dispatch login with that user's info; create a particular user in seed solely for demo use;
+	}
+ 
 	renderErrors() {
 		return (
 			<ul>
@@ -51,6 +55,7 @@ class SessionForm extends React.Component {
 			</label>
 		};
 
+		//button sign in demo (onClick, callback)
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
