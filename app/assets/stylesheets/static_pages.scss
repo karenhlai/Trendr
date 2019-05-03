@@ -16,10 +16,10 @@ section h1 {
   text-align: center;
   font-family: Bookman Old Style Bold;
   // background: purple;
-  color: black;
-  font-weight: 5000;
-  font-size: 70px;
-  line-height: 1.8;
+  color: white;
+  font-weight: 3000;
+  font-size: 65px;
+  line-height: 1.4;
 }
 
 section img {
@@ -36,20 +36,29 @@ section img {
 
 section .loginform {
   text-align: center;
+  
   margin-top: 15%;
-  background: pink;
+  background: #001935;
 }
 
-input[type=text] {
-  border: 2px solid plum;
+input[type=text], input[type=password] {
+  // display: block;
+  box-sizing: border-box;
+  border: 1px solid #d5d9dd;
+  border-radius: 0px;
+  padding: 11px 10px 11px 13px ;
 };
 
-input[type=password] {
-  border: 2px solid plum;
-}
 
-a {
-  color: hotpink;
+a {  //logged out header
+  font: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+  color: black;
+  // background-color: rgba(0,0,0,.0941176);
+  background-color: white;
+  overflow: hidden;
+  // background: white;
+  // transition: ;
+  vertical-align: top;
 }
 
 // login form container h1 - logo tumblr

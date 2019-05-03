@@ -8,13 +8,13 @@ import SplashPage from './splash_page/splash_page';
 
 const App = () => (
     <div>
-        <header>
-            {/* <h1>Tumblr Project</h1>
-            <GreetingContainer /> */}
-        </header>
+      <header>
+      	{/* <h1>Tumblr Project</h1>
+        <GreetingContainer /> */}
+      </header>
+        
 
-    <SplashPage />
-
+    	<SplashPage />
     </div>
 );
 
