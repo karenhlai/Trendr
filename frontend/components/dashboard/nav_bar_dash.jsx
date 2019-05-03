@@ -3,7 +3,10 @@ import React from 'react';
 class NavBarDash extends React.Component {
   render () {
     return (
-
+      <div>
+        Nav Bar Dash holder
+        
+      </div>
     )
   }
 }

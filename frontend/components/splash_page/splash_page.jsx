@@ -23,7 +23,7 @@ class SplashPage extends React.Component {
               <AuthRoute path="/login" component={LoginFormContainer} />
               <AuthRoute path="/signup" component={SignupFormContainer} />
               {/* <ProtectedRoute path="/" component={GreetingContainer} /> */}
-              <Redirect to="/" />
+              {/* <Redirect to="/" /> */}
             </Switch>
           </div>
         </section>

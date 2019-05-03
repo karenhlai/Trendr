@@ -6,8 +6,7 @@ class NavBarSplash extends React.Component {
     return (
       <div>
         <div className="logo">
-          This is the nav bar
-          {/* <a href="/"><img src="" /></a> */}
+          Nav Bar splash holder
         </div>
       </div>
     )
