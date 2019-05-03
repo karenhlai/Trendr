@@ -5,8 +5,6 @@ import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import NavBarSplash from './nav_bar_splash';
 
-
-
 class SplashPage extends React.Component {
   render () {
     return (

@@ -16,9 +16,9 @@ section h1 {
   text-align: center;
   font-family: Bookman Old Style Bold;
   // background: purple;
-  color: white;
+  color: black;
   font-weight: 3000;
-  font-size: 65px;
+  font-size: 30px;
   line-height: 1.4;
 }
 
@@ -36,7 +36,7 @@ section img {
 
 section .loginform {
   text-align: center;
-  
+
   margin-top: 15%;
   background: #001935;
 }
@@ -48,18 +48,6 @@ input[type=text], input[type=password] {
   border-radius: 0px;
   padding: 11px 10px 11px 13px ;
 };
-
-
-a {  //logged out header
-  font: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
-  color: black;
-  // background-color: rgba(0,0,0,.0941176);
-  background-color: white;
-  overflow: hidden;
-  // background: white;
-  // transition: ;
-  vertical-align: top;
-}
 
 // login form container h1 - logo tumblr
 //session form - style input to white backgrounf and space the inputs and Login(submit) button
