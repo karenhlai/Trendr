@@ -4,6 +4,7 @@ import SignupFormContainer from '../session_form/signup_form_container';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import NavBarSplash from './nav_bar_splash';
+import landingPage from '../landing_page/landing_page';
 import ReactFullpage from '@fullpage/react-fullpage';
 
 class SplashPage extends React.Component {
@@ -27,9 +28,7 @@ class SplashPage extends React.Component {
                   <Switch>
                     <AuthRoute path="/login" component={LoginFormContainer} />
                     <AuthRoute path="/signup" component={SignupFormContainer} />
-                    {/* AuthRoute path="/" component={} */}
-                    {/* <ProtectedRoute path="/" component={GreetingContainer} /> */}
-                    {/* <Redirect to="/" /> */}
+                    <AuthRoute path="/" component={landingPage} />
                   </Switch>
                 </div>
                 <button className="section-one-button" onClick={() => fullpageApi.moveSectionDown()}>

@@ -69,6 +69,7 @@ body {
 #fp-nav {
   position: fixed; 
   left: 35px;
+  width: 10%;
 }
 
 .section .fp-tableCell {
@@ -93,7 +94,6 @@ input[type=submit] {
   color: white;
   font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   font-weight: 700;
-
   box-sizing: border-box;
   border: 1px solid #00b8ff;
   background-color: #00b8ff;
@@ -102,27 +102,26 @@ input[type=submit] {
 }
 
 .sessionOptButtons, button { //sessionOptButtons
-  height: 32px; 
   line-height: 22px;
   text-align: center;
-  vertical-align: top;
   font: 14px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   box-sizing: border-box;
+  border-radius: 2px;
   border: 1px solid white;
   background-color: white;
-  border-radius: 2px;
   padding: 5px 13px 7px 13px;
 }
-//  -- ERRORS -- 
-.section .renderErrors { //need to add transition to slide errors down, once cliking submit button
-  text-align: center;
-  padding: 14px 15px;
-  font-family: Helvetica, sans-serif;
-  font-size: 14px;
-  color: white;
-  line-height: 16px;
-  // background: rgba(0,0,0,0.33);
-}
+
+//  -- session form ERRORS -- 
+// .section .renderErrors { //need to add transition to slide errors down, once cliking submit button
+//   text-align: center;
+//   padding: 14px 15px;
+//   font-family: Helvetica, sans-serif;
+//   font-size: 14px;
+//   color: white;
+//   line-height: 16px;
+//   background: rgba(0,0,0,0.33);
+// }
 
 
