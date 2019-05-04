@@ -15,7 +15,8 @@ class SplashPage extends React.Component {
         </div>
 
 
-        <section>
+        <section className="section1">
+          <img className="section1img" src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
           <div className="loginform">
             <Switch>
               <AuthRoute path="/login" component={LoginFormContainer} />
@@ -25,7 +26,8 @@ class SplashPage extends React.Component {
             </Switch>
           </div>
         </section>
-
+      
+        AuthRoute path="/" component={}
 
         <section><h1>Tumblr is so easy to use that it's hard to explain.</h1></section>
         <section><h1>Tumblr is blogs.</h1></section>

@@ -6,7 +6,7 @@ class NavBarSplash extends React.Component {
     return (
       <div>
         <div className="logo">
-          Nav Bar splash holder
+          {/* Nav Bar holder */}
         </div>
       </div>
     )

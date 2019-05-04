@@ -16,14 +16,14 @@ section h1 {
   text-align: center;
   font-family: Bookman Old Style Bold;
   // background: purple;
-  color: black;
+  color: white;
   font-weight: 3000;
-  font-size: 30px;
+  font-size: 65px;
   line-height: 1.4;
 }
 
-section img {
-  background-image: url("");
+section .section1img {
+  // background-image: url("");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 100vh;
@@ -34,20 +34,77 @@ section img {
   z-index: -1;
 }
 
-section .loginform {
-  text-align: center;
+// .section1 {
+//   background: #001935;
+// }
 
-  margin-top: 15%;
-  background: #001935;
+section .loginform {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 20%;
+  padding-top: 12%;
+  background: transparent;
 }
 
 input[type=text], input[type=password] {
-  // display: block;
+  width: 100%;
+  text-align: left;
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   border: 1px solid #d5d9dd;
-  border-radius: 0px;
+  border-radius: 2px;
   padding: 11px 10px 11px 13px ;
 };
+
+input[type=submit] {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+
+  box-sizing: border-box;
+  border: 1px solid #00b8ff;
+  background-color: #00b8ff;
+  border-radius: 2px;
+  padding: 11px 10px 11px 13px;
+}
+
+a, button { //sessionOptButtons
+  height: 32px; 
+  line-height: 22px;
+  text-align: center;
+  vertical-align: top;
+  font: 14px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  
+  box-sizing: border-box;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 2px;
+  padding: 5px 13px 7px 13px;
+}
+
+section .renderErrors { //need to add transition to slide errors down, once cliking submit button
+  text-align: center;
+  padding: 14px 15px;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: white;
+  line-height: 16px;
+  // background: rgba(0,0,0,0.33);
+}
+
+
+
+
+
+
+
+//still need to change submit button to (#9da6af) onClick, not onHover
 
 // login form container h1 - logo tumblr
 //session form - style input to white backgrounf and space the inputs and Login(submit) button
