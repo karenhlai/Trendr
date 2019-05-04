@@ -6,6 +6,7 @@ class NavBarSplash extends React.Component {
       <div>
         <header className="navBarHeader"> 
           <a href="/"><img src="http://cdn.onlinewebfonts.com/svg/download_426978.png" /></a>
+          
         </header>
       </div>
     )

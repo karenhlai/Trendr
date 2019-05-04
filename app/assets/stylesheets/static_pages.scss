@@ -7,20 +7,58 @@ body {
   width: 100%;
 };
 
+// --landing page--
+.landingButtons {
+  margin: 8px;
+  font: 14px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+.landingButtons p {
+  width: 300px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 11px;
+}
+
+.getStarted {
+  color: white;
+  background-color: #00b8ff;
+  border: 1px solid #00b8ff;
+}
+
+.logIn {
+  color: #444;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.splashHeader {
+  font-style: Bookman Old Style Bold;
+  text-align: center;
+  color: white;
+  font-size: 80px;
+  font-weight: bolder;
+}
+
 // -- navbar splash --
 .navBarHeader {
   position: fixed;
   top: 0;
   left: 0;
-  height: 10%;
+  height: 5%;
   width: 100%;
   z-index: 1;
   padding: 15px 5px 5px 15px;
 }
 
+.navBarHeader a {
+  width: 200px;
+}
+
 .navBarHeader img {
-  height: auto;
-  width: 2%;
+  height: 100%;
+  width: auto;
   padding-left: 5px;
 }
 
@@ -42,10 +80,13 @@ body {
 }
 
 .section-one-button { //What is tumblr?
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
   text-align: center;
   position: absolute;
   bottom: 0;
   width: 100%;
+  padding: 8px 0px 8px 0px;
 }
 
 .section img {
@@ -101,16 +142,24 @@ input[type=submit] {
   padding: 11px 10px 11px 13px;
 }
 
-.sessionOptButtons, button { //sessionOptButtons
-  line-height: 22px;
-  text-align: center;
+.sessionOptButtons { //sessionOptButtons
+  position: fixed;
+  top: 10px;
+  right: 20px;
   font: 14px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   font-weight: 700;
+  line-height: 22px;
+  width: 80px;
+  text-align: center;
   box-sizing: border-box;
   border-radius: 2px;
   border: 1px solid white;
   background-color: white;
-  padding: 5px 13px 7px 13px;
+  padding: 5px 5px 5px 5px;
+}
+
+.sessionOptButtons:active {
+  opacity: 0.8;
 }
 
 //  -- session form ERRORS -- 
@@ -123,5 +172,17 @@ input[type=submit] {
 //   line-height: 16px;
 //   background: rgba(0,0,0,0.33);
 // }
+
+// --h1 for each sections -- 
+
+h1 {
+  font-style: Bookman Old Style Bold;
+  color: white;
+  font-size: 80px;
+  font-weight: bolder;
+  text-align: center;
+  padding: 20%
+}
+
 
 

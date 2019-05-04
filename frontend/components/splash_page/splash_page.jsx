@@ -15,6 +15,7 @@ class SplashPage extends React.Component {
         <div className="navbarSplash">
           <NavBarSplash />        
         </div>
+        
 
 
         <ReactFullpage
