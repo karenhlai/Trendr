@@ -7,39 +7,7 @@ body {
   width: 100%;
 };
 
-section {
-  height: 100vh;
-  width: 100vw;
-};
-
-section h1 {
-  text-align: center;
-  font-family: Bookman Old Style Bold;
-  // background: purple;
-  color: white;
-  font-weight: 3000;
-  font-size: 65px;
-  line-height: 1.4;
-}
-
-section .section1img {
-  // background-image: url("");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-// .section1 {
-//   background: #001935;
-// }
-
-section .loginform {
-  display: block;
+.section .loginform {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -48,6 +16,7 @@ section .loginform {
   background: transparent;
 }
 
+// -- INPUTS, BUTTONS, AND ALINKS --
 input[type=text], input[type=password] {
   width: 100%;
   text-align: left;
@@ -87,8 +56,8 @@ a, button { //sessionOptButtons
   border-radius: 2px;
   padding: 5px 13px 7px 13px;
 }
-
-section .renderErrors { //need to add transition to slide errors down, once cliking submit button
+//  -- ERRORS -- 
+.section .renderErrors { //need to add transition to slide errors down, once cliking submit button
   text-align: center;
   padding: 14px 15px;
   font-family: Helvetica, sans-serif;
@@ -99,16 +68,184 @@ section .renderErrors { //need to add transition to slide errors down, once clik
 }
 
 
+/* Effect */
 
+/* ========== SECTION 1 - content animation ========== */
+.section-one > .fp-tableCell h1 {
+  transform: translateY(-1000px);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.8s ease-in-out;
+}
 
+.section-one.active > .fp-tableCell h1 {
+  transform: translateY(0);
+  opacity: 1;
+}
 
+.section-one > .fp-tableCell p {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.8s ease-in-out;
+}
 
+.section-one > .fp-tableCell p + p {
+  transform: translateX(-100%);
+}
 
-//still need to change submit button to (#9da6af) onClick, not onHover
+.section-one > .fp-tableCell p + p + p {
+  transform: translateX(0) translateY(0);
+  transform: translateY(1000px);
+}
 
-// login form container h1 - logo tumblr
-//session form - style input to white backgrounf and space the inputs and Login(submit) button
-//change the width height of the input boxes, as well as login button
-//session form errors have a background that is sort of transparent
-//put sessionform error buttons
-//might need a footer in sessionform
+.section-one.active > .fp-tableCell p {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.section-one.active > .fp-tableCell p {
+  transition-delay: 0.22s;
+}
+
+.section-one.active > .fp-tableCell p + p {
+  transition-delay: 0.44s;
+}
+
+.section-one.active > .fp-tableCell p + p + p {
+  transition-delay: 0.66s;
+}
+
+/* ========== SECTION 2 - content animation ========== */
+.section-two > .fp-tableCell h1,
+.section-two > .fp-tableCell p {
+  transform: translateY(-1000px);
+  opacity: 0;
+  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.66s ease-in-out;
+}
+
+.section-two.active > .fp-tableCell h1,
+.section-two.active > .fp-tableCell p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.section-two.active > .fp-tableCell h1 {
+  transition-delay: 0.22s;
+}
+
+.section-two.active > .fp-tableCell p {
+  transition-delay: 0.44s;
+}
+
+.section-two.active > .fp-tableCell p + p {
+  transition-delay: 0.66s;
+}
+.section-two.active > .fp-tableCell p + p + p {
+  transition-delay: 0.88s;
+}
+/* ========== SECTION 3 - content animation ========== */
+.section-three > .fp-tableCell h1,
+.section-three > .fp-tableCell p {
+  transform: translateY(1000px);
+  opacity: 0;
+  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.66s ease-in-out;
+}
+
+.section-three.active > .fp-tableCell h1,
+.section-three.active > .fp-tableCell p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.section-three.active > .fp-tableCell h1 {
+  transition-delay: 0.22s;
+}
+
+.section-three.active > .fp-tableCell p {
+  transition-delay: 0.44s;
+}
+
+.section-three.active > .fp-tableCell p + p {
+  transition-delay: 0.66s;
+}
+
+.section-three.active > .fp-tableCell p + p + p {
+  transition-delay: 0.88s;
+}
+/* ========== SECTION 4 - content animation ========== */
+.section-four > .fp-tableCell h1,
+.section-four > .fp-tableCell p {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.66s ease-in-out;
+}
+
+.section-four.active > .fp-tableCell h1,
+.section-four.active > .fp-tableCell p {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.section-four.active > .fp-tableCell p {
+  transition-delay: 0.22s;
+}
+
+.section-four.active > .fp-tableCell p + p {
+  transition-delay: 0.44s;
+}
+
+.section-four.active > .fp-tableCell p + p + p {
+  transition-delay: 0.66s;
+}
+/* ========== SECTION 5 - content animation ========== */
+.section-five > .fp-tableCell h1,
+.section-five > .fp-tableCell p {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.66s ease-in-out;
+}
+
+.section-five.active > .fp-tableCell h1,
+.section-five.active > .fp-tableCell p {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.section-five.active > .fp-tableCell p {
+  transition-delay: 0.22s;
+}
+
+.section-five.active > .fp-tableCell p + p {
+  transition-delay: 0.44s;
+}
+.section-five.active > .fp-tableCell p + p + p {
+  transition-delay: 0.66s;
+}
+
+/* ========== SECTION 6 - content animation ========== */
+.section-six > .fp-tableCell h1,
+.section-six > .fp-tableCell p {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.section-six.active > .fp-tableCell h1,
+.section-six.active > .fp-tableCell p {
+  opacity: 1;
+}
+
+.section-six.active > .fp-tableCell p {
+  transition-delay: 0.33s;
+}
+
+.section-six.active > .fp-tableCell p + p {
+  transition-delay: 0.66s;
+}
+.section-six.active > .fp-tableCell p + p + p {
+  transition-delay: 0.99s;
+}
