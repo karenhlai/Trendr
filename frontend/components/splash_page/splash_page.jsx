@@ -18,10 +18,11 @@ class SplashPage extends React.Component {
 
         <ReactFullpage
           navigation
+
           render={({ state, fullpageApi }) => 
             <ReactFullpage.Wrapper>
               <div className="section section-one">
-                {/* <img className="section1img" src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" /> */}
+                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
                 <div className="loginform">
                   <Switch>
                     <AuthRoute path="/login" component={LoginFormContainer} />
@@ -31,23 +32,33 @@ class SplashPage extends React.Component {
                     {/* <Redirect to="/" /> */}
                   </Switch>
                 </div>
-                <button onClick={() => fullpageApi.moveSectionDown()}>
-                  Click me to move down
+                <button className="section-one-button" onClick={() => fullpageApi.moveSectionDown()}>
+                  What is Tumblr?
                 </button>
               </div>
               <div className="section section-two">
+                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+
                 <h1>Tumblr is so easy to use that it's hard to explain.</h1>
               </div>
               <div className="section section-three">
+                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+
                 <h1>Tumblr is blogs.</h1>
               </div>
               <div className="section section-four">
+                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+
                 <h1>You already know how this works.</h1>
               </div>
               <div className="section section-five">
+                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+
                 <h1>Seriously, put anything you want here.</h1>
               </div>
               <div className="section section-six">
+                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+
                 <h1>Okay, it's not actually hard to explain.</h1>
               </div>
              
