@@ -1,10 +1,18 @@
 class Api::PostsController < ApplicationController
+  before_action :require_logged_in, only: [:create, :show, :update]
+
+  #don't constrain index to specific user b/c all posts are public + new related ones can render into index
   def index
     @posts = Post.all
-    @posts.select do |post|
-      post.authod_id == current_user.id
-    end
-    render "api/posts"
+  end
+
+  #must show current_user followings' posts in their index
+  def user_posts
+    @posts = Post.all.where(author_id: current_user.id)
+  end
+  
+  def show
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -12,36 +20,35 @@ class Api::PostsController < ApplicationController
     @post.author_id = current_user.id
 
     if @post.save
-      render "api/posts"
-      # need to render the index page (not show!), with my created post on the top/first of index dashboard
+      render "api/posts/show"
     else 
       render json: @post.errors.full_messages, status: 422
     end
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.where(author_id: current_user.id).find(params[:id])
       
-    if @post.update(post_params)
-      render "api/posts"
-      #must stay in same position on db, will show db index with updated post in order of when it was created
+    if @post && @post.update(post_params)
+      render "api/posts/show"
     else
-      render json: @post.errors.full_messages, status: 422
+      render json: ['Oops! Unable to edit post!'], status: 422
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
 
-    if @post.destroys
-      render "api/posts"
-      # once destroyed user will see updated index(without the destroyed post)
+    if @post
+      @post.destroy!
+      render json: {}
+      # render "api/posts"
     else
-      render json: ["You cannot destory this/what's not there"], status: 404
+      render json: ["You cannot destroy this post!!"], status: 404
   end
 
   private
   def post_params
-    params.require(:post).permit(:type, :title, :body)
+    params.require(:post).permit(:type, :title, :body, :author_id)
   end
 end
