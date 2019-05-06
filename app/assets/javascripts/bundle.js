@@ -650,7 +650,7 @@ function (_React$Component) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fullpage_react_fullpage__WEBPACK_IMPORTED_MODULE_7___default.a.Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-one"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: "https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg"
+            src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "loginform"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["AuthRoute"], {
@@ -670,23 +670,23 @@ function (_React$Component) {
           }, "What is Tumblr?")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-two"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: "https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg"
+            src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Tumblr is so easy to use that it's hard to explain.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-three"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: "https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg"
+            src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Tumblr is blogs.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-four"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: "https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg"
+            src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "You already know how this works.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-five"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: "https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg"
+            src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Seriously, put anything you want here.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-six"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: "https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg"
+            src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Okay, it's not actually hard to explain.")));
         }
       }));

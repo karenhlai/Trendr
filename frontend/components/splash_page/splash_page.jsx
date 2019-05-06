@@ -24,7 +24,7 @@ class SplashPage extends React.Component {
           render={({ state, fullpageApi }) => 
             <ReactFullpage.Wrapper>
               <div className="section section-one">
-                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
                 <div className="loginform">
                   <Switch>
                     <AuthRoute path="/login" component={LoginFormContainer} />
@@ -37,27 +37,27 @@ class SplashPage extends React.Component {
                 </button>
               </div>
               <div className="section section-two">
-                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
 
                 <h1>Tumblr is so easy to use that it's hard to explain.</h1>
               </div>
               <div className="section section-three">
-                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
 
                 <h1>Tumblr is blogs.</h1>
               </div>
               <div className="section section-four">
-                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
 
                 <h1>You already know how this works.</h1>
               </div>
               <div className="section section-five">
-                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
 
                 <h1>Seriously, put anything you want here.</h1>
               </div>
               <div className="section section-six">
-                <img src="https://i.pinimg.com/originals/ee/41/a3/ee41a360bf1ef5c03a79b73c9220156d.jpg" />
+                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
 
                 <h1>Okay, it's not actually hard to explain.</h1>
               </div>

@@ -25,12 +25,14 @@ body {
   color: white;
   background-color: #00b8ff;
   border: 1px solid #00b8ff;
+  z-index: 2;
 }
 
 .logIn {
   color: #444;
   border: 1px solid white;
   background-color: white;
+  z-index: 2;
 }
 
 .splashHeader {
@@ -56,7 +58,7 @@ body {
   width: 200px;
 }
 
-.navBarHeader img {
+.navBarHeader img { //tumblr logo on top left
   height: 100%;
   width: auto;
   padding-left: 5px;
@@ -77,6 +79,7 @@ body {
   width: 20%;
   padding-top: 15%;
   background: transparent;
+  // z-index: 2;
 }
 
 .section-one-button { //What is tumblr?
@@ -181,7 +184,8 @@ h1 {
   font-size: 80px;
   font-weight: bolder;
   text-align: center;
-  padding: 20%
+  // padding: 50px;
+  z-index: -2;
 }
 
 
