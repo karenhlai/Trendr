@@ -37,7 +37,7 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.where(author_id: current_user.id).find(params[:id])
 
     if @post
       @post.destroy!
@@ -49,6 +49,6 @@ class Api::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:type, :title, :body, :author_id)
+    params.require(:post).permit(:title, :body, :author_id, :media)
   end
 end
