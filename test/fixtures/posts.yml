@@ -3,8 +3,9 @@
 # Table name: posts
 #
 #  id         :bigint           not null, primary key
-#  title      :string           not null
-#  body       :text             not null
+#  content    :string
+#  title      :string
+#  body       :text
 #  author_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

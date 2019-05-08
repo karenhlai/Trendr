@@ -4,12 +4,28 @@ export const fetchPosts = () => {
     url: 'api/posts'
   })
 };
-export const fetchPost = (id) => {
+
+// remove if not using for modal
+// export const fetchPost = (id) => {
+//   return $.ajax({
+//     method: 'get',
+//     url: `api/posts/${id}`
+//   })
+// };
+
+export const fetchOwnPosts = (id) => {
   return $.ajax({
-    method: 'get',
-    url: `api/posts/${id}`
+    method: 'get', 
+    url: `api/users/${id}/posts`
   })
-};
+}
+
+export const fetchLikedPosts = (id) => {
+  return $.ajax({
+    method: 'get', 
+    url: `api/users/${id}/likes`
+  })
+}
 
 export const createPost = (post) => {
   return $.ajax({
@@ -33,7 +49,3 @@ export const deletePost = (id) => {
     url: `api/posts/${id}`
   })
 };
-
-//fetchUsersPosts
-
-//fetchLikedPosts

@@ -1,10 +1,9 @@
 import React from 'react';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/signup_form_container';
+import LandingPage from './landing_page';
+import LoginFormContainer from './session_form/login_form_container'
+import SignupFormContainer from './session_form/signup_form_container';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
-import NavBarSplash from './nav_bar_splash';
-import landingPage from '../landing_page/landing_page';
 import ReactFullpage from '@fullpage/react-fullpage';
 
 class SplashPage extends React.Component {
@@ -13,7 +12,9 @@ class SplashPage extends React.Component {
       <div> 
 
         <div className="navbarSplash">
-          <NavBarSplash />        
+          <header className="navbar-header">
+            <a href="/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAYAAABfqvm9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAGnmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDAgNzkuMTYwNDUxLCAyMDE3LzA1LzA2LTAxOjA4OjIxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTgtMDYtMjBUMTI6MTc6MTgtMDQ6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMTgtMDYtMjBUMTI6MTc6MTgtMDQ6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE4LTA2LTIwVDEyOjE3OjE4LTA0OjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmM2ZDg3OGQ3LWQ1ZDctNGVlOC04ZWJiLTc2Zjk0NmFjZWQwOCIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmZjMzExOTkxLWM3OTctYzQ0Yy1hYTg1LTUwYTgwYWM2ZTk0MCIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjFlMmUxZDA4LWQ0YzgtNDNkOS04NDU3LTQyMzJkZmIyYTFjNyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MWUyZTFkMDgtZDRjOC00M2Q5LTg0NTctNDIzMmRmYjJhMWM3IiBzdEV2dDp3aGVuPSIyMDE4LTA2LTIwVDEyOjE3OjE4LTA0OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YzZkODc4ZDctZDVkNy00ZWU4LThlYmItNzZmOTQ2YWNlZDA4IiBzdEV2dDp3aGVuPSIyMDE4LTA2LTIwVDEyOjE3OjE4LTA0OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+YWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjc0NmIwYTNlLWE4MWEtNzg0OS04OTJlLTBhNjdkNDQ1NjIwMDwvcmRmOmxpPiA8L3JkZjpCYWc+IDwvcGhvdG9zaG9wOkRvY3VtZW50QW5jZXN0b3JzPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtCi2F0AAAEKSURBVEjH7dU/K8VRGAfwUybKYDWavQFluMIt3sI1KMVgu7wCJUYr+cUogzKI27XZpDAYzCbZTEJ9DH63DPf3t7Nd33rG51Onc87zBIScmsI3vvCOT7+ZzeoJBeC6/lmsC+5ngM064AheY4Jt2akMTqSXEAUcwq38zJcFx/GkOI0icAxb+FAul9jDYVpHOMNywIF4OQ3oRgSTwQNPAnbxjA4ucJ1OmLzc4Tzt6aQ992j3e0ujBb+k8vgqA87FBpv/4ACAjdjgUhVwGG8F4E3VJfVQYhA8Yg0trGATC1ngcc1p080CW7HBsseuBE7HBgNmSjyhSmBvZ+/gJRbYq0msYhtJutyTP3WFjR9nA18dhY0ZsgAAAABJRU5ErkJggg==" /></a>
+          </header>   
         </div>
         
 
@@ -29,32 +30,32 @@ class SplashPage extends React.Component {
                   <Switch>
                     <AuthRoute path="/login" component={LoginFormContainer} />
                     <AuthRoute path="/signup" component={SignupFormContainer} />
-                    <AuthRoute path="/" component={landingPage} />
+                    <AuthRoute path="/" component={LandingPage} />
                   </Switch>
                 </div>
+                <div className="popup">
                 <button className="section-one-button" onClick={() => fullpageApi.moveSectionDown()}>
-                  What is Tumblr?
+                    <p className="session-one-bottom">What is Tumblr?</p>
                 </button>
+                </div>
               </div>
               <div className="section section-two">
-                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
-
-                <h1>Tumblr is so easy to use that it's hard to explain.</h1>
+                <h1 className="session-two-header">Tumblr is so easy to use <br/>that it's hard to explain.</h1>
+                <img className="babybird" src="https://s.cdpn.io/3/kiwi.svg" />
               </div>
               <div className="section section-three">
-                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
-
-                <h1>Tumblr is blogs.</h1>
+                <h1 className="session-three-header">Tumblr is blogs.</h1>
+               <p>Turns out that when you make it easy to create interesting things, <br/>
+               that’s exactly what people do. All those great, random blogs your <br/>
+               friends send you, those are Tumblr blogs. We’ll help you find and <br/>
+               follow blogs like that, and we’ll help other people find and follow <br/>
+               yours.</p>
               </div>
               <div className="section section-four">
-                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
-
-                <h1>You already know how this works.</h1>
+                <h1 className="session-four-header">You already know how this works.</h1>
               </div>
               <div className="section section-five">
-                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
-
-                <h1>Seriously, put anything you want here.</h1>
+                <h1 className="session-five-header">Seriously, put anything you want here.</h1>
               </div>
               <div className="section section-six">
                 <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />

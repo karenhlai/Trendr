@@ -12,6 +12,10 @@ class NavBarDash extends React.Component {
 }
 const navBar = () => (
   <div>
+
+    <button onClick={() => logout()}>Logout!</button>
+
+
     <ul className="nav justify-content-end">
       <li className="nav-item">
         <a className="nav-link active" href="#">Active</a>

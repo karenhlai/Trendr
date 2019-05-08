@@ -20,6 +20,8 @@ export const receiveErrors = errors => ({
     errors
 });
 
+// clear errors?
+
 //thunk actions
 export const login = user => dispatch => (
     APIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)), err => (
@@ -37,4 +39,3 @@ export const signup = user => dispatch => (
         dispatch(receiveErrors(err.responseJSON))
     ))
 );
-

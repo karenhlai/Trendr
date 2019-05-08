@@ -13,6 +13,8 @@ class SessionForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+
+
 	update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value
@@ -22,7 +24,7 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = Object.assign({}, this.state);
-		this.props.processForm(user);
+		this.props.processForm(user).then( () => this.props.history.push("/posts"));
 	}
 
 	loginDemo() {
@@ -68,7 +70,7 @@ class SessionForm extends React.Component {
 				<form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
 					<div className="login-form">
-						<h1>tumblr</h1>
+						<h1 className="splash-header">tumblr</h1>
 						<br />
 						<label>
 							{/* Email: */}
