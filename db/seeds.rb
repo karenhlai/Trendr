@@ -17,7 +17,7 @@ demoUser = User.create(
   email: "user@email.com",
   password: "password"
 );
-demoUserAvatar = File.open('https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/ikEg2jjH1rvMwKbJ6Qj1QnWd');
+demoUserAvatar = open('https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/ikEg2jjH1rvMwKbJ6Qj1QnWd');
 demoUser.avatar.attach(io: demoUserAvatar, filename: 'cube_closed');
 
 karen = User.create(
