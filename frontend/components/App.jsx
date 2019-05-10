@@ -7,14 +7,27 @@ import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import SplashPage from './splash_page/splash_page';
 import PostIndexContainer from './posts/post_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import PostFormModal from '../components/posts/post_form_modal';
+import AOS from 'aos';
 
-const App = () => (
-    <div>
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    AOS.init({
+      duration: 2000
+    })
+  }
+  render () {
+    return(
+     <div> 
       <header>
       	{/* <h1>Tumblr Project</h1>
         <GreetingContainer /> */}
       </header>
-
+      
     <Switch>
       <ProtectedRoute path="/posts" component={PostIndexContainer} />
       <Route path="/" component={SplashPage} /> 
@@ -22,6 +35,7 @@ const App = () => (
 
 
     </div>
-);
+    )}
+}
 
 export default App;

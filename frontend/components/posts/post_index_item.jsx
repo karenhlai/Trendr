@@ -1,40 +1,37 @@
 import React from 'react';
-// import edit modal here
-// import edit modal for media content here
-// import avatar here
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-class PostIndexItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      post: this.props.posts,
-    };
-
-    this.mountTitle = this.mountTitle.bind(this);
-    this.mountBody = this.mountBody.bind(this);
-    this.textModal = this.textModal.bind(this);
-    this.editForms = this.editForms.bind(this); //editTextForm and editContentForm will render here
-  }
-
-  
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.nextProps.post !== this.props.nextProps.post) {
-      this.setState({ post: nextProps.post });
-    }
-  }
+const PostIndexItem = (props) => {
+  // debugger
+  const media = props.post.medias.length !== 0 ? <img className="post-index-item-media" src={props.post.medias[0].mediaUrl} /> : null;
+  // debugger
+  return (
+    <div>
+      <div className="post-index-item-row">
+        <img className="post-author-icon" src={props.user.avatarUrl} data-aos='fade-right'/>
+        <div className="post-index-item" data-aos='fade-left'>
+        <h2 className="post-author-username"> Here's a post by: { props.user.username } </h2>
+      <h2 className="post-index-title">{props.post.title}</h2>
+          <center> {media} </center>
+      <p className="post-index-body">{props.post.body}</p>
+      {/* render an image if there is one, set source to the photo url */}
+      
+      <button onClick={ () => props.updatePost(props.post.id)}>
+            <img className="edit" src="https://cdn3.iconfinder.com/data/icons/block/32/box_edit-512.png" />
+      </button>
 
 
-  render () {
-
-
-    return (
-      <div>
-  
+      <button onClick={ () => props.deletePost(props.post.id)}>
+          <img className="trash" src="https://cdn1.iconfinder.com/data/icons/device-apps-settings/2048/Recycle_bin-512.png" />
+      </button>
       </div>
-    )
-  }
-}
+    </div>
+
+    </div>
+
+  )
+};
+
 
 export default PostIndexItem;

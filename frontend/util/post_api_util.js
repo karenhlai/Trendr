@@ -28,11 +28,19 @@ export const fetchLikedPosts = (id) => {
 }
 
 export const createPost = (post) => {
-  return $.ajax({
+  const request = {
     method: 'post',
     url: 'api/posts', 
-    data: { post }
-  })
+    data: {post},
+  }
+
+  if (post.getAll) {
+    request.data = post; //media only works when post is not wrapped in {}
+    request.contentType = false;
+    request.processData = false;
+  }
+
+  return $.ajax(request);
 };
 
 export const updatePost = (post) => {

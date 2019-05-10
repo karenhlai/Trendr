@@ -2,8 +2,576 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//renders when user is in session
 
-// body {
-//   background-color: #001935;
+// -- INPUTS, BUTTONS, AND ALINKS --
+
+
+.sessionOptButtons { //sessionOptButtons
+  position: absolute;
+  z-index: 20;
+  top: 10px;
+  right: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  width: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+}
+
+.sessionOptButtons:active {
+  opacity: 0.8;
+}
+
+//  -- session form ERRORS -- 
+// .section .renderErrors { //need to add transition to slide errors down, once cliking submit button
+//   text-align: center;
+//   padding: 14px 15px;
+//   font-family: Helvetica, sans-serif;
+//   font-size: 14px;
+//   color: white;
+//   line-height: 16px;
+//   background: rgba(0,0,0,0.33);
 // }
+
+// --h1 for each sections -- 
+
+
+//clear fix//
+@import url("https://fonts.googleapis.com/css?family=Dosis|Fira+Sans");
+
+body {
+  min-height: 100%;
+  max-width: 100%;
+}
+h1 {
+  color: white;
+  font-size: 42px;
+  font-family: Bookman Old Style Bold;
+  font-weight: 900;
+} 
+h3, h4 {
+  font-family: "Dosis", sans-serif;
+  font-weight: bold;
+}
+p {
+  font-family: "Dosis", sans-serif;
+}
+
+button {
+  font: 14px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  border-radius: 7px;
+}
+
+.section .fp-tableCell {
+  vertical-align: initial;
+}
+
+// Navbar //
+
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5%;
+  z-index: 1;
+  padding: 15px 5px 5px 15px;
+}
+
+//tumblr logo on top left
+.navbar-header img {
+  height: 70%;
+  width: auto;
+  padding-left: 200px;
+}
+//navagation//
+// -- NAV ANIMATIONS --
+// resource used: https://github.com/alvarotrigo/react-fullpage#examples
+#fp-nav ul li:hover a.active span,
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span {
+  background-color: white !important;
+  border: 4px solid white !important;
+}
+
+// Need to refactor by putting this after css on page so I can remove !important//
+#fp-nav ul li a span {
+  border: 4px solid gray !important;
+  background-color: transparent !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 !important;
+}
+#fp-nav ul li {
+  padding: 4px;
+}
+
+#fp-nav {
+  position: absolute;
+  left: 15px;
+  width: 10px;
+}
+//Session-One//
+//Home//
+
+.home-container {
+  margin: 15% auto auto auto;
+  width: 20%;
+  padding: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.splash-header {
+  font-style: Bookman Old Style Bold;
+  color: white;
+  font-size: 80px;
+  font-weight: bolder;
+  text-align: center;
+  text-align: center;
+  margin: auto auto 0px auto;
+  width: 232px;
+  height: 50px;
+}
+
+.splash-sub {
+  margin: 13% auto 5% auto;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+}
+.home-button {
+  background-color: transparent;
+  margin: 8px;
+}
+
+.home-button p {
+  width: 18vw;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 11px;
+}
+
+.register-button {
+  color: white;
+  background-color: #00b8ff;
+  border: 1px solid #00b8ff;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.login-button {
+  color: #444;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 2;
+}
+.demo-button {
+    width: 300px;
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 1px solid #00b8ff;
+    background-color: #00b8ff;
+    padding: 11px 10px 11px 13px;
+}
+.session-submit {
+  border-radius: 7px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 300px;
+  text-align: left;
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  border: 1px solid #d5d9dd;
+  padding: 11px 10px 11px 13px;
+}
+
+input[type="submit"] {
+  width: 300px;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  box-sizing: border-box;
+  border: 1px solid #00b8ff;
+  background-color: #00b8ff;
+  padding: 11px 10px 11px 13px;
+}
+
+.renderErrors {
+  width: 300px;
+  margin: 10px auto 0px auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+
+}
+
+.renderErrors ul li {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  opacity: 1;
+}
+.popup {
+  background-color: #00cf35;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.popup button {
+  border-radius: 0;
+  border: 1px solid #00cf35;
+}
+.bottom-slider {
+  animation: 1s ease-out 0s 1 slideIn;
+}
+.session-one-bottom {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
+//Session-One//
+//Login//
+
+.login-form h1 {
+  font-style: Bookman Old Style Bold;
+  text-align: center;
+  margin: auto auto 15% auto;
+  width: 232px;
+  height: 50px;
+  padding: 0px;
+}
+
+.login-form-container {
+  margin: auto;
+  text-align: center;
+  width: 20%;
+  padding-top: 15%;
+  background: transparent;
+}
+
+.section-one-button {
+  //What is tumblr?
+  background-color: #00cf35;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.section-one img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+//Session-Two//
+.section-two {
+  background-color: #00cf35;
+}
+
+.content-text {
+  position: absolute;
+  bottom: 15vh;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+}
+
+.content-text p {
+  font-size: 28px;
+}
+
+.session-two-header {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.babybird {
+  position: absolute;
+  height: 30%;
+  width: auto;
+  top: 30%;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin: 0px auto 0px auto;
+}
+
+//Session Three//
+.section-three {
+  background-color: #7c5cff;
+}
+
+.section-three-content {
+  position: absolute;
+  left: 10%;
+  top: 7%;
+}
+.section-three-content h3 {
+  padding: 0px;
+  font-size: 22px;
+  color: white;
+}
+.session-three-header {
+  font-size: 60px;
+}
+.section-three p {
+  padding: 10px 0px 0px 5%;
+  color: white;
+}
+.blogs-graphic {
+  position: absolute;
+  left: 10%;
+  top: 35%;
+}
+.blog-post-column {
+  float: left;
+  margin-left: 10px;
+  width: 21vw;
+}
+.blog-post {
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.ui-avatar {
+  height: 25px;
+}
+.avatar {
+  height: 100%;
+  width: auto;
+  padding: 2px;
+  margin-left: 2px;
+  border-radius: 5px;
+  float: left;
+}
+.post-image {
+  width: 21vw;
+  height: auto;
+}
+.blogs-graphic p {
+  color: black;
+  padding-top: 5px;
+}
+.post-bottom {
+  height: 30px;
+}
+.ui-notes {
+  float: left;
+  padding: 5px;
+}
+.post-bottom i {
+  float: right;
+  padding: 5px;
+}
+
+//Session-Four//
+.section-four {
+  background-color: #001935;
+}
+
+.nav-col {
+  float: left;
+  position: relative;
+  top: 10%;
+  left: 15%;
+  // display: inline block;
+}
+// .pictures {
+//   position: absolute;
+//   top: 20px;
+//   left: 20px;
+// }
+.nav-row {
+  padding-bottom: 20px;
+}
+.first-avatar {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.nav-avatar {
+  margin: 80px 0px 0px 80px;
+}
+.big-avatar {
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+  float: left;
+}
+.nav-section {
+  margin: 0px 30px 0px 10px;
+  background-color: white;
+  border-radius: 2px;
+  float: left;
+  width: 550px;
+}
+.icon-clear-fix {
+  padding: 0 1px 0 7px;
+}
+.icon-label {
+  float: left;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 20px;
+  padding: 61px 1px 18px 0;
+  color: #696969;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 15px;
+  opacity: 0.9;
+  font-weight: normal;
+  text-decoration: none;
+}
+.icon-label i {
+  position: absolute;
+  text-align: left;
+  top: 5px;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  padding: 0 14px;
+  margin: 0 auto;
+  font-size: 48px;
+  text-align: center;
+  line-height: 62px;
+}
+.icon-label span {
+  display: block;
+  width: 75px;
+  text-align: center;
+}
+.nav-top h4 {
+  padding: 5px 0px 5px 20px;
+  font-size: 20px;
+}
+.nav-post {
+  float: left;
+  width: 550px;
+  border-radius: 2px;
+  margin: 20px 30px 0px 10px;
+  background-color: white;
+}
+.nav-avatar p {
+  padding-left: 20px;
+}
+.nav-image {
+  width: 550px;
+}
+.nav-bottom {
+  height: 20px;
+}
+.nav-notes {
+  float: left;
+  padding: 10px;
+}
+.nav-bottom i {
+  float: right;
+  padding: 10px;
+}
+
+.session-four-header {
+  padding-top: 40%;
+  font-size: 50px;
+}
+.session-four-paragraph {
+  color: white;
+  font-size: 22px;
+  padding-top: 10px;
+}
+//Session-Five//
+
+.section-five {
+  background-color: #ff8a00;
+}
+.create-graphic {
+  position: absolute;
+  bottom: 50vh;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  color: #fff;
+}
+.create-graphic i {
+  font-size: 90px;
+  padding: 20px;
+}
+.create-graphic h3 {
+  font-size: 30px;
+  padding: 10px 35px 10px 35px;
+  display: inline-block;
+}
+.section-five-content {
+  position: absolute;
+  bottom: 15vh;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+}
+.session-five-header {
+  font-size: 60px;
+  padding: 10px;
+}
+.section-five-content h3 {
+  font-size: 22px;
+  padding: 10px;
+}
+.section-five-icon {
+  position: absolute;
+  top: 30%;
+  left:0px;
+  right:0px;
+  display: inline-block;
+  margin: 0px auto 0px auto;
+}
+.section-six img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.session-six-header {
+  position: absolute;
+  bottom: 15vh;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -2,10 +2,9 @@
 json.currentUser do
    json.extract! current_user, :id, :username
    
-   # debugger
-   # if current_user.avatar.attached?
-   #    json.avatar url_for(current_user.avatar) 
-   # end
+   if current_user.avatar.attached?
+      json.avatarUrl url_for(current_user.avatar) 
+   end
 
    json.posts do
       json.array! current_user.posts.collect { |post| post.id }
@@ -20,7 +19,7 @@ json.posts do
          #after retrieveing post info, medias if avail.
          json.medias do
             json.array! post.medias do |media|
-               json.url url_for(media)
+               json.mediaUrl url_for(media)
             end
          end
          #add likes next

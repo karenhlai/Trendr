@@ -1,3 +1,200 @@
 // Place all the styles related to the api/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "https://assets.tumblr.com/client/prod/app/global.build.css?_v=795c9b285a874a67e02195907325544e";
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display');
+
+#navbar-dash {
+  // align-content: flex-end;
+  background:  #001935;
+  border-bottom: 0.5px solid hsla(0,0%,100%,.65);
+  padding-left: 225px;
+  padding-top: 12px; 
+  padding-bottom: 5px;
+}
+
+#navbar-dash button {
+  position: relative;
+  // align-content: center;s
+  font-size: 21px;
+  font-weight: bolder;
+  color: white;
+  margin-left: 80%;
+  padding-bottom: 5px;
+}
+
+.dashboard-main {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+  background-color: #001935; 
+  padding-top: 50px;
+}
+
+.modal-create-bar {
+  margin: 0px 0px 0px 500px;
+  width: 540px;
+  border-radius: 3px;
+  background: white;
+  height: 100px;  
+}
+
+
+.modal-create-bar button {
+  height: 100%;
+  margin: 0px 14px 0px 13px;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.322);
+}
+  
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  margin: 250px 0px 0px 500px;
+  width: 500px;
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.form input[name=title] {
+  font-size: 50px;
+  width: 100%;
+  border: none;
+}
+.form input[name=body] {
+  font-size: 30px;
+  padding-bottom: 100px;
+  width: 100%;
+  border: none;
+}
+.form input[type=submit] {
+  position: relative;
+  right: -350px;
+  width: 150px;
+}
+.form button {
+  position: relative;
+  right: 150px;
+  widows: 100px;
+}
+
+.form button {
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin: 5px;
+  color: white;
+  padding: 11px 10px 11px 13px;
+  border: 1px solid gray;
+  background-color: gray;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+// .post-index-item-row {
+//   align-content: flex-end;
+// };
+.post-index-item-row {
+     margin: 0px 0px 0px 500px;
+    padding: 20px 0px 0px 0px;
+}
+.post-index-item {
+    width: 540px;
+    font-size: 14px;
+    background: #fff;
+    padding: 15px 0 0 0;
+    word-wrap: break-word;
+    border-radius: 3px;    
+}
+
+.post-author-icon {
+  // flex-direction: column;
+  position: sticky;
+  float: left;
+  top: 0;
+  margin: 0px 0px 0px -120px;
+  height: 100px;
+  width: 100px;
+  border-radius: 4px;
+}
+
+.post-author-username {
+  font-family: 'Merriweather', serif;
+  font-weight: bolder;
+  padding-left: 20px;
+}
+
+.post-index-title {
+  font-family: 'Merriweather', serif;
+  font-size: 40px;
+  color: black;
+  padding: 10px 0px 10px 20px;
+ }
+
+.post-index-item-media {
+  width: 100%;
+}
+
+.post-index-body {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  padding: 20px;
+}
+
+//create post navbar modal icons 
+i.icon_post_text {
+    color: #000;
+    font-size: 50px;
+}
+
+i.icon_post_photo {
+  color: #ff492f;
+  font-size: 50px;
+}
+
+i.icon_post_quote {
+    color: #ff8a00;
+    font-size: 50px;
+}
+
+i.icon_post_link {
+    color: #00cf35;
+    font-size: 50px;
+}
+
+i.icon_post_chat {
+    color: #00b8ff;
+    font-size: 50px;
+}
+
+i.icon_post_audio {
+    color: #7c5cff;
+    font-size: 50px;
+}
+
+i.icon_post_video {
+    color: #ff62ce;
+    font-size: 50px;
+}
+
+.trash {
+  height: 30px;
+  width: 30px;
+}
+.edit {
+  height: 25px;
+  width: 25px;
+ padding: 0px 0px 2px 480px;
+}
+

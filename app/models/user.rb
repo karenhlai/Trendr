@@ -17,13 +17,14 @@ class User < ApplicationRecord
 
   attr_reader :password
   after_initialize :ensure_session_token
-
+  
+  has_one_attached :avatar
+  
   has_many :posts, 
   primary_key: :id,
   foreign_key: :author_id, 
   class_name: :Post
 
-  has_one_attached :avatar
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

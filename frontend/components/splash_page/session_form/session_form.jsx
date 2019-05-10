@@ -10,10 +10,21 @@ class SessionForm extends React.Component {
 			username: '',
 			password: ''
 		};
+
+		this.loginDemo = this.loginDemo.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-
+	componentWillUnmount() {
+		this.props.clearErrors();
+		// debugger
+	}
+	// componentDidUpdate(oldProps) {
+	// 	debugger
+	// 	if (this.props.formType !== oldProps.formType) {
+	// 		this.props.clearErrors();
+	// 	}
+	// }
 
 	update(field) {
 		return e => this.setState({
@@ -27,10 +38,12 @@ class SessionForm extends React.Component {
 		this.props.processForm(user).then( () => this.props.history.push("/posts"));
 	}
 
-	loginDemo() {
-		// dispatch login with that user's info; create a particular user in seed solely for demo use;
+	loginDemo(e) {
+		e.preventDefault();
+		let demoUser = { email: 'user@email.com', password: 'password'}
+		this.props.processForm(demoUser).then( () => this.props.history.replace('/posts'));
 	}
- 
+
 	renderErrors() {
 		return (
 			<ul>
@@ -44,6 +57,7 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+		// debugger
 		let username;
 		if (this.props.formType === 'Sign Up') {
 			username = <label>
@@ -57,6 +71,11 @@ class SessionForm extends React.Component {
 				<br></br>
 			</label>
 		};
+		
+		let demoButton;
+		if (this.props.formType === "Log In") {
+			demoButton = <button className="demo-button" onClick={this.loginDemo}>Demo Login</button>
+		}
 
 		//button sign in demo (onClick, callback)
 		return (
@@ -94,13 +113,12 @@ class SessionForm extends React.Component {
 						</label>
 						<br />
 
-
 						<div className="renderErrors">
 							{this.renderErrors()}
 						</div>
-
-
 						<input className="session-submit" type="submit" value={this.props.formType} />
+						<br/>
+							{demoButton}
 					</div>
 				</form>
 			</div>

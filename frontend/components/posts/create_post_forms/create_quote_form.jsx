@@ -9,28 +9,23 @@ class CreateQuoteForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
   update(field) {
     return e => this.setState({ [field]: e.target.value, });
   };
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createPost(this.state);
+    this.props.createPost(this.state).then(this.props.closeModal);
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          {/* put a hidden input that submits text for every form? */}
-          <label>Title</label>
+        <form className="form" onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Quote"} />
-
-          <label>-</label>
           <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Source"} />
-
           <input type="submit" value="Post" />
+          <button onClick={() => this.props.closeModal()}>Close</button>
         </form>
       </div>
     )
@@ -38,11 +33,17 @@ class CreateQuoteForm extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-  post: { content: "quote", title: "", body: "" }
+  post: { content: "quote", title: "", body: "" }, 
+  formType: "Create Quote",
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createPost: (post) => dispatch(createPost(post))
+  createPost: (post) => dispatch(createPost(post)), 
+  otherForm: (
+    <button onClick={() => dispatch(openModal('Create Quote'))}>
+    Quote</button>
+  ),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateQuoteForm);

@@ -5,7 +5,7 @@ import { createPost } from '../../../actions/post_actions';
 class CreateTextForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.post;
+    this.state = { content: "text", title: "", body: "" };
 
     // this.state = { title: "", body: "" };
     // this.handleChange = this.handleChange.bind(this);
@@ -25,30 +25,22 @@ class CreateTextForm extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createPost(this.state);
-  //   let formData = {
-  //     title: this.state.title,
-  //     body: this.state.body,
-  //     content: "text",
-  //     author_id: 123
-  //   }
-
-  //  console.log(formData);
-  //  this.props.createPost(formData);
+    this.props.createPost(this.state).then(this.props.closeModal);
   }
 
   render () {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
         {/* put a hidden input that submits text for every form */}
-          <label>Title</label>
-          <input type="text" value={this.state.title} name="title" onChange={this.update("title")} />
+          {/* <label>Title</label> */}
+          <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder="Title" />
 
-          <label>Body</label>
-          <input type="text" value={this.state.body} name="body" onChange={this.update("body")} />
+          {/* <label>Body</label> */}
+          <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder="Your Text Here" />
 
           <input type="submit" value="Create Post" />
+          <button onClick={() => this.props.closeModal()}>Close</button>
         </form>
       </div>
     )
@@ -56,11 +48,18 @@ class CreateTextForm extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-  post: { content: "text", title: "", body: "" }
+  post: { content: "text", title: "", body: "" }, 
+  formType: "Create Text",
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createPost: (post) => dispatch(createPost(post))   
+  createPost: (post) => dispatch(createPost(post)), 
+  otherForm: (
+    <button onClick={() => dispatch(openModal('Create Text'))}>
+      Text
+    </button>
+  ), 
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateTextForm);

@@ -5,6 +5,9 @@ import SignupFormContainer from './session_form/signup_form_container';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import ReactFullpage from '@fullpage/react-fullpage';
+import SectionThree from './section_three';
+import SectionFour from './section_four';
+import SectionFive from './section_five';
 
 class SplashPage extends React.Component {
   render () {
@@ -21,7 +24,7 @@ class SplashPage extends React.Component {
 
         <ReactFullpage
           navigation
-
+          licenseKey="05881909-CC18460F-993ADDFD-EF6A380A"
           render={({ state, fullpageApi }) => 
             <ReactFullpage.Wrapper>
               <div className="section section-one">
@@ -33,34 +36,42 @@ class SplashPage extends React.Component {
                     <AuthRoute path="/" component={LandingPage} />
                   </Switch>
                 </div>
-                <div className="popup">
+                <div className="popup bottom-slider">
                 <button className="section-one-button" onClick={() => fullpageApi.moveSectionDown()}>
                     <p className="session-one-bottom">What is Tumblr?</p>
                 </button>
                 </div>
               </div>
               <div className="section section-two">
-                <h1 className="session-two-header">Tumblr is so easy to use <br/>that it's hard to explain.</h1>
-                <img className="babybird" src="https://s.cdpn.io/3/kiwi.svg" />
+                <div className="content-text">
+                  <h1 className="session-two-header">
+                    Tumblr is so easy to use <br />
+                    that it's hard to explain.
+                  </h1>
+                  <p>
+                    We made it really, really simple for people to make a blog
+                    and put whatever they <br />want on it. Stories, photos, GIFs, TV
+                    shows, links, quips, dumb jokes, smart jokes, <br />Spotify
+                    tracks, mp3s, videos, fashion, art, deep stuff. Tumblr is
+                    466 million different <br />blogs, filled with literally whatever.
+                  </p>
+                </div>
+                <img className="babybird" src="https://www.dailydot.com/wp-content/uploads/f3c/2c/db3b325ed46918ef.png" />
               </div>
-              <div className="section section-three">
-                <h1 className="session-three-header">Tumblr is blogs.</h1>
-               <p>Turns out that when you make it easy to create interesting things, <br/>
-               that’s exactly what people do. All those great, random blogs your <br/>
-               friends send you, those are Tumblr blogs. We’ll help you find and <br/>
-               follow blogs like that, and we’ll help other people find and follow <br/>
-               yours.</p>
-              </div>
-              <div className="section section-four">
-                <h1 className="session-four-header">You already know how this works.</h1>
-              </div>
-              <div className="section section-five">
-                <h1 className="session-five-header">Seriously, put anything you want here.</h1>
-              </div>
+              <SectionThree />
+              <SectionFour />
+              <SectionFive />
               <div className="section section-six">
                 <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
+                <h1 className="session-six-header">Okay, it's not actually hard to explain.</h1>
+                <div className="loginform">
+                  <Switch>
+                    <AuthRoute path="/login" component={LoginFormContainer} />
+                    <AuthRoute path="/signup" component={SignupFormContainer} />
+                    <AuthRoute path="/" component={LandingPage} />
+                  </Switch>
+                </div>
 
-                <h1>Okay, it's not actually hard to explain.</h1>
               </div>
              
           </ReactFullpage.Wrapper>

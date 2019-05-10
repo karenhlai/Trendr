@@ -14,9 +14,11 @@ class Api::PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+    render :show
   end
 
   def create
+    # debugger
     @post = Post.new(post_params)
     @post.author_id = current_user.id
 
@@ -44,8 +46,9 @@ class Api::PostsController < ApplicationController
 
     if @post
       @post.destroy!
-      render json: {}
+      # render json: {}
       # render "api/posts"
+      render :show
     else
       render json: ["You cannot destroy this post!!"], status: 404
     end
@@ -53,6 +56,6 @@ class Api::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:content, :title, :body, :author_id)
+    params.require(:post).permit(:content, :medias, :title, :body, :author_id)
   end
 end

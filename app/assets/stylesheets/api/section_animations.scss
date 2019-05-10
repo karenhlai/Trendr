@@ -72,11 +72,21 @@
   transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
     opacity 0.66s ease-in-out;
 }
-
+.section-two > .fp-tableCell img {
+    transform: translateX(-1000px);
+  opacity: 0;
+  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.66s ease-in-out;
+}
 .section-two.active > .fp-tableCell h1,
-.section-two.active > .fp-tableCell p {
-  transform: translateY(0);
+.section-two.active > .fp-tableCell p,
+.section-two.active > .fp-tableCell img {
+  transform: translateX(0);
   opacity: 1;
+}
+
+.section-two.active > .fp-tableCell img {
+  transition-delay: 0.44s;
 }
 
 .section-two.active > .fp-tableCell h1 {
@@ -94,106 +104,111 @@
   transition-delay: 0.88s;
 }
 /* ========== SECTION 3 - content animation ========== */
-.section-three > .fp-tableCell h1,
-.section-three > .fp-tableCell p {
-  transform: translateY(1000px);
+
+.section-three > .fp-tableCell .column-one,
+.section-three > .fp-tableCell .column-two,
+.section-three > .fp-tableCell .column-three,
+.section-three > .fp-tableCell .column-four {
+  transform: translateX(1000px);
   opacity: 0;
   transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
     opacity 0.66s ease-in-out;
 }
-
+.section-three > .fp-tableCell h1,
+.section-three > .fp-tableCell h3 {
+    transform: translateY(-1000px);
+  opacity: 0;
+  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.66s ease-in-out;
+}
 .section-three.active > .fp-tableCell h1,
-.section-three.active > .fp-tableCell p {
+.section-three.active > .fp-tableCell h3 {
   transform: translateY(0);
   opacity: 1;
 }
-
-.section-three.active > .fp-tableCell h1 {
-  transition-delay: 0.22s;
-}
-
-.section-three.active > .fp-tableCell p {
-  transition-delay: 0.44s;
-}
-
-.section-three.active > .fp-tableCell p + p {
-  transition-delay: 0.66s;
-}
-
-.section-three.active > .fp-tableCell p + p + p {
-  transition-delay: 0.88s;
-}
-/* ========== SECTION 4 - content animation ========== */
-.section-four > .fp-tableCell h1,
-.section-four > .fp-tableCell p {
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
-    opacity 0.66s ease-in-out;
-}
-
-.section-four.active > .fp-tableCell h1,
-.section-four.active > .fp-tableCell p {
+.section-three.active > .fp-tableCell .column-one,
+.section-three.active > .fp-tableCell .column-two,
+.section-three.active > .fp-tableCell .column-three,
+.section-three.active > .fp-tableCell .column-four {
   transform: translateX(0);
   opacity: 1;
 }
 
-.section-four.active > .fp-tableCell p {
+.section-three.active > .fp-tableCell h1,
+.section-three.active > .fp-tableCell h3 {
   transition-delay: 0.22s;
 }
 
-.section-four.active > .fp-tableCell p + p {
-  transition-delay: 0.44s;
+.section-three.active > .fp-tableCell .column-one {
+  transition-delay: 0.22s;
 }
 
-.section-four.active > .fp-tableCell p + p + p {
+.section-three.active > .fp-tableCell .column-two {
+  transition-delay: 0.44s;
+}
+.section-three.active > .fp-tableCell .column-three {
   transition-delay: 0.66s;
 }
-/* ========== SECTION 5 - content animation ========== */
-.section-five > .fp-tableCell h1,
-.section-five > .fp-tableCell p {
+.section-three.active > .fp-tableCell .column-four {
+  transition-delay: 0.88s;
+}
+/* ========== SECTION 4 - content animation ========== */
+.section-four > .fp-tableCell h1,
+.section-four > .fp-tableCell h3 {
   transform: translateX(100%);
   opacity: 0;
   transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
     opacity 0.66s ease-in-out;
 }
 
-.section-five.active > .fp-tableCell h1,
-.section-five.active > .fp-tableCell p {
+.section-four.active > .fp-tableCell h1,
+.section-four.active > .fp-tableCell h3 {
   transform: translateX(0);
   opacity: 1;
 }
 
-.section-five.active > .fp-tableCell p {
+.section-four.active > .fp-tableCell h3 {
   transition-delay: 0.22s;
 }
 
-.section-five.active > .fp-tableCell p + p {
-  transition-delay: 0.44s;
+/* ========== SECTION 5 - content animation ========== */
+.section-five > .fp-tableCell h1,
+.section-five > .fp-tableCell h3 {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.66s ease-in-out;
 }
-.section-five.active > .fp-tableCell p + p + p {
-  transition-delay: 0.66s;
+.section-five > .fp-tableCell i {
+    transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+    opacity 0.66s ease-in-out;
+}
+.section-five.active > .fp-tableCell h1,
+.section-five.active > .fp-tableCell h3,
+.section-five.active > .fp-tableCell i {
+  transform: translateX(0);
+  opacity: 1;
 }
 
+.section-five.active > .fp-tableCell h1,
+.section-five.active > .fp-tableCell h3,
+.section-five.active > .fp-tableCell i {
+  transition-delay: 0.22s;
+}
+
+
 /* ========== SECTION 6 - content animation ========== */
-.section-six > .fp-tableCell h1,
-.section-six > .fp-tableCell p {
+.section-six > .fp-tableCell h1 {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-.section-six.active > .fp-tableCell h1,
-.section-six.active > .fp-tableCell p {
+.section-six.active > .fp-tableCell h1 {
   opacity: 1;
 }
 
-.section-six.active > .fp-tableCell p {
-  transition-delay: 0.33s;
-}
-
-.section-six.active > .fp-tableCell p + p {
+.section-six.active > .fp-tableCell h1 {
   transition-delay: 0.66s;
-}
-.section-six.active > .fp-tableCell p + p + p {
-  transition-delay: 0.99s;
 }
