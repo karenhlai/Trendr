@@ -25,7 +25,7 @@ karen = User.create(
   email: "karen@email.com",
   password: "password"
 );
-karenAvatar = File.open('https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/s6Mcmp7e1e8pyz6Fz7AiyUZu');
+karenAvatar = open('https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/s6Mcmp7e1e8pyz6Fz7AiyUZu');
 karen.avatar.attach(io: karenAvatar, filename: 'my_actual_cat');
 
 # Post
@@ -43,7 +43,7 @@ post_three = Post.create(
   body: "But wish it was",
   author_id: 1
 );
-post_three_media = File.open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/7M8ERvLF2LpVXYodeKHDUNWt");
+post_three_media = open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/7M8ERvLF2LpVXYodeKHDUNWt");
 post_three.medias.attach(io: post_three_media, filename: "puppy");
 
 
@@ -62,7 +62,7 @@ content: nil,
   body: "Very, very busy...",
   author_id: 1
 );
-post_nine_media = File.open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/JdYPv5Qf3aka3vZcxBh8o99G");
+post_nine_media = open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/JdYPv5Qf3aka3vZcxBh8o99G");
 post_nine.medias.attach(io: post_nine_media, filename: "very_busy_cat");
 
 
@@ -72,7 +72,7 @@ content: nil,
   body: "Visited somewhere new yesterday...",
   author_id: 1
 );
-post_eleven_media = File.open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/RpTHPLiUcX9pVHWWdeLsYagM");
+post_eleven_media = open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/RpTHPLiUcX9pVHWWdeLsYagM");
 post_eleven.medias.attach(io: post_eleven_media, filename: "lands_end");
 
 
@@ -82,7 +82,7 @@ post_thirteen = Post.create(
   body: "",
   author_id: 1
 )
-post_thirteen_media = File.open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/8qyGiudgrro6dk2gkhWnxcCP");
+post_thirteen_media = open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/8qyGiudgrro6dk2gkhWnxcCP");
 post_thirteen.medias.attach(io: post_thirteen_media, filename: "me_last_night");
 
 
@@ -92,7 +92,7 @@ post_fourteen = Post.create(
   body: "",
   author_id: 1
 );
-post_fourteen_media = File.open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/acCzgvajZSp74uZ2zyMnF2AG");
+post_fourteen_media = open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/acCzgvajZSp74uZ2zyMnF2AG");
 post_fourteen.medias.attach(io: post_fourteen_media, filename: "tumblr_pic");
 
 post_fiftheen = Post.create(
@@ -101,7 +101,7 @@ post_fiftheen = Post.create(
   body: "Must complete",
   author_id: 2
 );
-post_fiftheen_media = File.open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/1c1QzA527RgUhiphm3GzdpVk");
+post_fiftheen_media = open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/1c1QzA527RgUhiphm3GzdpVk");
 post_fiftheen.medias.attach(io: post_fiftheen_media, filename: "todo_list");
 
 post_sixteen = Post.create(
@@ -118,5 +118,5 @@ post_seventeen = Post.create(
   body: "",
   author_id: 1
 );
-post_seventeen_media = File.open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/iM9mA3Rn3mUo3QTjs5dKPZxm");
+post_seventeen_media = open("https://s3-us-west-1.amazonaws.com/tumblr-clone-dev/iM9mA3Rn3mUo3QTjs5dKPZxm");
 post_seventeen.medias.attach(io: post_seventeen_media, filename: "pair_cats");
