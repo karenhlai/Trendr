@@ -5,7 +5,7 @@ class LandingPage extends React.Component {
   render () {
     return (
       <div className="home-container">
-        <h1 className="splash-header">tumblr</h1>
+        <h1 className="splash-header">trendr</h1>
         <h6 className="splash-sub">Come for what you love.
           <br/>Stay for what you discover.</h6>
         <div className="center">
