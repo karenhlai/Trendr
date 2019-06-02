@@ -49,4 +49,3 @@ Self notes for README completion:
 - Update functionality (based upon stuff I've completed thus far)
 - Integrate tech tools used under Implentation Methods and Tech section
 - Provide code snippets in Code Highlights (gif screenshot)
-- 
