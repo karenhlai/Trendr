@@ -6,10 +6,12 @@ Live Demo!
 Trendr is a social blogging application platform suitable for anyone who likes to express their creativity through text, photos, videos, and music. Implementing Amazon Web Services (AWS) to easily store media on the cloud, and backed by Rails and PostGresSQL, Trendr operates with the popular ReactJS and Redux tools on the front-end. This application is currently in the works, anything viable as of now was built within a 10-day time frame. Bonus features such as video and audio upload are currently in the works!
 
 <h3>Features</h3>
+
 - Standard User Authentication utilizing session tokens and BCrypt encryption
 - Users are assigned an avatar, but can upload and set their own unique avatar
 - Users can create posts that include types: text, link, photo 
 - Existing posts can be deleted by its owner
+
 
 Bonus Features coming soon!
 - Users can create posts that include types: audio, video
@@ -20,6 +22,7 @@ Bonus Features coming soon!
 - Users can explore posts through tag search
 
 <h3>Functionality and MVPs</h3>
+
 - User Auth
   - Existing users can sign in, new users can sign up
 - Posts
