@@ -40,5 +40,13 @@ Bonus Features coming soon!
 <h3>UI/UX</h3>
 The goal is to pixel perfectly replicate Tumblr's website
 
-- The landing page, where users will sign up or sign in, will showcase majority of this app's design implementation - animation and functionality wise.
+- The landing page, where users will sign up or sign in, will showcase majority of this app's design implementation - animation and functionality wise. It will contain section scrolling, and navigation buttons that will direct user to a specific section upon clicking. A user can sign in or sign up on the first or last sections.
+- Upon signing in or signing up, the user's dashboard will render with posts created by themselves, other users they are following, as well as recommended posts(coming soon!). Posts will render according based on chronological order, starting with the newest post on top. Only 8 posts will render at a time, meaning when users have scrolled past 75% of post content, another 8 posts will render following the current 8 posts. 
+- Upon creating or editing a post, an appropiate modal will render based on the type of action the user has chosen, i.e. a 'create text' modal will differ from the 'create photo' modal.
+
+
+Self notes for README completion: 
+- Update functionality (based upon stuff I've completed thus far)
+- Integrate tech tools used under Implentation Methods and Tech section
+- Provide code snippets in Code Highlights (gif screenshot)
 - 
