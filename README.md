@@ -41,3 +41,4 @@ Bonus Features coming soon!
 The goal is to pixel perfectly replicate Tumblr's website
 
 - The landing page, where users will sign up or sign in, will showcase majority of this app's design implementation - animation and functionality wise.
+- 
