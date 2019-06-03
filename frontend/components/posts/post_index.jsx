@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import PostFormModal from './post_form_modal';
 import PostIndexItem from './post_index_item';
+import InfiniteScroll from 'react-infinite-scroller';
  
 class PostIndex extends React.Component {
   constructor(props) {
@@ -96,13 +97,9 @@ class PostIndex extends React.Component {
                 <span className="new_post_label_text">Video</span>
             </button>
           </nav>
-          {/* <nav <button on click openModal ('Create') </nav> */}
 
-        
-        {/* { username } */}
-
-        
         { posts.reverse() }
+
       </div>
       </div>
     );
