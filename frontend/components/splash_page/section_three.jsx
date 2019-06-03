@@ -5,13 +5,13 @@ class SectionThree extends React.Component {
     return (
       <div className="section section-three">
         <div className="section-three-content">
-          <h1 className="session-three-header">Tumblr is blogs.</h1>
+          <h1 className="session-three-header">Trendr is blogs.</h1>
           <h3>
             Turns out that when you make it easy to create interesting things,{" "}
             <br />
             that’s exactly what people do. All those great, random blogs your{" "}
             <br />
-            friends send you, those are Tumblr blogs. We’ll help you find and{" "}
+            friends send you, those are Trendr blogs. We’ll help you find and{" "}
             <br />
             follow blogs like that, and we’ll help other people find and follow{" "}
             <br />

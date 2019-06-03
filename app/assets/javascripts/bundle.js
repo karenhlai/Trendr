@@ -1488,7 +1488,7 @@ function (_React$Component) {
         className: "home-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "splash-header"
-      }, "tumblr"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      }, "trendr"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
         className: "splash-sub"
       }, "Come for what you love.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Stay for what you discover."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "center"
@@ -1805,7 +1805,7 @@ function (_React$Component) {
         className: "section-three-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "session-three-header"
-      }, "Tumblr is blogs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Turns out that when you make it easy to create interesting things,", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "that\u2019s exactly what people do. All those great, random blogs your", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "friends send you, those are Tumblr blogs. We\u2019ll help you find and", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "follow blogs like that, and we\u2019ll help other people find and follow", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "yours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Trendr is blogs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Turns out that when you make it easy to create interesting things,", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "that\u2019s exactly what people do. All those great, random blogs your", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "friends send you, those are Trendr blogs. We\u2019ll help you find and", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "follow blogs like that, and we\u2019ll help other people find and follow", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "yours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "blogs-graphic"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "blog-post-column column-one"
@@ -2191,7 +2191,7 @@ function (_React$Component) {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "splash-header"
-      }, "tumblr"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "trendr"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Email",
         value: this.state.email,
@@ -2370,13 +2370,13 @@ function (_React$Component) {
             }
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "session-one-bottom"
-          }, "What is Tumblr?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, "What is Trendr?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-two"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "content-text"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             className: "session-two-header"
-          }, "Tumblr is so easy to use ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "that it's hard to explain."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We made it really, really simple for people to make a blog and put whatever they ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "want on it. Stories, photos, GIFs, TV shows, links, quips, dumb jokes, smart jokes, ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Spotify tracks, mp3s, videos, fashion, art, deep stuff. Tumblr is 466 million different ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blogs, filled with literally whatever.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          }, "Trendr is so easy to use ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "that it's hard to explain."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We made it really, really simple for people to make a blog and put whatever they ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "want on it. Stories, photos, GIFs, TV shows, links, quips, dumb jokes, smart jokes, ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Spotify tracks, mp3s, videos, fashion, art, deep stuff. Trendr is 466 million different ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "blogs, filled with literally whatever.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             className: "babybird",
             src: "https://www.dailydot.com/wp-content/uploads/f3c/2c/db3b325ed46918ef.png"
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_three__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_four__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_five__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

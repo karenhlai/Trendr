@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
 				<form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
 					<div className="login-form">
-						<h1 className="splash-header">tumblr</h1>
+						<h1 className="splash-header">trendr</h1>
 						<br />
 						<label>
 							{/* Email: */}
