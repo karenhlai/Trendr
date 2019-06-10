@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createPost } from '../../../actions/post_actions';
+import { closeModal } from '../../../actions/modal_actions';
+
 
 class CreateLinkForm extends React.Component {
   constructor(props) {
@@ -22,6 +24,7 @@ class CreateLinkForm extends React.Component {
   render() {
     return (
       <div>
+        <div className="form_author">{this.props.currentUser.username}</div>
         <form className="form" onSubmit={this.handleSubmit}>
           {/* put a hidden input that submits text for every form? */}
           {/* <label>Title</label>
@@ -35,10 +38,13 @@ class CreateLinkForm extends React.Component {
   }
 };
 
-const mapStateToProps = (state) => ({
-  post: { content: "link", title: "", body: "" },
-  formType: "Create Link",
-});
+const mapStateToProps = (state) => {
+  const currentUser = state.entities.users[state.session.id];
+  return ({
+    post: { content: "link", title: "", body: "" },
+    formType: "Create Link",
+  })
+};
 
 const mapDispatchToProps = (dispatch) => ({
   createPost: (post) => dispatch(createPost(post)), 

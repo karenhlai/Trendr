@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createPost } from '../../../actions/post_actions';
+import { closeModal } from '../../../actions/modal_actions';
+
 
 class CreatePhotoForm extends React.Component {
   constructor(props) {
@@ -45,6 +47,7 @@ class CreatePhotoForm extends React.Component {
     const preview = this.state.mediaUrl ? <img src={this.state.mediaUrl} /> : null;
     return (
       <div>
+        <div className="form_author">{this.props.currentUser.username}</div>
         <form className="form" onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Title your Pic"} />
           <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Add a caption"} />
@@ -61,10 +64,13 @@ class CreatePhotoForm extends React.Component {
   }
 };
 
-const mapStateToProps = (state) => ({
-  post: { content: "photo", title: "", body: "", mediaFile: null, photoUrl: null }, 
-  formType: "Create Photo",
-});
+const mapStateToProps = (state) => {
+  const currentUser = state.entities.users[state.session.id];
+  return ({
+    post: { content: "photo", title: "", body: "", mediaFile: null, photoUrl: null }, 
+    formType: "Create Photo",
+  })
+};
 
 const mapDispatchToProps = (dispatch) => ({
   createPost: (post) => dispatch(createPost(post)), 
