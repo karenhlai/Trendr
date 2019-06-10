@@ -26,10 +26,7 @@ class CreateLinkForm extends React.Component {
           {/* put a hidden input that submits text for every form? */}
           {/* <label>Title</label>
           <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Quote"} /> */}
-
-          <label></label>
-          <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Type or paste a URL"} />
-
+          <input type="url" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Type or paste a URL"} />
           <input type="submit" value="Post" />
           <button onClick={() => this.props.closeModal()}>Close</button>
         </form>

@@ -476,8 +476,8 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "url",
         value: this.state.body,
         name: "body",
         onChange: this.update("body"),
@@ -1022,6 +1022,152 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/posts/create_post_forms/edit_post_form.jsx":
+/*!************************************************************************!*\
+  !*** ./frontend/components/posts/create_post_forms/edit_post_form.jsx ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var EditPost =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(EditPost, _React$Component);
+
+  function EditPost(props) {
+    var _this;
+
+    _classCallCheck(this, EditPost);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditPost).call(this, props));
+    _this.state = _this.props.post;
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(EditPost, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.setState = {
+        content: this.props.content,
+        title: this.props.title,
+        body: this.props.body
+      };
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.closeModal();
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var post = Object.assign({}, this.state);
+      this.props.updatePost(post).then(this.props.closeModal);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-form-modal"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Edit Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "form",
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "title",
+        value: this.state.title,
+        onChange: this.update("title"),
+        placeholder: "Title"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.body,
+        name: "body",
+        onChange: this.update("body"),
+        placeholder: "Your Text Here"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        value: "Create Post"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this3.props.closeModal();
+        }
+      }, "Close")));
+    }
+  }]);
+
+  return EditPost;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    posts: state.entities.posts,
+    formType: "Edit Post"
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchOwnPosts: function fetchOwnPosts(id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchOwnPosts"])(id));
+    },
+    updatePost: function updatePost(post) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["updatePost"])(post));
+    },
+    closeModal: function closeModal() {
+      return dispatch(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"]);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(EditPost));
+
+/***/ }),
+
 /***/ "./frontend/components/posts/post_form_modal.jsx":
 /*!*******************************************************!*\
   !*** ./frontend/components/posts/post_form_modal.jsx ***!
@@ -1039,6 +1185,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _create_post_forms_create_quote_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./create_post_forms/create_quote_form */ "./frontend/components/posts/create_post_forms/create_quote_form.jsx");
 /* harmony import */ var _create_post_forms_create_link_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./create_post_forms/create_link_form */ "./frontend/components/posts/create_post_forms/create_link_form.jsx");
 /* harmony import */ var _create_post_forms_create_photo_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./create_post_forms/create_photo_form */ "./frontend/components/posts/create_post_forms/create_photo_form.jsx");
+/* harmony import */ var _create_post_forms_edit_post_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./create_post_forms/edit_post_form */ "./frontend/components/posts/create_post_forms/edit_post_form.jsx");
+
 
 
 
@@ -1072,6 +1220,10 @@ function PostFormModal(_ref) {
 
     case 'Create Link':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_post_forms_create_link_form__WEBPACK_IMPORTED_MODULE_5__["default"], null);
+      break;
+
+    case 'Edit Post':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_post_forms_edit_post_form__WEBPACK_IMPORTED_MODULE_7__["default"], null);
       break;
 
     default:
@@ -34827,7 +34979,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

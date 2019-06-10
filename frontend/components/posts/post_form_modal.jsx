@@ -5,6 +5,7 @@ import CreateTextForm from './create_post_forms/create_text_form';
 import CreateQuoteForm from './create_post_forms/create_quote_form';
 import CreateLinkForm from './create_post_forms/create_link_form';
 import CreatePhotoForm from './create_post_forms/create_photo_form';
+import EditPost from './create_post_forms/edit_post_form';
 
 function PostFormModal({ modal, closeModal }) {
   if (!modal) {
@@ -23,6 +24,9 @@ function PostFormModal({ modal, closeModal }) {
       break;
     case 'Create Link':
       component = <CreateLinkForm />;
+      break;
+    case 'Edit Post':
+      component = <EditPost />;
       break;
     default:
       return null;
