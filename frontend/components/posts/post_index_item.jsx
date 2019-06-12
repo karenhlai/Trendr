@@ -26,29 +26,29 @@ class PostIndexItem extends React.Component {
   }
 
   postContent(post) {
-    const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
+    // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
     
     switch (this.props.post.content) {
       case 'text':
         return (
           <div>
-            <h2>{this.props.post.title}</h2>
-            <p>{this.props.post.body}</p>
+            <h2 className="post-index-title">{this.props.post.title}</h2>
+            <p className="post-index-body">{this.props.post.body}</p>
           </div>
         );
       case 'photo':
         return (
           <div>
-            <h2>{this.props.post.title}</h2>
+            <h2 className="post-index-title">{this.props.post.title}</h2>
             { media }
-            <p>{this.props.post.body}</p>
+            <p className="post-index-body">{this.props.post.body}</p>
           </div>
         );
       case 'quote':
         return (
           <div>
-            <h2>"{this.props.post.title}"</h2>
-            <p>{this.props.post.body}</p>
+            <h2 className="post-index-title">"{this.props.post.title}"</h2>
+            <p className="post-index-body">{this.props.post.body}</p>
           </div>
         );
       case 'link':
@@ -62,7 +62,7 @@ class PostIndexItem extends React.Component {
         return (
           <div>
             {/* <h2>"{props.post.title}"</h2> */}
-            <p>{this.props.post.body}</p>
+            <p className="post-index-body">link</p>
           </div>
         );
     }
@@ -90,7 +90,7 @@ class PostIndexItem extends React.Component {
   }
 
   render() {
-    // const media = props.post.medias.length !== 0 ? <img className="post-index-item-media" src={props.post.medias[0].mediaUrl} /> : null;
+    // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
     const post = this.props.post;
     const authorAvatar = this.props.user.avatarUrl;
     const authorUsername = this.props.user.username;

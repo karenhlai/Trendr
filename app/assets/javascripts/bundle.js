@@ -453,12 +453,9 @@ function PostFormModal(_ref) {
     case 'Create Link':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_link_form__WEBPACK_IMPORTED_MODULE_5__["default"], null);
       break;
-
-    case 'Edit Post':
-      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        postId: modal.postId
-      });
-      break;
+    // case 'Edit Post':
+    //   component = <EditTextContainer postId={modal.postId} />;
+    //   break;
 
     default:
       return null;
@@ -1390,8 +1387,20 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     }),
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logout"])());
-    } // openModal: (type) => dispatch(openModal(type))
+    },
+    openModal: function (_openModal) {
+      function openModal(_x3) {
+        return _openModal.apply(this, arguments);
+      }
 
+      openModal.toString = function () {
+        return _openModal.toString();
+      };
+
+      return openModal;
+    }(function (type) {
+      return dispatch(openModal(type));
+    })
   };
 };
 
@@ -1477,20 +1486,28 @@ function (_React$Component) {
   }, {
     key: "postContent",
     value: function postContent(post) {
-      var media = this.props.post.medias.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "post-index-item-media",
-        src: this.props.post.medias[0].mediaUrl
-      }) : null;
-
+      // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
       switch (this.props.post.content) {
         case 'text':
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.body));
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+            className: "post-index-title"
+          }, this.props.post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+            className: "post-index-body"
+          }, this.props.post.body));
 
         case 'photo':
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.post.title), media, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.body));
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+            className: "post-index-title"
+          }, this.props.post.title), media, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+            className: "post-index-body"
+          }, this.props.post.body));
 
         case 'quote':
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\"", this.props.post.title, "\""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.body));
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+            className: "post-index-title"
+          }, "\"", this.props.post.title, "\""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+            className: "post-index-body"
+          }, this.props.post.body));
 
         case 'link':
           var link;
@@ -1501,7 +1518,9 @@ function (_React$Component) {
             link = "http://" + this.props.post.body;
           }
 
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.body));
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+            className: "post-index-body"
+          }, "link"));
       }
     }
   }, {
@@ -1544,7 +1563,7 @@ function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      // const media = props.post.medias.length !== 0 ? <img className="post-index-item-media" src={props.post.medias[0].mediaUrl} /> : null;
+      // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
       var post = this.props.post;
       var authorAvatar = this.props.user.avatarUrl;
       var authorUsername = this.props.user.username;
@@ -1617,13 +1636,13 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var post = ownProps.post;
   var currentUser = state.entities.users[state.session.id];
-  var authorId = ownProps.post ? ownProps.post.author_id : ""; // const authorId = ownProps.post.author_id;
-  // const author = state.entities.users[authorId];
-
+  var authorId = ownProps.post ? ownProps.post.author_id : "";
+  var media = ownProps.post.medias[0];
   return {
     post: post,
     authorId: authorId,
-    currentUser: currentUser
+    currentUser: currentUser,
+    media: media
   };
 };
 

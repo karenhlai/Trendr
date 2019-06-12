@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
   updatePost: (post) => dispatch(updatePost(post)),
   deletePost: id => dispatch(deletePost(id)),
   logout: () => dispatch(logout()),
-  // openModal: (type) => dispatch(openModal(type))
+  openModal: (type) => dispatch(openModal(type))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(PostIndex);

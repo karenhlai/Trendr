@@ -8,12 +8,12 @@ const mapStateToProps = (state, ownProps) => {
   const post = ownProps.post;
   const currentUser = state.entities.users[state.session.id];
   const authorId = ownProps.post ? ownProps.post.author_id : "";
-  // const authorId = ownProps.post.author_id;
-  // const author = state.entities.users[authorId];
+  const media = ownProps.post.medias[0];
   return ({
     post: post,
     authorId: authorId,
     currentUser: currentUser,
+    media: media
   })
 }
 

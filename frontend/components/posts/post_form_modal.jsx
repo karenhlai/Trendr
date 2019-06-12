@@ -25,9 +25,9 @@ function PostFormModal({ modal, closeModal }) {
     case 'Create Link':
       component = <LinkForm />;
       break;
-    case 'Edit Post':
-      component = <EditTextContainer postId={modal.postId} />;
-      break;
+    // case 'Edit Post':
+    //   component = <EditTextContainer postId={modal.postId} />;
+    //   break;
     default:
       return null;
   }
