@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import PostFormModal from './post_form_modal';
-import PostIndexItem from './post_index_item';
+import PostIndexItemContainer from './post_index_item_container';
+import SampleItem from './sample_item';
 import InfiniteScroll from 'react-infinite-scroller';
  
 class PostIndex extends React.Component {
@@ -27,7 +28,7 @@ class PostIndex extends React.Component {
       let that = this;
       // debugger
       return (
-        <PostIndexItem
+        <PostIndexItemContainer
           key={post.id}
           user={this.props.users[post.author_id]}
           post={post}

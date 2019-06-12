@@ -4,7 +4,7 @@ import { createPost } from '../../../actions/post_actions';
 import { closeModal } from '../../../actions/modal_actions';
 
 
-class CreatePhotoForm extends React.Component {
+class PhotoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.post;
@@ -47,7 +47,7 @@ class CreatePhotoForm extends React.Component {
     const preview = this.state.mediaUrl ? <img src={this.state.mediaUrl} /> : null;
     return (
       <div>
-        <div className="form_author">{this.props.currentUser.username}</div>
+        <div className="form-author">{this.props.currentUser.username}</div>
         <form className="form" onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Title your Pic"} />
           <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Add a caption"} />
@@ -67,6 +67,7 @@ class CreatePhotoForm extends React.Component {
 const mapStateToProps = (state) => {
   const currentUser = state.entities.users[state.session.id];
   return ({
+    currentUser: currentUser,
     post: { content: "photo", title: "", body: "", mediaFile: null, photoUrl: null }, 
     formType: "Create Photo",
   })
@@ -82,6 +83,6 @@ const mapDispatchToProps = (dispatch) => ({
   closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreatePhotoForm);
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoForm);
 
 

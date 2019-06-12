@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
-import CreateTextForm from './create_post_forms/create_text_form';
-import CreateQuoteForm from './create_post_forms/create_quote_form';
-import CreateLinkForm from './create_post_forms/create_link_form';
-import CreatePhotoForm from './create_post_forms/create_photo_form';
-import EditPost from './create_post_forms/edit_post_form';
+import TextForm from './post_forms/text_form';
+import QuoteForm from './post_forms/quote_form';
+import LinkForm from './post_forms/link_form';
+import PhotoForm from './post_forms/photo_form';
+import EditTextContainer from './post_forms/edit_text_container';
 
 function PostFormModal({ modal, closeModal }) {
   if (!modal) {
@@ -14,19 +14,19 @@ function PostFormModal({ modal, closeModal }) {
   let component;
   switch (modal) {
     case 'Create Text':
-      component = <CreateTextForm />;
+      component = <TextForm />;
       break;
     case 'Create Photo':
-      component = <CreatePhotoForm />;
+      component = <PhotoForm />;
       break;
     case 'Create Quote':
-      component = <CreateQuoteForm />;
+      component = <QuoteForm />;
       break;
     case 'Create Link':
-      component = <CreateLinkForm />;
+      component = <LinkForm />;
       break;
     case 'Edit Post':
-      component = <EditPost />;
+      component = <EditTextContainer postId={modal.postId} />;
       break;
     default:
       return null;

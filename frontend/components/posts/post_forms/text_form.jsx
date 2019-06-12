@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createPost } from '../../../actions/post_actions';
 import { closeModal } from '../../../actions/modal_actions';
 
-class CreateTextForm extends React.Component {
+class TextForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { content: "text", title: "", body: "" };
@@ -32,9 +32,8 @@ class CreateTextForm extends React.Component {
   render () {
     return (
       <div>
-        <div className="form_author">{this.props.currentUser.username}</div>
+        <div className="form-author">{this.props.currentUser.username}</div>
         <form className="form" onSubmit={this.handleSubmit}>
-        {/* put a hidden input that submits text for every form */}
           <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder="Title" />
           <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder="Your Text Here" />
           <input type="submit" value="Create Post" />
@@ -64,6 +63,6 @@ const mapDispatchToProps = (dispatch) => ({
   closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateTextForm);
+export default connect(mapStateToProps, mapDispatchToProps)(TextForm);
 
 

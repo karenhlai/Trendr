@@ -4,13 +4,12 @@ import { createPost } from '../../../actions/post_actions';
 import { closeModal } from '../../../actions/modal_actions';
 
 
-class CreateLinkForm extends React.Component {
+class QuoteForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.post;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
 
   update(field) {
     return e => this.setState({ [field]: e.target.value, });
@@ -24,12 +23,10 @@ class CreateLinkForm extends React.Component {
   render() {
     return (
       <div>
-        <div className="form_author">{this.props.currentUser.username}</div>
+        <div className="form-author">{this.props.currentUser.username}</div>
         <form className="form" onSubmit={this.handleSubmit}>
-          {/* put a hidden input that submits text for every form? */}
-          {/* <label>Title</label>
-          <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Quote"} /> */}
-          <input type="url" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Type or paste a URL"} />
+          <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Quote"} />
+          <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Source"} />
           <input type="submit" value="Post" />
           <button onClick={() => this.props.closeModal()}>Close</button>
         </form>
@@ -41,21 +38,21 @@ class CreateLinkForm extends React.Component {
 const mapStateToProps = (state) => {
   const currentUser = state.entities.users[state.session.id];
   return ({
-    post: { content: "link", title: "", body: "" },
-    formType: "Create Link",
+    currentUser: currentUser,
+    post: { content: "quote", title: "", body: "" }, 
+    formType: "Create Quote",
   })
 };
 
 const mapDispatchToProps = (dispatch) => ({
   createPost: (post) => dispatch(createPost(post)), 
   otherForm: (
-    <button onClick={() => dispatch(openModal('Create Link'))}>
-      Link
-    </button>
+    <button onClick={() => dispatch(openModal('Create Quote'))}>
+    Quote</button>
   ),
   closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateLinkForm);
+export default connect(mapStateToProps, mapDispatchToProps)(QuoteForm);
 
 
