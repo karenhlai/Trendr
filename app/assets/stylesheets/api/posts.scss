@@ -193,6 +193,14 @@ i.icon_post_video {
     font-size: 50px;
 }
 
+i.post-settings {
+  color: red;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 15px 20px 15px 15px;
+}
+
 .trash {
   height: 30px;
   width: 30px;

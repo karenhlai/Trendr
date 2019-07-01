@@ -1486,7 +1486,11 @@ function (_React$Component) {
   }, {
     key: "postContent",
     value: function postContent(post) {
-      // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
+      var media = this.props.post.medias.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "post-index-item-media",
+        src: this.props.post.medias[0].mediaUrl
+      }) : null;
+
       switch (this.props.post.content) {
         case 'text':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -1532,28 +1536,25 @@ function (_React$Component) {
         case 'text':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Text', props.post.id);
+              return _this4.props.openModal('Edit Text', _this4.props.post.id);
             }
           }, "Edit");
-
-        case 'photo':
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            onClick: function onClick() {
-              return _this4.props.openModal('Edit Photo', props.post.id);
-            }
-          }, "Edit");
+        // case 'photo':
+        //   return (
+        //     <button onClick={() => this.props.openModal('Edit Photo', this.props.post.id)}>Edit</button>
+        //   )
 
         case 'quote':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Text', props.post.id);
+              return _this4.props.openModal('Edit Text', _this4.props.post.id);
             }
           }, "Edit");
 
         case 'link':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Text', props.post.id);
+              return _this4.props.openModal('Edit Text', _this4.props.post.id);
             }
           }, "Edit");
       }
@@ -1561,8 +1562,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
-
       // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
       var post = this.props.post;
       var authorAvatar = this.props.user.avatarUrl;
@@ -1574,18 +1573,10 @@ function (_React$Component) {
           onClick: this.displayPostMenu
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-cog"
-        })), this.state.displayPostMenu ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          ref: function ref(instance) {
-            _this5.postMenu = instance;
-          }
-        }, this.postSetting(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: function onClick() {
-            return _this5.props.deletePost(props.post.id);
-          }
-        }, "Delete")) : null);
+        })), "this.state.displayPostMenu(this.postSetting(post))");
       } else {
         postControl = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-heart"
+          className: "fas fa-heart post-settings"
         }));
       }
 
@@ -1623,7 +1614,7 @@ function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
 /* harmony import */ var _post_index_item__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post_index_item */ "./frontend/components/posts/post_index_item.jsx");
@@ -1636,13 +1627,13 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var post = ownProps.post;
   var currentUser = state.entities.users[state.session.id];
-  var authorId = ownProps.post ? ownProps.post.author_id : "";
-  var media = ownProps.post.medias[0];
+  var authorId = ownProps.post ? ownProps.post.author_id : ""; // const media = ownProps.post.medias[0];
+
   return {
     post: post,
     authorId: authorId,
-    currentUser: currentUser,
-    media: media
+    currentUser: currentUser // media: media
+
   };
 };
 
@@ -1663,7 +1654,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_post_index_item__WEBPACK_IMPORTED_MODULE_4__["default"])));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_post_index_item__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 
@@ -35141,7 +35132,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

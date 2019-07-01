@@ -26,7 +26,7 @@ class PostIndexItem extends React.Component {
   }
 
   postContent(post) {
-    // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
+    const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
     
     switch (this.props.post.content) {
       case 'text':
@@ -72,19 +72,19 @@ class PostIndexItem extends React.Component {
     switch (post.content) {
       case 'text':
         return (
-          <button onClick={() => this.props.openModal('Edit Text', props.post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
         )
-      case 'photo':
-        return (
-          <button onClick={() => this.props.openModal('Edit Photo', props.post.id)}>Edit</button>
-        )
+      // case 'photo':
+      //   return (
+      //     <button onClick={() => this.props.openModal('Edit Photo', this.props.post.id)}>Edit</button>
+      //   )
       case 'quote':
         return (
-          <button onClick={() => this.props.openModal('Edit Text', props.post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
         )
       case 'link':
         return (
-          <button onClick={() => this.props.openModal('Edit Text', props.post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
         )
     }
   }
@@ -102,8 +102,8 @@ class PostIndexItem extends React.Component {
           <button onClick={this.displayPostMenu}>
             <i className="fas fa-cog"></i>
           </button>
-
-          {this.state.displayPostMenu
+          this.state.displayPostMenu(this.postSetting(post))
+          {/* {this.state.displayPostMenu
           ? (
             <div ref={(instance) => { this.postMenu = instance }}>
               {this.postSetting(post)}
@@ -111,12 +111,12 @@ class PostIndexItem extends React.Component {
             </div>
             ) :
             (null)
-          }
+          } */}
         </li>
       )
     } else {
       postControl = (
-        <li><i className="fas fa-heart"></i></li>
+        <li><i className="fas fa-heart post-settings"></i></li>
       )
     };
 

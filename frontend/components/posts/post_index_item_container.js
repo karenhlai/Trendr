@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { openModal } from '../../actions/modal_actions';
 import { fetchPosts, updatePost, deletePost } from '../../actions/post_actions';
 import PostIndexItem from './post_index_item';
@@ -8,12 +8,12 @@ const mapStateToProps = (state, ownProps) => {
   const post = ownProps.post;
   const currentUser = state.entities.users[state.session.id];
   const authorId = ownProps.post ? ownProps.post.author_id : "";
-  const media = ownProps.post.medias[0];
+  // const media = ownProps.post.medias[0];
   return ({
     post: post,
     authorId: authorId,
     currentUser: currentUser,
-    media: media
+    // media: media
   })
 }
 
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostIndexItem));
+export default connect(mapStateToProps, mapDispatchToProps)(PostIndexItem);
