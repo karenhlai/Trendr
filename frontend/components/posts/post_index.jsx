@@ -18,15 +18,12 @@ class PostIndex extends React.Component {
   }
 
   render() {
-
-    // debugger
     if (this.props.posts.length === 0 ) {
       return null;
     }
 
     let posts = this.props.posts.map(post => {
       let that = this;
-      // debugger
       return (
         <PostIndexItemContainer
           key={post.id}
