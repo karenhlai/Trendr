@@ -13,19 +13,19 @@ export const fetchPosts = () => {
 //   })
 // };
 
-export const fetchOwnPosts = (id) => {
-  return $.ajax({
-    method: 'get', 
-    url: `api/users/${id}/posts`
-  })
-}
+// export const fetchOwnPosts = (id) => {
+//   return $.ajax({
+//     method: 'get', 
+//     url: `api/users/${id}/posts`
+//   })
+// }
 
-export const fetchLikedPosts = (id) => {
-  return $.ajax({
-    method: 'get', 
-    url: `api/users/${id}/likes`
-  })
-}
+// export const fetchLikedPosts = (id) => {
+//   return $.ajax({
+//     method: 'get', 
+//     url: `api/users/${id}/likes`
+//   })
+// }
 
 export const createPost = (post) => {
   const request = {

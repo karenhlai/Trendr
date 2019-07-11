@@ -3,8 +3,8 @@ import * as PostAPIUtil from '../util/post_api_util';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
-export const RECEIVE_OWN_POSTS = 'RECEIVE_OWN_POSTS';
-export const RECEIVE_LIKED_POSTS = 'RECEIVE_LIKED_POSTS';
+// export const RECEIVE_OWN_POSTS = 'RECEIVE_OWN_POSTS';
+// export const RECEIVE_LIKED_POSTS = 'RECEIVE_LIKED_POSTS';
 
 export const receivePosts = ({ posts, currentUser, users }) => ({
   type: RECEIVE_POSTS, 
@@ -24,15 +24,15 @@ export const removePost = (postId) => ({
   postId
 });
 
-export const receiveOwnPosts = (payload) => ({
-  type: RECEIVE_OWN_POSTS,
-  payload
-});
+// export const receiveOwnPosts = (payload) => ({
+//   type: RECEIVE_OWN_POSTS,
+//   payload
+// });
 
-export const receiveLikedPosts = (payload) => ({
-  type: RECEIVE_LIKED_POSTS,
-  payload
-});
+// export const receiveLikedPosts = (payload) => ({
+//   type: RECEIVE_LIKED_POSTS,
+//   payload
+// });
 
 
 
@@ -52,8 +52,8 @@ export const updatePost = (post) => (dispatch) =>
 export const deletePost = (id) => (dispatch) => 
   PostAPIUtil.deletePost(id).then( post => dispatch(removePost(post.id)));
 
-export const fetchOwnPosts = (userId) => dispatch => 
-  PostAPIUtil.fetchOwnPosts(userId).then(posts => dispatch(receiveOwnPosts(posts)));
+// export const fetchOwnPosts = (userId) => dispatch => 
+//   PostAPIUtil.fetchOwnPosts(userId).then(posts => dispatch(receiveOwnPosts(posts)));
 
-export const fetchLikedPosts = (userId) => dispatch => 
-  PostAPIUtil.fetchLikedPosts(userId).then(posts => dispatch(receiveLikedPosts(posts)));
+// export const fetchLikedPosts = (userId) => dispatch => 
+//   PostAPIUtil.fetchLikedPosts(userId).then(posts => dispatch(receiveLikedPosts(posts)));

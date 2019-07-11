@@ -119,7 +119,7 @@ var closeModal = function closeModal() {
 /*!******************************************!*\
   !*** ./frontend/actions/post_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST, RECEIVE_OWN_POSTS, RECEIVE_LIKED_POSTS, receivePosts, receivePost, removePost, receiveOwnPosts, receiveLikedPosts, fetchPosts, createPost, updatePost, deletePost, fetchOwnPosts, fetchLikedPosts */
+/*! exports provided: RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST, receivePosts, receivePost, removePost, fetchPosts, createPost, updatePost, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -127,26 +127,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_POSTS", function() { return RECEIVE_POSTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_POST", function() { return RECEIVE_POST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_POST", function() { return REMOVE_POST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_OWN_POSTS", function() { return RECEIVE_OWN_POSTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LIKED_POSTS", function() { return RECEIVE_LIKED_POSTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePosts", function() { return receivePosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePost", function() { return receivePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removePost", function() { return removePost; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveOwnPosts", function() { return receiveOwnPosts; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveLikedPosts", function() { return receiveLikedPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePost", function() { return updatePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchOwnPosts", function() { return fetchOwnPosts; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLikedPosts", function() { return fetchLikedPosts; });
 /* harmony import */ var _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/post_api_util */ "./frontend/util/post_api_util.js");
 
 var RECEIVE_POSTS = 'RECEIVE_POSTS';
 var RECEIVE_POST = 'RECEIVE_POST';
-var REMOVE_POST = 'REMOVE_POST';
-var RECEIVE_OWN_POSTS = 'RECEIVE_OWN_POSTS';
-var RECEIVE_LIKED_POSTS = 'RECEIVE_LIKED_POSTS';
+var REMOVE_POST = 'REMOVE_POST'; // export const RECEIVE_OWN_POSTS = 'RECEIVE_OWN_POSTS';
+// export const RECEIVE_LIKED_POSTS = 'RECEIVE_LIKED_POSTS';
+
 var receivePosts = function receivePosts(_ref) {
   var posts = _ref.posts,
       currentUser = _ref.currentUser,
@@ -169,19 +163,15 @@ var removePost = function removePost(postId) {
     type: REMOVE_POST,
     postId: postId
   };
-};
-var receiveOwnPosts = function receiveOwnPosts(payload) {
-  return {
-    type: RECEIVE_OWN_POSTS,
-    payload: payload
-  };
-};
-var receiveLikedPosts = function receiveLikedPosts(payload) {
-  return {
-    type: RECEIVE_LIKED_POSTS,
-    payload: payload
-  };
-}; //thunks
+}; // export const receiveOwnPosts = (payload) => ({
+//   type: RECEIVE_OWN_POSTS,
+//   payload
+// });
+// export const receiveLikedPosts = (payload) => ({
+//   type: RECEIVE_LIKED_POSTS,
+//   payload
+// });
+//thunks
 
 var fetchPosts = function fetchPosts() {
   return function (dispatch) {
@@ -212,21 +202,10 @@ var deletePost = function deletePost(id) {
       return dispatch(removePost(post.id));
     });
   };
-};
-var fetchOwnPosts = function fetchOwnPosts(userId) {
-  return function (dispatch) {
-    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchOwnPosts"](userId).then(function (posts) {
-      return dispatch(receiveOwnPosts(posts));
-    });
-  };
-};
-var fetchLikedPosts = function fetchLikedPosts(userId) {
-  return function (dispatch) {
-    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchLikedPosts"](userId).then(function (posts) {
-      return dispatch(receiveLikedPosts(posts));
-    });
-  };
-};
+}; // export const fetchOwnPosts = (userId) => dispatch => 
+//   PostAPIUtil.fetchOwnPosts(userId).then(posts => dispatch(receiveOwnPosts(posts)));
+// export const fetchLikedPosts = (userId) => dispatch => 
+//   PostAPIUtil.fetchLikedPosts(userId).then(posts => dispatch(receiveLikedPosts(posts)));
 
 /***/ }),
 
@@ -1211,14 +1190,12 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger
       if (this.props.posts.length === 0) {
         return null;
       }
 
       var posts = this.props.posts.map(function (post) {
-        var that = _this; // debugger
-
+        var that = _this;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           key: post.id,
           user: _this.props.users[post.author_id],
@@ -1356,9 +1333,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchPosts"])());
     },
     // fetchLikedPosts: (userId) => dispatch(fetchLikedPosts(userId)),
-    fetchOwnPosts: function fetchOwnPosts(userId) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchOwnPosts"])(userId));
-    },
+    // fetchOwnPosts: (userId) => dispatch(fetchOwnPosts(userId)),
     updatePost: function (_updatePost) {
       function updatePost(_x) {
         return _updatePost.apply(this, arguments);
@@ -3111,14 +3086,12 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!****************************************!*\
   !*** ./frontend/util/post_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchPosts, fetchOwnPosts, fetchLikedPosts, createPost, updatePost, deletePost */
+/*! exports provided: fetchPosts, createPost, updatePost, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchOwnPosts", function() { return fetchOwnPosts; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLikedPosts", function() { return fetchLikedPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePost", function() { return updatePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
@@ -3134,19 +3107,19 @@ var fetchPosts = function fetchPosts() {
 //     url: `api/posts/${id}`
 //   })
 // };
+// export const fetchOwnPosts = (id) => {
+//   return $.ajax({
+//     method: 'get', 
+//     url: `api/users/${id}/posts`
+//   })
+// }
+// export const fetchLikedPosts = (id) => {
+//   return $.ajax({
+//     method: 'get', 
+//     url: `api/users/${id}/likes`
+//   })
+// }
 
-var fetchOwnPosts = function fetchOwnPosts(id) {
-  return $.ajax({
-    method: 'get',
-    url: "api/users/".concat(id, "/posts")
-  });
-};
-var fetchLikedPosts = function fetchLikedPosts(id) {
-  return $.ajax({
-    method: 'get',
-    url: "api/users/".concat(id, "/likes")
-  });
-};
 var createPost = function createPost(post) {
   var request = {
     method: 'post',
@@ -35132,7 +35105,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
   // fetchLikedPosts: (userId) => dispatch(fetchLikedPosts(userId)),
-  fetchOwnPosts: (userId) => dispatch(fetchOwnPosts(userId)),
+  // fetchOwnPosts: (userId) => dispatch(fetchOwnPosts(userId)),
   updatePost: (post) => dispatch(updatePost(post)),
   deletePost: id => dispatch(deletePost(id)),
   logout: () => dispatch(logout()),
