@@ -48,7 +48,7 @@ class PostIndexItem extends React.Component {
         return (
           <div>
             <h2 className="post-index-title">"{this.props.post.title}"</h2>
-            <p className="post-index-body">{this.props.post.body}</p>
+            <p className="post-index-body">- {this.props.post.body}</p>
           </div>
         );
       case 'link':
@@ -62,7 +62,7 @@ class PostIndexItem extends React.Component {
         return (
           <div>
             {/* <h2>"{props.post.title}"</h2> */}
-            <p className="post-index-body">link</p>
+            <p className="post-index-body">{link}</p>
           </div>
         );
     }

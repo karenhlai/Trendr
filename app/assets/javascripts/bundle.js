@@ -566,8 +566,13 @@ function (_React$Component) {
 
     _classCallCheck(this, LinkForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(LinkForm).call(this, props));
-    _this.state = _this.props.post;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LinkForm).call(this, props)); // this.state = this.props.post;
+
+    _this.state = {
+      content: "link",
+      title: "",
+      body: ""
+    };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -885,8 +890,13 @@ function (_React$Component) {
 
     _classCallCheck(this, QuoteForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(QuoteForm).call(this, props));
-    _this.state = _this.props.post;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(QuoteForm).call(this, props)); // this.state = this.props.post;
+
+    _this.state = {
+      content: "quote",
+      title: "",
+      body: ""
+    };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -1031,8 +1041,7 @@ function (_React$Component) {
       content: "text",
       title: "",
       body: ""
-    }; // this.state = { title: "", body: "" };
-    // this.handleChange = this.handleChange.bind(this);
+    }; // this.handleChange = this.handleChange.bind(this);
 
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -1492,7 +1501,7 @@ function (_React$Component) {
             className: "post-index-title"
           }, "\"", this.props.post.title, "\""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "post-index-body"
-          }, this.props.post.body));
+          }, "- ", this.props.post.body));
 
         case 'link':
           var link;
@@ -1505,7 +1514,7 @@ function (_React$Component) {
 
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "post-index-body"
-          }, "link"));
+          }, link));
       }
     }
   }, {

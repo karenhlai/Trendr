@@ -7,7 +7,8 @@ import { closeModal } from '../../../actions/modal_actions';
 class QuoteForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.post;
+    // this.state = this.props.post;
+    this.state = { content: "quote", title: "", body: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

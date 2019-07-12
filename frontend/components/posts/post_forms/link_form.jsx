@@ -7,7 +7,8 @@ import { closeModal } from '../../../actions/modal_actions';
 class LinkForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.post;
+    // this.state = this.props.post;
+    this.state = { content: "link", title: "", body: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

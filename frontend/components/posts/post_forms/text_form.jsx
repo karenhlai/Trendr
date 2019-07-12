@@ -8,7 +8,6 @@ class TextForm extends React.Component {
     super(props);
     this.state = { content: "text", title: "", body: "" };
 
-    // this.state = { title: "", body: "" };
     // this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
