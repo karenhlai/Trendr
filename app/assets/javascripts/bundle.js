@@ -1443,21 +1443,21 @@ function (_React$Component) {
     _this.state = {
       displayPostSettings: false
     };
-    _this.displayPostMenu = _this.displayPostMenu.bind(_assertThisInitialized(_this));
+    _this.openPostMenu = _this.openPostMenu.bind(_assertThisInitialized(_this));
     _this.closePostMenu = _this.closePostMenu.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(PostIndexItem, [{
-    key: "displayPostMenu",
-    value: function displayPostMenu(e) {
+    key: "openPostMenu",
+    value: function openPostMenu(e) {
       var _this2 = this;
 
       e.preventDefault();
       this.setState({
         displayPostSettings: true
       }, function () {
-        document.addEventListener('click', _this2.closePostMenu);
+        document.addEventListener('click', _this2.handleClickOutside);
       });
     }
   }, {
@@ -1465,14 +1465,13 @@ function (_React$Component) {
     value: function closePostMenu(e) {
       var _this3 = this;
 
-      // if (!this.displayPostMenu.contains(e.target)) {
-      // if (this.state.displayPostSettings === true ) {
-      e.preventDefault();
-      this.setState({
-        displayPostSettings: false
-      }, function () {
-        document.removeEventListener('click', _this3.closePostMenu);
-      }); // }
+      if (!this.dropdownMenu.contains(event.target)) {
+        this.setState({
+          displayPostSettings: false
+        }, function () {
+          document.removeEventListener('click', _this3.closePostMenu);
+        });
+      }
     }
   }, {
     key: "postContent",
@@ -1553,20 +1552,25 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
+      var _this5 = this;
+
       var post = this.props.post;
       var authorAvatar = this.props.user.avatarUrl;
       var authorUsername = this.props.user.username;
-      var postControl; // debugger
+      var postSettings; // debugger
 
       if (this.props.currentUser.id === this.props.authorId) {
-        postControl = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: this.displayPostMenu
+        postSettings = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.openPostMenu
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-cog post-settings"
-        })));
+        }))), this.state.displayPostSettings ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.postSetting(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this5.props.deletePost(_this5.props.post.id);
+          }
+        }, "Delete")) : null);
       } else {
-        postControl = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        postSettings = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-heart post-settings"
         }));
       }
@@ -1583,7 +1587,7 @@ function (_React$Component) {
         "data-aos": "fade-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "post-author-username"
-      }, " Here's a post by: ", authorUsername, " "), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postControl)));
+      }, " Here's a post by: ", authorUsername, " "), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
     }
   }]);
 

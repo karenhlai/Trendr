@@ -6,25 +6,23 @@ class PostIndexItem extends React.Component {
     this.state = {
       displayPostSettings: false
     }
-    this.displayPostMenu = this.displayPostMenu.bind(this);
+    this.openPostMenu = this.openPostMenu.bind(this);
     this.closePostMenu = this.closePostMenu.bind(this);
   }
 
-  displayPostMenu(e) {
+  openPostMenu(e) {
     e.preventDefault();
     this.setState({ displayPostSettings: true }, () => {
-      document.addEventListener('click', this.closePostMenu )
+      document.addEventListener('click', this.handleClickOutside )
     });
   }
 
   closePostMenu(e) {
-    // if (!this.displayPostMenu.contains(e.target)) {
-      // if (this.state.displayPostSettings === true ) {
-      e.preventDefault();
+    if (!this.dropdownMenu.contains(event.target)) {
       this.setState({ displayPostSettings: false }, () => {
         document.removeEventListener('click', this.closePostMenu )
       });
-    // }
+    }
   }
 
   postContent(post) {
@@ -92,24 +90,33 @@ class PostIndexItem extends React.Component {
   }
 
   render() {
-    // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
     const post = this.props.post;
     const authorAvatar = this.props.user.avatarUrl;
     const authorUsername = this.props.user.username;
-    let postControl;
+    let postSettings;
 
     // debugger
     if (this.props.currentUser.id === this.props.authorId) {
-      postControl = (
+      postSettings = (
+        <div>
         <li>
-          <button onClick={this.displayPostMenu}>
+          <button onClick={this.openPostMenu}>
             <i className="fas fa-cog post-settings"></i>
           </button>
-          {/* <button onClick={this.props.deletePost(props.post.id)}>Delete</button> */}
         </li>
+        { this.state.displayPostSettings
+          ? (
+            <div>
+            { this.postSetting(post) }
+            <button onClick={ () => this.props.deletePost(this.props.post.id)}>Delete</button>
+            </div>
+          ) :
+          (null)
+        }
+        </div>
       )
     } else {
-      postControl = (
+      postSettings = (
         <li>
             <i className="fas fa-heart post-settings"></i>
         </li>
@@ -125,7 +132,7 @@ class PostIndexItem extends React.Component {
           { this.postContent(post) }
           
           <ul>
-            { postControl }
+            { postSettings }
           </ul>
         </div>
       </div>
