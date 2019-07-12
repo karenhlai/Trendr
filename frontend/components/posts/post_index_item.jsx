@@ -4,7 +4,7 @@ class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayPostMenu: false
+      displayPostSettings: false
     }
     this.displayPostMenu = this.displayPostMenu.bind(this);
     this.closePostMenu = this.closePostMenu.bind(this);
@@ -12,17 +12,19 @@ class PostIndexItem extends React.Component {
 
   displayPostMenu(e) {
     e.preventDefault();
-    this.setState({ displayPostMenu: true }, () => {
-      document.addEventListener('click', this.closePostMenu() )
+    this.setState({ displayPostSettings: true }, () => {
+      document.addEventListener('click', this.closePostMenu )
     });
   }
 
   closePostMenu(e) {
-    if (!this.postMenu.contains(e.target)) {
-      this.setState({ displayPostMenu: false }, () => {
-        document.removeEventListener('click', this.closePostMenu)
+    // if (!this.displayPostMenu.contains(e.target)) {
+      // if (this.state.displayPostSettings === true ) {
+      e.preventDefault();
+      this.setState({ displayPostSettings: false }, () => {
+        document.removeEventListener('click', this.closePostMenu )
       });
-    }
+    // }
   }
 
   postContent(post) {
@@ -92,8 +94,6 @@ class PostIndexItem extends React.Component {
   render() {
     // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
     const post = this.props.post;
-    const title = this.props.post.title;
-    const body = this.props.post.body;
     const authorAvatar = this.props.user.avatarUrl;
     const authorUsername = this.props.user.username;
     let postControl;
@@ -103,16 +103,15 @@ class PostIndexItem extends React.Component {
       postControl = (
         <li>
           <button onClick={this.displayPostMenu}>
-            <i className="fas fa-cog"></i>
+            <i className="fas fa-cog post-settings"></i>
           </button>
           {/* <button onClick={this.props.deletePost(props.post.id)}>Delete</button> */}
-            
         </li>
       )
     } else {
       postControl = (
         <li>
-          <i className="fas fa-heart post-settings"></i>
+            <i className="fas fa-heart post-settings"></i>
         </li>
       )
     };

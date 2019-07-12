@@ -1441,7 +1441,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PostIndexItem).call(this, props));
     _this.state = {
-      displayPostMenu: false
+      displayPostSettings: false
     };
     _this.displayPostMenu = _this.displayPostMenu.bind(_assertThisInitialized(_this));
     _this.closePostMenu = _this.closePostMenu.bind(_assertThisInitialized(_this));
@@ -1455,9 +1455,9 @@ function (_React$Component) {
 
       e.preventDefault();
       this.setState({
-        displayPostMenu: true
+        displayPostSettings: true
       }, function () {
-        document.addEventListener('click', _this2.closePostMenu());
+        document.addEventListener('click', _this2.closePostMenu);
       });
     }
   }, {
@@ -1465,13 +1465,14 @@ function (_React$Component) {
     value: function closePostMenu(e) {
       var _this3 = this;
 
-      if (!this.postMenu.contains(e.target)) {
-        this.setState({
-          displayPostMenu: false
-        }, function () {
-          document.removeEventListener('click', _this3.closePostMenu);
-        });
-      }
+      // if (!this.displayPostMenu.contains(e.target)) {
+      // if (this.state.displayPostSettings === true ) {
+      e.preventDefault();
+      this.setState({
+        displayPostSettings: false
+      }, function () {
+        document.removeEventListener('click', _this3.closePostMenu);
+      }); // }
     }
   }, {
     key: "postContent",
@@ -1554,8 +1555,6 @@ function (_React$Component) {
     value: function render() {
       // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
       var post = this.props.post;
-      var title = this.props.post.title;
-      var body = this.props.post.body;
       var authorAvatar = this.props.user.avatarUrl;
       var authorUsername = this.props.user.username;
       var postControl; // debugger
@@ -1564,7 +1563,7 @@ function (_React$Component) {
         postControl = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.displayPostMenu
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-cog"
+          className: "fas fa-cog post-settings"
         })));
       } else {
         postControl = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
