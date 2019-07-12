@@ -1466,13 +1466,12 @@ function (_React$Component) {
     value: function closePostMenu(e) {
       var _this3 = this;
 
-      if (!this.dropdownSettings.contains(e.target)) {
-        this.setState({
-          displayPostSettings: false
-        }, function () {
-          document.removeEventListener('click', _this3.closePostMenu);
-        });
-      }
+      // if (!this.dropdownSettings.contains(e.target)) {
+      this.setState({
+        displayPostSettings: false
+      }, function () {
+        document.removeEventListener('click', _this3.closePostMenu);
+      }); // } 
     }
   }, {
     key: "postContent",

@@ -11,7 +11,6 @@ export const receivePosts = ({ posts, currentUser, users }) => ({
   posts, 
   currentUser, 
   users
-
 });
 
 export const receivePost = (post) => ({
