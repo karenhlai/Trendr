@@ -701,8 +701,13 @@ function (_React$Component) {
 
     _classCallCheck(this, PhotoForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoForm).call(this, props));
-    _this.state = _this.props.post;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoForm).call(this, props)); // this.state = this.props.post;
+
+    _this.state = {
+      content: "photo",
+      title: "",
+      body: ""
+    };
     _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -741,6 +746,7 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var formData = new FormData();
+      formData.append('post[content]', this.state.content);
       formData.append('post[title]', this.state.title);
       formData.append('post[body]', this.state.body);
 
@@ -755,7 +761,7 @@ function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      console.log(this.state);
+      // console.log(this.state);
       var preview = this.state.mediaUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.state.mediaUrl
       }) : null;
@@ -1442,7 +1448,7 @@ function (_React$Component) {
       this.setState({
         displayPostMenu: true
       }, function () {
-        document.addEventListener('click', _this2.closePostMenu);
+        document.addEventListener('click', _this2.closePostMenu());
       });
     }
   }, {
@@ -1539,16 +1545,18 @@ function (_React$Component) {
     value: function render() {
       // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
       var post = this.props.post;
+      var title = this.props.post.title;
+      var body = this.props.post.body;
       var authorAvatar = this.props.user.avatarUrl;
       var authorUsername = this.props.user.username;
-      var postControl;
+      var postControl; // debugger
 
-      if (this.props.currentUser.id === this.props.authordId) {
+      if (this.props.currentUser.id === this.props.authorId) {
         postControl = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.displayPostMenu
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-cog"
-        })), "this.state.displayPostMenu(this.postSetting(post))");
+        })));
       } else {
         postControl = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-heart post-settings"
@@ -1603,6 +1611,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var post = ownProps.post;
   var currentUser = state.entities.users[state.session.id];
   var authorId = ownProps.post ? ownProps.post.author_id : ""; // const media = ownProps.post.medias[0];
+  // debugger
 
   return {
     post: post,
@@ -1622,10 +1631,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     deletePost: function deletePost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deletePost"])(id));
-    },
-    fetchPosts: function fetchPosts() {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
-    }
+    } // fetchPosts: () => dispatch(fetchPosts()),
+
   };
 };
 

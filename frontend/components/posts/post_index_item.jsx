@@ -13,7 +13,7 @@ class PostIndexItem extends React.Component {
   displayPostMenu(e) {
     e.preventDefault();
     this.setState({ displayPostMenu: true }, () => {
-      document.addEventListener('click', this.closePostMenu)
+      document.addEventListener('click', this.closePostMenu() )
     });
   }
 
@@ -92,31 +92,28 @@ class PostIndexItem extends React.Component {
   render() {
     // const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
     const post = this.props.post;
+    const title = this.props.post.title;
+    const body = this.props.post.body;
     const authorAvatar = this.props.user.avatarUrl;
     const authorUsername = this.props.user.username;
     let postControl;
-    
-    if (this.props.currentUser.id === this.props.authordId) {
+
+    // debugger
+    if (this.props.currentUser.id === this.props.authorId) {
       postControl = (
         <li>
           <button onClick={this.displayPostMenu}>
             <i className="fas fa-cog"></i>
           </button>
-          this.state.displayPostMenu(this.postSetting(post))
-          {/* {this.state.displayPostMenu
-          ? (
-            <div ref={(instance) => { this.postMenu = instance }}>
-              {this.postSetting(post)}
-              <button onClick={ () => this.props.deletePost(props.post.id)}>Delete</button>
-            </div>
-            ) :
-            (null)
-          } */}
+          {/* <button onClick={this.props.deletePost(props.post.id)}>Delete</button> */}
+            
         </li>
       )
     } else {
       postControl = (
-        <li><i className="fas fa-heart post-settings"></i></li>
+        <li>
+          <i className="fas fa-heart post-settings"></i>
+        </li>
       )
     };
 

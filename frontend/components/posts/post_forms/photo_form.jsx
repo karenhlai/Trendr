@@ -7,7 +7,8 @@ import { closeModal } from '../../../actions/modal_actions';
 class PhotoForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.post;
+    // this.state = this.props.post;
+    this.state = { content: "photo", title: "", body: "" };
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,6 +32,7 @@ class PhotoForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
+    formData.append('post[content]', this.state.content);
     formData.append('post[title]', this.state.title);
     formData.append('post[body]', this.state.body);
     
@@ -43,7 +45,7 @@ class PhotoForm extends React.Component {
 
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     const preview = this.state.mediaUrl ? <img src={this.state.mediaUrl} /> : null;
     return (
       <div>

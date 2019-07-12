@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   const authorId = ownProps.post ? ownProps.post.author_id : "";
   // const media = ownProps.post.medias[0];
+  // debugger
   return ({
     post: post,
     authorId: authorId,
@@ -22,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
     openModal: (modal, postId) => dispatch(openModal(modal, postId)),
     updatePost: (post) => dispatch(updatePost(post)),
     deletePost: (id) => dispatch(deletePost(id)),
-    fetchPosts: () => dispatch(fetchPosts()),
+    // fetchPosts: () => dispatch(fetchPosts()),
   });
 }
 
