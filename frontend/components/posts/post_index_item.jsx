@@ -13,16 +13,17 @@ class PostIndexItem extends React.Component {
   openPostMenu(e) {
     e.preventDefault();
     this.setState({ displayPostSettings: true }, () => {
-      document.addEventListener('click', this.handleClickOutside )
+      document.addEventListener('click', this.closePostMenu )
     });
   }
 
+  //check if the origin of the event was from within the menu itself -- only if it isn't do we set state and remove the event handler from document
   closePostMenu(e) {
-    if (!this.dropdownMenu.contains(event.target)) {
+    if (!this.dropdownSettings.contains(e.target)) {
       this.setState({ displayPostSettings: false }, () => {
         document.removeEventListener('click', this.closePostMenu )
       });
-    }
+    } 
   }
 
   postContent(post) {
@@ -99,20 +100,25 @@ class PostIndexItem extends React.Component {
     if (this.props.currentUser.id === this.props.authorId) {
       postSettings = (
         <div>
-        <li>
-          <button onClick={this.openPostMenu}>
-            <i className="fas fa-cog post-settings"></i>
-          </button>
-        </li>
-        { this.state.displayPostSettings
-          ? (
-            <div>
-            { this.postSetting(post) }
-            <button onClick={ () => this.props.deletePost(this.props.post.id)}>Delete</button>
-            </div>
-          ) :
-          (null)
-        }
+          <li>
+            <button onClick={this.openPostMenu}>
+              <i className="fas fa-cog post-settings"></i>
+            </button>
+          </li>
+
+            { 
+              this.state.displayPostSettings
+              ? (
+                //check if origin of out click event is from an element that the dropdown menu contains
+                //reference to the dropdown menu, ref property to get a reference to the DOM element
+              <li className="post-settings" ref={(element) => { this.dropdownSettings = element }}>
+                  <ul>{this.postSetting(post)}</ul>
+                  <ul><button onClick={() => this.props.deletePost(post.id)}>Delete</button></ul>
+              </li>
+                ) : (
+                null
+              )
+            }
         </div>
       )
     } else {

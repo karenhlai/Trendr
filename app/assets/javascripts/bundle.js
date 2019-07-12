@@ -1457,15 +1457,16 @@ function (_React$Component) {
       this.setState({
         displayPostSettings: true
       }, function () {
-        document.addEventListener('click', _this2.handleClickOutside);
+        document.addEventListener('click', _this2.closePostMenu);
       });
-    }
+    } //check if the origin of the event was from within the menu itself -- only if it isn't do we set state and remove the event handler from document
+
   }, {
     key: "closePostMenu",
     value: function closePostMenu(e) {
       var _this3 = this;
 
-      if (!this.dropdownMenu.contains(event.target)) {
+      if (!this.dropdownSettings.contains(e.target)) {
         this.setState({
           displayPostSettings: false
         }, function () {
@@ -1564,11 +1565,18 @@ function (_React$Component) {
           onClick: this.openPostMenu
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-cog post-settings"
-        }))), this.state.displayPostSettings ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.postSetting(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: function onClick() {
-            return _this5.props.deletePost(_this5.props.post.id);
+        }))), this.state.displayPostSettings ? //check if origin of out click event is from an element that the dropdown menu contains
+        //reference to the dropdown menu, ref property to get a reference to the DOM element
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "post-settings",
+          ref: function ref(element) {
+            _this5.dropdownSettings = element;
           }
-        }, "Delete")) : null);
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.postSetting(post)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this5.props.deletePost(post.id);
+          }
+        }, "Delete"))) : null);
       } else {
         postSettings = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-heart post-settings"
