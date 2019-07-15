@@ -396,13 +396,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_forms_create_quote_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post_forms/create_quote_container */ "./frontend/components/posts/post_forms/create_quote_container.js");
 /* harmony import */ var _post_forms_create_link_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./post_forms/create_link_container */ "./frontend/components/posts/post_forms/create_link_container.js");
 /* harmony import */ var _post_forms_create_photo_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./post_forms/create_photo_container */ "./frontend/components/posts/post_forms/create_photo_container.js");
+/* harmony import */ var _post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./post_forms/edit_text_container */ "./frontend/components/posts/post_forms/edit_text_container.js");
 
 
 
 
 
 
- // import EditText from './post_forms/edit_text';
+
+
 
 function PostFormModal(_ref) {
   var modal = _ref.modal,
@@ -430,9 +432,12 @@ function PostFormModal(_ref) {
     case 'Create Link':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_create_link_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
       break;
-    // case 'Edit Text':
-    //   component = <EditText postId={modal.postId} />;
-    //   break;
+
+    case 'Edit Text':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        postId: modal.postId
+      });
+      break;
 
     default:
       return null;
@@ -503,11 +508,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     createPost: function createPost(post) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["createPost"])(post));
     },
-    // otherForm: (
-    //   <button onClick={() => dispatch(openModal('Create Link'))}>
-    //     Link
-    //   </button>
-    // ),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     }
@@ -556,11 +556,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     createPost: function createPost(post) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["createPost"])(post));
     },
-    // otherForm: (
-    //   <button onClick={() => dispatch(openModal('Create Photo'))}>
-    //     Photo
-    //   </button>
-    // ),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     }
@@ -607,10 +602,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     createPost: function createPost(post) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["createPost"])(post));
     },
-    // otherForm: (
-    //   <button onClick={() => dispatch(openModal('Create Quote'))}>
-    //     Quote</button>
-    // ),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     }
@@ -654,14 +645,9 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    createPost: function createPost(post) {
+    action: function action(post) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["createPost"])(post));
     },
-    // otherForm: (
-    //   <button onClick={() => dispatch(openModal('Create Text'))}>
-    //     Text
-    //   </button>
-    // ),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     }
@@ -669,6 +655,56 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/posts/post_forms/edit_text_container.js":
+/*!*********************************************************************!*\
+  !*** ./frontend/components/posts/post_forms/edit_text_container.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _text_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./text_form */ "./frontend/components/posts/post_forms/text_form.jsx");
+
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var currentUser = state.entities.users[state.session.id];
+  var postId = ownProps.postId;
+  var posts = state.entities.posts;
+  var post = posts[postId];
+  return {
+    currentUser: currentUser,
+    post: post,
+    formType: "Edit Text"
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    action: function action(post) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["updatePost"])(post));
+    },
+    deletePost: function deletePost(id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["deletePost"])(id));
+    },
+    closeModal: function closeModal() {
+      return dispatch(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"]);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 
@@ -1112,7 +1148,7 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.createPost(this.state).then(this.props.closeModal);
+      this.props.action(this.state).then(this.props.closeModal);
     }
   }, {
     key: "render",

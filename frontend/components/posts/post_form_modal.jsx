@@ -5,7 +5,7 @@ import CreateTextContainer from './post_forms/create_text_container';
 import CreateQuoteContainer from './post_forms/create_quote_container';
 import CreateLinkContainer from './post_forms/create_link_container';
 import CreatePhotoContainer from './post_forms/create_photo_container';
-// import EditText from './post_forms/edit_text';
+import EditTextContainer from './post_forms/edit_text_container';
 
 function PostFormModal({ modal, closeModal }) {
   if (!modal) {
@@ -25,9 +25,9 @@ function PostFormModal({ modal, closeModal }) {
     case 'Create Link':
       component = <CreateLinkContainer />;
       break;
-    // case 'Edit Text':
-    //   component = <EditText postId={modal.postId} />;
-    //   break;
+    case 'Edit Text':
+      component = <EditTextContainer postId={modal.postId} />;
+      break;
     default:
       return null;
   }
