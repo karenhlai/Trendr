@@ -1,8 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { createPost } from '../../../actions/post_actions';
-import { closeModal } from '../../../actions/modal_actions';
-
+import withRouter from 'react-router';
 
 class QuoteForm extends React.Component {
   constructor(props) {
@@ -36,24 +33,4 @@ class QuoteForm extends React.Component {
   }
 };
 
-const mapStateToProps = (state) => {
-  const currentUser = state.entities.users[state.session.id];
-  return ({
-    currentUser: currentUser,
-    post: { content: "quote", title: "", body: "" }, 
-    formType: "Create Quote",
-  })
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  createPost: (post) => dispatch(createPost(post)), 
-  otherForm: (
-    <button onClick={() => dispatch(openModal('Create Quote'))}>
-    Quote</button>
-  ),
-  closeModal: () => dispatch(closeModal())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(QuoteForm);
-
-
+export default QuoteForm;

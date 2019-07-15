@@ -1,8 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { createPost } from '../../../actions/post_actions';
-import { closeModal } from '../../../actions/modal_actions';
-
+import withRouter from 'react-router';
 
 class PhotoForm extends React.Component {
   constructor(props) {
@@ -40,7 +37,7 @@ class PhotoForm extends React.Component {
       formData.append('post[medias]', this.state.mediaFile);
     }
     
-    this.props.createPost(formData);    
+    this.props.createPost(formData).then(this.props.closeModal);    
   }
 
 
@@ -66,25 +63,4 @@ class PhotoForm extends React.Component {
   }
 };
 
-const mapStateToProps = (state) => {
-  const currentUser = state.entities.users[state.session.id];
-  return ({
-    currentUser: currentUser,
-    post: { content: "photo", title: "", body: "", mediaFile: null, photoUrl: null }, 
-    formType: "Create Photo",
-  })
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  createPost: (post) => dispatch(createPost(post)), 
-  otherForm: (
-    <button onClick={() => dispatch(openModal('Create Photo'))}>
-      Photo
-    </button>
-  ),
-  closeModal: () => dispatch(closeModal())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(PhotoForm);
-
-
+export default PhotoForm;
