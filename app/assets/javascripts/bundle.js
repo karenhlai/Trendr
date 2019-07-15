@@ -86,6 +86,58 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/like_actions.js":
+/*!******************************************!*\
+  !*** ./frontend/actions/like_actions.js ***!
+  \******************************************/
+/*! exports provided: RECEIVE_LIKE, REMOVE_LIKE, receiveLike, removeLike, likePost, unlikePost */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LIKE", function() { return RECEIVE_LIKE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_LIKE", function() { return REMOVE_LIKE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveLike", function() { return receiveLike; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeLike", function() { return removeLike; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "likePost", function() { return likePost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unlikePost", function() { return unlikePost; });
+/* harmony import */ var _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/like_api_util */ "./frontend/util/like_api_util.js");
+/* harmony import */ var _util_post_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/post_api_util */ "./frontend/util/post_api_util.js");
+
+
+var RECEIVE_LIKE = 'RECEIVE_LIKE';
+var REMOVE_LIKE = 'REMOVE_LIKE';
+var receiveLike = function receiveLike(like) {
+  return {
+    type: RECEIVE_LIKE,
+    like: like
+  };
+};
+var removeLike = function removeLike(like) {
+  return {
+    type: REMOVE_LIKE,
+    like: like
+  };
+}; //add likes count, 
+//refactor to show liked by user
+
+var likePost = function likePost(postId, userId) {
+  return function (dispatch) {
+    return _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__["likePost"](postId, userId).then(function (like) {
+      return dispatch(receiveLike(like));
+    });
+  };
+};
+var unlikePost = function unlikePost(postId) {
+  return function (dispatch) {
+    return _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__["unlikePost"](postId).then(function (like) {
+      return dispatch(removeLike(like));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -2857,9 +2909,13 @@ function modalReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/like_actions */ "./frontend/actions/like_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_3__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
  //set inital state to {} ???
@@ -2868,7 +2924,7 @@ var postsReducer = function postsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state);
+  var nextState;
 
   switch (action.type) {
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_OWN_POSTS"]:
@@ -2882,11 +2938,19 @@ var postsReducer = function postsReducer() {
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST"]:
       // nextState[action.post.id] = action.post;
-      var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.post.id, action.post));
-      return newState;
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.post.id, action.post));
+      return nextState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_POST"]:
       delete nextState[action.postId];
+      return nextState;
+
+    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LIKE"]:
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.like.postId, action.like.userId));
+      return nextState;
+
+    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_LIKE"]:
+      delete nextState[action.like.postId];
       return nextState;
 
     default:
@@ -3164,16 +3228,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./frontend/util/like_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/like_api_util.js ***!
+  \****************************************/
+/*! exports provided: likePost, unlikePost */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "likePost", function() { return likePost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unlikePost", function() { return unlikePost; });
+var likePost = function likePost(postId, userId) {
+  return $.ajax({
+    method: 'post',
+    url: '/api/likes',
+    data: {
+      postId: postId,
+      userId: userId
+    }
+  });
+};
+var unlikePost = function unlikePost(postId) {
+  return $.ajax({
+    method: 'delete',
+    url: "api/posts/".concat(postId, "/like")
+  });
+};
+
+/***/ }),
+
 /***/ "./frontend/util/post_api_util.js":
 /*!****************************************!*\
   !*** ./frontend/util/post_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchPosts, createPost, updatePost, deletePost */
+/*! exports provided: fetchPosts, fetchPost, createPost, updatePost, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPost", function() { return fetchPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePost", function() { return updatePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
@@ -3183,13 +3278,13 @@ var fetchPosts = function fetchPosts() {
     url: 'api/posts'
   });
 }; // remove if not using for modal
-// export const fetchPost = (id) => {
-//   return $.ajax({
-//     method: 'get',
-//     url: `api/posts/${id}`
-//   })
-// };
-// export const fetchOwnPosts = (id) => {
+
+var fetchPost = function fetchPost(id) {
+  return $.ajax({
+    method: 'get',
+    url: "api/posts/".concat(id)
+  });
+}; // export const fetchOwnPosts = (id) => {
 //   return $.ajax({
 //     method: 'get', 
 //     url: `api/users/${id}/posts`

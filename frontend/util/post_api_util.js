@@ -6,12 +6,12 @@ export const fetchPosts = () => {
 };
 
 // remove if not using for modal
-// export const fetchPost = (id) => {
-//   return $.ajax({
-//     method: 'get',
-//     url: `api/posts/${id}`
-//   })
-// };
+export const fetchPost = (id) => {
+  return $.ajax({
+    method: 'get',
+    url: `api/posts/${id}`
+  })
+};
 
 // export const fetchOwnPosts = (id) => {
 //   return $.ajax({
