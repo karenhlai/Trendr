@@ -23,7 +23,6 @@ const mapDispatchToProps = (dispatch) => {
     openModal: (modal, postId) => dispatch(openModal(modal, postId)),
     updatePost: (post) => dispatch(updatePost(post)),
     deletePost: (id) => dispatch(deletePost(id)),
-    // fetchPosts: () => dispatch(fetchPosts()),
   });
 }
 

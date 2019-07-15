@@ -74,7 +74,7 @@ class PostIndexItem extends React.Component {
     switch (post.content) {
       case 'text':
         return (
-          <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Text', post.id)}>Edit</button>
         )
       case 'photo':
         return (

@@ -18,9 +18,9 @@ const mapDispatchToProps = dispatch => ({
   // fetchLikedPosts: (userId) => dispatch(fetchLikedPosts(userId)),
   // fetchOwnPosts: (userId) => dispatch(fetchOwnPosts(userId)),
   updatePost: (post) => dispatch(updatePost(post)),
-  deletePost: id => dispatch(deletePost(id)),
+  deletePost: (id) => dispatch(deletePost(id)),
   logout: () => dispatch(logout()),
-  openModal: (type) => dispatch(openModal(type))
+  openModal: (formType) => dispatch(openModal(formType))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(PostIndex);

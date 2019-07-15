@@ -5,6 +5,7 @@ import { closeModal } from '../../../actions/modal_actions';
 import TextForm from './text_form';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   const currentUser = state.entities.users[state.session.id];
   const postId = ownProps.postId;
   const posts = state.entities.posts;
@@ -24,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TextForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TextForm));

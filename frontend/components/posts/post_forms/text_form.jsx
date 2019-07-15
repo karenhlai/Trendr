@@ -1,5 +1,5 @@
 import React from 'react';
-import withRouter from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 class TextForm extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class TextForm extends React.Component {
         <form className="form" onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder="Title" />
           <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder="Your Text Here" />
-          <input type="submit" value="Create Post" />
+          <input type="submit" value={this.props.formType} />
           <button onClick={() => this.props.closeModal()}>Close</button>
         </form>
       </div>
@@ -41,6 +41,6 @@ class TextForm extends React.Component {
   }
 };
 
-export default TextForm;
+export default withRouter(TextForm);
 
 

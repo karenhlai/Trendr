@@ -11,6 +11,9 @@ function PostFormModal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
+  console.log(modal);
+  console.log(modal.post.id);
+
   let component;
   switch (modal) {
     case 'Create Text':
@@ -26,7 +29,7 @@ function PostFormModal({ modal, closeModal }) {
       component = <CreateLinkContainer />;
       break;
     case 'Edit Text':
-      component = <EditTextContainer postId={modal.postId} />;
+      component = <EditTextContainer postId={post.id} />;
       break;
     default:
       return null;
@@ -43,7 +46,7 @@ function PostFormModal({ modal, closeModal }) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
   };
 };
 

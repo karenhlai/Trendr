@@ -414,6 +414,8 @@ function PostFormModal(_ref) {
     return null;
   }
 
+  console.log(modal);
+  console.log(modal.post.id);
   var component;
 
   switch (modal) {
@@ -435,7 +437,7 @@ function PostFormModal(_ref) {
 
     case 'Edit Text':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        postId: modal.postId
+        postId: post.id
       });
       break;
 
@@ -679,6 +681,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
+  debugger;
   var currentUser = state.entities.users[state.session.id];
   var postId = ownProps.postId;
   var posts = state.entities.posts;
@@ -704,7 +707,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_4__["default"])));
 
 /***/ }),
 
@@ -1085,7 +1088,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1170,7 +1173,7 @@ function (_React$Component) {
         placeholder: "Your Text Here"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
-        value: "Create Post"
+        value: this.props.formType
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this3.props.closeModal();
@@ -1183,7 +1186,7 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 ;
-/* harmony default export */ __webpack_exports__["default"] = (TextForm);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(TextForm));
 
 /***/ }),
 
@@ -1437,8 +1440,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       };
 
       return openModal;
-    }(function (type) {
-      return dispatch(openModal(type));
+    }(function (formType) {
+      return dispatch(openModal(formType));
     })
   };
 };
@@ -1577,7 +1580,7 @@ function (_React$Component) {
         case 'text':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Text', _this4.props.post.id);
+              return _this4.props.openModal('Edit Text', post.id);
             }
           }, "Edit");
 
@@ -1704,8 +1707,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     deletePost: function deletePost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deletePost"])(id));
-    } // fetchPosts: () => dispatch(fetchPosts()),
-
+    }
   };
 };
 
