@@ -5,7 +5,7 @@ import TextForm from './post_forms/text_form';
 import QuoteForm from './post_forms/quote_form';
 import LinkForm from './post_forms/link_form';
 import PhotoForm from './post_forms/photo_form';
-import EditTextContainer from './post_forms/edit_text_container';
+import EditText from './post_forms/edit_text';
 
 function PostFormModal({ modal, closeModal }) {
   if (!modal) {
@@ -25,9 +25,9 @@ function PostFormModal({ modal, closeModal }) {
     case 'Create Link':
       component = <LinkForm />;
       break;
-    // case 'Edit Post':
-    //   component = <EditTextContainer postId={modal.postId} />;
-    //   break;
+    case 'Edit Post':
+      component = <EditText postId={modal.postId} />;
+      break;
     default:
       return null;
   }

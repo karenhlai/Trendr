@@ -396,7 +396,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_forms_quote_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post_forms/quote_form */ "./frontend/components/posts/post_forms/quote_form.jsx");
 /* harmony import */ var _post_forms_link_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./post_forms/link_form */ "./frontend/components/posts/post_forms/link_form.jsx");
 /* harmony import */ var _post_forms_photo_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./post_forms/photo_form */ "./frontend/components/posts/post_forms/photo_form.jsx");
-/* harmony import */ var _post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./post_forms/edit_text_container */ "./frontend/components/posts/post_forms/edit_text_container.js");
+/* harmony import */ var _post_forms_edit_text__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./post_forms/edit_text */ "./frontend/components/posts/post_forms/edit_text.js");
 
 
 
@@ -432,9 +432,12 @@ function PostFormModal(_ref) {
     case 'Create Link':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_link_form__WEBPACK_IMPORTED_MODULE_5__["default"], null);
       break;
-    // case 'Edit Post':
-    //   component = <EditTextContainer postId={modal.postId} />;
-    //   break;
+
+    case 'Edit Post':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_text__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        postId: modal.postId
+      });
+      break;
 
     default:
       return null;
@@ -469,10 +472,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/posts/post_forms/edit_text_container.js":
-/*!*********************************************************************!*\
-  !*** ./frontend/components/posts/post_forms/edit_text_container.js ***!
-  \*********************************************************************/
+/***/ "./frontend/components/posts/post_forms/edit_text.js":
+/*!***********************************************************!*\
+  !*** ./frontend/components/posts/post_forms/edit_text.js ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -495,7 +498,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
     currentUser: currentUser,
     post: posts[postId],
     // posts: state.entities.posts,
-    formType: "Edit Post"
+    formType: "Edit Text"
   };
 };
 
@@ -507,6 +510,11 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     deletePost: function deletePost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["deletePost"])(id));
     },
+    otherForm: React.createElement("button", {
+      onClick: function onClick() {
+        return dispatch(openModal('Edit Text'));
+      }
+    }, "Edit"),
     closeModal: function closeModal() {
       return dispatch(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"]);
     }
@@ -1409,6 +1417,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _post_form_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_form_modal */ "./frontend/components/posts/post_form_modal.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1426,6 +1435,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1529,10 +1539,13 @@ function (_React$Component) {
               return _this4.props.openModal('Edit Text', _this4.props.post.id);
             }
           }, "Edit");
-        // case 'photo':
-        //   return (
-        //     <button onClick={() => this.props.openModal('Edit Photo', this.props.post.id)}>Edit</button>
-        //   )
+
+        case 'photo':
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            onClick: function onClick() {
+              return _this4.props.openModal('Edit Photo', _this4.props.post.id);
+            }
+          }, "Edit");
 
         case 'quote':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

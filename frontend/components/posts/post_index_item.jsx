@@ -1,4 +1,5 @@
 import React from 'react';
+import PostFormModal from './post_form_modal';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -75,10 +76,10 @@ class PostIndexItem extends React.Component {
         return (
           <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
         )
-      // case 'photo':
-      //   return (
-      //     <button onClick={() => this.props.openModal('Edit Photo', this.props.post.id)}>Edit</button>
-      //   )
+      case 'photo':
+        return (
+          <button onClick={() => this.props.openModal('Edit Photo', this.props.post.id)}>Edit</button>
+        )
       case 'quote':
         return (
           <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
