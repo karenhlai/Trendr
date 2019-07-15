@@ -1120,11 +1120,7 @@ function (_React$Component) {
     _classCallCheck(this, TextForm);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TextForm).call(this, props));
-    _this.state = {
-      content: "text",
-      title: "",
-      body: ""
-    }; // this.handleChange = this.handleChange.bind(this);
+    _this.state = _this.props.post; // this.handleChange = this.handleChange.bind(this);
 
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;

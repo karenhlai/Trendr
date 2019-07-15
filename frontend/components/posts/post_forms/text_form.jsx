@@ -4,7 +4,7 @@ import withRouter from 'react-router';
 class TextForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { content: "text", title: "", body: "" };
+    this.state = this.props.post;
 
     // this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
