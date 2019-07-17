@@ -20,6 +20,7 @@ class Post < ApplicationRecord
   class_name: :User
   
   has_many_attached :medias
+  has_many :likes
 
   # def body_too_long
   #   if body.length > 140 
