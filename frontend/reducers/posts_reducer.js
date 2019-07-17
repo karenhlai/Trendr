@@ -25,9 +25,9 @@ const postsReducer = (state={}, action) => {
     case RECEIVE_LIKE:
       nextState = merge({}, state, { [action.like.postId]: action.like.userId });
       return nextState;
-    case REMOVE_LIKE:
-      delete nextState[action.like.postId];
-      return nextState;
+    // case REMOVE_LIKE:
+    //   delete nextState[action.like.postId];
+    //   return nextState;
     default:
       return state;
   }

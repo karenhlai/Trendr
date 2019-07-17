@@ -2950,10 +2950,9 @@ var postsReducer = function postsReducer() {
     case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LIKE"]:
       nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.like.postId, action.like.userId));
       return nextState;
-
-    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_LIKE"]:
-      delete nextState[action.like.postId];
-      return nextState;
+    // case REMOVE_LIKE:
+    //   delete nextState[action.like.postId];
+    //   return nextState;
 
     default:
       return state;
