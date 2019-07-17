@@ -5,7 +5,6 @@ export const fetchPosts = () => {
   })
 };
 
-// remove if not using for modal
 export const fetchPost = (id) => {
   return $.ajax({
     method: 'get',

@@ -1573,13 +1573,12 @@ function (_React$Component) {
     value: function closePostMenu(e) {
       var _this3 = this;
 
-      if (!this.dropdownSettings.contains(e.target)) {
-        this.setState({
-          displayPostSettings: false
-        }, function () {
-          document.removeEventListener('click', _this3.closePostMenu);
-        });
-      }
+      // if (!this.dropdownSettings.contains(e.target)) {
+      this.setState({
+        displayPostSettings: false
+      }, function () {
+        document.removeEventListener('click', _this3.closePostMenu);
+      }); // } 
     }
   }, {
     key: "postContent",
@@ -1694,6 +1693,10 @@ function (_React$Component) {
       }
 
       ;
+      var likers = post.likers; //check if user has already liked post; otherwise call likePost with currentUser's id and the postId
+      // if (this.props.post.likers)
+
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item-row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1730,7 +1733,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
-/* harmony import */ var _post_index_item__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post_index_item */ "./frontend/components/posts/post_index_item.jsx");
+/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/like_actions */ "./frontend/actions/like_actions.js");
+/* harmony import */ var _post_index_item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./post_index_item */ "./frontend/components/posts/post_index_item.jsx");
+
 
 
 
@@ -1740,14 +1745,12 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var post = ownProps.post;
   var currentUser = state.entities.users[state.session.id];
-  var authorId = ownProps.post ? ownProps.post.author_id : ""; // const media = ownProps.post.medias[0];
-  // debugger
+  var authorId = ownProps.post ? ownProps.post.author_id : ""; // debugger
 
   return {
     post: post,
     authorId: authorId,
-    currentUser: currentUser // media: media
-
+    currentUser: currentUser
   };
 };
 
@@ -1761,11 +1764,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     deletePost: function deletePost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deletePost"])(id));
+    },
+    likePost: function likePost(postId, userId) {
+      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["likePost"])(postId, userId));
+    },
+    unlikePost: function unlikePost(postId) {
+      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["unlikePost"])(postId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_post_index_item__WEBPACK_IMPORTED_MODULE_4__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_post_index_item__WEBPACK_IMPORTED_MODULE_5__["default"]));
 
 /***/ }),
 
@@ -2926,17 +2935,16 @@ var postsReducer = function postsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var nextState;
+  var nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state);
 
   switch (action.type) {
-    case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_OWN_POSTS"]:
-      return action.payload.posts;
-
-    case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LIKED_POSTS"]:
-      return action.payload.posts;
-
+    // case RECEIVE_OWN_POSTS:
+    //   return action.payload.posts;
+    // case RECEIVE_LIKED_POSTS:
+    //   return action.payload.posts;
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS"]:
-      return action.posts;
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, action.posts);
+      return nextState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST"]:
       // nextState[action.post.id] = action.post;
@@ -2948,11 +2956,13 @@ var postsReducer = function postsReducer() {
       return nextState;
 
     case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LIKE"]:
-      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.like.postId, action.like.userId));
+      nextState[action.like.postId].likers.push(action.like.userId);
       return nextState;
-    // case REMOVE_LIKE:
-    //   delete nextState[action.like.postId];
-    //   return nextState;
+
+    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_LIKE"]:
+      var idx = nextState[action.like.postId].likers.indexOf(action.like.userId);
+      nextState[action.like.postId].likers.splice(idx);
+      return nextState;
 
     default:
       return state;
@@ -3278,8 +3288,7 @@ var fetchPosts = function fetchPosts() {
     method: 'get',
     url: 'api/posts'
   });
-}; // remove if not using for modal
-
+};
 var fetchPost = function fetchPost(id) {
   return $.ajax({
     method: 'get',
