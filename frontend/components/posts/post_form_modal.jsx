@@ -11,8 +11,8 @@ function PostFormModal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
-  console.log(modal);
-  console.log(modal.post.id);
+  // console.log(modal);
+  // console.log(modal.post.id);
 
   let component;
   switch (modal) {
@@ -29,7 +29,7 @@ function PostFormModal({ modal, closeModal }) {
       component = <CreateLinkContainer />;
       break;
     case 'Edit Text':
-      component = <EditTextContainer postId={post.id} />;
+      component = <EditTextContainer postId={modal.id} />;
       break;
     default:
       return null;

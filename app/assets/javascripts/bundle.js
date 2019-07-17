@@ -464,10 +464,10 @@ function PostFormModal(_ref) {
 
   if (!modal) {
     return null;
-  }
+  } // console.log(modal);
+  // console.log(modal.post.id);
 
-  console.log(modal);
-  console.log(modal.post.id);
+
   var component;
 
   switch (modal) {
@@ -489,7 +489,7 @@ function PostFormModal(_ref) {
 
     case 'Edit Text':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        postId: post.id
+        postId: modal.id
       });
       break;
 
@@ -1565,19 +1565,21 @@ function (_React$Component) {
       }, function () {
         document.addEventListener('click', _this2.closePostMenu);
       });
-    } //check if the origin of the event was from within the menu itself -- only if it isn't do we set state and remove the event handler from document
+    } //check if the origin of the event was from within the menu itself 
+    //-- only if it isn't do we set state and remove the event handler from document
 
   }, {
     key: "closePostMenu",
     value: function closePostMenu(e) {
       var _this3 = this;
 
-      // if (!this.dropdownSettings.contains(e.target)) {
-      this.setState({
-        displayPostSettings: false
-      }, function () {
-        document.removeEventListener('click', _this3.closePostMenu);
-      }); // } 
+      if (!this.dropdownSettings.contains(e.target)) {
+        this.setState({
+          displayPostSettings: false
+        }, function () {
+          document.removeEventListener('click', _this3.closePostMenu);
+        });
+      }
     }
   }, {
     key: "postContent",
@@ -3118,7 +3120,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
- // import { RECEIVE_REVIEW, RECEIVE_BENCH } from '../actions/bench_actions';
+
 
 var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
