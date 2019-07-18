@@ -1441,13 +1441,13 @@ __webpack_require__.r(__webpack_exports__);
  // remember to user currentUser created from json views
 
 var mapStateToProps = function mapStateToProps(state) {
-  // debugger
-  var posts = Object.values(state.entities.posts);
+  // const posts = Object.values(state.entities.posts);
   var currentUser = state.entities.users[state.session.id];
-  var users = state.entities.users; // const posts = Object.keys(state.entities.posts).map(id => state.entities.posts[id]);
-  // const dashboardPosts = posts.filter(post => post.likers.length >= 4 && post.author.username !== currentUser.username);
+  var users = state.entities.users;
+  var posts = Object.keys(state.entities.posts).map(function (id) {
+    return state.entities.posts[id];
+  }); // debugger
 
-  debugger;
   return {
     currentUser: currentUser,
     users: users,
@@ -1657,9 +1657,34 @@ function (_React$Component) {
       var _this5 = this;
 
       var post = this.props.post;
+      var currentUser = this.props.currentUser;
       var authorAvatar = this.props.user.avatarUrl;
       var authorUsername = this.props.user.username;
-      var postSettings; // debugger
+      var postSettings;
+      var likeButton;
+
+      if (!post.likes.includes(currentUser.id)) {
+        likeButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this5.props.likePost(post.id, currentUser.id);
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-heart post-settings"
+        }));
+      } else {
+        likeButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this5.props.unlikePost(post.id);
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-heart post-settings-unlike"
+        }), this.props.post.likes);
+      } //error once I try to like a post I've already liked, I keep receiving 422 error msg when I try to like posts I haven't yet liked
+      //does not get this error I like posts I haven't liked at all, I can like multiple posts 
+      //fix reducers to actually remove currnetUser's id
+      //fix views to get user_id into array, and not the id of the like 
+      // debugger
+
 
       if (this.props.currentUser.id === this.props.authorId) {
         postSettings = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1679,14 +1704,10 @@ function (_React$Component) {
           }
         }, "Delete"))) : null);
       } else {
-        postSettings = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-heart post-settings"
-        }));
+        postSettings = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, likeButton);
       }
 
-      ; //check if user has already liked post; otherwise call likePost with currentUser's id and the postId
-      // if (this.props.post.likers)
-
+      ;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item-row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1749,9 +1770,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     openModal: function openModal(modal, postId) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal, postId));
     },
-    updatePost: function updatePost(post) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["updatePost"])(post));
-    },
+    // updatePost: (post) => dispatch(updatePost(post)),
     deletePost: function deletePost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deletePost"])(id));
     },
@@ -2946,7 +2965,7 @@ var postsReducer = function postsReducer() {
       return nextState;
 
     case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LIKE"]:
-      nextState[action.like.postId].likes.push(action.like.userId);
+      nextState[action.like.post_id].likes.push(action.like.user_id);
       return nextState;
     // case REMOVE_LIKE:
     //   const idx = nextState[action.like.postId].likers.indexOf(action.like.userId);

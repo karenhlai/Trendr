@@ -24,7 +24,7 @@ const postsReducer = (state={}, action) => {
       delete nextState[action.postId];
       return nextState;
     case RECEIVE_LIKE:
-      nextState[action.like.postId].likes.push(action.like.userId);
+      nextState[action.like.post_id].likes.push(action.like.user_id);
       return nextState;
     // case REMOVE_LIKE:
     //   const idx = nextState[action.like.postId].likers.indexOf(action.like.userId);
