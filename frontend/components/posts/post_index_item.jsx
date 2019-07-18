@@ -29,7 +29,9 @@ class PostIndexItem extends React.Component {
   }
 
   postContent(post) {
-    const media = this.props.post.medias.length !== 0 ? <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> : null;
+    const media = this.props.post.medias.length !== 0 ? 
+    <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> 
+      : null;
     
     switch (this.props.post.content) {
       case 'text':

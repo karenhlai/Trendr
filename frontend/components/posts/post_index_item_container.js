@@ -19,8 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    openModal: (modal, postId) => dispatch(openModal(modal, postId)),
-    // updatePost: (post) => dispatch(updatePost(post)),
+    openModal: (modal, postId) => dispatch(openModal(modal, postId)), //editPost
+    updatePost: (post) => dispatch(updatePost(post)),
     deletePost: (id) => dispatch(deletePost(id)),
     likePost: (postId, userId) => dispatch(likePost(postId, userId)),
     unlikePost: (postId) => dispatch(unlikePost(postId))

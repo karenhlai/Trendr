@@ -20,15 +20,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
-  // fetchLikedPosts: (userId) => dispatch(fetchLikedPosts(userId)),
-  // fetchOwnPosts: (userId) => dispatch(fetchOwnPosts(userId)),
-  // updatePost: (post) => dispatch(updatePost(post)),
-  // deletePost: (id) => dispatch(deletePost(id)),
   logout: () => dispatch(logout()),
-  openModal: (formType) => dispatch(openModal(formType)), 
-  //actions be in post_index or post_index_item??
-  likePost: (postId, userId) => dispatch(likePost(postId, userId)),
-  unlikePost: (postId) => dispatch(unlikePost(postId)),
+  openModal: (formType) => dispatch(openModal(formType)), //createPost from postNav
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(PostIndex);

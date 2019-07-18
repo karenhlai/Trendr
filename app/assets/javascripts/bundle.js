@@ -1460,10 +1460,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchPosts: function fetchPosts() {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchPosts"])());
     },
-    // fetchLikedPosts: (userId) => dispatch(fetchLikedPosts(userId)),
-    // fetchOwnPosts: (userId) => dispatch(fetchOwnPosts(userId)),
-    // updatePost: (post) => dispatch(updatePost(post)),
-    // deletePost: (id) => dispatch(deletePost(id)),
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logout"])());
     },
@@ -1479,14 +1475,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return openModal;
     }(function (formType) {
       return dispatch(openModal(formType));
-    }),
-    //actions be in post_index or post_index_item??
-    likePost: function likePost(postId, userId) {
-      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["likePost"])(postId, userId));
-    },
-    unlikePost: function unlikePost(postId) {
-      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["unlikePost"])(postId));
-    }
+    }) //createPost from postNav
+
   };
 };
 
@@ -1770,7 +1760,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     openModal: function openModal(modal, postId) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal, postId));
     },
-    // updatePost: (post) => dispatch(updatePost(post)),
+    //editPost
+    updatePost: function updatePost(post) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["updatePost"])(post));
+    },
     deletePost: function deletePost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deletePost"])(id));
     },
