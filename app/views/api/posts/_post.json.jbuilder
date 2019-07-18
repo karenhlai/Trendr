@@ -7,3 +7,6 @@ json.medias do
   end
 end
 
+json.set! :likers do
+    json.array! post.likes.pluck(:user_id)
+end
