@@ -1671,14 +1671,14 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-heart post-settings"
         }));
-      } else {
+      } else if (post.likes.includes(currentUser.id)) {
         likeButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this5.props.unlikePost(post.id);
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-heart post-settings-unlike"
-        }), this.props.post.likes);
+        }), post.likes);
       } //error once I try to like a post I've already liked, I keep receiving 422 error msg when I try to like posts I haven't yet liked
       //does not get this error I like posts I haven't liked at all, I can like multiple posts 
       //fix reducers to actually remove currnetUser's id
@@ -2967,10 +2967,12 @@ var postsReducer = function postsReducer() {
     case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LIKE"]:
       nextState[action.like.post_id].likes.push(action.like.user_id);
       return nextState;
-    // case REMOVE_LIKE:
-    //   const idx = nextState[action.like.postId].likers.indexOf(action.like.userId);
-    //   nextState[action.like.postId].likers.splice(idx);
-    //   return nextState;
+
+    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_LIKE"]:
+      delete nextState[action.like.post_id].likes.indexOf(action.like.user_id); // debugger
+      //dispatching correct action, but currentUser's id is not removed until page refresh
+
+      return nextState;
 
     default:
       return state;

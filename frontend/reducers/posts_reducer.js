@@ -26,10 +26,11 @@ const postsReducer = (state={}, action) => {
     case RECEIVE_LIKE:
       nextState[action.like.post_id].likes.push(action.like.user_id);
       return nextState;
-    // case REMOVE_LIKE:
-    //   const idx = nextState[action.like.postId].likers.indexOf(action.like.userId);
-    //   nextState[action.like.postId].likers.splice(idx);
-    //   return nextState;
+    case REMOVE_LIKE:
+      delete nextState[action.like.post_id].likes.indexOf(action.like.user_id);
+      // debugger
+      //dispatching correct action, but currentUser's id is not removed until page refresh
+      return nextState;
     default:
       return state;
   }
