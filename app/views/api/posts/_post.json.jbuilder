@@ -7,6 +7,11 @@ json.medias do
   end
 end
 
-json.set! :likers do
+json.user do
+    json.partial! "api/users/user", user: post.user
+end
+
+json.set! :post_likes do
+  # json.partial! "api/likes/like", like: post.likes
     json.array! post.likes.pluck(:user_id)
 end

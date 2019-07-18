@@ -381,7 +381,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import GreetingContainer from './greeting/greeting_container';
 
 
 
@@ -1320,9 +1319,13 @@ function (_React$Component) {
           user: _this.props.users[post.author_id],
           post: post,
           updatePost: _this.props.updatePost,
-          deletePost: _this.props.deletePost
+          deletePost: _this.props.deletePost // openModal={this.props.openModal}
+          ,
+          likePost: _this.props.likePost,
+          unlikePost: _this.props.unlikePost
         });
       }); // let username = this.props.currentUser.username;
+      // debugger
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         id: "navbar-dash"
@@ -1430,6 +1433,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_index */ "./frontend/components/posts/post_index.jsx");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/like_actions */ "./frontend/actions/like_actions.js");
+
 
 
 
@@ -1437,12 +1442,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   // debugger
+  var posts = Object.values(state.entities.posts);
+  var currentUser = state.entities.users[state.session.id];
+  var users = state.entities.users; // const posts = Object.keys(state.entities.posts).map(id => state.entities.posts[id]);
+  // const dashboardPosts = posts.filter(post => post.likers.length >= 4 && post.author.username !== currentUser.username);
+
+  debugger;
   return {
-    currentUser: state.entities.users[state.session.id],
-    posts: Object.keys(state.entities.posts).map(function (id) {
-      return state.entities.posts[id];
-    }),
-    users: state.entities.users
+    currentUser: currentUser,
+    users: users,
+    posts: posts
   };
 };
 
@@ -1453,37 +1462,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     // fetchLikedPosts: (userId) => dispatch(fetchLikedPosts(userId)),
     // fetchOwnPosts: (userId) => dispatch(fetchOwnPosts(userId)),
-    updatePost: function (_updatePost) {
-      function updatePost(_x) {
-        return _updatePost.apply(this, arguments);
-      }
-
-      updatePost.toString = function () {
-        return _updatePost.toString();
-      };
-
-      return updatePost;
-    }(function (post) {
-      return dispatch(updatePost(post));
-    }),
-    deletePost: function (_deletePost) {
-      function deletePost(_x2) {
-        return _deletePost.apply(this, arguments);
-      }
-
-      deletePost.toString = function () {
-        return _deletePost.toString();
-      };
-
-      return deletePost;
-    }(function (id) {
-      return dispatch(deletePost(id));
-    }),
+    // updatePost: (post) => dispatch(updatePost(post)),
+    // deletePost: (id) => dispatch(deletePost(id)),
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logout"])());
     },
     openModal: function (_openModal) {
-      function openModal(_x3) {
+      function openModal(_x) {
         return _openModal.apply(this, arguments);
       }
 
@@ -1494,7 +1479,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return openModal;
     }(function (formType) {
       return dispatch(openModal(formType));
-    })
+    }),
+    //actions be in post_index or post_index_item??
+    likePost: function likePost(postId, userId) {
+      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["likePost"])(postId, userId));
+    },
+    unlikePost: function unlikePost(postId) {
+      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["unlikePost"])(postId));
+    }
   };
 };
 
@@ -1692,11 +1684,9 @@ function (_React$Component) {
         }));
       }
 
-      ;
-      var likers = post.likers; //check if user has already liked post; otherwise call likePost with currentUser's id and the postId
+      ; //check if user has already liked post; otherwise call likePost with currentUser's id and the postId
       // if (this.props.post.likers)
 
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item-row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -2956,13 +2946,12 @@ var postsReducer = function postsReducer() {
       return nextState;
 
     case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LIKE"]:
-      nextState[action.like.postId].likers.push(action.like.userId);
+      nextState[action.like.postId].likes.push(action.like.userId);
       return nextState;
-
-    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_LIKE"]:
-      var idx = nextState[action.like.postId].likers.indexOf(action.like.userId);
-      nextState[action.like.postId].likers.splice(idx);
-      return nextState;
+    // case REMOVE_LIKE:
+    //   const idx = nextState[action.like.postId].likers.indexOf(action.like.userId);
+    //   nextState[action.like.postId].likers.splice(idx);
+    //   return nextState;
 
     default:
       return state;

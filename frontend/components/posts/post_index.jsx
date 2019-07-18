@@ -31,12 +31,15 @@ class PostIndex extends React.Component {
           post={post}
           updatePost={this.props.updatePost}
           deletePost={this.props.deletePost}
+          // openModal={this.props.openModal}
+          likePost={this.props.likePost}
+          unlikePost={this.props.unlikePost}
         />
       );
     });
 
     // let username = this.props.currentUser.username;
-
+    // debugger
     return (
       <div>
 

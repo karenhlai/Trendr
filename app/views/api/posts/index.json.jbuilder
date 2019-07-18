@@ -23,6 +23,9 @@ json.posts do
             end
          end
          #add likes next
+         json.likes do
+            json.array! post.likes.collect { |like| like.id }
+         end
       end
    end
 end

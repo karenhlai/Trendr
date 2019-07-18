@@ -24,12 +24,12 @@ const postsReducer = (state={}, action) => {
       delete nextState[action.postId];
       return nextState;
     case RECEIVE_LIKE:
-      nextState[action.like.postId].likers.push(action.like.userId);
+      nextState[action.like.postId].likes.push(action.like.userId);
       return nextState;
-    case REMOVE_LIKE:
-      const idx = nextState[action.like.postId].likers.indexOf(action.like.userId);
-      nextState[action.like.postId].likers.splice(idx);
-      return nextState;
+    // case REMOVE_LIKE:
+    //   const idx = nextState[action.like.postId].likers.indexOf(action.like.userId);
+    //   nextState[action.like.postId].likers.splice(idx);
+    //   return nextState;
     default:
       return state;
   }

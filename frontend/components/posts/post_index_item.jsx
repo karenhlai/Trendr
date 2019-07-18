@@ -131,11 +131,9 @@ class PostIndexItem extends React.Component {
       )
     };
 
-    let likers = post.likers;
     //check if user has already liked post; otherwise call likePost with currentUser's id and the postId
     // if (this.props.post.likers)
 
-    debugger
 
 
     return(
