@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import PostFormModal from './post_form_modal';
 import PostIndexItemContainer from './post_index_item_container';
-import SampleItem from './sample_item';
 import InfiniteScroll from 'react-infinite-scroller';
  
 class PostIndex extends React.Component {
@@ -29,7 +28,7 @@ class PostIndex extends React.Component {
           post={post}
           updatePost={this.props.updatePost}
           deletePost={this.props.deletePost}
-          // openModal={this.props.openModal}
+          openModal={this.props.openModal}
           likePost={this.props.likePost}
           unlikePost={this.props.unlikePost}
         />

@@ -57,17 +57,18 @@ class PostIndexItem extends React.Component {
           </div>
         );
       case 'link':
-        let link;
-        if (this.props.post.body.includes("https://")) {
-          link = post.body;
+        let linkStr;
+        if (this.props.post.title.includes("https://")) {
+          linkStr = this.props.post.title;
         } else {
-          link = "http://" + this.props.post.body;
+          linkStr = `http://${this.props.post.title}`;
         }
 
         return (
           <div>
-            {/* <h2>"{props.post.title}"</h2> */}
-            <p className="post-index-body">{link}</p>
+            <a href={linkStr}>
+              <p className="post-index-body">{linkStr}</p>
+            </a>
           </div>
         );
     }
@@ -158,7 +159,7 @@ class PostIndexItem extends React.Component {
       <div className="post-index-item-row">
         <img className="post-author-icon" src={authorAvatar} data-aos='fade-right' />
         <div className="post-index-item" data-aos='fade-left'>
-          <h2 className="post-author-username"> Here's a post by: {authorUsername} </h2>
+          <h2 className="post-author-username"> Here's a blog: <b>{authorUsername}</b> </h2>
 
           { this.postContent(post) }
           

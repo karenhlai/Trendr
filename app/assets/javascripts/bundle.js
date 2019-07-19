@@ -845,10 +845,16 @@ function (_React$Component) {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "url",
+        value: this.state.title,
+        name: "title",
+        onChange: this.update("title"),
+        placeholder: "Type or paste a URL"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
         value: this.state.body,
         name: "body",
         onChange: this.update("body"),
-        placeholder: "Type or paste a URL"
+        placeholder: "Add a description, if you'd like"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Post"
@@ -1257,9 +1263,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _post_form_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post_form_modal */ "./frontend/components/posts/post_form_modal.jsx");
 /* harmony import */ var _post_index_item_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post_index_item_container */ "./frontend/components/posts/post_index_item_container.js");
-/* harmony import */ var _sample_item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sample_item */ "./frontend/components/posts/sample_item.jsx");
-/* harmony import */ var react_infinite_scroller__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-infinite-scroller */ "./node_modules/react-infinite-scroller/index.js");
-/* harmony import */ var react_infinite_scroller__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_infinite_scroller__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_infinite_scroller__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-infinite-scroller */ "./node_modules/react-infinite-scroller/index.js");
+/* harmony import */ var react_infinite_scroller__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_infinite_scroller__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1277,7 +1282,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -1318,8 +1322,8 @@ function (_React$Component) {
           user: _this.props.users[post.author_id],
           post: post,
           updatePost: _this.props.updatePost,
-          deletePost: _this.props.deletePost // openModal={this.props.openModal}
-          ,
+          deletePost: _this.props.deletePost,
+          openModal: _this.props.openModal,
           likePost: _this.props.likePost,
           unlikePost: _this.props.unlikePost
         });
@@ -1592,17 +1596,19 @@ function (_React$Component) {
           }, "- ", this.props.post.body));
 
         case 'link':
-          var link;
+          var linkStr;
 
-          if (this.props.post.body.includes("https://")) {
-            link = post.body;
+          if (this.props.post.title.includes("https://")) {
+            linkStr = this.props.post.title;
           } else {
-            link = "http://" + this.props.post.body;
+            linkStr = "http://".concat(this.props.post.title);
           }
 
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+            href: linkStr
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "post-index-body"
-          }, link));
+          }, linkStr)));
       }
     }
   }, {
@@ -1708,7 +1714,7 @@ function (_React$Component) {
         "data-aos": "fade-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "post-author-username"
-      }, " Here's a post by: ", authorUsername, " "), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
+      }, " Here's a blog: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, authorUsername), " "), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
     }
   }]);
 
@@ -1776,17 +1782,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_post_index_item__WEBPACK_IMPORTED_MODULE_5__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/posts/sample_item.jsx":
-/*!***************************************************!*\
-  !*** ./frontend/components/posts/sample_item.jsx ***!
-  \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/karenlai/Desktop/trendr/frontend/components/posts/sample_item.jsx'");
 
 /***/ }),
 

@@ -23,10 +23,8 @@ class LinkForm extends React.Component {
       <div>
         <div className="form-author">{this.props.currentUser.username}</div>
         <form className="form" onSubmit={this.handleSubmit}>
-          {/* put a hidden input that submits text for every form? */}
-          {/* <label>Title</label>
-          <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Quote"} /> */}
-          <input type="url" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Type or paste a URL"} />
+          <input type="url" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Type or paste a URL"} />
+          <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Add a description, if you'd like"} />
           <input type="submit" value="Post" />
           <button onClick={() => this.props.closeModal()}>Close</button>
         </form>
