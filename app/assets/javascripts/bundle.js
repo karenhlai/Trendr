@@ -1300,8 +1300,7 @@ function (_React$Component) {
   _createClass(PostIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchPosts(); // this.props.fetchOwnPosts(this.props.currentUser.id);
-      // this.props.fetchLikedPosts(this.props.currentUser.id);
+      this.props.fetchPosts();
     }
   }, {
     key: "render",
@@ -1785,54 +1784,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   !*** ./frontend/components/posts/sample_item.jsx ***!
   \***************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
-
-
-var SampleItem = function SampleItem(props) {
-  var media = props.post.medias.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "post-index-item-media",
-    src: props.post.medias[0].mediaUrl
-  }) : null;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "post-index-item-row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "post-author-icon",
-    src: props.user.avatarUrl,
-    "data-aos": "fade-right"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "post-index-item",
-    "data-aos": "fade-left"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "post-author-username"
-  }, " Here's a post by: ", props.user.username, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "post-index-title"
-  }, props.post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("center", null, " ", media, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "post-index-body"
-  }, props.post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: function onClick() {
-      return props.updatePost(props.post.id);
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "edit",
-    src: "https://cdn3.iconfinder.com/data/icons/block/32/box_edit-512.png"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: function onClick() {
-      return props.deletePost(props.post.id);
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "trash",
-    src: "https://cdn1.iconfinder.com/data/icons/device-apps-settings/2048/Recycle_bin-512.png"
-  })))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (SampleItem);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/karenlai/Desktop/trendr/frontend/components/posts/sample_item.jsx'");
 
 /***/ }),
 

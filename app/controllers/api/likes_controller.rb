@@ -25,8 +25,7 @@ class Api::LikesController < ApplicationController
         user_id: current_user.id
         )
       
-      if @like && @like.destroy
-        # @like.destroy!
+      if @like && @like.destroy!
         render json: @like
       else
         render json: @like.errors.full_messages, status: 422
