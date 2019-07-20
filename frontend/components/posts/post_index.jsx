@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PostFormModal from './post_form_modal';
 import PostIndexItemContainer from './post_index_item_container';
 import InfiniteScroll from 'react-infinite-scroller';
+import M from 'materialize-css/dist/js/materialize.js';
  
 class PostIndex extends React.Component {
   constructor(props) {
@@ -12,6 +13,8 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts(); 
+    // document.title = 'AuthorSideProfile';
+    M.AutoInit();
   }  
 
   render() {

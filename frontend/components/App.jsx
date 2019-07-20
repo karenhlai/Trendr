@@ -23,8 +23,6 @@ class App extends React.Component {
     return(
      <div> 
       <header>
-      	{/* <h1>Tumblr Project</h1>
-        <GreetingContainer /> */}
       </header>
       
     <Switch>
