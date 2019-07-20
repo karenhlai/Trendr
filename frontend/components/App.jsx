@@ -13,11 +13,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
+  
   componentDidMount() {
     AOS.init({
       duration: 2000
     })
   }
+
   render () {
     return(
      <div> 
