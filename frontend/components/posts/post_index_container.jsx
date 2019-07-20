@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import PostIndex from './post_index';
-import { fetchPosts, fetchOwnPosts, fetchLikedPosts } from '../../actions/post_actions';
-import { logout } from '../../actions/session_actions';
+import { fetchPosts } from '../../actions/post_actions';
 import { likePost, unlikePost } from '../../actions/like_actions';
+import PostIndex from './post_index';
 
 // remember to user currentUser created from json views
 const mapStateToProps = state => {
@@ -20,8 +19,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
-  logout: () => dispatch(logout()),
   openModal: (formType) => dispatch(openModal(formType)), //createPost from postNav
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(PostIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
