@@ -426,6 +426,7 @@ function (_React$Component) {
   return App;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
+;
 /* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
@@ -659,6 +660,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  // map currentUser for side nav profile information
+  //make avatar clickable
   return {};
 };
 
@@ -1563,8 +1566,7 @@ function (_React$Component) {
           likePost: _this.props.likePost,
           unlikePost: _this.props.unlikePost
         });
-      }); // let username = this.props.currentUser.username;
-      // debugger
+      }); // debugger
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, posts.reverse());
     }
@@ -1588,7 +1590,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
-/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/like_actions */ "./frontend/actions/like_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _post_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post_index */ "./frontend/components/posts/post_index.jsx");
 
 
@@ -1596,12 +1598,13 @@ __webpack_require__.r(__webpack_exports__);
  // remember to user currentUser created from json views
 
 var mapStateToProps = function mapStateToProps(state) {
-  // const posts = Object.values(state.entities.posts);
   var currentUser = state.entities.users[state.session.id];
+  var username = currentUser.username;
   var users = state.entities.users;
   var posts = Object.keys(state.entities.posts).map(function (id) {
     return state.entities.posts[id];
-  }); // debugger
+  }); // const posts = Object.values(state.entities.posts);
+  // debugger
 
   return {
     currentUser: currentUser,
@@ -1615,19 +1618,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchPosts: function fetchPosts() {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPosts"])());
     },
-    openModal: function (_openModal) {
-      function openModal(_x) {
-        return _openModal.apply(this, arguments);
-      }
-
-      openModal.toString = function () {
-        return _openModal.toString();
-      };
-
-      return openModal;
-    }(function (formType) {
-      return dispatch(openModal(formType));
-    }) //createPost from postNav
+    openModal: function openModal(formType) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(formType));
+    } //createPost from postNav
 
   };
 };
@@ -1883,12 +1876,10 @@ function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
-/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/like_actions */ "./frontend/actions/like_actions.js");
-/* harmony import */ var _post_index_item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./post_index_item */ "./frontend/components/posts/post_index_item.jsx");
-
+/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/like_actions */ "./frontend/actions/like_actions.js");
+/* harmony import */ var _post_index_item__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post_index_item */ "./frontend/components/posts/post_index_item.jsx");
 
 
 
@@ -1909,26 +1900,26 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
+    updatePost: function updatePost(post) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["updatePost"])(post));
+    },
+    deletePost: function deletePost(id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["deletePost"])(id));
+    },
     openModal: function openModal(modal, postId) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal, postId));
     },
     //editPost
-    updatePost: function updatePost(post) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["updatePost"])(post));
-    },
-    deletePost: function deletePost(id) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deletePost"])(id));
-    },
     likePost: function likePost(postId, userId) {
-      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["likePost"])(postId, userId));
+      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_3__["likePost"])(postId, userId));
     },
     unlikePost: function unlikePost(postId) {
-      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["unlikePost"])(postId));
+      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_3__["unlikePost"])(postId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_post_index_item__WEBPACK_IMPORTED_MODULE_5__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_post_index_item__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 

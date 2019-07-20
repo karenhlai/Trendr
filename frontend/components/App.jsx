@@ -9,7 +9,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PostFormModal from '../components/posts/post_form_modal';
 import AOS from 'aos';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,14 +24,12 @@ class App extends React.Component {
       <header>
       </header>
       
-    <Switch>
-      <ProtectedRoute path="/posts" component={DashboardContainer} />
-      <Route path="/" component={SplashPage} /> 
-    </Switch>
-
-
+      <Switch>
+        <ProtectedRoute path="/posts" component={DashboardContainer} />
+        <Route path="/" component={SplashPage} /> 
+      </Switch>
     </div>
-    )}
-}
+  )};
+};
 
 export default App;

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { updatePost, deletePost } from '../../actions/post_actions';
 import { openModal } from '../../actions/modal_actions';
-import { fetchPosts, updatePost, deletePost } from '../../actions/post_actions';
 import { likePost, unlikePost } from '../../actions/like_actions';
 import PostIndexItem from './post_index_item';
 
@@ -19,9 +18,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    openModal: (modal, postId) => dispatch(openModal(modal, postId)), //editPost
     updatePost: (post) => dispatch(updatePost(post)),
     deletePost: (id) => dispatch(deletePost(id)),
+    openModal: (modal, postId) => dispatch(openModal(modal, postId)), //editPost
     likePost: (postId, userId) => dispatch(likePost(postId, userId)),
     unlikePost: (postId) => dispatch(unlikePost(postId))
   });

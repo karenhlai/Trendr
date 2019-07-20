@@ -31,11 +31,10 @@ class PostIndex extends React.Component {
       );
     });
 
-    // let username = this.props.currentUser.username;
     // debugger
     return (
       <div>
-          { posts.reverse() }
+        { posts.reverse() }
       </div>
     );
   }
