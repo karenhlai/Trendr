@@ -1,5 +1,6 @@
 import React from 'react';
 import M from 'materialize-css/dist/js/materialize.js';
+import SideProfileContainer from '../sidenav/side_profile_container';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -108,6 +109,7 @@ class PostIndexItem extends React.Component {
     const currentUser = this.props.currentUser;
     const authorAvatar = this.props.user.avatarUrl;
     const authorUsername = this.props.user.username;
+    
     let postSettings;
     let likeButton;
 
@@ -182,6 +184,7 @@ class PostIndexItem extends React.Component {
             <li><a className="subheader">Subheader</a></li>
             <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
             <li><a className="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
+            <SideProfileContainer />
         </ul>
         
         <div className="post-index-item" data-aos='fade-left'>
