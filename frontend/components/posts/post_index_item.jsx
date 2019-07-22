@@ -1,7 +1,6 @@
 import React from 'react';
-import PostFormModal from './post_form_modal';
 import M from 'materialize-css/dist/js/materialize.js';
-// import '../../../node_modules/materialize-css/sass/components/_sidenav.scss';
+// import 'materialize-css/dist/css/materialize.min.css';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -167,11 +166,11 @@ class PostIndexItem extends React.Component {
 
     return(
       <div className="post-index-item-row">
-        {/* <img className="post-author-icon" src={authorAvatar} data-aos='fade-right' /> */}
-
+        <a href="#" data-target="slide-out" className="sidenav-trigger">
+          <img className="post-author-icon" src={authorAvatar} data-aos='fade-right' />
+        </a>
 
         <ul id="slide-out" className="sidenav">
-
           <li><div className="user-view">
             <div className="background">
             </div>
@@ -184,13 +183,8 @@ class PostIndexItem extends React.Component {
             <li><a className="subheader">Subheader</a></li>
             <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
             <li><a className="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
-
         </ul>
-        <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-
-
-
-
+        
         <div className="post-index-item" data-aos='fade-left'>
           <h2 className="post-author-username"> Here's a blog: <b>{authorUsername}</b> </h2>
 

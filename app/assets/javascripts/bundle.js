@@ -1632,9 +1632,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _post_form_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_form_modal */ "./frontend/components/posts/post_form_modal.jsx");
-/* harmony import */ var materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! materialize-css/dist/js/materialize.js */ "./node_modules/materialize-css/dist/js/materialize.js");
-/* harmony import */ var materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! materialize-css/dist/js/materialize.js */ "./node_modules/materialize-css/dist/js/materialize.js");
+/* harmony import */ var materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1654,8 +1653,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-
- // import '../../../node_modules/materialize-css/sass/components/_sidenav.scss';
+ // import 'materialize-css/dist/css/materialize.min.css';
 
 var PostIndexItem =
 /*#__PURE__*/
@@ -1679,7 +1677,7 @@ function (_React$Component) {
   _createClass(PostIndexItem, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_2___default.a.AutoInit(); // document.addEventListener('DOMContentLoaded', () => {
+      materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1___default.a.AutoInit(); // document.addEventListener('DOMContentLoaded', () => {
       //   let elem = document.querySelectorAll('.sidenav');
       //   let instances = M.Sidenav.init(elems, options);
       // });
@@ -1848,7 +1846,15 @@ function (_React$Component) {
       ;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item-row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        "data-target": "slide-out",
+        className: "sidenav-trigger"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "post-author-icon",
+        src: authorAvatar,
+        "data-aos": "fade-right"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         id: "slide-out",
         className: "sidenav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1879,13 +1885,7 @@ function (_React$Component) {
       }, "Third Link With Waves")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "sidenav-close",
         href: "#!"
-      }, "Clicking this will close Sidenav"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        "data-target": "slide-out",
-        className: "sidenav-trigger"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "material-icons"
-      }, "menu")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Clicking this will close Sidenav"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item",
         "data-aos": "fade-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
