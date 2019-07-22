@@ -24,7 +24,7 @@ class SideProfile extends React.Component {
     })
 
     return (
-      <div className="side-profile-container">
+      <ul id="slide-out" className="sidenav">
         <div className="side-profile-nav">
         </div>
 
@@ -34,6 +34,7 @@ class SideProfile extends React.Component {
           <a href="#name"><span className="white-text name">John Doe</span></a>
           <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
         </div></li>
+
         <li><a href="#!"><i className="material-icons">cloud</i>First Link With Icon</a></li>
         <li><a href="#!">Second Link</a></li>
         <li><div className="divider"></div></li>
@@ -41,10 +42,10 @@ class SideProfile extends React.Component {
         <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
         <li><a className="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
 
-        <div>
+        <div className="side-profile-posts">
           { posts.reverse() }
         </div>
-      </div>
+      </ul>
     )
   }
 
