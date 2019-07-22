@@ -1,6 +1,5 @@
 import React from 'react';
 import M from 'materialize-css/dist/js/materialize.js';
-// import 'materialize-css/dist/css/materialize.min.css';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -164,7 +163,7 @@ class PostIndexItem extends React.Component {
       )
     };
 
-    return(
+    return (
       <div className="post-index-item-row">
         <a href="#" data-target="slide-out" className="sidenav-trigger">
           <img className="post-author-icon" src={authorAvatar} data-aos='fade-right' />
