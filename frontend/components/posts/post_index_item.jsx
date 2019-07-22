@@ -1,15 +1,25 @@
 import React from 'react';
 import PostFormModal from './post_form_modal';
+import M from 'materialize-css/dist/js/materialize.js';
+// import '../../../node_modules/materialize-css/sass/components/_sidenav.scss';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       displayPostSettings: false
-    }
+    };
     this.openPostMenu = this.openPostMenu.bind(this);
     this.closePostMenu = this.closePostMenu.bind(this);
   }
+
+  componentDidMount() {
+    M.AutoInit();
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   let elem = document.querySelectorAll('.sidenav');
+    //   let instances = M.Sidenav.init(elems, options);
+    // });
+  };
 
   openPostMenu(e) {
     e.preventDefault();
@@ -157,7 +167,30 @@ class PostIndexItem extends React.Component {
 
     return(
       <div className="post-index-item-row">
-        <img className="post-author-icon" src={authorAvatar} data-aos='fade-right' />
+        {/* <img className="post-author-icon" src={authorAvatar} data-aos='fade-right' /> */}
+
+
+        <ul id="slide-out" className="sidenav">
+
+          <li><div className="user-view">
+            <div className="background">
+            </div>
+                <a href="#name"><span className="white-text name">John Doe</span></a>
+                <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
+          </div></li>
+            <li><a href="#!"><i className="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li><div className="divider"></div></li>
+            <li><a className="subheader">Subheader</a></li>
+            <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
+            <li><a className="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
+
+        </ul>
+        <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+
+
+
+
         <div className="post-index-item" data-aos='fade-left'>
           <h2 className="post-author-username"> Here's a blog: <b>{authorUsername}</b> </h2>
 

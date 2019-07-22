@@ -1,5 +1,4 @@
 import React from 'react';
-import M from 'materialize-css/dist/js/materialize.js';
 import CreateBar from './create_bar';
 import PostIndexContainer from '../posts/post_index_container';
 
@@ -8,9 +7,6 @@ class Dashboard extends React.Component {
     super(props);
   };
 
-  componentDidMount() {
-    M.AutoInit();
-  };
 
   render() {
     return (
