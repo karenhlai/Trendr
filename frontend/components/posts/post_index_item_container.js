@@ -9,8 +9,8 @@ const mapStateToProps = (state, ownProps) => {
   const postLikes = post.post_likes;
   const currentUser = state.entities.users[state.session.id];
   const authorId = ownProps.post ? ownProps.post.author_id : "";
-  console.log(postLikes);
-  console.log(post.likes)
+  // console.log(postLikes);
+  // console.log(post.likes)
   return ({
     post,
     postLikes, 

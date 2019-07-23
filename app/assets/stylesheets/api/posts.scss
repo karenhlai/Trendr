@@ -89,6 +89,7 @@
   position: relative;
   right: -350px;
   width: 150px;
+  cursor: pointer;
 }
 .form button {
   position: relative;
@@ -159,6 +160,11 @@
 }
 
 //create post navbar modal icons 
+//add className to navbar icons later to make just navbar icons float
+i:hover {
+  transform: translateY(-2px);
+}
+
 i.icon_post_text {
   color: #000;
   font-size: 50px;

@@ -1866,7 +1866,7 @@ function (_React$Component) {
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-heart post-settings-liked"
-        }), post.likes);
+        }));
       }
 
       ; //error once I try to like a post I've already liked, I keep receiving 422 error msg, and when I try to like posts I haven't yet liked
@@ -1949,9 +1949,9 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var post = ownProps.post;
   var postLikes = post.post_likes;
   var currentUser = state.entities.users[state.session.id];
-  var authorId = ownProps.post ? ownProps.post.author_id : "";
-  console.log(postLikes);
-  console.log(post.likes);
+  var authorId = ownProps.post ? ownProps.post.author_id : ""; // console.log(postLikes);
+  // console.log(post.likes)
+
   return {
     post: post,
     postLikes: postLikes,

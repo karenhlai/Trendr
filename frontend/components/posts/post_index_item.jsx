@@ -122,7 +122,6 @@ class PostIndexItem extends React.Component {
       likeButton = (
         <button onClick={() => this.props.unlikePost(post.id)}>
           <i className="fas fa-heart post-settings-liked"></i>
-          { post.likes }
         </button>
       );
     };
