@@ -115,13 +115,13 @@ class PostIndexItem extends React.Component {
     if (this.props.postLikes.indexOf(currentUser.id) === -1) {
       likeButton = (
         <button onClick={() => this.props.likePost(post.id, currentUser.id)}>
-          <i className="fas fa-heart post-settings"></i>
+          <i className="fas fa-heart post-settings post-settings-unliked"></i>
         </button>
       );
     } else {
       likeButton = (
         <button onClick={() => this.props.unlikePost(post.id)}>
-          <i className="fas fa-heart post-settings-unlike"></i>
+          <i className="fas fa-heart post-settings-liked"></i>
           { post.likes }
         </button>
       );

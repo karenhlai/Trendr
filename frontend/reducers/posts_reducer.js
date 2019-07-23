@@ -6,6 +6,8 @@ import merge from 'lodash/merge';
 const postsReducer = (state={}, action) => {
   Object.freeze(state);
   let nextState = merge({}, state);
+  let likerId;
+  let postId;
 
   switch (action.type) {
     // case RECEIVE_OWN_POSTS:
@@ -23,12 +25,16 @@ const postsReducer = (state={}, action) => {
       delete nextState[action.postId];
       return nextState;
     case RECEIVE_LIKE:
-      nextState[action.like.post_id].likes.push(action.like.user_id);
+      likerId = action.like.user_id;
+      postId = action.like.post_id;
+      nextState[postId].post_likes.push(likerId);
       return nextState;
     case REMOVE_LIKE:
-      delete nextState[action.like.post_id].likes.indexOf(action.like.user_id);
+      likerId = action.like.user_id;
+      postId = action.like.post_id;
+      let like = nextState[postId].post_likes.indexOf(likerId);
+      delete nextState[postId].post_likes.splice(like);
       // debugger
-      //dispatching correct action, but currentUser's id is not removed until page refresh
       return nextState;
     default:
       return state;

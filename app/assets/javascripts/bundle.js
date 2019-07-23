@@ -1857,7 +1857,7 @@ function (_React$Component) {
             return _this5.props.likePost(post.id, currentUser.id);
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-heart post-settings"
+          className: "fas fa-heart post-settings post-settings-unliked"
         }));
       } else {
         likeButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1865,7 +1865,7 @@ function (_React$Component) {
             return _this5.props.unlikePost(post.id);
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-heart post-settings-unlike"
+          className: "fas fa-heart post-settings-liked"
         }), post.likes);
       }
 
@@ -1950,6 +1950,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var postLikes = post.post_likes;
   var currentUser = state.entities.users[state.session.id];
   var authorId = ownProps.post ? ownProps.post.author_id : "";
+  console.log(postLikes);
+  console.log(post.likes);
   return {
     post: post,
     postLikes: postLikes,
@@ -3239,6 +3241,8 @@ var postsReducer = function postsReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state);
+  var likerId;
+  var postId;
 
   switch (action.type) {
     // case RECEIVE_OWN_POSTS:
@@ -3259,12 +3263,16 @@ var postsReducer = function postsReducer() {
       return nextState;
 
     case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LIKE"]:
-      nextState[action.like.post_id].likes.push(action.like.user_id);
+      likerId = action.like.user_id;
+      postId = action.like.post_id;
+      nextState[postId].post_likes.push(likerId);
       return nextState;
 
     case _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_LIKE"]:
-      delete nextState[action.like.post_id].likes.indexOf(action.like.user_id); // debugger
-      //dispatching correct action, but currentUser's id is not removed until page refresh
+      likerId = action.like.user_id;
+      postId = action.like.post_id;
+      var like = nextState[postId].post_likes.indexOf(likerId);
+      delete nextState[postId].post_likes.splice(like); // debugger
 
       return nextState;
 

@@ -23,10 +23,10 @@ json.posts do
          #    end
          # end
          json.partial! "api/posts/post", post: post
-         #add likes next
-         json.likes do
-            json.array! post.likes.collect { |like| like.id }
-         end
+         #add likes next - uncomment for LikesIdx
+         # json.likes do
+         #    json.array! post.likes.collect { |like| like.id }
+         # end
       end
    end
 end

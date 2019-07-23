@@ -201,10 +201,16 @@ i.post-settings {
   margin: 15px 20px 15px 15px;
 }
 
-i.post-settings-unlike {
+i.post-settings-unliked {
+  color: grey;
   font-size: 20px;
   margin: 15px 20px 15px 15px;
+}
+
+i.post-settings-liked {
   color: red;
+  font-size: 20px;
+  margin: 15px 20px 15px 15px;
 }
 
 li.post-settings {
