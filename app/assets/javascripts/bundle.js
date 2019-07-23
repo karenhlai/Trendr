@@ -215,9 +215,10 @@ var removePost = function removePost(postId) {
     type: REMOVE_POST,
     postId: postId
   };
-}; // export const receiveOwnPosts = (payload) => ({
+}; // export const receiveOwnPosts = ({ posts, userId }) => ({
 //   type: RECEIVE_OWN_POSTS,
-//   payload
+//   posts, 
+//   userId,
 // });
 // export const receiveLikedPosts = (payload) => ({
 //   type: RECEIVE_LIKED_POSTS,
@@ -254,8 +255,8 @@ var deletePost = function deletePost(id) {
       return dispatch(removePost(post.id));
     });
   };
-}; // export const fetchOwnPosts = (userId) => dispatch => 
-//   PostAPIUtil.fetchOwnPosts(userId).then(posts => dispatch(receiveOwnPosts(posts)));
+}; // export const fetchOwnPosts = (payload) => dispatch => 
+//   PostAPIUtil.fetchOwnPosts(payload).then(posts => dispatch(receiveOwnPosts(posts)));
 // export const fetchLikedPosts = (userId) => dispatch => 
 //   PostAPIUtil.fetchLikedPosts(userId).then(posts => dispatch(receiveLikedPosts(posts)));
 
@@ -2038,7 +2039,7 @@ function (_React$Component) {
       }, currentUsername), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "full-side-name"
       }, currentUsername)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "side-profile-posts post-index-item-row"
+        className: "side-profile-posts post-index-item"
       }, posts.reverse()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-view"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3528,13 +3529,14 @@ var unlikePost = function unlikePost(postId) {
 /*!****************************************!*\
   !*** ./frontend/util/post_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchPosts, fetchPost, createPost, updatePost, deletePost */
+/*! exports provided: fetchPosts, fetchPost, fetchOwnPosts, createPost, updatePost, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPost", function() { return fetchPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchOwnPosts", function() { return fetchOwnPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePost", function() { return updatePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
@@ -3549,13 +3551,13 @@ var fetchPost = function fetchPost(id) {
     method: 'get',
     url: "api/posts/".concat(id)
   });
-}; // export const fetchOwnPosts = (id) => {
-//   return $.ajax({
-//     method: 'get', 
-//     url: `api/users/${id}/posts`
-//   })
-// }
-// export const fetchLikedPosts = (id) => {
+};
+var fetchOwnPosts = function fetchOwnPosts(id) {
+  return $.ajax({
+    method: 'get',
+    url: "api/users/".concat(id, "/posts")
+  });
+}; // export const fetchLikedPosts = (id) => {
 //   return $.ajax({
 //     method: 'get', 
 //     url: `api/users/${id}/likes`

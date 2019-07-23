@@ -23,9 +23,10 @@ export const removePost = (postId) => ({
   postId
 });
 
-// export const receiveOwnPosts = (payload) => ({
+// export const receiveOwnPosts = ({ posts, userId }) => ({
 //   type: RECEIVE_OWN_POSTS,
-//   payload
+//   posts, 
+//   userId,
 // });
 
 // export const receiveLikedPosts = (payload) => ({
@@ -51,8 +52,8 @@ export const updatePost = (post) => (dispatch) =>
 export const deletePost = (id) => (dispatch) => 
   PostAPIUtil.deletePost(id).then( post => dispatch(removePost(post.id)));
 
-// export const fetchOwnPosts = (userId) => dispatch => 
-//   PostAPIUtil.fetchOwnPosts(userId).then(posts => dispatch(receiveOwnPosts(posts)));
+// export const fetchOwnPosts = (payload) => dispatch => 
+//   PostAPIUtil.fetchOwnPosts(payload).then(posts => dispatch(receiveOwnPosts(posts)));
 
 // export const fetchLikedPosts = (userId) => dispatch => 
 //   PostAPIUtil.fetchLikedPosts(userId).then(posts => dispatch(receiveLikedPosts(posts)));

@@ -38,7 +38,7 @@ class SideProfile extends React.Component {
         </div>
 
 
-        <div className="side-profile-posts post-index-item-row">
+        <div className="side-profile-posts post-index-item">
           {posts.reverse()}
         </div>
 
