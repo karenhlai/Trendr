@@ -1,69 +1,70 @@
 nav {
-    color: #fff;
-    background-color: #ee6e73;
-    width: 100%;
-    height: 56px;
-    line-height: 56px;
-  }
-  
-  nav.nav-extended {
-    height: auto;
-  }
-  
-  nav.nav-extended .nav-wrapper {
-    min-height: 56px;
-    height: auto;
-  }
-  
-  nav.nav-extended .nav-content {
-    position: relative;
-    line-height: normal;
-  }
-  
-  nav a {
-    color: #fff;
-  }
-  
-  nav i,
-  nav [class^="mdi-"], nav [class*="mdi-"],
-  nav i.material-icons {
-    display: block;
-    font-size: 24px;
-    height: 56px;
-    line-height: 56px;
-  }
-  
-  nav .nav-wrapper {
-    position: relative;
-    height: 100%;
-  }
-  
-  nav .sidenav-trigger {
-    float: left;
-    position: relative;
-    z-index: 1;
-    height: 56px;
-    margin: 0 18px;
-  }
-  
-  nav .sidenav-trigger i {
-    height: 56px;
-    line-height: 56px;
-  }
-  
-  nav .brand-logo {
-    position: absolute;
-    color: #fff;
-    display: inline-block;
-    font-size: 2.1rem;
-    padding: 0;
-  }
-  
-  nav .brand-logo.center {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
+  color: #fff;
+  background-color: #ee6e73;
+  /* width: 100%; */
+  height: 56px;
+  line-height: 56px;
+}
+
+nav.nav-extended {
+  height: auto;
+}
+
+nav.nav-extended .nav-wrapper {
+  min-height: 56px;
+  height: auto;
+}
+
+nav.nav-extended .nav-content {
+  position: relative;
+  line-height: normal;
+}
+
+nav a {
+  color: #fff;
+}
+
+nav i,
+nav [class^="mdi-"], nav [class*="mdi-"],
+nav i.material-icons {
+  display: block;
+  font-size: 24px;
+  height: 56px;
+  line-height: 56px;
+}
+
+nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+nav .sidenav-trigger {
+  float: left;
+  position: relative;
+  z-index: 1;
+  height: 56px;
+  margin: 0 18px;
+}
+
+nav .sidenav-trigger i {
+  height: 56px;
+  line-height: 56px;
+}
+
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+}
+
+nav .brand-logo.center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .table-of-contents.fixed {
     position: fixed;
   }
@@ -100,7 +101,7 @@ nav {
   
   .sidenav {
     position: fixed;
-    width: 300px;
+    width: 40%;
     left: 0;
     top: 0;
     margin: 0;
@@ -110,7 +111,7 @@ nav {
     height: calc(100% + 60px);
     height: -moz-calc(100%);
     padding-bottom: 60px;
-    background-color: #fff;
+    background-color: #fcf7f3;
     z-index: 999;
     overflow-y: auto;
     will-change: transform;
@@ -317,7 +318,8 @@ nav {
     right: 0;
     opacity: 0;
     height: 120vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: #001935;
     z-index: 997;
     display: none;
   }
@@ -381,4 +383,11 @@ nav {
   .navbar-fixed {
     height: 64px;
   }
+}
+
+
+
+/* Side Profile Navbbar */
+.side-profile-nav-name {
+  display: none;
 }

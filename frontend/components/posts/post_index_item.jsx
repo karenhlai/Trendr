@@ -172,10 +172,8 @@ class PostIndexItem extends React.Component {
           <img className="post-author-icon" src={authorAvatar} data-aos='fade-right' />
         </a>
 
-        {/* <ul id="slide-out" className="sidenav"> */}
-            <SideProfileContainer />
-        {/* </ul> */}
-        {/*  */}
+        <SideProfileContainer />
+        
         <div className="post-index-item" data-aos='fade-left'>
           <h2 className="post-author-username"> Here's a blog: <b>{authorUsername}</b> </h2>
 

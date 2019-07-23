@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SideProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { 
+      sideProfileUsername: null,
+    };
   }
 
   componentDidMount() {
@@ -10,9 +14,11 @@ class SideProfile extends React.Component {
   }
 
   render() {
+    let currentUsername = `${this.props.currentUser.username}.trendr.com`;
+
     if (this.props.posts.length === 0) {
       return null;
-    };
+    }
 
     let posts = this.props.posts.map( post => {
       return (
@@ -21,12 +27,21 @@ class SideProfile extends React.Component {
           { post.body }
         </div>
       )
-    })
+    });
+
 
     return (
       <ul id="slide-out" className="sidenav">
         <div className="side-profile-nav">
+          <div className="side-name">{ currentUsername }</div>
+          <div className="full-side-name">{ currentUsername }</div>
         </div>
+
+
+        <div className="side-profile-posts post-index-item-row">
+          {posts.reverse()}
+        </div>
+
 
         <li><div className="user-view">
           <div className="background">
@@ -41,10 +56,6 @@ class SideProfile extends React.Component {
         <li><a className="subheader">Subheader</a></li>
         <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
         <li><a className="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
-
-        <div className="side-profile-posts">
-          { posts.reverse() }
-        </div>
       </ul>
     )
   }

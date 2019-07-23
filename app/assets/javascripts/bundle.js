@@ -1972,6 +1972,7 @@ var Root = function Root(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1992,15 +1993,22 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var SideProfile =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(SideProfile, _React$Component);
 
   function SideProfile(props) {
+    var _this;
+
     _classCallCheck(this, SideProfile);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SideProfile).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SideProfile).call(this, props));
+    _this.state = {
+      sideProfileUsername: null
+    };
+    return _this;
   }
 
   _createClass(SideProfile, [{
@@ -2011,11 +2019,12 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var currentUsername = "".concat(this.props.currentUser.username, ".trendr.com");
+
       if (this.props.posts.length === 0) {
         return null;
       }
 
-      ;
       var posts = this.props.posts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, post.title, post.body);
       });
@@ -2024,7 +2033,13 @@ function (_React$Component) {
         className: "sidenav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "side-profile-nav"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "side-name"
+      }, currentUsername), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "full-side-name"
+      }, currentUsername)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "side-profile-posts post-index-item-row"
+      }, posts.reverse()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-view"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "background"
@@ -2052,9 +2067,7 @@ function (_React$Component) {
       }, "Third Link With Waves")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "sidenav-close",
         href: "#!"
-      }, "Clicking this will close Sidenav")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "side-profile-posts"
-      }, posts.reverse()));
+      }, "Clicking this will close Sidenav")));
     }
   }]);
 
