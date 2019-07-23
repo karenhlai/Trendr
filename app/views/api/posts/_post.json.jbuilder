@@ -7,6 +7,7 @@ json.medias do
   end
 end
 
+# author
 json.user do
     json.partial! "api/users/user", user: post.user
 end
