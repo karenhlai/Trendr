@@ -1906,12 +1906,14 @@ function (_React$Component) {
         className: "post-author-icon",
         src: authorAvatar,
         "data-aos": "fade-right"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidenav_side_profile_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidenav_side_profile_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        targetUser: this.props.user
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item",
         "data-aos": "fade-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "post-author-username"
-      }, " Here's a blog: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, authorUsername), " "), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
+      }, " ", "Here's a blog: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, authorUsername), " "), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
     }
   }]);
 
@@ -2063,21 +2065,24 @@ function (_React$Component) {
 
   _createClass(SideProfile, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchPosts();
+    value: function componentDidMount() {// this.props.fetchPosts();
     }
   }, {
     key: "render",
     value: function render() {
-      var currentUsername = "".concat(this.props.currentUser.username, ".trendr.com");
+      var targetUsername = "".concat(this.props.targetUser.username, ".trendr.com"); // debugger
+      // if (this.props.posts.length === 0) {
+      //   return null;
+      // }
+      // let posts = this.props.posts.map( post => {
+      //   return (
+      //     <div>
+      //       { post.title }
+      //       { post.body }
+      //     </div>
+      //   )
+      // });
 
-      if (this.props.posts.length === 0) {
-        return null;
-      }
-
-      var posts = this.props.posts.map(function (post) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, post.title, post.body);
-      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         id: "slide-out",
         className: "sidenav"
@@ -2085,11 +2090,9 @@ function (_React$Component) {
         className: "side-profile-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "side-name"
-      }, currentUsername), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "full-side-name"
-      }, currentUsername)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, targetUsername)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "side-profile-posts post-index-item"
-      }, posts.reverse()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-view"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "background"
@@ -2145,23 +2148,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state) {
-  var currentUser = state.entities.users[state.session.id];
-  var posts = Object.keys(state.entities.posts).map(function (id) {
-    return state.entities.posts[id];
-  });
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var currentUser = state.entities.users[state.session.id]; // const posts = Object.keys(state.entities.posts).map(id => state.entities.posts[id]);
+
+  var targetUser = ownProps.targetUser; // debugger
+
   return {
     currentUser: currentUser,
-    posts: posts
+    // posts,
+    targetUser: targetUser
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    fetchPosts: function fetchPosts() {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPosts"])());
-    } //fetchOwnPosts - match currentUsername, 
-
+  return {// fetchPosts: () => dispatch(fetchPosts()), //fetchOwnPosts - match currentUsername, 
   };
 };
 

@@ -109,7 +109,6 @@ class PostIndexItem extends React.Component {
     const currentUser = this.props.currentUser;
     const authorAvatar = this.props.user.avatarUrl;
     const authorUsername = this.props.user.username;
-
     let postSettings;
     let likeButton;
 
@@ -169,22 +168,26 @@ class PostIndexItem extends React.Component {
       <div className="post-index-item-row">
         {/* sideprofile */}
         <a href="#" data-target="slide-out" className="sidenav-trigger">
-          <img className="post-author-icon" src={authorAvatar} data-aos='fade-right' />
+          <img
+            className="post-author-icon"
+            src={authorAvatar}
+            data-aos="fade-right"
+          />
         </a>
+        <SideProfileContainer targetUser={this.props.user} />
 
-        <SideProfileContainer />
-        
-        <div className="post-index-item" data-aos='fade-left'>
-          <h2 className="post-author-username"> Here's a blog: <b>{authorUsername}</b> </h2>
+        <div className="post-index-item" data-aos="fade-left">
+          <h2 className="post-author-username">
+            {" "}
+            Here's a blog: <b>{authorUsername}</b>{" "}
+          </h2>
 
-          { this.postContent(post) }
-          
-          <ul>
-            { postSettings }
-          </ul>
+          {this.postContent(post)}
+
+          <ul>{postSettings}</ul>
         </div>
       </div>
-    )
+    );
   }
 };
 

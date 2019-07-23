@@ -10,36 +10,37 @@ class SideProfile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts();
+    // this.props.fetchPosts();
   }
 
   render() {
-    let currentUsername = `${this.props.currentUser.username}.trendr.com`;
+    let targetUsername = `${this.props.targetUser.username}.trendr.com`;
+    // debugger
 
-    if (this.props.posts.length === 0) {
-      return null;
-    }
+    // if (this.props.posts.length === 0) {
+    //   return null;
+    // }
 
-    let posts = this.props.posts.map( post => {
-      return (
-        <div>
-          { post.title }
-          { post.body }
-        </div>
-      )
-    });
+    // let posts = this.props.posts.map( post => {
+      
+    //   return (
+    //     <div>
+    //       { post.title }
+    //       { post.body }
+    //     </div>
+    //   )
+    // });
 
 
     return (
       <ul id="slide-out" className="sidenav">
         <div className="side-profile-nav">
-          <div className="side-name">{ currentUsername }</div>
-          <div className="full-side-name">{ currentUsername }</div>
+          <div className="side-name">{ targetUsername }</div>
         </div>
 
 
         <div className="side-profile-posts post-index-item">
-          {posts.reverse()}
+          {/* {posts.reverse()} */}
         </div>
 
 
