@@ -110,24 +110,24 @@ class PostIndexItem extends React.Component {
     const authorAvatar = this.props.user.avatarUrl;
     const authorUsername = this.props.user.username;
     let postSettings;
-    let likeButton;
+    
+    let likeButton = this.props.post.likes;
+    if (this.props.postLikes.indexOf(currentUser.id) === -1) {
+      likeButton = (
+        <button onClick={() => this.props.likePost(post.id, currentUser.id)}>
+          <i className="fas fa-heart post-settings"></i>
+        </button>
+      );
+    } else {
+      likeButton = (
+        <button onClick={() => this.props.unlikePost(post.id)}>
+          <i className="fas fa-heart post-settings-unlike"></i>
+          { post.likes }
+        </button>
+      );
+    };
 
-      if (!post.likes.includes(currentUser.id) ) {
-        likeButton = (
-          <button onClick={() => this.props.likePost(post.id, currentUser.id)}>
-            <i className="fas fa-heart post-settings"></i>
-          </button>
-        );
-      } else if (post.likes.includes(currentUser.id)) {
-        likeButton = (
-          <button onClick={() => this.props.unlikePost(post.id)}>
-            <i className="fas fa-heart post-settings-unlike"></i>
-            { post.likes }
-          </button>
-        );
-      }
-  //error once I try to like a post I've already liked, I keep receiving 422 error msg when I try to like posts I haven't yet liked
-  //does not get this error I like posts I haven't liked at all, I can like multiple posts 
+  //error once I try to like a post I've already liked, I keep receiving 422 error msg, and when I try to like posts I haven't yet liked
     //fix reducers to actually remove currnetUser's id
     //fix views to get user_id into array, and not the id of the like 
 

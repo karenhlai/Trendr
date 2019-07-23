@@ -6,13 +6,14 @@ import PostIndexItem from './post_index_item';
 
 const mapStateToProps = (state, ownProps) => {
   const post = ownProps.post;
+  const postLikes = post.post_likes;
   const currentUser = state.entities.users[state.session.id];
   const authorId = ownProps.post ? ownProps.post.author_id : "";
-  // debugger
   return ({
-    post: post,
-    authorId: authorId,
-    currentUser: currentUser,
+    post,
+    postLikes, 
+    authorId,
+    currentUser,
   })
 }
 

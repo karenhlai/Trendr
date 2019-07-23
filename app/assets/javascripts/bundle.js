@@ -1849,9 +1849,9 @@ function (_React$Component) {
       var authorAvatar = this.props.user.avatarUrl;
       var authorUsername = this.props.user.username;
       var postSettings;
-      var likeButton;
+      var likeButton = this.props.post.likes;
 
-      if (!post.likes.includes(currentUser.id)) {
+      if (this.props.postLikes.indexOf(currentUser.id) === -1) {
         likeButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this5.props.likePost(post.id, currentUser.id);
@@ -1859,7 +1859,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-heart post-settings"
         }));
-      } else if (post.likes.includes(currentUser.id)) {
+      } else {
         likeButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this5.props.unlikePost(post.id);
@@ -1867,12 +1867,12 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-heart post-settings-unlike"
         }), post.likes);
-      } //error once I try to like a post I've already liked, I keep receiving 422 error msg when I try to like posts I haven't yet liked
-      //does not get this error I like posts I haven't liked at all, I can like multiple posts 
+      }
+
+      ; //error once I try to like a post I've already liked, I keep receiving 422 error msg, and when I try to like posts I haven't yet liked
       //fix reducers to actually remove currnetUser's id
       //fix views to get user_id into array, and not the id of the like 
       // debugger
-
 
       if (this.props.currentUser.id === this.props.authorId) {
         postSettings = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1947,11 +1947,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var post = ownProps.post;
+  var postLikes = post.post_likes;
   var currentUser = state.entities.users[state.session.id];
-  var authorId = ownProps.post ? ownProps.post.author_id : ""; // debugger
-
+  var authorId = ownProps.post ? ownProps.post.author_id : "";
   return {
     post: post,
+    postLikes: postLikes,
     authorId: authorId,
     currentUser: currentUser
   };
