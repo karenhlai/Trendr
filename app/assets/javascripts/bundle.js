@@ -3450,10 +3450,9 @@ var usersReducer = function usersReducer() {
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_ALL_USERS"]:
       nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, action.users);
       return nextState;
-
-    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_USER"]:
-      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.user.id, action.user));
-      return nextState;
+    // case RECEIVE_USER:
+    //     nextState = merge({}, state, { [action.user.id]: action.user } );
+    //     return nextState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_POSTS"]:
       //receive each user's info for each post (avatar)
