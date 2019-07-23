@@ -343,6 +343,55 @@ var signup = function signup(user) {
 
 /***/ }),
 
+/***/ "./frontend/actions/user_actions.js":
+/*!******************************************!*\
+  !*** ./frontend/actions/user_actions.js ***!
+  \******************************************/
+/*! exports provided: RECEIVE_ALL_USERS, RECEIVE_USER, receiveUser, fetchAllUsers, fetchUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_USERS", function() { return RECEIVE_ALL_USERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER", function() { return RECEIVE_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUser", function() { return receiveUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllUsers", function() { return fetchAllUsers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
+/* harmony import */ var _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/user_api_util */ "./frontend/util/user_api_util.js");
+
+var RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+var RECEIVE_USER = 'RECEIVE_USER';
+
+var receiveAllUsers = function receiveAllUsers(users) {
+  return {
+    type: RECEIVE_ALL_USERS,
+    users: users
+  };
+};
+
+var receiveUser = function receiveUser(user) {
+  return {
+    type: RECEIVE_USER,
+    user: user
+  };
+};
+var fetchAllUsers = function fetchAllUsers() {
+  return function (dispatch) {
+    return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllUsers"]().then(function (users) {
+      return dispatch(receiveAllUsers(users));
+    });
+  };
+};
+var fetchUser = function fetchUser(id) {
+  return function (dispatch) {
+    return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchUser"](id).then(function (user) {
+      return dispatch(receiveUser(user));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/components/App.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/App.jsx ***!
@@ -2111,7 +2160,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchPosts: function fetchPosts() {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPosts"])());
-    } //fetchOwnPosts - match currentUsername
+    } //fetchOwnPosts - match currentUsername, 
 
   };
 };
@@ -3176,11 +3225,9 @@ function modalReducer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
 /* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/like_actions */ "./frontend/actions/like_actions.js");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -3190,7 +3237,7 @@ var postsReducer = function postsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state);
+  var nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state);
 
   switch (action.type) {
     // case RECEIVE_OWN_POSTS:
@@ -3198,12 +3245,12 @@ var postsReducer = function postsReducer() {
     // case RECEIVE_LIKED_POSTS:
     //   return action.payload.posts;
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS"]:
-      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, action.posts);
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, action.posts);
       return nextState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST"]:
       // nextState[action.post.id] = action.post;
-      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.post.id, action.post));
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.post.id, action.post));
       return nextState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_POST"]:
@@ -3381,7 +3428,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -3398,7 +3447,17 @@ var usersReducer = function usersReducer() {
       nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
       return nextState;
 
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_ALL_USERS"]:
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, action.users);
+      return nextState;
+
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_USER"]:
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.user.id, action.user));
+      return nextState;
+
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_POSTS"]:
+      //receive each user's info for each post (avatar)
+      //remove when RECEIVE_ALL_USERS can be used in place
       nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, action.users);
       return nextState;
 
@@ -3529,14 +3588,13 @@ var unlikePost = function unlikePost(postId) {
 /*!****************************************!*\
   !*** ./frontend/util/post_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchPosts, fetchPost, fetchOwnPosts, createPost, updatePost, deletePost */
+/*! exports provided: fetchPosts, fetchPost, createPost, updatePost, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPost", function() { return fetchPost; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchOwnPosts", function() { return fetchOwnPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePost", function() { return updatePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
@@ -3551,13 +3609,13 @@ var fetchPost = function fetchPost(id) {
     method: 'get',
     url: "api/posts/".concat(id)
   });
-};
-var fetchOwnPosts = function fetchOwnPosts(id) {
-  return $.ajax({
-    method: 'get',
-    url: "api/users/".concat(id, "/posts")
-  });
-}; // export const fetchLikedPosts = (id) => {
+}; // export const fetchOwnPosts = (id) => {
+//   return $.ajax({
+//     method: 'get', 
+//     url: `api/users/${id}/posts`
+//   })
+// };
+// export const fetchLikedPosts = (id) => {
 //   return $.ajax({
 //     method: 'get', 
 //     url: `api/users/${id}/likes`
@@ -3696,6 +3754,32 @@ var logout = function logout() {
   return $.ajax({
     method: 'DELETE',
     url: '/api/session'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/user_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/user_api_util.js ***!
+  \****************************************/
+/*! exports provided: fetchUser, fetchAllUsers */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllUsers", function() { return fetchAllUsers; });
+var fetchUser = function fetchUser(id) {
+  return $.ajax({
+    method: 'GET',
+    url: "api/users/".concat(id)
+  });
+};
+var fetchAllUsers = function fetchAllUsers() {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/users'
   });
 };
 

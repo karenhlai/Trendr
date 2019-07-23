@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchPosts: () => dispatch(fetchPosts()), //fetchOwnPosts - match currentUsername
+  fetchPosts: () => dispatch(fetchPosts()), //fetchOwnPosts - match currentUsername, 
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideProfile);

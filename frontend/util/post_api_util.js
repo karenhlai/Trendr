@@ -12,12 +12,12 @@ export const fetchPost = (id) => {
   })
 };
 
-export const fetchOwnPosts = (id) => {
-  return $.ajax({
-    method: 'get', 
-    url: `api/users/${id}/posts`
-  })
-};
+// export const fetchOwnPosts = (id) => {
+//   return $.ajax({
+//     method: 'get', 
+//     url: `api/users/${id}/posts`
+//   })
+// };
 
 // export const fetchLikedPosts = (id) => {
 //   return $.ajax({
