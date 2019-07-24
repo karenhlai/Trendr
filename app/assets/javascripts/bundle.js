@@ -764,13 +764,23 @@ function (_React$Component) {
         href: "/"
       }, "t"), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
-      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://assets.tumblr.com/images/tab_switching_dashboard_active.png?1"
+      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fas fa-home"
+      })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fas fa-user"
+      })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fas fa-pencil-alt"
       })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.logout();
         }
-      }, "Logout"));
+      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fas fa-sign-out-alt"
+      })));
     }
   }]);
 

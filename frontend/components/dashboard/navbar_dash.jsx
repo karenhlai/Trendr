@@ -11,12 +11,22 @@ class NavbarDash extends React.Component {
     return (
       <nav id="navbar-dash">
         <a href="/">t</a>
-        {/* SearchBar goes here */}
+
         <a href="/">
-          <img src="https://assets.tumblr.com/images/tab_switching_dashboard_active.png?1" />
+          <i class="fas fa-home" />
         </a>
 
-        <button onClick={() => this.props.logout()}>Logout</button>
+        <a href="/">
+          <i class="fas fa-user" />
+        </a>
+
+        <a href="/">
+          <i class="fas fa-pencil-alt" />
+        </a>
+
+        <button onClick={() => this.props.logout()}>
+          <i class="fas fa-sign-out-alt" />
+        </button>
       </nav>
     );
   }
