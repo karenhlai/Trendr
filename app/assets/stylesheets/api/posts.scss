@@ -8,30 +8,21 @@
 #navbar-dash {
   position: sticky !important;
   top: 0;
-  background:  #001935;
-  border-bottom: 0.3px solid hsla(0,0%,100%,.65);
+  background: #001935;
+  border-bottom: 0.3px solid hsla(0, 0%, 100%, .65);
   z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-//CREDIT: unwrapping.tumblr.com
-#navbar-dash a {
+.navbar-left-container > a {
+  padding-left: 50px;
   font-family: 'Bookman Old Style';
   font-weight: bolder;
   font-size: 55px;
   line-height: 50px;
   margin: 0px 15px 0px 15px;
-}
-
-.navbar-right-container > button {
-  margin: 20px 15px 0px 12px;
-  z-index: 10;
-}
-
-.navbar-left-container {
-  padding-left: 50px;
 }
 
 .navbar-right-container {
@@ -41,8 +32,16 @@
   padding-right: 50px;
 }
 
-.navbar-right-container > li{
+.navbar-right-container > li > a > i {
   display: inline-block;
+  padding: 0px 20px 0px 20px;
+  color: lightgray;
+}
+
+.navbar-right-container > li > button {
+  display: inline-block;
+  padding: 0px 20px 0px 20px;
+  color: lightgray;
 }
 
 .dashboard-main {
@@ -63,7 +62,6 @@
   background: white;
   height: 100px;  
 }
-
 
 .modal-create-bar button {
   height: 100%;
