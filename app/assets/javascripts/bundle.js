@@ -692,7 +692,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // map currentUser for side nav profile information
   //make avatar clickable
   return {};
 };
@@ -721,6 +720,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var React__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! React */ "./node_modules/React/index.js");
 /* harmony import */ var React__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(React__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -742,6 +742,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
  // import dashboard_home_icon from '../../../app/assets/images/dashboard_home.png';
 
+
+
 var NavbarDash =
 /*#__PURE__*/
 function (_React$Component) {
@@ -760,27 +762,31 @@ function (_React$Component) {
 
       return React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         id: "navbar-dash"
+      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "navbar-left-container"
       }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
-      }, "t"), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "t")), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "navbar-right-container"
+      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-home"
-      })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "fas fa-home"
+      }))), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-user"
-      })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "fas fa-user"
+      }))), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-pencil-alt"
-      })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "fas fa-pencil-alt"
+      }))), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.logout();
         }
       }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-sign-out-alt"
-      })));
+        className: "fas fa-sign-out-alt"
+      })))));
     }
   }]);
 
@@ -50030,7 +50036,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -6,12 +6,14 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 #navbar-dash {
-  
+  position: sticky !important;
+  top: 0;
   background:  #001935;
   border-bottom: 0.3px solid hsla(0,0%,100%,.65);
-  padding-left: 225px;
-  padding-top: 12px; 
-  // padding-bottom: 5px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 //CREDIT: unwrapping.tumblr.com
@@ -19,12 +21,28 @@
   font-family: 'Bookman Old Style';
   font-weight: bolder;
   font-size: 55px;
+  line-height: 50px;
+  margin: 0px 15px 0px 15px;
 }
 
-#navbar-dash i button {
-  padding: 5px 5px 5px 5px;
-  color: lightgrey;
-  font-size: 25px;
+.navbar-right-container > button {
+  margin: 20px 15px 0px 12px;
+  z-index: 10;
+}
+
+.navbar-left-container {
+  padding-left: 50px;
+}
+
+.navbar-right-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-right: 50px;
+}
+
+.navbar-right-container > li{
+  display: inline-block;
 }
 
 .dashboard-main {
@@ -65,7 +83,7 @@
 }
 
 .modal-child {
-  margin: 115px 0px 0px 500px;
+  margin: 108px 0px 0px 500px;
   width: 500px;
   background: white;
   border-radius: 5px;

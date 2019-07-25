@@ -3,10 +3,8 @@ import { logout } from '../../actions/session_actions';
 import Dashboard from './dashboard';
 
 const mapStateToProps = state => {
-  // map currentUser for side nav profile information
   //make avatar clickable
   return ({
-    
   });
 };
 
