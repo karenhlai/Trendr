@@ -883,8 +883,9 @@ function PostFormModal(_ref) {
       break;
 
     case 'Edit Text':
+      debugger;
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        postId: modal.id
+        postId: modal.postId
       });
       break;
 
@@ -905,7 +906,8 @@ function PostFormModal(_ref) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
@@ -1128,13 +1130,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  debugger;
   var currentUser = state.entities.users[state.session.id];
   var postId = ownProps.postId;
   var posts = state.entities.posts;
   var post = posts[postId];
   return {
     currentUser: currentUser,
+    postId: postId,
     post: post,
     formType: "Edit Text"
   };
@@ -1912,15 +1914,15 @@ function (_React$Component) {
       }
     }
   }, {
-    key: "postSetting",
-    value: function postSetting(post) {
+    key: "postEditOptions",
+    value: function postEditOptions(post) {
       var _this4 = this;
 
       switch (post.content) {
         case 'text':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Text', post.id);
+              return _this4.props.openModal('Edit Text', _this4.props.post.id);
             }
           }, "Edit");
 
@@ -1993,7 +1995,7 @@ function (_React$Component) {
           ref: function ref(element) {
             _this5.dropdownSettings = element;
           }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.postSetting(post)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.postEditOptions(post)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this5.props.deletePost(post.id);
           }

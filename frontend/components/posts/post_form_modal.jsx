@@ -29,7 +29,8 @@ function PostFormModal({ modal, closeModal }) {
       component = <CreateLinkContainer />;
       break;
     case 'Edit Text':
-      component = <EditTextContainer postId={modal.id} />;
+      debugger
+      component = <EditTextContainer postId={modal.postId} />;
       break;
     default:
       return null;
@@ -47,6 +48,7 @@ function PostFormModal({ modal, closeModal }) {
 const mapStateToProps = state => {
   return {
     modal: state.ui.modal,
+    currentUser: state.entities.users[state.session.id],
   };
 };
 

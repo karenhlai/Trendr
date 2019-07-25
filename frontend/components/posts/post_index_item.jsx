@@ -83,11 +83,11 @@ class PostIndexItem extends React.Component {
     }
   }
 
-  postSetting(post) {
+  postEditOptions(post) {
     switch (post.content) {
       case 'text':
         return (
-          <button onClick={() => this.props.openModal('Edit Text', post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
         )
       case 'photo':
         return (
@@ -146,7 +146,7 @@ class PostIndexItem extends React.Component {
                 //check if origin of out click event is from an element that the dropdown menu contains
                 //reference to the dropdown menu, ref property to get a reference to the DOM element
               <li className="post-settings" ref={(element) => { this.dropdownSettings = element }}>
-                  <ul>{this.postSetting(post)}</ul>
+                  <ul>{this.postEditOptions(post)}</ul>
                   <ul><button onClick={() => this.props.deletePost(post.id)}>Delete</button></ul>
               </li>
                 ) : (

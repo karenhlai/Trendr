@@ -5,14 +5,14 @@ import { closeModal } from '../../../actions/modal_actions';
 import TextForm from './text_form';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   const currentUser = state.entities.users[state.session.id];
   const postId = ownProps.postId;
   const posts = state.entities.posts;
   const post = posts[postId];
   return ({
-    currentUser: currentUser,
-    post: post,
+    currentUser,
+    postId,
+    post,
     formType: "Edit Text",
   })
 };

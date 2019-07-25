@@ -24,6 +24,7 @@ class Dashboard extends React.Component {
               </a>
             </li>
             <li>
+              {/* open currentSessionUser sideNav here */}
               <a href="/">
                 <i className="fas fa-user" />
               </a>
