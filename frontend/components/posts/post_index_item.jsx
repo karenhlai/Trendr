@@ -14,10 +14,6 @@ class PostIndexItem extends React.Component {
 
   componentDidMount() {
     M.AutoInit();
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   let elem = document.querySelectorAll('.sidenav');
-    //   let instances = M.Sidenav.init(elems, options);
-    // });
   };
 
   openPostMenu(e) {
@@ -30,11 +26,11 @@ class PostIndexItem extends React.Component {
   //check if the origin of the event was from within the menu itself 
   //-- only if it isn't do we set state and remove the event handler from document
   closePostMenu(e) {
-    // if (!this.dropdownSettings.contains(e.target)) {
+    if (!this.dropdownSettings.contains(e.target)) {
       this.setState({ displayPostSettings: false }, () => {
         document.removeEventListener('click', this.closePostMenu )
       });
-    // } 
+    } 
   }
 
   postContent(post) {

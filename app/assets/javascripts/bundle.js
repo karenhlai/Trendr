@@ -1900,10 +1900,7 @@ function (_React$Component) {
   _createClass(PostIndexItem, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1___default.a.AutoInit(); // document.addEventListener('DOMContentLoaded', () => {
-      //   let elem = document.querySelectorAll('.sidenav');
-      //   let instances = M.Sidenav.init(elems, options);
-      // });
+      materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1___default.a.AutoInit();
     }
   }, {
     key: "openPostMenu",
@@ -1924,12 +1921,13 @@ function (_React$Component) {
     value: function closePostMenu(e) {
       var _this3 = this;
 
-      // if (!this.dropdownSettings.contains(e.target)) {
-      this.setState({
-        displayPostSettings: false
-      }, function () {
-        document.removeEventListener('click', _this3.closePostMenu);
-      }); // } 
+      if (!this.dropdownSettings.contains(e.target)) {
+        this.setState({
+          displayPostSettings: false
+        }, function () {
+          document.removeEventListener('click', _this3.closePostMenu);
+        });
+      }
     }
   }, {
     key: "postContent",
