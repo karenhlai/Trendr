@@ -15,28 +15,32 @@ class NavbarDash extends React.Component {
           <a href="/">t</a>
         </section>
 
-          <ul className="navbar-right-container">
-            <li>
-              <a href="/">
-                <i className="fas fa-home" />
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <i className="fas fa-user" />
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <i className="fas fa-pencil-alt" />
-              </a>
-            </li>
-            <li>
-              <button onClick={ () => this.props.logout() }>
-                <i className="fas fa-sign-out-alt" />
-              </button>
-            </li>
-          </ul>
+
+
+
+        <ul className="navbar-right-container">
+          <li>
+            <a href="/">
+              <i className="fas fa-home" />
+            </a>
+          </li>
+          <li>
+            {/* open currentSessionUser sideNav here */}
+            <a href="/">
+              <i className="fas fa-user" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i className="fas fa-pencil-alt" />
+            </a>
+          </li>
+          <li>
+            <button onClick={() => this.props.logout()}>
+              <i className="fas fa-sign-out-alt" />
+            </button>
+          </li>
+        </ul>
       </nav>
     );
   }

@@ -5,6 +5,7 @@ import LandingPage from './splash_page/landing_page';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import SplashPage from './splash_page/splash_page';
 import DashboardContainer from './dashboard/dashboard_container';
+import Dashboard from './dashboard/dashboard';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PostFormModal from '../components/posts/post_form_modal';
 import AOS from 'aos';
@@ -27,7 +28,7 @@ class App extends React.Component {
       </header>
       
       <Switch>
-        <ProtectedRoute path="/posts" component={DashboardContainer} />
+        <ProtectedRoute path="/posts" component={Dashboard} />
         <Route path="/" component={SplashPage} /> 
       </Switch>
     </div>

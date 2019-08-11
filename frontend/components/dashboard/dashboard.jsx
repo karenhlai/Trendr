@@ -12,35 +12,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <nav id="navbar-dash">
-          <section className="navbar-left-container">
-            <a href="/">t</a>
-          </section>
-
-          <ul className="navbar-right-container">
-            <li>
-              <a href="/">
-                <i className="fas fa-home" />
-              </a>
-            </li>
-            <li>
-              {/* open currentSessionUser sideNav here */}
-              <a href="/">
-                <i className="fas fa-user" />
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <i className="fas fa-pencil-alt" />
-              </a>
-            </li>
-            <li>
-              <button onClick={() => this.props.logout()}>
-                <i className="fas fa-sign-out-alt" />
-              </button>
-            </li>
-          </ul>
-        </nav>
+        <NavbarDash />
 
         <div className="dashboard-main">
           <CreateBar />

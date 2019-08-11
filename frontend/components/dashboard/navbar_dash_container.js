@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Dashboard from './dashboard';
+import { openModal } from '../../actions/modal_actions';
+import NavbarDash from './navbar_dash';
 
 const mapStateToProps = state => {
-  //make avatar clickable
   return ({
   });
 };
 
 const mapDispatchToProps = dispatch => ({
+  openModal: (altCreatePost) => dispatch(openModal(alCreatePost)),
   logout: () => dispatch(logout()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarDash);
 
