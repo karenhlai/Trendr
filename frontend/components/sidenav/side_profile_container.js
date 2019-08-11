@@ -6,7 +6,6 @@ const mapStateToProps = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   // const posts = Object.keys(state.entities.posts).map(id => state.entities.posts[id]);
   const targetUser = ownProps.targetUser;
-  // debugger
   return ({
     currentUser, 
     // posts,

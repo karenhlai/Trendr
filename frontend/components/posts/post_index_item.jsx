@@ -1,5 +1,6 @@
 import React from 'react';
 import M from 'materialize-css/dist/js/materialize.js';
+import SideProfile from '../sidenav/side_profile';
 import SideProfileContainer from '../sidenav/side_profile_container';
 
 class PostIndexItem extends React.Component {
@@ -100,6 +101,7 @@ class PostIndexItem extends React.Component {
     }
   }
 
+
   render() {
     const post = this.props.post;
     const currentUser = this.props.currentUser;
@@ -153,10 +155,10 @@ class PostIndexItem extends React.Component {
         </div>
       )
     };
-
     return (
       <div className="post-index-item-row">
         {/* sideprofile */}
+        <SideProfile targetUser={post.user} />
         <a href="#" data-target="slide-out" className="sidenav-trigger">
           <img
             className="post-author-icon"
@@ -164,18 +166,17 @@ class PostIndexItem extends React.Component {
             data-aos="fade-right"
           />
         </a>
-        <SideProfileContainer targetUser={this.props.user} />
 
         <div className="post-index-item" data-aos="fade-left">
           <h2 className="post-author-username">
-            {" "}
-            Here's a blog: <b>{authorUsername}</b>{" "}
+            Here's a blog: <b>{authorUsername}</b>
+            {/* use "here's a blog" for user that you're not following */}
           </h2>
-
           {this.postContent(post)}
 
           <ul>{postSettings}</ul>
         </div>
+        
       </div>
     );
   }

@@ -1855,7 +1855,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! materialize-css/dist/js/materialize.js */ "./node_modules/materialize-css/dist/js/materialize.js");
 /* harmony import */ var materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(materialize_css_dist_js_materialize_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _sidenav_side_profile_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sidenav/side_profile_container */ "./frontend/components/sidenav/side_profile_container.js");
+/* harmony import */ var _sidenav_side_profile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sidenav/side_profile */ "./frontend/components/sidenav/side_profile.jsx");
+/* harmony import */ var _sidenav_side_profile_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../sidenav/side_profile_container */ "./frontend/components/sidenav/side_profile_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1873,6 +1874,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -2064,7 +2066,9 @@ function (_React$Component) {
       ;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item-row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidenav_side_profile__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        targetUser: post.user
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#",
         "data-target": "slide-out",
         className: "sidenav-trigger"
@@ -2072,14 +2076,12 @@ function (_React$Component) {
         className: "post-author-icon",
         src: authorAvatar,
         "data-aos": "fade-right"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidenav_side_profile_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        targetUser: this.props.user
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item",
         "data-aos": "fade-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "post-author-username"
-      }, " ", "Here's a blog: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, authorUsername), " "), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
+      }, "Here's a blog: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, authorUsername)), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
     }
   }]);
 
@@ -2191,110 +2193,89 @@ var Root = function Root(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// class SideProfile extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { 
+//       sideProfileUsername: null,
+//     };
+//   }
+//   componentDidMount() {
+//     // this.props.fetchPosts();
+//   }
+//   render() {
+//     let targetUsername = `${this.props.targetUser.username}.trendr.com`;
+//     // debugger
+//     return (
+// <ul id="slide-out" className="sidenav">
+//   <div className="side-profile-nav">
+//     <div className="side-name">{ targetUsername }</div>
+//   </div>
+//   <div className="side-profile-posts post-index-item">
+//     {/* {posts.reverse()} */}
+//   </div>
+//   <li><div className="user-view">
+//     <div className="background">
+//     </div>
+//     <a href="#name"><span className="white-text name">John Doe</span></a>
+//     <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
+//   </div></li>
+//   <li><a href="#!"><i className="material-icons">cloud</i>First Link With Icon</a></li>
+//   <li><a href="#!">Second Link</a></li>
+//   <li><div className="divider"></div></li>
+//   <li><a className="subheader">Subheader</a></li>
+//   <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
+//   <li><a className="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
+// </ul>
+//     )
+//   }
+// };
+// export default SideProfile;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+var SideProfile = function SideProfile(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    id: "slide-out",
+    className: "sidenav"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "side-profile-nav"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "side-name"
+  }, props.targetUser.user)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "side-profile-posts post-index-item"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "user-view"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "background"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#name"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "white-text name"
+  }, props.targetUser.email)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#email"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "white-text email"
+  }, "jdandturk@gmail.com")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#!"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "material-icons"
+  }, "cloud"), "First Link With Icon")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#!"
+  }, "Second Link")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "divider"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "subheader"
+  }, "Subheader")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "waves-effect",
+    href: "#!"
+  }, "Third Link With Waves")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "sidenav-close",
+    href: "#!"
+  }, "Clicking this will close Sidenav")));
+};
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var SideProfile =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(SideProfile, _React$Component);
-
-  function SideProfile(props) {
-    var _this;
-
-    _classCallCheck(this, SideProfile);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SideProfile).call(this, props));
-    _this.state = {
-      sideProfileUsername: null
-    };
-    return _this;
-  }
-
-  _createClass(SideProfile, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {// this.props.fetchPosts();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var targetUsername = "".concat(this.props.targetUser.username, ".trendr.com"); // debugger
-      // if (this.props.posts.length === 0) {
-      //   return null;
-      // }
-      // let posts = this.props.posts.map( post => {
-      //   return (
-      //     <div>
-      //       { post.title }
-      //       { post.body }
-      //     </div>
-      //   )
-      // });
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        id: "slide-out",
-        className: "sidenav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "side-profile-nav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "side-name"
-      }, targetUsername)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "side-profile-posts post-index-item"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-view"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "background"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#name"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "white-text name"
-      }, "John Doe")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#email"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "white-text email"
-      }, "jdandturk@gmail.com")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#!"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "material-icons"
-      }, "cloud"), "First Link With Icon")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#!"
-      }, "Second Link")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "divider"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "subheader"
-      }, "Subheader")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "waves-effect",
-        href: "#!"
-      }, "Third Link With Waves")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "sidenav-close",
-        href: "#!"
-      }, "Clicking this will close Sidenav")));
-    }
-  }]);
-
-  return SideProfile;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-;
 /* harmony default export */ __webpack_exports__["default"] = (SideProfile);
 
 /***/ }),
@@ -2318,8 +2299,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   var currentUser = state.entities.users[state.session.id]; // const posts = Object.keys(state.entities.posts).map(id => state.entities.posts[id]);
 
-  var targetUser = ownProps.targetUser; // debugger
-
+  var targetUser = ownProps.targetUser;
   return {
     currentUser: currentUser,
     // posts,
