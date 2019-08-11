@@ -29,7 +29,6 @@ function PostFormModal({ modal, closeModal }) {
       component = <CreateLinkContainer />;
       break;
     case 'Edit Text':
-      debugger
       component = <EditTextContainer postId={modal.postId} />;
       break;
     default:

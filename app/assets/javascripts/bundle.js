@@ -884,7 +884,6 @@ function PostFormModal(_ref) {
       break;
 
     case 'Edit Text':
-      debugger;
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
         postId: modal.postId
       });
@@ -3315,7 +3314,6 @@ function modalReducer() {
 
   switch (action.type) {
     case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_MODAL"]:
-      // return action.modal;
       return {
         modal: action.modal,
         postId: action.postId
