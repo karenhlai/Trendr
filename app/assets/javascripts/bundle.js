@@ -1163,7 +1163,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["deletePost"])(id));
     },
     closeModal: function closeModal() {
-      return dispatch(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"]);
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     }
   };
 };
@@ -1212,7 +1212,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["deletePost"])(id));
     },
     closeModal: function closeModal() {
-      return dispatch(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"]);
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
     }
   };
 };

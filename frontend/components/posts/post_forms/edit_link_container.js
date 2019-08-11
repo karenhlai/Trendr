@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     action: (post) => dispatch(updatePost(post)),
     deletePost: (id) => dispatch(deletePost(id)),
-    closeModal: () => dispatch(closeModal),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 
