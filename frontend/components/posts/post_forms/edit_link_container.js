@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { updatePost, deletePost } from '../../../actions/post_actions';
 import { closeModal } from '../../../actions/modal_actions';
-import TextForm from './text_form';
+import LinkForm from './text_form';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser,
     postId,
     post,
-    formType: "Edit Text",
+    formType: "Edit Link",
   })
 };
 
@@ -24,4 +24,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TextForm);
+export default connect(mapStateToProps, mapDispatchToProps)(LinkForm);

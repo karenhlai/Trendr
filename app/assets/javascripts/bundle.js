@@ -845,6 +845,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_forms_create_link_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./post_forms/create_link_container */ "./frontend/components/posts/post_forms/create_link_container.js");
 /* harmony import */ var _post_forms_create_photo_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./post_forms/create_photo_container */ "./frontend/components/posts/post_forms/create_photo_container.js");
 /* harmony import */ var _post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./post_forms/edit_text_container */ "./frontend/components/posts/post_forms/edit_text_container.js");
+/* harmony import */ var _post_forms_edit_quote_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./post_forms/edit_quote_container */ "./frontend/components/posts/post_forms/edit_quote_container.js");
+
 
 
 
@@ -885,6 +887,18 @@ function PostFormModal(_ref) {
 
     case 'Edit Text':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        postId: modal.postId
+      });
+      break;
+
+    case 'Edit Quote':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_quote_container__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        postId: modal.postId
+      });
+      break;
+
+    case 'Edit Link':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(EditLinkContainer, {
         postId: modal.postId
       });
       break;
@@ -1109,6 +1123,55 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/posts/post_forms/edit_quote_container.js":
+/*!**********************************************************************!*\
+  !*** ./frontend/components/posts/post_forms/edit_quote_container.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _text_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./text_form */ "./frontend/components/posts/post_forms/text_form.jsx");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var currentUser = state.entities.users[state.session.id];
+  var postId = ownProps.postId;
+  var posts = state.entities.posts;
+  var post = posts[postId];
+  return {
+    currentUser: currentUser,
+    postId: postId,
+    post: post,
+    formType: "Edit Quote"
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    action: function action(post) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["updatePost"])(post));
+    },
+    deletePost: function deletePost(id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["deletePost"])(id));
+    },
+    closeModal: function closeModal() {
+      return dispatch(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"]);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/posts/post_forms/edit_text_container.js":
 /*!*********************************************************************!*\
   !*** ./frontend/components/posts/post_forms/edit_text_container.js ***!
@@ -1119,11 +1182,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/post_actions */ "./frontend/actions/post_actions.js");
-/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-/* harmony import */ var _text_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./text_form */ "./frontend/components/posts/post_forms/text_form.jsx");
-
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _text_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./text_form */ "./frontend/components/posts/post_forms/text_form.jsx");
 
 
 
@@ -1145,18 +1206,18 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     action: function action(post) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["updatePost"])(post));
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["updatePost"])(post));
     },
     deletePost: function deletePost(id) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["deletePost"])(id));
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["deletePost"])(id));
     },
     closeModal: function closeModal() {
-      return dispatch(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"]);
+      return dispatch(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"]);
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 

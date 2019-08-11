@@ -6,6 +6,7 @@ import CreateQuoteContainer from './post_forms/create_quote_container';
 import CreateLinkContainer from './post_forms/create_link_container';
 import CreatePhotoContainer from './post_forms/create_photo_container';
 import EditTextContainer from './post_forms/edit_text_container';
+import EditQuoteContainer from './post_forms/edit_quote_container';
 
 function PostFormModal({ modal, closeModal }) {
   if (!modal) {
@@ -30,6 +31,12 @@ function PostFormModal({ modal, closeModal }) {
       break;
     case 'Edit Text':
       component = <EditTextContainer postId={modal.postId} />;
+      break;
+    case 'Edit Quote':
+      component = <EditQuoteContainer postId={modal.postId} />;
+      break;
+    case 'Edit Link':
+      component = <EditLinkContainer postId={modal.postId} />;
       break;
     default:
       return null;
