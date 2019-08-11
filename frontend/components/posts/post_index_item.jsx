@@ -42,33 +42,33 @@ class PostIndexItem extends React.Component {
     <img className="post-index-item-media" src={this.props.post.medias[0].mediaUrl} /> 
       : null;
     
-    switch (this.props.post.content) {
+    switch (post.content) {
       case 'text':
         return (
           <div>
-            <h2 className="post-index-title">{this.props.post.title}</h2>
-            <p className="post-index-body">{this.props.post.body}</p>
+            <h2 className="post-index-title">{post.title}</h2>
+            <p className="post-index-body">{post.body}</p>
           </div>
         );
       case 'photo':
         return (
           <div>
-            <h2 className="post-index-title">{this.props.post.title}</h2>
+            <h2 className="post-index-title">{post.title}</h2>
             { media }
-            <p className="post-index-body">{this.props.post.body}</p>
+            <p className="post-index-body">{post.body}</p>
           </div>
         );
       case 'quote':
         return (
           <div>
-            <h2 className="post-index-title">"{this.props.post.title}"</h2>
-            <p className="post-index-body">- {this.props.post.body}</p>
+            <h2 className="post-index-title">"{post.title}"</h2>
+            <p className="post-index-body">- {post.body}</p>
           </div>
         );
       case 'link':
         let linkStr;
         // if (this.props.post.title.includes("https://")) {
-          linkStr = this.props.post.title;
+          linkStr = post.title;
         // } else {
           // linkStr = `http://${this.props.post.title}`;
         // }
@@ -87,19 +87,19 @@ class PostIndexItem extends React.Component {
     switch (post.content) {
       case 'text':
         return (
-          <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Text', post.id)}>Edit</button>
         )
       case 'photo':
         return (
-          <button onClick={() => this.props.openModal('Edit Photo', this.props.post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Photo', post.id)}>Edit</button>
         )
       case 'quote':
         return (
-          <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Text', post.id)}>Edit</button>
         )
       case 'link':
         return (
-          <button onClick={() => this.props.openModal('Edit Text', this.props.post.id)}>Edit</button>
+          <button onClick={() => this.props.openModal('Edit Text', post.id)}>Edit</button>
         )
     }
   }

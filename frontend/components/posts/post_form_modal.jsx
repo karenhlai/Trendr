@@ -15,7 +15,7 @@ function PostFormModal({ modal, closeModal }) {
   // console.log(modal.post.id);
 
   let component;
-  switch (modal) {
+  switch (modal.modal) {
     case 'Create Text':
       component = <CreateTextContainer />;
       break;

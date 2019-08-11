@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TextForm));
+export default connect(mapStateToProps, mapDispatchToProps)(TextForm);

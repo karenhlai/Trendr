@@ -8,6 +8,7 @@ class TextForm extends React.Component {
 
     // this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.update = this.update.bind(this);
   }
 
 // handleChange(e) {
@@ -41,6 +42,6 @@ class TextForm extends React.Component {
   }
 };
 
-export default withRouter(TextForm);
+export default TextForm;
 
 

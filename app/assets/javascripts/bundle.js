@@ -153,10 +153,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
 var OPEN_MODAL = 'OPEN_MODAL';
 var CLOSE_MODAL = 'CLOSE_MODAL';
-var openModal = function openModal(modal) {
+var openModal = function openModal(modal, postId) {
   return {
     type: OPEN_MODAL,
-    modal: modal
+    modal: modal,
+    postId: postId
   };
 };
 var closeModal = function closeModal() {
@@ -865,7 +866,7 @@ function PostFormModal(_ref) {
 
   var component;
 
-  switch (modal) {
+  switch (modal.modal) {
     case 'Create Text':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_create_text_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
       break;
@@ -1156,7 +1157,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_4__["default"])));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_text_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 
@@ -1580,7 +1581,8 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TextForm).call(this, props));
     _this.state = _this.props.post; // this.handleChange = this.handleChange.bind(this);
 
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this)); // this.update = this.update.bind(this);
+
     return _this;
   } // handleChange(e) {
   //   this.setState({
@@ -1641,7 +1643,7 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 ;
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(TextForm));
+/* harmony default export */ __webpack_exports__["default"] = (TextForm);
 
 /***/ }),
 
@@ -1877,32 +1879,32 @@ function (_React$Component) {
         src: this.props.post.medias[0].mediaUrl
       }) : null;
 
-      switch (this.props.post.content) {
+      switch (post.content) {
         case 'text':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
             className: "post-index-title"
-          }, this.props.post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          }, post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "post-index-body"
-          }, this.props.post.body));
+          }, post.body));
 
         case 'photo':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
             className: "post-index-title"
-          }, this.props.post.title), media, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          }, post.title), media, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "post-index-body"
-          }, this.props.post.body));
+          }, post.body));
 
         case 'quote':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
             className: "post-index-title"
-          }, "\"", this.props.post.title, "\""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          }, "\"", post.title, "\""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "post-index-body"
-          }, "- ", this.props.post.body));
+          }, "- ", post.body));
 
         case 'link':
           var linkStr; // if (this.props.post.title.includes("https://")) {
 
-          linkStr = this.props.post.title; // } else {
+          linkStr = post.title; // } else {
           // linkStr = `http://${this.props.post.title}`;
           // }
 
@@ -1922,28 +1924,28 @@ function (_React$Component) {
         case 'text':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Text', _this4.props.post.id);
+              return _this4.props.openModal('Edit Text', post.id);
             }
           }, "Edit");
 
         case 'photo':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Photo', _this4.props.post.id);
+              return _this4.props.openModal('Edit Photo', post.id);
             }
           }, "Edit");
 
         case 'quote':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Text', _this4.props.post.id);
+              return _this4.props.openModal('Edit Text', post.id);
             }
           }, "Edit");
 
         case 'link':
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             onClick: function onClick() {
-              return _this4.props.openModal('Edit Text', _this4.props.post.id);
+              return _this4.props.openModal('Edit Text', post.id);
             }
           }, "Edit");
       }
@@ -2071,9 +2073,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    updatePost: function updatePost(post) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["updatePost"])(post));
-    },
+    // updatePost: (post) => dispatch(updatePost(post)),
     deletePost: function deletePost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["deletePost"])(id));
     },
@@ -3311,10 +3311,15 @@ __webpack_require__.r(__webpack_exports__);
 function modalReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
   var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
 
   switch (action.type) {
     case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_MODAL"]:
-      return action.modal;
+      // return action.modal;
+      return {
+        modal: action.modal,
+        postId: action.postId
+      };
 
     case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["CLOSE_MODAL"]:
       return null;

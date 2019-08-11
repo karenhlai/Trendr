@@ -34,7 +34,7 @@ class Api::PostsController < ApplicationController
     # @post = Post.where(author_id: current_user.id).find(params[:id])
       
     if @post && @post.update_attributes(post_params)
-      render :show
+      render json: @post
     else
       render json: ['Oops! Unable to edit post!'], status: 422
     end
