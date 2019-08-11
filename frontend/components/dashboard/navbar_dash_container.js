@@ -9,7 +9,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  openModal: (altCreatePost) => dispatch(openModal(alCreatePost)),
+  openModal: (modal) => dispatch(openModal(modal)),
   logout: () => dispatch(logout()),
 });
 

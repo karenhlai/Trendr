@@ -7,6 +7,7 @@ import CreateLinkContainer from './post_forms/create_link_container';
 import CreatePhotoContainer from './post_forms/create_photo_container';
 import EditTextContainer from './post_forms/edit_text_container';
 import EditQuoteContainer from './post_forms/edit_quote_container';
+import AltCreatePost from '../dashboard/alt_create_post';
 
 function PostFormModal({ modal, closeModal }) {
   if (!modal) {
@@ -32,11 +33,18 @@ function PostFormModal({ modal, closeModal }) {
     case 'Edit Text':
       component = <EditTextContainer postId={modal.postId} />;
       break;
+    // case 'Edit Photo':
+    //   component = <EditPhotoContainer postId={modal.postId} />;
+    //   break;
     case 'Edit Quote':
       component = <EditQuoteContainer postId={modal.postId} />;
       break;
     case 'Edit Link':
       component = <EditLinkContainer postId={modal.postId} />;
+      break;
+    case 'AltCreatePost':
+      component = <AltCreatePost /> 
+      //may want an alternate return statement here
       break;
     default:
       return null;

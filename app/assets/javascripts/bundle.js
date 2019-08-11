@@ -482,6 +482,79 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/components/dashboard/alt_create_post.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/dashboard/alt_create_post.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
+
+
+
+var AltCreatePost = function AltCreatePost(_ref) {
+  var openModal = _ref.openModal;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return openModal('Create Text');
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "icon_post_text"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "new_post_label_text"
+  }, "Text"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return openModal('Create Photo');
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "icon_post_photo"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "new_post_label_text"
+  }, "Photo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return openModal('Create Quote');
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "icon_post_quote"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "new_post_label_text"
+  }, "Quote"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return openModal('Create Link');
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "icon_post_link"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "new_post_label_text"
+  }, "Link")))));
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(AltCreatePost));
+
+/***/ }),
+
 /***/ "./frontend/components/dashboard/create_bar.jsx":
 /*!******************************************************!*\
   !*** ./frontend/components/dashboard/create_bar.jsx ***!
@@ -744,11 +817,12 @@ function (_React$Component) {
         href: "/"
       }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-user"
-      }))), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
-      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-pencil-alt"
-      }))), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-pencil-alt",
+        onClick: function onClick() {
+          return _this.props.openModal("AltCreatePost");
+        }
+      })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.logout();
         }
@@ -790,8 +864,8 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    openModal: function openModal(altCreatePost) {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(alCreatePost));
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
     },
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["logout"])());
@@ -822,6 +896,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_forms_create_photo_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./post_forms/create_photo_container */ "./frontend/components/posts/post_forms/create_photo_container.js");
 /* harmony import */ var _post_forms_edit_text_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./post_forms/edit_text_container */ "./frontend/components/posts/post_forms/edit_text_container.js");
 /* harmony import */ var _post_forms_edit_quote_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./post_forms/edit_quote_container */ "./frontend/components/posts/post_forms/edit_quote_container.js");
+/* harmony import */ var _dashboard_alt_create_post__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../dashboard/alt_create_post */ "./frontend/components/dashboard/alt_create_post.jsx");
+
 
 
 
@@ -866,6 +942,9 @@ function PostFormModal(_ref) {
         postId: modal.postId
       });
       break;
+    // case 'Edit Photo':
+    //   component = <EditPhotoContainer postId={modal.postId} />;
+    //   break;
 
     case 'Edit Quote':
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_edit_quote_container__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -877,6 +956,11 @@ function PostFormModal(_ref) {
       component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(EditLinkContainer, {
         postId: modal.postId
       });
+      break;
+
+    case 'AltCreatePost':
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_alt_create_post__WEBPACK_IMPORTED_MODULE_9__["default"], null); //may want an alternate return statement here
+
       break;
 
     default:

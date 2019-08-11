@@ -31,9 +31,9 @@ class NavbarDash extends React.Component {
             </a>
           </li>
           <li>
-            <a href="/">
-              <i className="fas fa-pencil-alt" />
-            </a>
+            {/* <a href="/"> */}
+              <i className="fas fa-pencil-alt" onClick={() => this.props.openModal("AltCreatePost")} />
+            {/* </a> */}
           </li>
           <li>
             <button onClick={() => this.props.logout()}>
