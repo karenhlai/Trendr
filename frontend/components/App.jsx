@@ -4,7 +4,6 @@ import SignupFormContainer from './splash_page/session_form/signup_form_containe
 import LandingPage from './splash_page/landing_page';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import SplashPage from './splash_page/splash_page';
-import DashboardContainer from './dashboard/dashboard_container';
 import Dashboard from './dashboard/dashboard';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PostFormModal from '../components/posts/post_form_modal';

@@ -409,12 +409,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splash_page_landing_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash_page/landing_page */ "./frontend/components/splash_page/landing_page.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _splash_page_splash_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splash_page/splash_page */ "./frontend/components/splash_page/splash_page.jsx");
-/* harmony import */ var _dashboard_dashboard_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dashboard/dashboard_container */ "./frontend/components/dashboard/dashboard_container.js");
-/* harmony import */ var _dashboard_dashboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dashboard/dashboard */ "./frontend/components/dashboard/dashboard.jsx");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _components_posts_post_form_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/posts/post_form_modal */ "./frontend/components/posts/post_form_modal.jsx");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _dashboard_dashboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dashboard/dashboard */ "./frontend/components/dashboard/dashboard.jsx");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _components_posts_post_form_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/posts/post_form_modal */ "./frontend/components/posts/post_form_modal.jsx");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_9__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -444,7 +443,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
 var App =
 /*#__PURE__*/
 function (_React$Component) {
@@ -459,16 +457,16 @@ function (_React$Component) {
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      aos__WEBPACK_IMPORTED_MODULE_10___default.a.init({
+      aos__WEBPACK_IMPORTED_MODULE_9___default.a.init({
         duration: 2000
       });
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_8__["ProtectedRoute"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["ProtectedRoute"], {
         path: "/posts",
-        component: _dashboard_dashboard__WEBPACK_IMPORTED_MODULE_7__["default"]
+        component: _dashboard_dashboard__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
         path: "/",
         component: _splash_page_splash_page__WEBPACK_IMPORTED_MODULE_5__["default"]
@@ -625,7 +623,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _navbar_dash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar_dash */ "./frontend/components/dashboard/navbar_dash.jsx");
+/* harmony import */ var _navbar_dash_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar_dash_container */ "./frontend/components/dashboard/navbar_dash_container.js");
 /* harmony import */ var _create_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./create_bar */ "./frontend/components/dashboard/create_bar.jsx");
 /* harmony import */ var _posts_post_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../posts/post_index_container */ "./frontend/components/posts/post_index_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -665,7 +663,7 @@ function (_React$Component) {
   _createClass(Dashboard, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_dash__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_dash_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_bar__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
     }
@@ -675,17 +673,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);
-
-/***/ }),
-
-/***/ "./frontend/components/dashboard/dashboard_container.js":
-/*!**************************************************************!*\
-  !*** ./frontend/components/dashboard/dashboard_container.js ***!
-  \**************************************************************/
-/*! no exports provided */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/karenlai/Desktop/trendr/frontend/components/dashboard/dashboard_container.js'");
 
 /***/ }),
 
@@ -776,6 +763,43 @@ function (_React$Component) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (NavbarDash);
+
+/***/ }),
+
+/***/ "./frontend/components/dashboard/navbar_dash_container.js":
+/*!****************************************************************!*\
+  !*** ./frontend/components/dashboard/navbar_dash_container.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _navbar_dash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navbar_dash */ "./frontend/components/dashboard/navbar_dash.jsx");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    openModal: function openModal(altCreatePost) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(alCreatePost));
+    },
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["logout"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_navbar_dash__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 

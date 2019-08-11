@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarDash from './navbar_dash';
+import NavbarDashContainer from './navbar_dash_container';
 import CreateBar from './create_bar';
 import PostIndexContainer from '../posts/post_index_container';
 
@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <NavbarDash />
+        <NavbarDashContainer />
 
         <div className="dashboard-main">
           <CreateBar />
