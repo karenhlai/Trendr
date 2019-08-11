@@ -2038,10 +2038,7 @@ function (_React$Component) {
         }));
       }
 
-      ; //error once I try to like a post I've already liked, I keep receiving 422 error msg, and when I try to like posts I haven't yet liked
-      //fix reducers to actually remove currnetUser's id
-      //fix views to get user_id into array, and not the id of the like 
-      // debugger
+      ; // debugger
 
       if (this.props.currentUser.id === this.props.authorId) {
         postSettings = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

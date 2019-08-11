@@ -121,11 +121,6 @@ class PostIndexItem extends React.Component {
         </button>
       );
     };
-
-  //error once I try to like a post I've already liked, I keep receiving 422 error msg, and when I try to like posts I haven't yet liked
-    //fix reducers to actually remove currnetUser's id
-    //fix views to get user_id into array, and not the id of the like 
-
     // debugger
     if (this.props.currentUser.id === this.props.authorId) {
       postSettings = (
