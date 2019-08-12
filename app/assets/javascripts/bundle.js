@@ -824,13 +824,12 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this.props.openModal("AltCreatePost");
         }
-      })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-sign-out-alt",
         onClick: function onClick() {
           return _this.props.logout();
         }
-      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-sign-out-alt"
-      })))));
+      }))));
     }
   }]);
 
