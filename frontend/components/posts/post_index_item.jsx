@@ -1,7 +1,7 @@
 import React from 'react';
 import M from 'materialize-css/dist/js/materialize.js';
-import SideProfile from '../sidenav/side_profile';
 import SideProfileContainer from '../sidenav/side_profile_container';
+// import DefaultAvatar from '../../../app/assets/images/cube_closed.png';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -100,15 +100,21 @@ class PostIndexItem extends React.Component {
         )
     }
   }
-
+  
 
   render() {
     const post = this.props.post;
     const currentUser = this.props.currentUser;
-    const authorAvatar = this.props.user.avatarUrl;
     const authorUsername = this.props.user.username;
+    let authorAvatar;
     let postSettings;
     
+    if (!this.props.user.avatarUrl) {
+      authorAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE";
+    } else {
+      authorAvatar = this.props.user.avatarUrl;
+    };
+
     let likeButton = this.props.post.likes;
     if (this.props.postLikes.indexOf(currentUser.id) === -1) {
       likeButton = (
@@ -155,10 +161,11 @@ class PostIndexItem extends React.Component {
         </div>
       )
     };
+
     return (
       <div className="post-index-item-row">
         {/* sideprofile */}
-        <SideProfile targetUser={post.user} />
+        <SideProfileContainer targetUser={post.user} />
         <a href="#" data-target="slide-out" className="sidenav-trigger">
           <img
             className="post-author-icon"
