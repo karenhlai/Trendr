@@ -32,18 +32,18 @@
   padding-right: 50px;
 }
 
-.navbar-right-container > li > i {
+
+.navbar-right-container > li > i,
+.navbar-right-container > li > a > i {
   display: inline-block;
   padding: 0px 20px 0px 20px;
   color: lightgray;
 }
 
-.navbar-right-container > li > button {
-  display: inline-block;
-  padding: 0px 20px 0px 20px;
-  color: lightgray;
+.navbar-right-container > li > i:hover,
+.navbar-right-container > li > a > i:hover {
+  color: #fff;
 }
-
 
 //account-dropdown
 .account {
@@ -54,25 +54,30 @@
 .account-dropdown-content {
   display: none;
   position: absolute;
-  z-index: 1;
 }
 
 .account:hover .account-dropdown-content {
   display: block;
   background-color: #fff;
+  border-radius: 2px;
   position: relative;
-  top: 0;
+}
+
+.account .account-dropdown-content:hover {
+  background-color: #ddd;
 }
 
 .account-dropdown-content button {
-  display: relative;
+  display: flex;
   color: #444;
   font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.account-dropdown-content button:hover {
-  background-color: #ddd;
-}
+// .account-dropdown-content button:hover {
+//   background-color: #ddd;
+// }
 
 // Alternate Create Post Bar
  .alt-modal-child {
@@ -260,7 +265,7 @@
 
 //create post navbar modal icons 
 //add className to navbar icons later to make just navbar icons float
-i:hover {
+.modal-create-bar i:hover {
   transform: translateY(-2px);
 }
 

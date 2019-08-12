@@ -811,8 +811,8 @@ function (_React$Component) {
         href: "/"
       }, "t")), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "navbar-right-container"
-      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/"
+      }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
       }, React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-home"
       }))), React__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
