@@ -501,39 +501,41 @@ __webpack_require__.r(__webpack_exports__);
 
 var AltCreatePost = function AltCreatePost(_ref) {
   var openModal = _ref.openModal;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "alt-create-bar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return openModal('Create Text');
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "icon_post_text"
+    className: "alt-bar icon_post_text"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "new_post_label_text"
+    className: "alt_new_post_label_text"
   }, "Text"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return openModal('Create Photo');
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "icon_post_photo"
+    className: "alt-bar icon_post_photo"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "new_post_label_text"
+    className: "alt_new_post_label_text"
   }, "Photo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: function onClick() {
-      return openModal('Create Quote');
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "icon_post_quote"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "new_post_label_text"
-  }, "Quote"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return openModal('Create Link');
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "icon_post_link"
+    className: "alt-bar icon_post_link"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "new_post_label_text"
-  }, "Link")))));
+    className: "alt_new_post_label_text"
+  }, "Link"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return openModal('Create Quote');
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "alt-bar icon_post_quote"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "alt_new_post_label_text"
+  }, "Quote")))));
 };
 
 var mapStateToProps = function mapStateToProps(state) {
@@ -959,8 +961,19 @@ function PostFormModal(_ref) {
       break;
 
     case 'AltCreatePost':
-      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_alt_create_post__WEBPACK_IMPORTED_MODULE_9__["default"], null); //may want an alternate return statement here
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_alt_create_post__WEBPACK_IMPORTED_MODULE_9__["default"], null); //may want to create seperate return state to divert from initial modal styling classNames
 
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-background",
+        onClick: function onClick() {
+          return closeModal();
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alt-modal-child",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
+      }, component));
       break;
 
     default:

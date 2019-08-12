@@ -44,7 +44,14 @@ function PostFormModal({ modal, closeModal }) {
       break;
     case 'AltCreatePost':
       component = <AltCreatePost /> 
-      //may want an alternate return statement here
+      //may want to create seperate return state to divert from initial modal styling classNames
+      return (
+        <div className="modal-background" onClick={() => closeModal()}>
+          <div className="alt-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      );
       break;
     default:
       return null;

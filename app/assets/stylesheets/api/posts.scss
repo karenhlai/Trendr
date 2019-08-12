@@ -44,6 +44,54 @@
   color: lightgray;
 }
 
+// Alternate Create Post Bar
+ .alt-modal-child {
+   background-color: transparent;
+ }
+
+.alt-create-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 250px auto;
+}
+
+.alt-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50%;
+  padding: 25px;
+}
+
+.alt-bar.icon_post_text {
+  color: #001935;
+  background-color: whitesmoke;
+  font-size: 65px;
+}
+
+.alt-bar.icon_post_photo {
+  color: #001935;
+  background-color: tomato;
+}
+
+.alt-bar.icon_post_link {
+  color: #001935;
+  background-color: orange;
+}
+
+.alt-bar.icon_post_quote {
+  color: #001935;
+  background-color: lime;
+}
+
+.alt_new_post_label_text {
+  color: #ffffff;
+  font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+  font-size: 18px;
+}
+
 .dashboard-main {
   position: relative;
   top: 0;
@@ -76,7 +124,8 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  // background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 25, 53, 0.95); //credit: using Tumblr bg modal color
   z-index: 10;
 }
 
