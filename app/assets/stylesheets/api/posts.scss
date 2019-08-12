@@ -32,7 +32,7 @@
   padding-right: 50px;
 }
 
-.navbar-right-container > li > a > i {
+.navbar-right-container > li > i {
   display: inline-block;
   padding: 0px 20px 0px 20px;
   color: lightgray;
@@ -42,6 +42,36 @@
   display: inline-block;
   padding: 0px 20px 0px 20px;
   color: lightgray;
+}
+
+
+//account-dropdown
+.account {
+  position: relative;
+  display: inline-block;
+}
+
+.account-dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.account:hover .account-dropdown-content {
+  display: block;
+  background-color: #fff;
+  position: relative;
+  top: 0;
+}
+
+.account-dropdown-content button {
+  display: relative;
+  color: #444;
+  font-size: 18px;
+}
+
+.account-dropdown-content button:hover {
+  background-color: #ddd;
 }
 
 // Alternate Create Post Bar

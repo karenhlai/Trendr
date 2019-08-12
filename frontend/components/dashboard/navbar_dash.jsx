@@ -17,21 +17,18 @@ class NavbarDash extends React.Component {
 
         <ul className="navbar-right-container">
           <li>
-            <a href="/">
+            <Link to="/">
               <i className="fas fa-home" />
-            </a>
+            </Link>
+          </li>
+          <li className="account">
+            <i className="fas fa-user" />
+            <div className="account-dropdown-content">
+                <button onClick={() => this.props.logout()}>Logout</button>
+            </div>
           </li>
           <li>
-            {/* open currentSessionUser sideNav here */}
-            <a href="/">
-              <i className="fas fa-user" />
-            </a>
-          </li>
-          <li>
-              <i className="fas fa-pencil-alt" onClick={() => this.props.openModal("AltCreatePost")} />
-          </li>
-          <li>
-              <i className="fas fa-sign-out-alt" onClick={() => this.props.logout()}/>
+            <i className="fas fa-pencil-alt" onClick={() => this.props.openModal("AltCreatePost")} />
           </li>
         </ul>
       </nav>
