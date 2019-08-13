@@ -38,7 +38,13 @@ class Dashboard extends React.Component {
             <h1>Recommended Blogs</h1>
             { users }
           </div>
+
+
+          <footer>
+            Footer
+          </footer>
         </div>
+
       </div>
     );
   };

@@ -159,6 +159,13 @@
   padding: 50px 0 0 50px;
 }
 
+.dashboard-main > footer {
+  display: flex;
+  flex-direction: column-reverse;
+  // position: sticky;
+  color: lightgrey;
+}
+
 .modal-create-bar {
   margin: 0px 0px 0px 350px;
   width: 540px;
