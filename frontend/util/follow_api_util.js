@@ -1,5 +1,5 @@
 export const fetchFollows = (userId) => {
-  return $.ajaz({
+  return $.ajax({
     method: 'get', 
     url: `api/users/${userId}/follows`
   })
@@ -8,7 +8,7 @@ export const fetchFollows = (userId) => {
 // pass in the userId that current_user wants to follow
 export const follow = (followingId) => {
   return $.ajax({
-    method: 'get', 
+    method: 'post', 
     url: `api/follows`, 
     data: { followingId }
   })

@@ -4,7 +4,8 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      render :show
+      #render :show
+      render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -21,11 +22,13 @@ class Api::UsersController < ApplicationController
   end
 
   def index
+    @users = User.includes(:followings, :followers).all
+    render :index
   end
   
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :avatar)
+    params.require(:user).permit(:username, :email, :password, :avatar, :followings, :followers)
   end
 end

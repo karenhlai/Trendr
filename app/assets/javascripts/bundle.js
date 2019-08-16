@@ -86,6 +86,63 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/follow_actions.js":
+/*!********************************************!*\
+  !*** ./frontend/actions/follow_actions.js ***!
+  \********************************************/
+/*! exports provided: RECEIVE_USER_FOLLOWS, RECEIVE_FOLLOW, REMOVE_FOLLOW, receiveFollow, removeFollow, follow, unfollow */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER_FOLLOWS", function() { return RECEIVE_USER_FOLLOWS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FOLLOW", function() { return RECEIVE_FOLLOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FOLLOW", function() { return REMOVE_FOLLOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveFollow", function() { return receiveFollow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeFollow", function() { return removeFollow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "follow", function() { return follow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unfollow", function() { return unfollow; });
+/* harmony import */ var _util_follow_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/follow_api_util */ "./frontend/util/follow_api_util.js");
+
+var RECEIVE_USER_FOLLOWS = 'RECEIVE_USER_FOLLOWS';
+var RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
+var REMOVE_FOLLOW = 'REMOVE_FOLLOW'; // const receiveUserFollows = (userId, follows) => {
+//   return {
+//     type: RECEIVE_USER_FOLLOWS, 
+//     userId, 
+//     follows
+//   }
+// }; 
+
+var receiveFollow = function receiveFollow(follow) {
+  return {
+    type: RECEIVE_FOLLOW,
+    follow: follow
+  };
+};
+var removeFollow = function removeFollow(follow) {
+  return {
+    type: REMOVE_FOLLOW,
+    follow: follow
+  };
+};
+var follow = function follow(followingId) {
+  return function (dispatch) {
+    return _util_follow_api_util__WEBPACK_IMPORTED_MODULE_0__["follow"](followingId).then(function (follow) {
+      return dispatch(receiveFollow(follow));
+    });
+  };
+};
+var unfollow = function unfollow(followingId) {
+  return function (dispatch) {
+    return _util_follow_api_util__WEBPACK_IMPORTED_MODULE_0__["unfollow"](followingId).then(function (follow) {
+      return dispatch(removeFollow(follow));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/like_actions.js":
 /*!******************************************!*\
   !*** ./frontend/actions/like_actions.js ***!
@@ -313,8 +370,7 @@ var removeSessionErrors = function removeSessionErrors() {
     type: REMOVE_SESSION_ERRORS,
     errors: []
   };
-}; // clear errors?
-//thunk actions
+}; //thunk actions
 
 var login = function login(user) {
   return function (dispatch) {
@@ -327,7 +383,7 @@ var login = function login(user) {
 };
 var logout = function logout() {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function () {
       return dispatch(logoutCurrentUser());
     });
   };
@@ -700,9 +756,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
-/* harmony import */ var _navbar_dash_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navbar_dash_container */ "./frontend/components/dashboard/navbar_dash_container.js");
-/* harmony import */ var _create_bar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./create_bar */ "./frontend/components/dashboard/create_bar.jsx");
-/* harmony import */ var _posts_post_index_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../posts/post_index_container */ "./frontend/components/posts/post_index_container.jsx");
+/* harmony import */ var _actions_follow_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/follow_actions */ "./frontend/actions/follow_actions.js");
+/* harmony import */ var _navbar_dash_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./navbar_dash_container */ "./frontend/components/dashboard/navbar_dash_container.js");
+/* harmony import */ var _create_bar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./create_bar */ "./frontend/components/dashboard/create_bar.jsx");
+/* harmony import */ var _posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../posts/post_index_container */ "./frontend/components/posts/post_index_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -720,6 +777,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -746,18 +804,33 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var users = this.props.users.map(function (user) {
+      var _this = this;
+
+      var currentUser = this.props.currentUser;
+      var recommended = this.props.users.map(function (user) {
+        // let userAvatar;
+        // if (!currentUser.followings.includes(currentUser.id)) {
+        // userAvatar = <div>You shouldn't be able to see this!</div> 
+        // userAvatar = <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE" />;
+        // }
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: user.id
-        }, user.username);
-      });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_dash_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this.props.follow(user.id);
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "follow-plus fas fa-plus-square"
+        })));
+      }); // debugger
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_dash_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main-left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_bar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_bar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main-right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Recommended Blogs"), users), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, "Footer")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Recommended Blogs"), recommended), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, "Footer")));
     }
   }]);
 
@@ -778,6 +851,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchAllUsers: function fetchAllUsers() {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAllUsers"])());
+    },
+    follow: function follow(user) {
+      return dispatch(Object(_actions_follow_actions__WEBPACK_IMPORTED_MODULE_3__["follow"])(user));
+    },
+    unfollow: function unfollow(user) {
+      return dispatch(Object(_actions_follow_actions__WEBPACK_IMPORTED_MODULE_3__["unfollow"])(user));
     }
   };
 };
@@ -3680,7 +3759,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_follow_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/follow_actions */ "./frontend/actions/follow_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -3692,6 +3773,7 @@ var usersReducer = function usersReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var nextState;
+  var followerId;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
@@ -3709,6 +3791,19 @@ var usersReducer = function usersReducer() {
       //receive each user's info for each post (avatar)
       //remove when RECEIVE_ALL_USERS can be used in place
       nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, action.users);
+      return nextState;
+
+    case _actions_follow_actions__WEBPACK_IMPORTED_MODULE_4__["RECEIVE_FOLLOW"]:
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state);
+      followerId = action.follow.follower_id;
+      nextState[followerId].followings.push(action.follow.following_id);
+      return nextState;
+
+    case _actions_follow_actions__WEBPACK_IMPORTED_MODULE_4__["REMOVE_FOLLOW"]:
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state);
+      followerId = action.follow.follower_id;
+      var followIdx = nextState[followerId].followings.indexOf(action.follow.following_id);
+      nextState[followerId].followings.splice(followIdx, 1);
       return nextState;
 
     default:
@@ -3801,6 +3896,43 @@ document.addEventListener('DOMContentLoaded', function () {
     store: store
   }), root);
 });
+
+/***/ }),
+
+/***/ "./frontend/util/follow_api_util.js":
+/*!******************************************!*\
+  !*** ./frontend/util/follow_api_util.js ***!
+  \******************************************/
+/*! exports provided: fetchFollows, follow, unfollow */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFollows", function() { return fetchFollows; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "follow", function() { return follow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unfollow", function() { return unfollow; });
+var fetchFollows = function fetchFollows(userId) {
+  return $.ajax({
+    method: 'get',
+    url: "api/users/".concat(userId, "/follows")
+  });
+}; // pass in the userId that current_user wants to follow
+
+var follow = function follow(followingId) {
+  return $.ajax({
+    method: 'post',
+    url: "api/follows",
+    data: {
+      followingId: followingId
+    }
+  });
+};
+var unfollow = function unfollow(followingId) {
+  return $.ajax({
+    method: 'delete',
+    url: "api/follows/".concat(followingId)
+  });
+};
 
 /***/ }),
 

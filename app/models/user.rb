@@ -27,16 +27,33 @@ class User < ApplicationRecord
 
   has_many :likes
 
-  has_many :followings, 
-  primary_key: :id,
-  foreign_key: :following_id, 
-  class_name: :Follow
+#  has_many :followings, 
+ # primary_key: :id,
+#  foreign_key: :following_id, 
+#  class_name: :Follow
   
-  has_many :followers, 
+ # has_many :followers, 
+ # primary_key: :id,
+ # foreign_key: :follower_id, 
+ # class_name: :Follow
+
+  has_many :follower_joins,
   primary_key: :id,
-  foreign_key: :follower_id, 
+  foreign_key: :following_id,
   class_name: :Follow
 
+  has_many :following_joins,
+  primary_key: :id,
+  foreign_key: :follower_id,
+  class_name: :Follow
+
+  has_many :followers,
+  through: :follower_joins,
+  source: :follower
+
+  has_many :followings,
+  through: :following_joins,
+  source: :following
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
