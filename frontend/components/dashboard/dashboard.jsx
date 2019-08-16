@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
       return (
         <div key={user.id}>
           {/* { userAvatar } */}
-          { user.username } 
+          { user.username }
           <button onClick={() => this.props.follow(user.id)}><i className="follow-plus fas fa-plus-square"/></button>
         </div>
       )
