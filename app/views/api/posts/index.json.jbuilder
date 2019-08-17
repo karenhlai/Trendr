@@ -16,13 +16,13 @@ json.posts do
    @posts.each do |post|
       json.set! post.id do
          # json.extract! post, :id, :content, :title, :body, :author_id
-         # #after retrieveing post info, medias if avail.
-         # json.medias do
-         #    json.array! post.medias do |media|
-         #       json.mediaUrl url_for(media)
-         #    end
-         # end
          json.partial! "api/posts/post", post: post
+         # #after retrieveing post info, medias if avail.
+          json.medias do
+             json.array! post.medias do |media|
+                json.mediaUrl url_for(media)
+             end
+          end
          #add likes next - uncomment for LikesIdx
          # json.likes do
          #    json.array! post.likes.collect { |like| like.id }

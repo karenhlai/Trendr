@@ -10,11 +10,10 @@ const mapStateToProps = state => {
   const users = state.entities.users;
   const posts = Object.keys(state.entities.posts).map(id => state.entities.posts[id]);
   // const posts = Object.values(state.entities.posts);
-  // debugger
   return ({
-    currentUser: currentUser,
-    users: users,
-    posts: posts, 
+    currentUser, 
+    users, 
+    posts
   });
 };
 

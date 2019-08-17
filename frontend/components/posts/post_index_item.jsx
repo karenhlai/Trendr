@@ -161,7 +161,6 @@ class PostIndexItem extends React.Component {
         </div>
       )
     };
-
     return (
       <div className="post-index-item-row">
         {/* sideprofile */}
