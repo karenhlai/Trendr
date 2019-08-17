@@ -1,5 +1,5 @@
 {
-  "name": "tumblr_clone",
+  "name": "trendr",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.4.3",

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./frontend/tumblr_index.jsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./frontend/trendr_index.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -3189,7 +3189,7 @@ function (_React$Component) {
 
       e.preventDefault();
       var demoUser = {
-        email: 'user@email.com',
+        email: 'demoUser@email.com',
         password: 'password'
       };
       this.props.processForm(demoUser).then(function () {
@@ -3843,9 +3843,9 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
-/***/ "./frontend/tumblr_index.jsx":
+/***/ "./frontend/trendr_index.jsx":
 /*!***********************************!*\
-  !*** ./frontend/tumblr_index.jsx ***!
+  !*** ./frontend/trendr_index.jsx ***!
   \***********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -50331,7 +50331,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

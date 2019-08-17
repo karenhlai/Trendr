@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: tumblr_clone_development
+  database: trendr_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: tumblr_clone_test
+  # database: tumblr_clone_test
+  database: trendr_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +81,8 @@ test:
 #
 production:
   <<: *default
-  database: tumblr_clone_production
-  username: tumblr_clone
-  password: <%= ENV['TUMBLR_CLONE_DATABASE_PASSWORD'] %>
+  database: trendr_production
+  # username: tumblr_clone
+  username: trendr
+  # password: <%= ENV['TUMBLR_CLONE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['TRENDR_DATABASE_PASSWORD'] %>
