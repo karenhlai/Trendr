@@ -15,6 +15,7 @@
 .rec-list-left {
   display: flex;
   flex-direction: row;
+  margin-right: 50px;
 }
 
 .rec-avatar {
@@ -26,5 +27,5 @@
 
 i.follow-plus {
   color: hsla(0, 0%, 100%, .2);
-  font-size: 24px;
+  font-size: 27px;
 }
