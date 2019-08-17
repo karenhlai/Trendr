@@ -839,11 +839,13 @@ function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   var currentUser = state.entities.users[state.session.id];
-  var users = Object.values(state.entities.users); // debugger
+  var users = Object.values(state.entities.users);
+  var posts = Object.values(state.entities.posts); // debugger
 
   return {
     currentUser: currentUser,
-    users: users
+    users: users,
+    posts: posts
   };
 };
 
@@ -2004,6 +2006,7 @@ var mapStateToProps = function mapStateToProps(state) {
   var posts = Object.keys(state.entities.posts).map(function (id) {
     return state.entities.posts[id];
   }); // const posts = Object.values(state.entities.posts);
+  // debugger
 
   return {
     currentUser: currentUser,
@@ -2206,7 +2209,8 @@ function (_React$Component) {
       var postSettings;
 
       if (!this.props.user.avatarUrl) {
-        authorAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE";
+        // authorAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE";
+        authorAvatar = 'https://trendr-prod.s3-us-west-1.amazonaws.com/bulbasaur.png';
       } else {
         authorAvatar = this.props.user.avatarUrl;
       }
@@ -48400,7 +48404,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -110,7 +110,8 @@ class PostIndexItem extends React.Component {
     let postSettings;
     
     if (!this.props.user.avatarUrl) {
-      authorAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE";
+      // authorAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE";
+      authorAvatar = 'https://trendr-prod.s3-us-west-1.amazonaws.com/bulbasaur.png';
     } else {
       authorAvatar = this.props.user.avatarUrl;
     };
@@ -178,7 +179,7 @@ class PostIndexItem extends React.Component {
         >
           <h2 className="post-author-username">
             Here's a blog: <b>{authorUsername}</b>
-            {/* use "here's a blog" for user that you're not following */}
+            {/* use "here's a blog" for user they are not following */}
           </h2>
           {this.postContent(post)}
 

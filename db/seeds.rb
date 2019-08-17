@@ -24,88 +24,155 @@ karen = User.create(
   email: "karen@email.com",
   password: "password"
 );
-karenAvatar = open('https://trendr-prod.s3-us-west-1.amazonaws.com/cone_open_64.png');
-karen.avatar.attach(io: karenAvatar, filename: 'cone_open_64');
+karenAvatar = open('https://trendr-prod.s3-us-west-1.amazonaws.com/cube_cat.jpg');
+karen.avatar.attach(io: karenAvatar, filename: 'cube_cat');
 
-userBot = User.create(
-  username: "userBot", 
-  email: "userBot@bots.net", 
+sf_landmarks = User.create(
+  username: "sf_landmarks", 
+  email: "sf_landmarks@email.com", 
   password: "password"
 );
-userBotAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/userBot.jpg");
-userBot.avatar.attach(io: userBotAvatar, filename: 'userBot');
+sf_landmarksAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/sf_landmarks_icon.jpg");
+sf_landmarks.avatar.attach(io: sf_landmarksAvatar, filename: 'sf_landmarks_icon');
 
+otis = User.create(
+  username: "otis", 
+  email: "otis@otis.otis", 
+  password: "password"
+);
+otisAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/otis.JPG");
+otis.avatar.attach(io: otisAvatar, filename: 'otis');
+
+kelly = User.create(
+  username: "kelly", 
+  email: "kelly@email.com", 
+  password: "password"
+);
+kellyAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/fire_pyramid.png");
+kelly.avatar.attach(io: kellyAvatar, filename: 'fire_pyramid');
 
 #Post
 post_one = Post.create(
-  content: "Text", 
+  content: "text", 
   title: "Hello World", 
   body: "Welcome to Trendr!", 
   author_id: demoUser.id
 );
 
 post_two = Post.create(
-  content: "Photo",
+  content: "photo",
   title: "Lands End",
   body: "San Francisco Landmark",
-  author_id: demoUser.id
+  author_id: sf_landmarks.id
 );
 post_two_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/lands_end.jpg");
 post_two.medias.attach(io: post_two_media, filename: "lands_end");
 
 post_three = Post.create(
-  content: "Photo", 
-  title: "Stitch Cartoon", 
-  body: "", 
-  author_id: demoUser.id
+  content: "photo", 
+  title: "Painted Ladies", 
+  body: "Must visit~", 
+  author_id: sf_landmarks.id
 );
-post_three_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/stitch_cartoon.jpg");
-post_three.medias.attach(io: post_three_media, filename: "stitch_cartoon");
+post_three_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/painted_ladies.jpeg");
+post_three.medias.attach(io: post_three_media, filename: "painted_ladies");
 
 post_four = Post.create(
-  content: "Text", 
+  content: "text", 
   title: "Hey there, I'm new to this.", 
   body: "Follow me!",
   author_id: karen.id
 );
 
 post_five = Post.create(
-  content: "Photo",
+  content: "photo",
   title: "",
   body: "",
-  author_id: karen.id
+  author_id: demoUser.id
 );
 post_five_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/pair_cats.gif");
 post_five.medias.attach(io: post_five_media, filename: "pair_cats");
 
 post_six = Post.create(
-  content: "Quote", 
+  content: "quote", 
   title: "Post quote",
   body: "Author",
   author_id: karen.id
 );
 
 post_seven = Post.create(
-  content: "Photo", 
+  content: "photo", 
   title: "New puppy",
   body: "", 
-  author_id: userBot.id
+  author_id: karen.id
 );
 post_seven_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/puppy.gif");
 post_seven.medias.attach(io: post_seven_media, filename: "puppy");
 
 post_eight = Post.create(
-  content: "Link",
+  content: "link",
   title: "https://github.com/karenhlai/Trendr",
   body: "Interested in how I built this app?",
-  author_id: userBot.id
+  author_id: demoUser.id
 );
 
 post_nine = Post.create(
-  content: "Photo",
-  title: "",
+  content: "photo",
+  title: "Golden Gate",
   body: "",
-  author_id: userBot.id
+  author_id: sf_landmarks.id
 );
-post_nine_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/animated.gif");
-post_nine.medias.attach(io: post_nine_media, filename: "https://trendr-prod.s3-us-west-1.amazonaws.com/animated.gif");
+post_nine_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/golden_gate.jpg");
+post_nine.medias.attach(io: post_nine_media, filename: "golden_gate");
+
+post_ten = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: otis.id
+);
+post_ten_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/whiny_cat.gif"); 
+post_ten.medias.attach(io: post_ten_media, filename: 'whiny_cat');
+
+post_eleven = Post.create(
+  content: "quote", 
+  title: "Hi, I'm a new user, follow me!", 
+  body: "", 
+  author_id: kelly.id
+);
+
+post_twelve = Post.create(
+  content: "photo", 
+  title: "Carousel at the Pier", 
+  body: "", 
+  author_id: sf_landmarks.id
+);
+post_twelve_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/pier_carousel.jpg"); 
+post_twelve.medias.attach(io: post_twelve_media, filename: 'https://trendr-prod.s3-us-west-1.amazonaws.com/pier_carousel.jpg');
+
+post_thirteen = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: kelly.id
+);
+post_thirteen_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/cartoon.jpg"); 
+post_thirteen.medias.attach(io: post_thirteen_media, filename: 'cartoon');
+
+post_fourteen = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: sf_landmarks.id
+);
+post_fourteen_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/travel_cartoon.png"); 
+post_fourteen.medias.attach(io: post_fourteen_media, filename: 'travel_cartoon');
+
+post_fifteen = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: kelly.id
+);
+post_fifteen_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/birds_cartoon.jpg"); 
+post_fifteen.medias.attach(io: post_fifteen_media, filename: 'birds_cartoon');
