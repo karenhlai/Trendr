@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import { Link } from 'react-router-dom';
 // import dashboard_home_icon from '../../../app/assets/images/dashboard_home.png';
 import { logout } from '../../actions/session_actions';
