@@ -114,7 +114,7 @@ class SessionForm extends React.Component {
 						<br />
 
 						<div className="renderErrors">
-							{this.renderErrors()}
+							{/* {this.renderErrors()} */}
 						</div>
 						<input className="session-submit" type="submit" value={this.props.formType} />
 						<br/>
