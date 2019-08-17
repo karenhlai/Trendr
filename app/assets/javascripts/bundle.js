@@ -514,7 +514,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       aos__WEBPACK_IMPORTED_MODULE_9___default.a.init({
-        duration: 2000
+        duration: 800
       });
     }
   }, {
@@ -664,7 +664,12 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_form_modal__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      var currentUserAvatar = this.props.currentUser.avatarUrl;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-create-bar-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: currentUserAvatar
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_form_modal__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "modal-create-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
@@ -718,7 +723,10 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {};
+  var currentUser = state.entities.users[state.session.id];
+  return {
+    currentUser: currentUser
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -808,29 +816,38 @@ function (_React$Component) {
 
       var currentUser = this.props.currentUser;
       var recommended = this.props.users.map(function (user) {
-        // let userAvatar;
-        // if (!currentUser.followings.includes(currentUser.id)) {
-        // userAvatar = <div>You shouldn't be able to see this!</div> 
-        // userAvatar = <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE" />;
-        // }
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: user.id
-        }, user.username, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: function onClick() {
-            return _this.props.follow(user.id);
-          }
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "follow-plus fas fa-plus-square"
-        })));
-      }); // debugger
-
+        if (currentUser.id != user.id && !user.followings.includes(user.id)) {
+          var recAvatar = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            className: "rec-avatar",
+            src: user.avatarUrl
+          });
+          var recUsername = user.username;
+          var recName = "".concat(user.username, ".trendr.com");
+          var recButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            className: "recButton",
+            onClick: function onClick() {
+              return _this.props.follow(user.id);
+            }
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "follow-plus fas fa-plus-square"
+          }));
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            className: "rec-list-container",
+            key: user.id
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "rec-list-left"
+          }, recAvatar, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "rec-list-center"
+          }, recUsername, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), recName)), recButton);
+        }
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_dash_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_bar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main-right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Recommended Blogs"), recommended), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, "Footer")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Recommended Blogs"), recommended), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, "Footer")));
     }
   }]);
 
@@ -839,9 +856,9 @@ function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   var currentUser = state.entities.users[state.session.id];
-  var users = Object.values(state.entities.users);
-  var posts = Object.values(state.entities.posts); // debugger
+  var users = Object.values(state.entities.users); // const users = state.entities.users;
 
+  var posts = Object.values(state.entities.posts);
   return {
     currentUser: currentUser,
     users: users,
@@ -2006,7 +2023,6 @@ var mapStateToProps = function mapStateToProps(state) {
   var posts = Object.keys(state.entities.posts).map(function (id) {
     return state.entities.posts[id];
   }); // const posts = Object.values(state.entities.posts);
-  // debugger
 
   return {
     currentUser: currentUser,
@@ -3260,7 +3276,7 @@ function (_React$Component) {
         className: "login-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "renderErrors"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "session-submit",
         type: "submit",
         value: this.props.formType

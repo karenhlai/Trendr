@@ -159,6 +159,11 @@
   padding: 50px 0 0 50px;
 }
 
+.dashboard-main-right h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .dashboard-main > footer {
   display: flex;
   flex-direction: column-reverse;
@@ -231,7 +236,7 @@
 }
 
 .post-index-item {
-  width: 600px;
+  width: 540px;
   font-size: 14px;
   background: #fff;
   padding: 15px 0 0 0;
@@ -243,9 +248,9 @@
   position: sticky;
   float: left;
   top: 75px;
-  margin: 0px 0px 0px -120px;
-  height: 85px;
-  width: 85px;
+  margin: 0px 0px 0px -80px;
+  height: 65px;
+  width: 65px;
   border-radius: 4px;
 }
 
@@ -274,9 +279,18 @@
 
 //create post navbar modal icons 
 //add className to navbar icons later to make just navbar icons float
+.modal-create-bar-container img {
+  height: 65px;
+  width: 65px;
+  border-radius: 4px;
+  position: relative;
+  float: left;
+  margin-left: 270px;
+}
+
 .modal-create-bar {
   margin: 0px 0px 0px 350px;
-  width: 600px;
+  width: 540px;
   border-radius: 3px;
   background: white;
   height: 100px;

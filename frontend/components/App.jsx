@@ -16,7 +16,7 @@ class App extends React.Component {
   
   componentDidMount() {
     AOS.init({
-      duration: 2000
+      duration: 800
     })
   }
 

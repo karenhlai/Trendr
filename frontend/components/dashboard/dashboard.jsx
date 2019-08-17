@@ -17,21 +17,31 @@ class Dashboard extends React.Component {
 
   render() {
     let currentUser = this.props.currentUser;
+
     let recommended = this.props.users.map(user => {
-      // let userAvatar;
-      // if (!currentUser.followings.includes(currentUser.id)) {
-        // userAvatar = <div>You shouldn't be able to see this!</div> 
-        // userAvatar = <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE" />;
-      // }
-      return (
-        <div key={user.id}>
-          {/* { userAvatar } */}
-          { user.username }
-          <button onClick={() => this.props.follow(user.id)}><i className="follow-plus fas fa-plus-square"/></button>
-        </div>
-      )
+      if (currentUser.id != user.id && !user.followings.includes(user.id)) {
+        let recAvatar = <img className="rec-avatar" src={user.avatarUrl} />;
+        let recUsername = user.username;
+        let recName = `${user.username}.trendr.com`;
+        let recButton = <button className="recButton" onClick={() => this.props.follow(user.id)}><i className="follow-plus fas fa-plus-square" /></button>;
+      
+        return (
+          <li className="rec-list-container" key={user.id}>
+            <div className="rec-list-left">
+              {recAvatar}
+              <div className="rec-list-center">
+                {recUsername}
+                <br />
+                {recName}
+              </div>
+            </div>
+
+            {recButton}
+          </li>
+        )
+      }
     });
-    // debugger
+
     return (
       <div>
         <NavbarDashContainer />
@@ -43,7 +53,7 @@ class Dashboard extends React.Component {
           </div>
 
           <div className="dashboard-main-right">
-            <h1>Recommended Blogs</h1>
+            <h2>Recommended Blogs</h2>
             { recommended }
           </div>
 
@@ -61,8 +71,8 @@ class Dashboard extends React.Component {
 const mapStateToProps = state => {
   const currentUser = state.entities.users[state.session.id];
   const users = Object.values(state.entities.users);
-  const posts = Object.values(state.entities.posts)
-  // debugger
+  // const users = state.entities.users;
+  const posts = Object.values(state.entities.posts);
   return ({
     currentUser,
     users, 

@@ -4,12 +4,13 @@ import PostFormModal from '../posts/post_form_modal';
 
 class CreateBar extends React.Component {
   render () {
+    let currentUserAvatar = this.props.currentUser.avatarUrl;
     return (
-      <div>
+      <div className="modal-create-bar-container">
+        <img src={currentUserAvatar} />
         <PostFormModal />
         {/* using official tumblr icons */}
         <nav className="modal-create-bar">
-
           <button onClick={() => this.props.openModal('Create Text')}>
             <i className="icon_post_text"></i>
             <span className="new_post_label_text">Text</span>
@@ -54,7 +55,9 @@ class CreateBar extends React.Component {
 
 
 const mapStateToProps = state => {
+  const currentUser = state.entities.users[state.session.id];
   return ({
+    currentUser
   })
 };
 

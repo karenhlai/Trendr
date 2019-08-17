@@ -2,8 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.rec-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid hsla(0, 0%, 100%, .13);
+  background-color: transparent;
+}
+
+.rec-list-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.rec-avatar {
+  height: 37px;
+  width: 37px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
 i.follow-plus {
-  color: red;
-  // height: 50px;
-  // width: 50px;
+  color: hsla(0, 0%, 100%, .2);
+  font-size: 24px;
 }
