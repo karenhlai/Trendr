@@ -39,6 +39,7 @@ The goal is to pixel perfectly replicate Tumblr's website
 <!-- place animation of photo upload here -->
 
 <h3>Bonus Features:</h3>
+
 - Users can create posts that include types: audio, video
 - Users can chat with other users through the chat feature
 - Users can reblog other user's posts
