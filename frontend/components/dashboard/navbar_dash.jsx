@@ -10,7 +10,7 @@ class NavbarDash extends React.Component {
 
   render() {
     return (
-      <nav id="navbar-dash">
+      <nav className="navbar-dash">
         <section className="navbar-left-container">
           <a href="/">t</a>
         </section>

@@ -58,14 +58,25 @@ class Dashboard extends React.Component {
           </div>
 
           <div className="dashboard-main-right">
-            <h2>Recommended Blogs</h2>
-            { recommended }
-
+            <div className="recommend-container">
+              <h2>Recommended Blogs</h2>
+              { recommended }
+            </div>
 
             <div className="radar-container">
+              <h2>Radar</h2>
+              {/* needs a user and that user's post to render (post cannot be currentUser or following's post; 
+            and post cannot be currently liked by currentUser) */}
+              {/* put a follow button on user, using above's CSS className's */}
 
             </div>
 
+            <ul>
+              <a href="/"> <i class="fab fa-github-square"></i> </a>
+              {/* <a href="/"> Link </a> */}
+              {/* <a href="/"> Link </a> */}
+              <a href="/"> <i class="fab fa-linkedin"></i> </a>
+            </ul>
           </div>
         </div>
 

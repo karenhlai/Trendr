@@ -23,9 +23,6 @@ class App extends React.Component {
   render () {
     return(
      <div> 
-      <header>
-      </header>
-      
       <Switch>
         <ProtectedRoute path="/posts" component={Dashboard} />
         <Route path="/" component={SplashPage} /> 

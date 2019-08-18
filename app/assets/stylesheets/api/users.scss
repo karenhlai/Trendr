@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.recommend-container {
+  padding-bottom: 35px;
+}
+
 .rec-list-container {
   display: flex;
   flex-direction: row;
@@ -36,7 +40,19 @@ i.follow-plus {
   font-size: 27px;
 }
 
-i.follow-plus:hover {
+i.follow-plus:hover,
+.dashboard-main-right > ul > a > i:hover {
   color: #00b8ff;
 }
 
+//footer-links
+.dashboard-main-right > ul {
+  position: fixed;
+  bottom: 10px;
+}
+
+.dashboard-main-right > ul > a > i {
+  color: hsla(0, 0%, 100%, .13);
+  font-size: 27px;
+  padding-right: 10px;
+}

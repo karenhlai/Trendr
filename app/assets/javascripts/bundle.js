@@ -520,7 +520,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["ProtectedRoute"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["ProtectedRoute"], {
         path: "/posts",
         component: _dashboard_dashboard__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
@@ -855,9 +855,19 @@ function (_React$Component) {
         className: "dashboard-main-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_bar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main-right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Recommended Blogs"), recommended, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "recommend-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Recommended Blogs"), recommended), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "radar-container"
-      }))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Radar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fab fa-github-square"
+      }), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fab fa-linkedin"
+      }), " ")))));
     }
   }]);
 
@@ -947,7 +957,7 @@ function (_React$Component) {
       var _this = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        id: "navbar-dash"
+        className: "navbar-dash"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "navbar-left-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -2303,7 +2313,7 @@ function (_React$Component) {
         "data-aos": "fade-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "post-author-username"
-      }, "Here's a blog: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, authorUsername)), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
+      }, authorUsername), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));
     }
   }]);
 

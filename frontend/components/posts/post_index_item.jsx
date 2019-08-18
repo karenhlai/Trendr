@@ -176,7 +176,7 @@ class PostIndexItem extends React.Component {
 
         <div className="post-index-item" data-aos="fade-left">
           <h2 className="post-author-username">
-            Here's a blog: <b>{authorUsername}</b>
+            { authorUsername }
             {/* use "here's a blog" for user they are not following */}
           </h2>
           {this.postContent(post)}
