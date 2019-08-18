@@ -16,8 +16,8 @@ demoUser = User.create(
   email: "demoUser@email.com",
   password: "password"
 );
-demoUserAvatar = open('https://trendr-prod.s3-us-west-1.amazonaws.com/cube_closed.png');
-demoUser.avatar.attach(io: demoUserAvatar, filename: 'cube_closed');
+demoUserAvatar = open('https://trendr-prod.s3-us-west-1.amazonaws.com/bulbasaur.png');
+demoUser.avatar.attach(io: demoUserAvatar, filename: 'bulbasaur');
 
 karen = User.create(
   username: "karen",

@@ -16,6 +16,12 @@
   display: flex;
   flex-direction: row;
   margin-right: 50px;
+  color: hsla(0, 0%, 100%, .50);
+}
+
+.recUsername {
+  color: white;
+  font-weight: bold;
 }
 
 .rec-avatar {
@@ -29,3 +35,8 @@ i.follow-plus {
   color: hsla(0, 0%, 100%, .2);
   font-size: 27px;
 }
+
+i.follow-plus:hover {
+  color: #00b8ff;
+}
+

@@ -15,11 +15,16 @@ class Dashboard extends React.Component {
     // this.props.fetchAllUsers();
   }
 
+  handleFollow() {
+    this.props.follow(user.id)
+  }
+
   render() {
     let currentUser = this.props.currentUser;
 
     let recommended = this.props.users.map(user => {
-      if (currentUser.id != user.id && !user.followings.includes(user.id)) {
+      // if (currentUser.id != user.id && !user.followers.includes(currentUser.id)) {
+      if (currentUser.id != user.id && !currentUser.followings.includes(user.id)) {
         let recAvatar = <img className="rec-avatar" src={user.avatarUrl} />;
         let recUsername = user.username;
         let recName = `${user.username}.trendr.com`;
@@ -30,8 +35,8 @@ class Dashboard extends React.Component {
             <div className="rec-list-left">
               {recAvatar}
               <div className="rec-list-center">
-                {recUsername}
-                <br />
+                <div className="recUsername">{recUsername}</div>
+                {/* <br /> */}
                 {recName}
               </div>
             </div>
@@ -55,12 +60,13 @@ class Dashboard extends React.Component {
           <div className="dashboard-main-right">
             <h2>Recommended Blogs</h2>
             { recommended }
+
+
+            <div className="radar-container">
+
+            </div>
+
           </div>
-
-
-          <footer>
-            Footer
-          </footer>
         </div>
 
       </div>

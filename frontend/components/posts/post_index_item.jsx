@@ -111,7 +111,7 @@ class PostIndexItem extends React.Component {
     
     if (!this.props.user.avatarUrl) {
       // authorAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE";
-      authorAvatar = 'https://trendr-prod.s3-us-west-1.amazonaws.com/bulbasaur.png';
+      authorAvatar = 'https://trendr-prod.s3-us-west-1.amazonaws.com/cube_closed.png';
     } else {
       authorAvatar = this.props.user.avatarUrl;
     };

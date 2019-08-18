@@ -810,13 +810,19 @@ function (_React$Component) {
     value: function componentDidMount() {// this.props.fetchAllUsers();
     }
   }, {
+    key: "handleFollow",
+    value: function handleFollow() {
+      this.props.follow(user.id);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this = this;
 
       var currentUser = this.props.currentUser;
       var recommended = this.props.users.map(function (user) {
-        if (currentUser.id != user.id && !user.followings.includes(user.id)) {
+        // if (currentUser.id != user.id && !user.followers.includes(currentUser.id)) {
+        if (currentUser.id != user.id && !currentUser.followings.includes(user.id)) {
           var recAvatar = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             className: "rec-avatar",
             src: user.avatarUrl
@@ -838,7 +844,9 @@ function (_React$Component) {
             className: "rec-list-left"
           }, recAvatar, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "rec-list-center"
-          }, recUsername, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), recName)), recButton);
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "recUsername"
+          }, recUsername), recName)), recButton);
         }
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_dash_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -847,7 +855,9 @@ function (_React$Component) {
         className: "dashboard-main-left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_bar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_index_container__WEBPACK_IMPORTED_MODULE_6__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main-right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Recommended Blogs"), recommended), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, "Footer")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Recommended Blogs"), recommended, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "radar-container"
+      }))));
     }
   }]);
 
@@ -2226,7 +2236,7 @@ function (_React$Component) {
 
       if (!this.props.user.avatarUrl) {
         // authorAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRodU8a0j7tQxFglkdkS6JYVX4o3IXl92YWHYW4wvqg2WvAYSVE";
-        authorAvatar = 'https://trendr-prod.s3-us-west-1.amazonaws.com/bulbasaur.png';
+        authorAvatar = 'https://trendr-prod.s3-us-west-1.amazonaws.com/cube_closed.png';
       } else {
         authorAvatar = this.props.user.avatarUrl;
       }
