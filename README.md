@@ -12,14 +12,6 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
 - Users are able to like posts, and access their like feed
 - Users are able to follow other users, and access their follows page
 
-<div class="hidden">
-<h3>Bonus Features:</h3>
-- Users can create posts that include types: audio, video
-- Users can chat with other users through the chat feature
-- Users can reblog other user's posts
-- Users can explore posts through tag search
-</div>
-
 <h3>Implementation Methods and Technologies</h3>
   Backend: Rails
   Frontend: React.js, Redux
@@ -45,3 +37,9 @@ The goal is to pixel perfectly replicate Tumblr's website
 - Upon clicking on the create post mavigatoin bar, an appropiate modal form will render based on the type of action the user has chosen, i.e. a 'create text' modal will differ from the 'create photo' modal.
 
 <!-- place animation of photo upload here -->
+
+<h3>Bonus Features:</h3>
+- Users can create posts that include types: audio, video
+- Users can chat with other users through the chat feature
+- Users can reblog other user's posts
+- Users can explore posts through tag search
