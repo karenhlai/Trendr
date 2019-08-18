@@ -135,14 +135,11 @@ body {
   font-size: 18px;
 }
 
-//dashboard
+// dashboard
 .dashboard-main {
   display: flex;
   flex-direction: row;
-  // justify-content: center;
   background-color: #001935;
-  // z-index: -1;
-  overflow: hidden;
 }
 
 .dashboard-main-left {
