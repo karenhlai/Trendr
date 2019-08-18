@@ -16,7 +16,7 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
   Backend: Rails
   <br />
   Frontend: React.js, Redux
-
+  <br />
 - Building and implementing a thorough database scheme with Rails backend Routes to store users, posts, likes, and follows
 - Integrating full CRUD functionality, allowing users to create, update, and delete posts on their dashboard
 - Organizing Landing, Dashboard Index, Sign Up, Sign In, Create / Edit Post components with React and Redux 
