@@ -514,7 +514,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       aos__WEBPACK_IMPORTED_MODULE_9___default.a.init({
-        duration: 800
+        duration: 400
       });
     }
   }, {
@@ -862,11 +862,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Radar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fab fa-github-square"
+        className: "fab fa-github-square"
       }), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fab fa-linkedin"
+        className: "fab fa-linkedin"
       }), " ")))));
     }
   }]);
@@ -2310,7 +2310,7 @@ function (_React$Component) {
         "data-aos": "fade-right"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-index-item",
-        "data-aos": "fade-left"
+        "data-aos": "fade-up"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "post-author-username"
       }, authorUsername), this.postContent(post), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, postSettings)));

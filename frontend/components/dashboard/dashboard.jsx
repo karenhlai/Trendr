@@ -72,10 +72,10 @@ class Dashboard extends React.Component {
             </div>
 
             <ul>
-              <a href="/"> <i class="fab fa-github-square"></i> </a>
+              <a href="/"> <i className="fab fa-github-square"></i> </a>
               {/* <a href="/"> Link </a> */}
               {/* <a href="/"> Link </a> */}
-              <a href="/"> <i class="fab fa-linkedin"></i> </a>
+              <a href="/"> <i className="fab fa-linkedin"></i> </a>
             </ul>
           </div>
         </div>

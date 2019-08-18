@@ -5,10 +5,10 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display');
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-// #root {
-//   background-color: #001935;
-//   overflow-y: hidden;
-// }
+body {
+  background-color: #001935;
+  // overflow: hidden;
+}
 
 .navbar-dash {
   position: sticky !important;
@@ -267,7 +267,7 @@
   font-family: 'Merriweather', serif;
   font-size: 32px;
   line-height: 42px;
-  padding: 12px 12px 0px 20px;
+  margin: 12px 18px 12px 18px;
   color: black;
  }
 
