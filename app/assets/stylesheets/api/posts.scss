@@ -26,7 +26,7 @@ body {
   font-family: 'Bookman Old Style';
   font-weight: bolder;
   font-size: 55px;
-  line-height: 50px;
+  line-height: 55px;
   margin: 0px 15px 0px 15px;
 }
 
@@ -103,6 +103,7 @@ body {
   align-items: center;
   border-radius: 50%;
   padding: 25px;
+  margin-bottom: 10px;
 }
 
 .alt-bar.icon_post_text {
@@ -133,6 +134,7 @@ body {
   color: #ffffff;
   font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
   font-size: 18px;
+  // padding-top: 5px
 }
 
 // dashboard
@@ -155,6 +157,7 @@ body {
 }
 
 .dashboard-main-right {
+  width: 300px;
   display: flex;
   flex-direction: column;
   position: relative;

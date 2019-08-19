@@ -558,6 +558,7 @@ __webpack_require__.r(__webpack_exports__);
 var AltCreatePost = function AltCreatePost(_ref) {
   var openModal = _ref.openModal;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    "data-aos": "fade-down",
     className: "alt-create-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
@@ -830,7 +831,7 @@ function (_React$Component) {
           var recUsername = user.username;
           var recName = "".concat(user.username, ".trendr.com");
           var recButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            className: "recButton",
+            className: "rec-button",
             onClick: function onClick() {
               return _this.props.follow(user.id);
             }
@@ -860,11 +861,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Recommended Blogs"), recommended), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "radar-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Radar")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
+        href: "https://github.com/karenhlai"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fab fa-github-square"
       }), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
+        href: "https://www.linkedin.com/in/karenhlai/"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fab fa-linkedin"
       }), " ")))));
@@ -2477,9 +2478,7 @@ function (_React$Component) {
         className: "sidenav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "side-profile-nav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "side-name"
-      }, targetUser)));
+      }));
     }
   }]);
 
@@ -2910,7 +2909,7 @@ function (_React$Component) {
         src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzyeVu9M_4z7_MUcazam4NxE0QuyeVJg3c7AmIHGfOZOVtt9N3HQ",
         className: "avatar"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "zat3am"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC84MTkvb3JpZ2luYWwvY3V0ZS1raXR0ZW4uanBn",
+        src: "http://25.media.tumblr.com/650a5105c8c1ddc327d0417cde585e03/tumblr_mtx21tYUni1rdutw3o1_400.gif",
         className: "post-image"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-bottom"
@@ -48440,7 +48439,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

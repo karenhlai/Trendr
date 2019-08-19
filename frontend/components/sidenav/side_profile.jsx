@@ -18,7 +18,7 @@ class SideProfile extends React.Component {
     return (
       <ul id="slide-out" className="sidenav">
         <div className="side-profile-nav">
-          <div className="side-name">{ targetUser }</div>
+          {/* <div className="side-name">{ targetUser }</div> */}
         </div>
 
       </ul>

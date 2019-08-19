@@ -5,7 +5,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const AltCreatePost = ({openModal}) => {
   return (
     <div>
-      <ul className="alt-create-bar">
+      <ul data-aos="fade-down" className="alt-create-bar">
         <li>
           <button onClick={() => openModal('Create Text')}>
             <i className="alt-bar icon_post_text"></i>

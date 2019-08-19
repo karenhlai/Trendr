@@ -19,8 +19,12 @@
 .rec-list-left {
   display: flex;
   flex-direction: row;
-  margin-right: 50px;
+  overflow-x: hidden;
   color: hsla(0, 0%, 100%, .50);
+}
+
+.rec-button {
+  padding-left: 50px;
 }
 
 .recUsername {

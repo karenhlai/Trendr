@@ -29,7 +29,7 @@ class SectionThree extends React.Component {
                   <p>zat3am</p>
                 </div>
               </div>
-              <img src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC84MTkvb3JpZ2luYWwvY3V0ZS1raXR0ZW4uanBn" className="post-image" />
+              <img src="http://25.media.tumblr.com/650a5105c8c1ddc327d0417cde585e03/tumblr_mtx21tYUni1rdutw3o1_400.gif" className="post-image" />
               <div className="post-bottom">
                 <div className="ui-notes">2.130 not</div>
                 <div className="post_controls">

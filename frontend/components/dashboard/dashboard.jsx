@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
         let recAvatar = <img className="rec-avatar" src={user.avatarUrl} />;
         let recUsername = user.username;
         let recName = `${user.username}.trendr.com`;
-        let recButton = <button className="recButton" onClick={() => this.props.follow(user.id)}><i className="follow-plus fas fa-plus-square" /></button>;
+        let recButton = <button className="rec-button" onClick={() => this.props.follow(user.id)}><i className="follow-plus fas fa-plus-square" /></button>;
       
         return (
           <li className="rec-list-container" key={user.id}>
@@ -72,10 +72,8 @@ class Dashboard extends React.Component {
             </div>
 
             <ul>
-              <a href="/"> <i className="fab fa-github-square"></i> </a>
-              {/* <a href="/"> Link </a> */}
-              {/* <a href="/"> Link </a> */}
-              <a href="/"> <i className="fab fa-linkedin"></i> </a>
+              <a href="https://github.com/karenhlai"> <i className="fab fa-github-square"></i> </a>
+              <a href="https://www.linkedin.com/in/karenhlai/"> <i className="fab fa-linkedin"></i> </a>
             </ul>
           </div>
         </div>
