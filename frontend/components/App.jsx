@@ -4,9 +4,9 @@ import SignupFormContainer from './splash_page/session_form/signup_form_containe
 import LandingPage from './splash_page/landing_page';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import SplashPage from './splash_page/splash_page';
-import Dashboard from './dashboard/dashboard';
+import DashboardContainer from './dashboard/dashboard';
+import FollowingIndexContainer from './follows/following_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import PostFormModal from '../components/posts/post_form_modal';
 import AOS from 'aos';
 
 class App extends React.Component {
@@ -24,7 +24,8 @@ class App extends React.Component {
     return(
      <div> 
       <Switch>
-        <ProtectedRoute path="/posts" component={Dashboard} />
+        <ProtectedRoute path="/posts" component={DashboardContainer} />
+        <ProtectedRoute path="/following" component={FollowingIndexContainer} />
         <Route path="/" component={SplashPage} /> 
       </Switch>
     </div>

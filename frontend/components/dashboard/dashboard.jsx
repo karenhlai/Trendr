@@ -11,10 +11,6 @@ class Dashboard extends React.Component {
     super(props);
   };
 
-  componentDidMount() {
-    // this.props.fetchAllUsers();
-  }
-
   handleFollow() {
     this.props.follow(user.id)
   }
@@ -64,11 +60,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className="radar-container">
-              <h2>Radar</h2>
-              {/* needs a user and that user's post to render (post cannot be currentUser or following's post; 
-            and post cannot be currently liked by currentUser) */}
-              {/* put a follow button on user, using above's CSS className's */}
-
+              {/* <h2>Radar</h2>  */}
             </div>
 
             <ul>
@@ -88,10 +80,15 @@ const mapStateToProps = state => {
   const users = Object.values(state.entities.users);
   // const users = state.entities.users;
   const posts = Object.values(state.entities.posts);
+  const radar = posts.filter(post => post.post_likes.length >= 1 && post.author_id !== currentUser.id);
+  const currentRadar = radar[Math.floor(Math.random() * radar.length)];
+  // debugger
   return ({
     currentUser,
     users, 
-    posts
+    posts, 
+    // radar,
+    currentRadar,
   });
 };
 
