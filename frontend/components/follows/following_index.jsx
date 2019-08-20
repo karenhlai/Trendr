@@ -5,6 +5,12 @@ class FollowingIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAllUsers().then(
+      console.log("All Users Fetched!")
+    )
+  }
+
   render () {
     return (
       <div>

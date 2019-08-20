@@ -1086,6 +1086,11 @@ function (_React$Component) {
   }
 
   _createClass(FollowingIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchAllUsers().then(console.log("All Users Fetched!"));
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Following Index");
@@ -1111,13 +1116,16 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_follow_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/follow_actions */ "./frontend/actions/follow_actions.js");
-/* harmony import */ var _following_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./following_index */ "./frontend/components/follows/following_index.jsx");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _following_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./following_index */ "./frontend/components/follows/following_index.jsx");
+
 
 
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  var currentUser = state.entities.users[state.session.id];
+  var currentUser = state.entities.users[state.session.id]; // debugger
+
   return {
     currentUser: currentUser
   };
@@ -1127,11 +1135,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     unfollow: function unfollow(userId) {
       return dispatch(Object(_actions_follow_actions__WEBPACK_IMPORTED_MODULE_1__["unfollow"])(userId));
+    },
+    fetchAllUsers: function fetchAllUsers() {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAllUsers"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_following_index__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_following_index__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
