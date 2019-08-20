@@ -6,15 +6,30 @@ class FollowingIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllUsers().then(
-      console.log("All Users Fetched!")
-    )
+    this.props.fetchAllUsers();
   }
 
   render () {
+    const users = this.props.users; 
+    const currentUser = this.props.currentUser;
+
+    let following = users.map(user => {
+      if (currentUser.followings.includes(user.id)) {
+        let followingName = user.username;
+        let followingAvatar = <img src={user.avatarUrl} />;
+        return (
+          <li key={user.id}>
+            { followingName }
+            { followingAvatar }
+          </li>
+        )
+      }
+    })
+
     return (
       <div>
         Following Index 
+        {following}
       </div>
     );
   }

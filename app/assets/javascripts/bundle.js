@@ -1088,12 +1088,25 @@ function (_React$Component) {
   _createClass(FollowingIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchAllUsers().then(console.log("All Users Fetched!"));
+      this.props.fetchAllUsers();
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Following Index");
+      var users = this.props.users;
+      var currentUser = this.props.currentUser;
+      var following = users.map(function (user) {
+        if (currentUser.followings.includes(user.id)) {
+          var followingName = user.username;
+          var followingAvatar = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            src: user.avatarUrl
+          });
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            key: user.id
+          }, followingName, followingAvatar);
+        }
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Following Index", following);
     }
   }]);
 
@@ -1124,10 +1137,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  var currentUser = state.entities.users[state.session.id]; // debugger
+  var currentUser = state.entities.users[state.session.id];
+  var users = Object.values(state.entities.users); // debugger
 
   return {
-    currentUser: currentUser
+    currentUser: currentUser,
+    users: users
   };
 };
 

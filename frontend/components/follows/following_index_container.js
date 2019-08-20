@@ -5,9 +5,11 @@ import FollowingIndex from './following_index';
 
 const mapStateToProps = state => {
   const currentUser =  state.entities.users[state.session.id];
+  const users = Object.values(state.entities.users);
   // debugger
   return ({
     currentUser,
+    users
   });
 };
 
