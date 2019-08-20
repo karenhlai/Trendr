@@ -68,16 +68,21 @@ body {
   position: relative;
 }
 
-.account .account-dropdown-content:hover {
+.account .account-dropdown-content ul:hover {
   background-color: #ddd;
 }
 
-.account-dropdown-content button {
+.account-dropdown-content button, 
+.account-dropdown-content a {
   display: flex;
   color: #444;
-  font-size: 18px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  // font-size: 18px;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
+}
+
+#following-idx:hover {
+  color: #444;
 }
 
 // .account-dropdown-content button:hover {
@@ -278,7 +283,7 @@ body {
 .post-index-body {
   font-family: 'Playfair Display', serif;
   font-size: 16px;
-  padding: 20px;
+  padding-left: 20px;
 }
 
 //create post navbar modal icons 

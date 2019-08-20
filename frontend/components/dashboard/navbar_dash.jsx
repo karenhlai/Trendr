@@ -28,10 +28,15 @@ class NavbarDash extends React.Component {
             <i className="fas fa-user" />
             <div className="account-dropdown-content">
                 <ul>
-                  <button onClick={() => this.props.logout()}>Logout</button>
+                  <button onClick={() => this.props.logout()}>
+                    <u>Logout</u>
+                    </button>
                 </ul>
                 <ul>
-                  <Link to="/following"><i className="fas fa-user-friends"></i>Following</Link>
+                  <Link id="following-idx" to="/following" >
+                    {/* <i className="fas fa-user-friends"></i> */}
+                    Following
+                  </Link>
                 </ul>
             </div>
           </li>

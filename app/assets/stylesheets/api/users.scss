@@ -60,3 +60,64 @@ i.follow-plus:hover,
   font-size: 27px;
   padding-right: 10px;
 }
+
+
+
+
+// following
+.following-index-container {
+  background: white;
+  border-radius: 10px;
+  width: 75%;
+  height: 400px;
+  // display: flex;
+  // flex-direction: column;
+  margin-top: 150px;
+  margin-left: 200px;
+  text-align: center;
+  // justify-content: center;
+  overflow-y: auto;
+ 
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.following-index-container h2 {
+  position: sticky;
+  top: 0;
+  font-weight: bolder;
+  margin-bottom: 50px;
+  font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+  font-size: 18px;
+}
+
+.following-index-container i {
+  position: absolute;
+  bottom: 26%;
+  font-size: 18px;
+}
+
+.following-index-container img {
+  float: left;
+  height: 45px;
+  width: 45px;
+  border-radius: 4px;
+  padding-left: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.following-index {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ text-align: left;
+}
+
+.following-name {
+  padding-top: 20px;
+  // padding-left: 15px;
+  font-weight: bold;
+}

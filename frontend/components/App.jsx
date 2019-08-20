@@ -5,6 +5,7 @@ import LandingPage from './splash_page/landing_page';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import SplashPage from './splash_page/splash_page';
 import DashboardContainer from './dashboard/dashboard';
+import NavbarDashContainer from './dashboard/navbar_dash_container';
 import FollowingIndexContainer from './follows/following_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import AOS from 'aos';

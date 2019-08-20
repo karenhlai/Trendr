@@ -51,6 +51,50 @@ kelly = User.create(
 kellyAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/fire_pyramid.png");
 kelly.avatar.attach(io: kellyAvatar, filename: 'fire_pyramid');
 
+# added new users
+bob = User.create(
+  username: "bob", 
+  email: "bob@email.com", 
+  password: "password"
+);
+bobAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/cube_closed.png");
+bob.avatar.attach(io: bobAvatar, filename: 'cube_closed');
+
+userJohn = User.create(
+  username: "userJohn", 
+  email: "userJohn@email.com", 
+  password: "password"
+);
+userJohnAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/bulbasaur.png");
+userJohn.avatar.attach(io: userJohnAvatar, filename: 'bulbasaur');
+
+newUser = User.create(
+  username: "newUser", 
+  email: "newUser@email.com", 
+  password: "password"
+);
+newUserAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/fire_pyramid.png");
+newUser.avatar.attach(io: newUserAvatar, filename: 'fire_pyramid');
+
+someUser = User.create(
+  username: "someUser", 
+  email: "someUser@email.com", 
+  password: "password"
+);
+someUserAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/cube_cat.jpg");
+someUser.avatar.attach(io: someUserAvatar, filename: 'cube_cat');
+
+
+pusheen = User.create(
+  username: "pusheen", 
+  email: "pusheen@email.com", 
+  password: "password"
+);
+pusheenAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/pusheen_icon.gif");
+pusheen.avatar.attach(io: pusheenAvatar, filename: 'pusheen_icon');
+
+
+
 #Post
 post_one = Post.create(
   content: "text", 
@@ -135,7 +179,7 @@ post_ten_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/whiny_cat.
 post_ten.medias.attach(io: post_ten_media, filename: 'whiny_cat');
 
 post_eleven = Post.create(
-  content: "quote", 
+  content: "text", 
   title: "Hi, I'm a new user, follow me!", 
   body: "", 
   author_id: kelly.id
@@ -159,6 +203,16 @@ post_thirteen = Post.create(
 post_thirteen_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/cartoon.jpg"); 
 post_thirteen.medias.attach(io: post_thirteen_media, filename: 'cartoon');
 
+post_extra_two = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: pusheen.id
+);
+post_extra_two_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/pusheen_sleep.gif"); 
+post_extra_two.medias.attach(io: post_extra_two_media, filename: 'pusheen_sleep');
+
+
 post_fourteen = Post.create(
   content: "photo", 
   title: "", 
@@ -176,3 +230,57 @@ post_fifteen = Post.create(
 );
 post_fifteen_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/birds_cartoon.jpg"); 
 post_fifteen.medias.attach(io: post_fifteen_media, filename: 'birds_cartoon');
+
+post_sixteen = Post.create(
+  content: "text", 
+  title: "Hi, I'm an app academy student!", 
+  body: "Follow me!", 
+  author_id: bob.id
+);
+
+post_extra_one = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: pusheen.id
+);
+post_extra_one_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/pusheen_dance.gif"); 
+post_extra_one.medias.attach(io: post_extra_one_media, filename: 'pusheen_dance');
+
+post_seventeen = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: userJohn.id
+);
+post_seventeen_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/desert.jpg"); 
+post_seventeen.medias.attach(io: post_seventeen_media, filename: 'desert');
+
+post_eighteen = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: newUser.id
+);
+post_eighteen_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/power_rangers.png"); 
+post_eighteen.medias.attach(io: post_eighteen_media, filename: 'power_rangers');
+
+post_nineteen = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: someUser.id
+);
+post_nineteen_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/cat_walk.gif"); 
+post_nineteen.medias.attach(io: post_nineteen_media, filename: 'cat_walk');
+
+post_twenty = Post.create(
+  content: "photo", 
+  title: "", 
+  body: "", 
+  author_id: pusheen.id
+);
+post_twenty_media = open("https://trendr-prod.s3-us-west-1.amazonaws.com/pusheen_chase.gif"); 
+post_twenty.medias.attach(io: post_twenty_media, filename: 'pusheen_chase');
+
+

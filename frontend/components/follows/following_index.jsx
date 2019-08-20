@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarDashContainer from '../dashboard/navbar_dash_container';
 
 class FollowingIndex extends React.Component {
   constructor(props) {
@@ -18,18 +19,38 @@ class FollowingIndex extends React.Component {
         let followingName = user.username;
         let followingAvatar = <img src={user.avatarUrl} />;
         return (
-          <li key={user.id}>
-            { followingName }
-            { followingAvatar }
-          </li>
+          <div key={user.id}>
+            <div className="following-avatar">
+              {followingAvatar}
+            </div>
+            <div className="following-name">
+              {followingName}
+            </div>
+            <button className="following-button" onClick={() => this.props.unfollow(user.id)}>
+              {/* <i class="fas fa-minus"></i> */}
+              Unfollow
+            </button>
+          </div>
         )
       }
     })
 
     return (
       <div>
-        Following Index 
-        {following}
+        <NavbarDashContainer />
+      <div className="following-index-container">
+        <h2>
+          Following
+        </h2>
+       
+       
+        <div className="following-index">
+          {following}
+        </div>
+
+
+        <i className="fas fa-angle-down"></i>
+      </div>
       </div>
     );
   }
