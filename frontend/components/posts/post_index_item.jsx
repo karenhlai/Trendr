@@ -105,7 +105,19 @@ class PostIndexItem extends React.Component {
   render() {
     const post = this.props.post;
     const currentUser = this.props.currentUser;
-    const authorUsername = this.props.user.username;
+    let authorUsername;
+    // debugger
+    if (!this.props.user) {
+      authorUsername = "guest"
+      // console.log("no user")
+      // console.log(this.props)
+      return null;
+    } else {
+      // console.log(this.props.user.username)
+      authorUsername = this.props.user.username;
+    };
+
+    // debugger
     let authorAvatar;
     let postSettings;
     
@@ -147,7 +159,7 @@ class PostIndexItem extends React.Component {
                 //reference to the dropdown menu, ref property to get a reference to the DOM element
               <li className="post-settings" ref={(element) => { this.dropdownSettings = element }}>
                   <ul>{this.postEditOptions(post)}</ul>
-                  <ul><button onClick={() => this.props.deletePost(post.id)}>Delete</button></ul>
+                  <ul><button onClick={() => this.props.postHandler(post.id)}>Delete</button></ul>
               </li>
                 ) : (
                 null

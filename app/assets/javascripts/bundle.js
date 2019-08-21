@@ -859,9 +859,7 @@ function (_React$Component) {
         className: "dashboard-main-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "recommend-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Recommended Blogs"), recommended), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "radar-container"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Recommended Blogs"), recommended), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/karenhlai"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fab fa-github-square"
@@ -880,18 +878,16 @@ var mapStateToProps = function mapStateToProps(state) {
   var currentUser = state.entities.users[state.session.id];
   var users = Object.values(state.entities.users); // const users = state.entities.users;
 
-  var posts = Object.values(state.entities.posts);
-  var radar = posts.filter(function (post) {
-    return post.post_likes.length >= 1 && post.author_id !== currentUser.id;
-  });
-  var currentRadar = radar[Math.floor(Math.random() * radar.length)]; // debugger
+  var posts = Object.values(state.entities.posts); // const radar = posts.filter(post => post.post_likes.length >= 1 && post.author_id !== currentUser.id);
+  // const currentRadar = radar[Math.floor(Math.random() * radar.length)];
+  // debugger
 
   return {
     currentUser: currentUser,
     users: users,
-    posts: posts,
-    // radar,
-    currentRadar: currentRadar
+    posts: posts // radar,
+    // currentRadar,
+
   };
 };
 
@@ -2106,14 +2102,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+ // import { merge } from 'react'
 
 
 
@@ -2124,9 +2121,17 @@ function (_React$Component) {
   _inherits(PostIndex, _React$Component);
 
   function PostIndex(props) {
+    var _this;
+
     _classCallCheck(this, PostIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PostIndex).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PostIndex).call(this, props));
+    _this.state = {
+      posts: _this.props.posts
+    }; // debugger
+
+    _this.postHandler = _this.postHandler.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(PostIndex, [{
@@ -2135,24 +2140,49 @@ function (_React$Component) {
       this.props.fetchPosts();
     }
   }, {
+    key: "postHandler",
+    value: function postHandler(id) {
+      // merge new posts in old posts Object.assign
+      // set this.state posts to new obj 
+      var posts = this.state.posts.filter(function (post) {
+        return id !== post.id;
+      }); // debugger
+
+      this.setState({
+        posts: posts
+      });
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.posts) {
+        this.setState({
+          posts: nextProps.posts
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
+
+      console.log(this.state);
 
       if (this.props.posts.length === 0) {
         return null;
       }
 
-      var posts = this.props.posts.map(function (post) {
+      var posts = this.state.posts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: post.id,
-          user: _this.props.users[post.author_id],
+          user: _this2.props.users[post.author_id],
           post: post,
-          updatePost: _this.props.updatePost,
-          deletePost: _this.props.deletePost,
-          openModal: _this.props.openModal,
-          likePost: _this.props.likePost,
-          unlikePost: _this.props.unlikePost
+          updatePost: _this2.props.updatePost,
+          deletePost: _this2.props.deletePost,
+          openModal: _this2.props.openModal,
+          likePost: _this2.props.likePost,
+          unlikePost: _this2.props.unlikePost,
+          postHandler: _this2.postHandler
         });
       }); // debugger
 
@@ -2389,7 +2419,20 @@ function (_React$Component) {
 
       var post = this.props.post;
       var currentUser = this.props.currentUser;
-      var authorUsername = this.props.user.username;
+      var authorUsername; // debugger
+
+      if (!this.props.user) {
+        authorUsername = "guest"; // console.log("no user")
+        // console.log(this.props)
+
+        return null;
+      } else {
+        // console.log(this.props.user.username)
+        authorUsername = this.props.user.username;
+      }
+
+      ; // debugger
+
       var authorAvatar;
       var postSettings;
 
@@ -2437,7 +2480,7 @@ function (_React$Component) {
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.postEditOptions(post)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
-            return _this5.props.deletePost(post.id);
+            return _this5.props.postHandler(post.id);
           }
         }, "Delete"))) : null);
       } else {
@@ -2498,14 +2541,16 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var post = ownProps.post;
   var postLikes = post.post_likes;
   var currentUser = state.entities.users[state.session.id];
-  var authorId = ownProps.post ? ownProps.post.author_id : ""; // console.log(postLikes);
+  var authorId = ownProps.post ? ownProps.post.author_id : "";
+  var user = ownProps.user; // console.log(postLikes);
   // console.log(post.likes)
 
   return {
     post: post,
     postLikes: postLikes,
     authorId: authorId,
-    currentUser: currentUser
+    currentUser: currentUser,
+    user: user
   };
 };
 
@@ -48588,7 +48633,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

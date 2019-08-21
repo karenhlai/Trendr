@@ -59,9 +59,9 @@ class Dashboard extends React.Component {
               { recommended }
             </div>
 
-            <div className="radar-container">
+            {/* <div className="radar-container"> */}
               {/* <h2>Radar</h2>  */}
-            </div>
+            {/* </div> */}
 
             <ul>
               <a href="https://github.com/karenhlai"> <i className="fab fa-github-square"></i> </a>
@@ -80,15 +80,15 @@ const mapStateToProps = state => {
   const users = Object.values(state.entities.users);
   // const users = state.entities.users;
   const posts = Object.values(state.entities.posts);
-  const radar = posts.filter(post => post.post_likes.length >= 1 && post.author_id !== currentUser.id);
-  const currentRadar = radar[Math.floor(Math.random() * radar.length)];
+  // const radar = posts.filter(post => post.post_likes.length >= 1 && post.author_id !== currentUser.id);
+  // const currentRadar = radar[Math.floor(Math.random() * radar.length)];
   // debugger
   return ({
     currentUser,
     users, 
     posts, 
     // radar,
-    currentRadar,
+    // currentRadar,
   });
 };
 
