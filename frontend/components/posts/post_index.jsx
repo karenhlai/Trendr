@@ -29,7 +29,7 @@ class PostIndex extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.posts) {
-      this.setState({posts: nextProps.posts})
+      this.setState({ posts: nextProps.posts})
     }
   }
 

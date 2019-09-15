@@ -2214,11 +2214,9 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state) {
   var currentUser = state.entities.users[state.session.id];
   var username = currentUser.username;
-  var users = state.entities.users;
-  var posts = Object.keys(state.entities.posts).map(function (id) {
-    return state.entities.posts[id];
-  }); // const posts = Object.values(state.entities.posts);
-  // debugger
+  var users = state.entities.users; // const posts = Object.keys(state.entities.posts).map(id => state.entities.posts[id]);
+
+  var posts = Object.values(state.entities.posts); // debugger
 
   return {
     currentUser: currentUser,
