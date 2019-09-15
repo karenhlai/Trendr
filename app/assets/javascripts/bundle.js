@@ -876,8 +876,7 @@ function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   var currentUser = state.entities.users[state.session.id];
-  var users = Object.values(state.entities.users); // const users = state.entities.users;
-
+  var users = Object.values(state.entities.users);
   var posts = Object.values(state.entities.posts); // const radar = posts.filter(post => post.post_likes.length >= 1 && post.author_id !== currentUser.id);
   // const currentRadar = radar[Math.floor(Math.random() * radar.length)];
   // debugger
@@ -1221,7 +1220,8 @@ function PostFormModal(_ref) {
 
   switch (modal.modal) {
     case 'Create Text':
-      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_create_text_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_forms_create_text_container__WEBPACK_IMPORTED_MODULE_3__["default"], null); // debugger
+
       break;
 
     case 'Create Photo':
@@ -2101,9 +2101,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -2128,8 +2128,8 @@ function (_React$Component) {
     _this.state = {
       posts: _this.props.posts
     }; // debugger
+    // this.postHandler = this.postHandler.bind(this);
 
-    _this.postHandler = _this.postHandler.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2137,20 +2137,17 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchPosts();
-    }
-  }, {
-    key: "postHandler",
-    value: function postHandler(id) {
-      // merge new posts in old posts Object.assign
-      // set this.state posts to new obj 
-      var posts = this.state.posts.filter(function (post) {
-        return id !== post.id;
-      }); // debugger
+    } // refreshes state to get updates from post index item
+    // postHandler(id) {
+    //   // merge new posts in old posts Object.assign
+    //   // set this.state posts to new obj 
+    //   let posts = this.state.posts.filter(post => id !== post.id);
+    //   // debugger
+    //   this.setState({
+    //     posts: posts
+    //   })
+    // }
 
-      this.setState({
-        posts: posts
-      });
-    }
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
@@ -2165,23 +2162,23 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this.state);
-
+      // console.log(this.props.posts)
       if (this.props.posts.length === 0) {
         return null;
       }
 
-      var posts = this.state.posts.map(function (post) {
+      var posts = this.props.posts.map(function (post) {
+        // let posts = this.state.posts.map(post => {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: post.id,
-          user: _this2.props.users[post.author_id],
           post: post,
+          user: _this2.props.users[post.author_id],
           updatePost: _this2.props.updatePost,
           deletePost: _this2.props.deletePost,
           openModal: _this2.props.openModal,
           likePost: _this2.props.likePost,
-          unlikePost: _this2.props.unlikePost,
-          postHandler: _this2.postHandler
+          unlikePost: _this2.props.unlikePost // postHandler={this.postHandler}
+
         });
       }); // debugger
 
@@ -2221,6 +2218,7 @@ var mapStateToProps = function mapStateToProps(state) {
   var posts = Object.keys(state.entities.posts).map(function (id) {
     return state.entities.posts[id];
   }); // const posts = Object.values(state.entities.posts);
+  // debugger
 
   return {
     currentUser: currentUser,
@@ -2230,6 +2228,7 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  // debugger
   return {
     fetchPosts: function fetchPosts() {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPosts"])());
@@ -2479,7 +2478,7 @@ function (_React$Component) {
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.postEditOptions(post)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
-            return _this5.props.postHandler(post.id);
+            return _this5.props.deletePost(post.id);
           }
         }, "Delete"))) : null);
       } else {
@@ -2555,7 +2554,9 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    // updatePost: (post) => dispatch(updatePost(post)),
+    updatePost: function updatePost(post) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["updatePost"])(post));
+    },
     deletePost: function deletePost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["deletePost"])(id));
     },
@@ -3708,8 +3709,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  posts: _posts_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  posts: _posts_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 

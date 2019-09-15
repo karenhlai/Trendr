@@ -159,7 +159,8 @@ class PostIndexItem extends React.Component {
                 //reference to the dropdown menu, ref property to get a reference to the DOM element
               <li className="post-settings" ref={(element) => { this.dropdownSettings = element }}>
                   <ul>{this.postEditOptions(post)}</ul>
-                  <ul><button onClick={() => this.props.postHandler(post.id)}>Delete</button></ul>
+                  {/* <ul><button onClick={() => this.props.postHandler(post.id)}>Delete</button></ul> */}
+                  <ul><button onClick={() => this.props.deletePost(post.id)}>Delete</button></ul>
               </li>
                 ) : (
                 null

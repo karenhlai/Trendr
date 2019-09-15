@@ -20,6 +20,7 @@ function PostFormModal({ modal, closeModal }) {
   switch (modal.modal) {
     case 'Create Text':
       component = <CreateTextContainer />;
+      // debugger
       break;
     case 'Create Photo':
       component = <CreatePhotoContainer />;

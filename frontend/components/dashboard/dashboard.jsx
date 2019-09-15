@@ -78,7 +78,6 @@ class Dashboard extends React.Component {
 const mapStateToProps = state => {
   const currentUser = state.entities.users[state.session.id];
   const users = Object.values(state.entities.users);
-  // const users = state.entities.users;
   const posts = Object.values(state.entities.posts);
   // const radar = posts.filter(post => post.post_likes.length >= 1 && post.author_id !== currentUser.id);
   // const currentRadar = radar[Math.floor(Math.random() * radar.length)];

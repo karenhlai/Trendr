@@ -10,6 +10,7 @@ const mapStateToProps = state => {
   const users = state.entities.users;
   const posts = Object.keys(state.entities.posts).map(id => state.entities.posts[id]);
   // const posts = Object.values(state.entities.posts);
+  // debugger
   return ({
     currentUser, 
     users, 
@@ -17,9 +18,12 @@ const mapStateToProps = state => {
   });
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => {
+  // debugger
+  return ({
   fetchPosts: () => dispatch(fetchPosts()),
   openModal: (formType) => dispatch(openModal(formType)), //createPost from postNav
 });
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);

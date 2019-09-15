@@ -8,23 +8,24 @@ class PostIndex extends React.Component {
     super(props);
     this.state = { posts: this.props.posts};
     // debugger
-    this.postHandler = this.postHandler.bind(this);
+    // this.postHandler = this.postHandler.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPosts(); 
   }
 
-  postHandler(id) {
-    // merge new posts in old posts Object.assign
-    // set this.state posts to new obj 
-    let posts = this.state.posts.filter(post => id !== post.id);
+  // refreshes state to get updates from post index item
+  // postHandler(id) {
+  //   // merge new posts in old posts Object.assign
+  //   // set this.state posts to new obj 
+  //   let posts = this.state.posts.filter(post => id !== post.id);
     
-    // debugger
-    this.setState({
-      posts: posts
-    })
-  }
+  //   // debugger
+  //   this.setState({
+  //     posts: posts
+  //   })
+  // }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.posts) {
@@ -32,25 +33,24 @@ class PostIndex extends React.Component {
     }
   }
 
-
-
   render() {
-    console.log(this.state)
+    // console.log(this.props.posts)
     if (this.props.posts.length === 0 ) {
       return null;
     }
-    let posts = this.state.posts.map(post => {
+    let posts = this.props.posts.map(post => {
+    // let posts = this.state.posts.map(post => {
       return (
         <PostIndexItemContainer
           key={post.id}
-          user={this.props.users[post.author_id]}
           post={post}
+          user={this.props.users[post.author_id]}
           updatePost={this.props.updatePost}
           deletePost={this.props.deletePost}
           openModal={this.props.openModal}
           likePost={this.props.likePost}
           unlikePost={this.props.unlikePost}
-          postHandler={this.postHandler}
+          // postHandler={this.postHandler}
         />
       );
     });
