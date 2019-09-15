@@ -37,7 +37,6 @@ body {
   padding-right: 50px;
 }
 
-
 .navbar-right-container > li > i,
 .navbar-right-container > li > a > i {
   display: inline-block;
@@ -50,8 +49,14 @@ body {
   color: #fff;
 }
 
+
+
+
+
+
+
 //account-dropdown
-.account {
+.account-dropdown {
   position: relative;
   display: inline-block;
 }
@@ -61,33 +66,33 @@ body {
   position: absolute;
 }
 
-.account:hover .account-dropdown-content {
+.account-dropdown:hover .account-dropdown-content {
   display: block;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 3px;
   position: relative;
 }
 
-.account .account-dropdown-content ul:hover {
-  background-color: #ddd;
-}
+// .account-dropdown .account-dropdown-content div:hover {
+//   background-color: red;
+// }
 
 .account-dropdown-content button, 
-.account-dropdown-content a {
-  display: flex;
+.account-dropdown-content a, 
+.account-dropdown-content p {
+  display: block;
   color: #444;
-  // font-size: 18px;
-  // padding-top: 5px;
-  // padding-bottom: 5px;
+  font-size: 15px;
+  padding-top: 1px;
 }
 
-#following-idx:hover {
-  color: #444;
+.account-dropdown-content > div:first-child {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #e7e7e7;
+  border-radius: 3px;
 }
 
-// .account-dropdown-content button:hover {
-//   background-color: #ddd;
-// }
+
 
 // Alternate Create Post Bar
  .alt-modal-child {
