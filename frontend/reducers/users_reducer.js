@@ -16,9 +16,9 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_ALL_USERS:
             nextState = merge({}, state, action.users);
             return nextState;
-        case RECEIVE_USER:
-            nextState = merge({}, state, { [action.user.id]: action.user } );
-            return nextState;
+        // case RECEIVE_USER:
+        //     nextState = merge({}, state, { [action.user.id]: action.user } );
+        //     return nextState;
         case RECEIVE_POSTS:
             //receive each user's info for each post (avatar)
             //remove when RECEIVE_ALL_USERS can be used in place
