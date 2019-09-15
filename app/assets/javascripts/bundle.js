@@ -4015,9 +4015,10 @@ var usersReducer = function usersReducer() {
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_ALL_USERS"]:
       nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, action.users);
       return nextState;
-    // case RECEIVE_USER:
-    //     nextState = merge({}, state, { [action.user.id]: action.user } );
-    //     return nextState;
+
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_USER"]:
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.user.id, action.user));
+      return nextState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_POSTS"]:
       //receive each user's info for each post (avatar)
@@ -48633,7 +48634,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
