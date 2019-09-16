@@ -2165,10 +2165,10 @@ function (_React$Component) {
       // console.log(this.props.posts)
       if (this.props.posts.length === 0) {
         return null;
-      }
+      } // let posts = this.props.posts.map(post => {
 
-      var posts = this.props.posts.map(function (post) {
-        // let posts = this.state.posts.map(post => {
+
+      var posts = this.state.posts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: post.id,
           post: post,
@@ -3805,7 +3805,7 @@ var postsReducer = function postsReducer() {
       return nextState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST"]:
-      // nextState[action.post.id] = action.post;
+      // return nextState[action.post.id] = action.post;
       nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.post.id, action.post));
       return nextState;
 

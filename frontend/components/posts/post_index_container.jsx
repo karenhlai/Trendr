@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => {
   return ({
   fetchPosts: () => dispatch(fetchPosts()),
   openModal: (formType) => dispatch(openModal(formType)), //createPost from postNav
-});
+  });
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
