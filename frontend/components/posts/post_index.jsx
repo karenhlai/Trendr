@@ -16,16 +16,16 @@ class PostIndex extends React.Component {
   }
 
   // refreshes state to get updates from post index item
-  // postHandler(id) {
-  //   // merge new posts in old posts Object.assign
-  //   // set this.state posts to new obj 
-  //   let posts = this.state.posts.filter(post => id !== post.id);
+  postHandler(id) {
+    // merge new posts in old posts Object.assign
+    // set this.state posts to new obj 
+    let posts = this.state.posts.filter(post => id !== post.id);
     
-  //   // debugger
-  //   this.setState({
-  //     posts: posts
-  //   })
-  // }
+    // debugger
+    this.setState({
+      posts: posts
+    })
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.posts) {
@@ -45,7 +45,7 @@ class PostIndex extends React.Component {
           key={post.id}
           post={post}
           user={this.props.users[post.author_id]}
-          updatePost={this.props.updatePost}
+          // updatePost={this.props.updatePost}
           deletePost={this.props.deletePost}
           openModal={this.props.openModal}
           likePost={this.props.likePost}

@@ -2138,16 +2138,20 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchPosts();
     } // refreshes state to get updates from post index item
-    // postHandler(id) {
-    //   // merge new posts in old posts Object.assign
-    //   // set this.state posts to new obj 
-    //   let posts = this.state.posts.filter(post => id !== post.id);
-    //   // debugger
-    //   this.setState({
-    //     posts: posts
-    //   })
-    // }
 
+  }, {
+    key: "postHandler",
+    value: function postHandler(id) {
+      // merge new posts in old posts Object.assign
+      // set this.state posts to new obj 
+      var posts = this.state.posts.filter(function (post) {
+        return id !== post.id;
+      }); // debugger
+
+      this.setState({
+        posts: posts
+      });
+    }
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
@@ -2172,8 +2176,8 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: post.id,
           post: post,
-          user: _this2.props.users[post.author_id],
-          updatePost: _this2.props.updatePost,
+          user: _this2.props.users[post.author_id] // updatePost={this.props.updatePost}
+          ,
           deletePost: _this2.props.deletePost,
           openModal: _this2.props.openModal,
           likePost: _this2.props.likePost,
