@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/post_actions';
+import { fetchPosts, updatePost, deletePost } from '../../actions/post_actions';
 import { openModal } from '../../actions/modal_actions';
 import PostIndex from './post_index';
 
@@ -22,6 +22,8 @@ const mapDispatchToProps = dispatch => {
   // debugger
   return ({
   fetchPosts: () => dispatch(fetchPosts()),
+  updatePost: (post) => dispatch(updatePost(post)),
+  deletePost: (id) => dispatch(deletePost(id)),
   openModal: (formType) => dispatch(openModal(formType)), //createPost from postNav
   });
 };

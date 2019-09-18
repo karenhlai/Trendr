@@ -2140,21 +2140,29 @@ function (_React$Component) {
     } // refreshes state to get updates from post index item
 
   }, {
-    key: "postHandler",
-    value: function postHandler(id) {
+    key: "postDeleteHandler",
+    value: function postDeleteHandler(id) {
+      var _this2 = this;
+
       // merge new posts in old posts Object.assign
       // set this.state posts to new obj 
-      var posts = this.state.posts.filter(function (post) {
-        return id !== post.id;
-      }); // debugger
+      debugger;
+      this.deletePost(id).then(function () {
+        var posts = _this2.state.posts.filter(function (post) {
+          return id !== post.id;
+        }); // debugger
 
-      this.setState({
-        posts: posts
+
+        _this2.setState({
+          posts: posts
+        });
       });
     }
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
+      debugger;
+
       if (nextProps.posts) {
         this.setState({
           posts: nextProps.posts
@@ -2164,7 +2172,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       // console.log(this.props.posts)
       if (this.props.posts.length === 0) {
@@ -2176,13 +2184,11 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: post.id,
           post: post,
-          user: _this2.props.users[post.author_id] // updatePost={this.props.updatePost}
-          ,
-          deletePost: _this2.props.deletePost,
-          openModal: _this2.props.openModal,
-          likePost: _this2.props.likePost,
-          unlikePost: _this2.props.unlikePost // postHandler={this.postHandler}
-
+          user: _this3.props.users[post.author_id],
+          openModal: _this3.props.openModal,
+          likePost: _this3.props.likePost,
+          unlikePost: _this3.props.unlikePost,
+          postDeleteHandler: _this3.postDeleteHandler
         });
       }); // debugger
 
@@ -2234,6 +2240,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchPosts: function fetchPosts() {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["fetchPosts"])());
+    },
+    updatePost: function updatePost(post) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["updatePost"])(post));
+    },
+    deletePost: function deletePost(id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["deletePost"])(id));
     },
     openModal: function openModal(formType) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(formType));
@@ -2480,7 +2492,7 @@ function (_React$Component) {
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.postEditOptions(post)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
-            return _this5.props.deletePost(post.id);
+            return _this5.props.postDeleteHandler(post.id);
           }
         }, "Delete"))) : null);
       } else {
