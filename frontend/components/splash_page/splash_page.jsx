@@ -25,7 +25,7 @@ class SplashPage extends React.Component {
         <ReactFullpage
           navigation
           licenseKey="05881909-CC18460F-993ADDFD-EF6A380A"
-          render={({ state, fullpageApi }) => 
+          render={({ fullpageApi }) => 
             <ReactFullpage.Wrapper>
               <div className="section section-one">
                 <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />

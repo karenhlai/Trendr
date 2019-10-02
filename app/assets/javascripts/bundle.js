@@ -2822,68 +2822,33 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-
-var SectionFive =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(SectionFive, _React$Component);
-
-  function SectionFive() {
-    _classCallCheck(this, SectionFive);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SectionFive).apply(this, arguments));
-  }
-
-  _createClass(SectionFive, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "section section-five"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "create-graphic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-font"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-camera"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-quote-right"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-link"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Text"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Quote"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Link"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-comment-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-headphones-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-video"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Chat"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Audio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Video")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "section-five-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "session-five-header"
-      }, "Seriously, put anything ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "you want here."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Seven post types to get you started. Your brain can do the rest. This thing is yours. ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Use it however you like.")));
-    }
-  }]);
-
-  return SectionFive;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+var SectionFive = function SectionFive() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "section section-five"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "create-graphic"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-font"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-camera"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-quote-right"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-link"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Text"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Quote"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Link"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-comment-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-headphones-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-video"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Chat"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Audio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Video")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "section-five-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "session-five-header"
+  }, "Seriously, put anything ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "you want here."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Seven post types to get you started. Your brain can do the rest. This thing is yours. ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Use it however you like.")));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (SectionFive);
 
@@ -2900,151 +2865,116 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-
-var SectionFour =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(SectionFour, _React$Component);
-
-  function SectionFour() {
-    _classCallCheck(this, SectionFour);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SectionFour).apply(this, arguments));
-  }
-
-  _createClass(SectionFour, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "section section-four"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-col pictures"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
-        className: "first-avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-section"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-clear-fix"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-label"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-font"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Text")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-label"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-camera"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-label"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-quote-right"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Quote")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-label"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-link"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Link")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-label"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-comment-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Chat")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-label"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-headphones-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Audio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "icon-label"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-video"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Video")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
-        className: "big-avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "ash_k3tchup")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://news.nationalgeographic.com/content/dam/news/2018/05/17/you-can-train-your-cat/02-cat-training-NationalGeographic_1484324.ngsversion.1526587209178.adapt.1900.1.jpg",
-        className: "nav-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-notes"
-      }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav_controls"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls_inner"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-share-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-retweet"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "far fa-heart"
-      }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://www.akc.org/wp-content/themes/akc/component-library/assets/img/welcome.jpg",
-        className: "big-avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "pup_p3r")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://66.media.tumblr.com/0d3b8eefc3bcd0fbe589da5a2808a5a6/tumblr_pkyd96Euc01tsakdz_1280.jpg",
-        className: "nav-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-notes"
-      }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav_controls"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls_inner"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-share-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-retweet"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "far fa-heart"
-      })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "session-four-header"
-      }, "You already ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " know how this ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " works."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "session-four-paragraph"
-      }, "Once you follow a blog, all of its posts show up in ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "your dashboard, just like you\u2019d expect. See ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "something great? Reblog it to your own blog. Add ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "commentary if you like. Make it your own. Other ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "people will do the same to your posts. That\u2019s how ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "you meet people here.")));
-    }
-  }]);
-
-  return SectionFour;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+var SectionFour = function SectionFour() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "section section-four"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-col pictures"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
+    className: "first-avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-section"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-clear-fix"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-label"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-font"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Text")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-label"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-camera"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-label"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-quote-right"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Quote")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-label"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-link"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Link")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-label"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-comment-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Chat")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-label"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-headphones-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Audio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "icon-label"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-video"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Video")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+    className: "big-avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "ash_k3tchup")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://news.nationalgeographic.com/content/dam/news/2018/05/17/you-can-train-your-cat/02-cat-training-NationalGeographic_1484324.ngsversion.1526587209178.adapt.1900.1.jpg",
+    className: "nav-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-notes"
+  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav_controls"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls_inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-share-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-retweet"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-heart"
+  }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://www.akc.org/wp-content/themes/akc/component-library/assets/img/welcome.jpg",
+    className: "big-avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "pup_p3r")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://66.media.tumblr.com/0d3b8eefc3bcd0fbe589da5a2808a5a6/tumblr_pkyd96Euc01tsakdz_1280.jpg",
+    className: "nav-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-notes"
+  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav_controls"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls_inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-share-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-retweet"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-heart"
+  })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "session-four-header"
+  }, "You already ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " know how this ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " works."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "session-four-paragraph"
+  }, "Once you follow a blog, all of its posts show up in ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "your dashboard, just like you\u2019d expect. See ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "something great? Reblog it to your own blog. Add ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "commentary if you like. Make it your own. Other ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "people will do the same to your posts. That\u2019s how ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "you meet people here.")));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (SectionFour);
 
@@ -3061,230 +2991,195 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-
-var SectionThree =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(SectionThree, _React$Component);
-
-  function SectionThree() {
-    _classCallCheck(this, SectionThree);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SectionThree).apply(this, arguments));
-  }
-
-  _createClass(SectionThree, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "section section-three"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "section-three-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "session-three-header"
-      }, "Trendr is blogs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Turns out that when you make it easy to create interesting things,", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "that\u2019s exactly what people do. All those great, random blogs your", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "friends send you, those are Trendr blogs. We\u2019ll help you find and", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "follow blogs like that, and we\u2019ll help other people find and follow", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "yours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blogs-graphic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post-column column-one"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzyeVu9M_4z7_MUcazam4NxE0QuyeVJg3c7AmIHGfOZOVtt9N3HQ",
-        className: "avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "zat3am"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "http://25.media.tumblr.com/650a5105c8c1ddc327d0417cde585e03/tumblr_mtx21tYUni1rdutw3o1_400.gif",
-        className: "post-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-notes"
-      }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls_inner"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-share-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-retweet"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "far fa-heart"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "http://sportsvape.net/wp-content/uploads/2014/09/Green-Apple.jpg",
-        className: "avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "gr33n_apple"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://pixel.nymag.com/imgs/daily/vulture/2016/02/12/recaps/12-bobs-burgers.w700.h700.jpg",
-        className: "post-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-notes"
-      }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post-column column-two"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTev1veqkw4utTffufZZeMYFJGsbteMrR_9LjZjzOaIuV0impiV6Q",
-        className: "avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "r0cking_ha1r"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://i.gifer.com/29Wb.gif",
-        className: "post-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-notes"
-      }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls_inner"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-share-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-retweet"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "far fa-heart"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqzuv71T_e5kELaSqga2HQx10iNxvU6jlb9iwb8PN9HTZKaMhc",
-        className: "avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "space1sFun"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://66.media.tumblr.com/9ae685a80c5d0b578d452ae251903dbd/tumblr_pqvt4fc0Cg1rngqfho1_500.gif",
-        className: "post-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-notes"
-      }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post-column column-three"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://i.guim.co.uk/img/media/fccf2d648bd42dae41b65cad55925181506ec5e7/0_117_6016_3611/master/6016.jpg?width=300&quality=85&auto=format&fit=max&s=b66678e70c1fd07688c227e9dea79aac",
-        className: "avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Stev_adventure"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://media.giphy.com/media/3o6ZtpWvwnhf34Oj0A/giphy.gif",
-        className: "post-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-notes"
-      }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls_inner"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-share-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-retweet"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "far fa-heart"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
-        className: "avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "woo-hoo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://media3.giphy.com/media/xT8qBmk4MAjBeTO1tm/source.gif",
-        className: "post-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-notes"
-      }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post-column column-four"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        className: "avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "yeehaw"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://media2.giphy.com/media/3o6Zthilb8hwxJKZu8/source.gif",
-        className: "post-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-notes"
-      }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post_controls_inner"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-share-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-retweet"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "far fa-heart"
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "blog-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        className: "avatar"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "gr33n_apple"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://66.media.tumblr.com/2006d56571c8b3392dbbe31ee829f9ac/tumblr_ppv6zpMinX1rc06xoo1_500.jpg",
-        className: "post-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ui-notes"
-      }, "2.130 not"))))));
-    }
-  }]);
-
-  return SectionThree;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+var SectionThree = function SectionThree() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "section section-three"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "section-three-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "session-three-header"
+  }, "Trendr is blogs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Turns out that when you make it easy to create interesting things,", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "that\u2019s exactly what people do. All those great, random blogs your", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "friends send you, those are Trendr blogs. We\u2019ll help you find and", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "follow blogs like that, and we\u2019ll help other people find and follow", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "yours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blogs-graphic"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post-column column-one"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzyeVu9M_4z7_MUcazam4NxE0QuyeVJg3c7AmIHGfOZOVtt9N3HQ",
+    className: "avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "zat3am"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "http://25.media.tumblr.com/650a5105c8c1ddc327d0417cde585e03/tumblr_mtx21tYUni1rdutw3o1_400.gif",
+    className: "post-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-notes"
+  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls_inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-share-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-retweet"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-heart"
+  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "http://sportsvape.net/wp-content/uploads/2014/09/Green-Apple.jpg",
+    className: "avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "gr33n_apple"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://pixel.nymag.com/imgs/daily/vulture/2016/02/12/recaps/12-bobs-burgers.w700.h700.jpg",
+    className: "post-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-notes"
+  }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post-column column-two"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTev1veqkw4utTffufZZeMYFJGsbteMrR_9LjZjzOaIuV0impiV6Q",
+    className: "avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "r0cking_ha1r"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://i.gifer.com/29Wb.gif",
+    className: "post-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-notes"
+  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls_inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-share-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-retweet"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-heart"
+  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqzuv71T_e5kELaSqga2HQx10iNxvU6jlb9iwb8PN9HTZKaMhc",
+    className: "avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "space1sFun"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://66.media.tumblr.com/9ae685a80c5d0b578d452ae251903dbd/tumblr_pqvt4fc0Cg1rngqfho1_500.gif",
+    className: "post-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-notes"
+  }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post-column column-three"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://i.guim.co.uk/img/media/fccf2d648bd42dae41b65cad55925181506ec5e7/0_117_6016_3611/master/6016.jpg?width=300&quality=85&auto=format&fit=max&s=b66678e70c1fd07688c227e9dea79aac",
+    className: "avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Stev_adventure"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://media.giphy.com/media/3o6ZtpWvwnhf34Oj0A/giphy.gif",
+    className: "post-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-notes"
+  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls_inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-share-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-retweet"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-heart"
+  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
+    className: "avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "woo-hoo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://media3.giphy.com/media/xT8qBmk4MAjBeTO1tm/source.gif",
+    className: "post-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-notes"
+  }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post-column column-four"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    className: "avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "yeehaw"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://media2.giphy.com/media/3o6Zthilb8hwxJKZu8/source.gif",
+    className: "post-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-notes"
+  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post_controls_inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-share-alt"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-retweet"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-heart"
+  }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "blog-post"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-avatar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    className: "avatar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "gr33n_apple"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://66.media.tumblr.com/2006d56571c8b3392dbbe31ee829f9ac/tumblr_ppv6zpMinX1rc06xoo1_500.jpg",
+    className: "post-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ui-notes"
+  }, "2.130 not"))))));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (SectionThree);
 
@@ -3641,8 +3536,7 @@ function (_React$Component) {
         navigation: true,
         licenseKey: "05881909-CC18460F-993ADDFD-EF6A380A",
         render: function render(_ref) {
-          var state = _ref.state,
-              fullpageApi = _ref.fullpageApi;
+          var fullpageApi = _ref.fullpageApi;
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fullpage_react_fullpage__WEBPACK_IMPORTED_MODULE_6___default.a.Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-one"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
