@@ -30,7 +30,7 @@ const SectionThree = () => {
             </div>
             <img src="http://25.media.tumblr.com/650a5105c8c1ddc327d0417cde585e03/tumblr_mtx21tYUni1rdutw3o1_400.gif" className="post-image" />
             <div className="post-bottom">
-              <div className="ui-notes">2.130 not</div>
+              <div className="ui-notes">2.130 notes</div>
               <div className="post_controls">
                 <div className="post_controls_inner">
                   <i className="fas fa-share-alt" />
@@ -55,7 +55,7 @@ const SectionThree = () => {
               className="post-image"
             />
             <div className="post-bottom">
-              <div className="ui-notes">2.130 not</div>
+              <div className="ui-notes">2.130 notes</div>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@ const SectionThree = () => {
             </div>
             <img src="https://i.gifer.com/29Wb.gif" className="post-image" />
             <div className="post-bottom">
-              <div className="ui-notes">2.130 not</div>
+              <div className="ui-notes">2.130 notes</div>
               <div className="post_controls">
                 <div className="post_controls_inner">
                   <i className="fas fa-share-alt" />
@@ -97,7 +97,7 @@ const SectionThree = () => {
               className="post-image"
             />
             <div className="post-bottom">
-              <div className="ui-notes">2.130 not</div>
+              <div className="ui-notes">2.130 notes</div>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ const SectionThree = () => {
               className="post-image"
             />
             <div className="post-bottom">
-              <div className="ui-notes">2.130 not</div>
+              <div className="ui-notes">2.130 notes</div>
               <div className="post_controls">
                 <div className="post_controls_inner">
                   <i className="fas fa-share-alt" />
@@ -142,7 +142,7 @@ const SectionThree = () => {
               className="post-image"
             />
             <div className="post-bottom">
-              <div className="ui-notes">2.130 not</div>
+              <div className="ui-notes">2.130 notes</div>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ const SectionThree = () => {
               className="post-image"
             />
             <div className="post-bottom">
-              <div className="ui-notes">2.130 not</div>
+              <div className="ui-notes">2.130 notes</div>
               <div className="post_controls">
                 <div className="post_controls_inner">
                   <i className="fas fa-share-alt" />
@@ -187,7 +187,7 @@ const SectionThree = () => {
               className="post-image"
             />
             <div className="post-bottom">
-              <div className="ui-notes">2.130 not</div>
+              <div className="ui-notes">2.130 notes</div>
             </div>
           </div>
         </div>

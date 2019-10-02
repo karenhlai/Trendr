@@ -97,21 +97,21 @@ button {
 #fp-nav ul li:hover a.active span,
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li:hover a.active span,
-.fp-slidesNav ul li a.active span {
+.fp-slidesNav ul li a.active span { 
   background-color: white !important;
-  border: 4px solid white !important;
+  border: 3px solid white !important;
 }
 
 // Need to refactor by putting this after css on page so I can remove !important//
 #fp-nav ul li a span {
-  border: 4px solid gray !important;
+  border: 3px solid gray !important;
   background-color: transparent !important;
   width: 12px !important;
   height: 12px !important;
   margin: 0 !important;
 }
 #fp-nav ul li {
-  padding: 4px;
+  padding: 3px;
 }
 
 #fp-nav {

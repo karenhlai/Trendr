@@ -62,7 +62,7 @@ const SectionFour = () => {
                 className="nav-image"
               />
               <div className="nav-bottom">
-                <div className="nav-notes">2.130 not</div>
+                <div className="nav-notes">2.130 notes</div>
                 <div className="nav_controls">
                   <div className="post_controls_inner">
                     <i className="fas fa-share-alt" />
@@ -92,7 +92,7 @@ const SectionFour = () => {
                 className="nav-image"
               />
               <div className="nav-bottom">
-                <div className="nav-notes">2.130 not</div>
+                <div className="nav-notes">2.130 notes</div>
                 <div className="nav_controls">
                   <div className="post_controls_inner">
                     <i className="fas fa-share-alt" />

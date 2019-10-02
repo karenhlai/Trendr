@@ -2929,7 +2929,7 @@ var SectionFour = function SectionFour() {
     className: "nav-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-notes"
-  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav_controls"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls_inner"
@@ -2957,7 +2957,7 @@ var SectionFour = function SectionFour() {
     className: "nav-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-notes"
-  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav_controls"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls_inner"
@@ -3020,7 +3020,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls_inner"
@@ -3046,7 +3046,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post-column column-two"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
@@ -3064,7 +3064,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls_inner"
@@ -3090,7 +3090,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post-column column-three"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
@@ -3108,7 +3108,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls_inner"
@@ -3134,7 +3134,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 not")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post-column column-four"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
@@ -3152,7 +3152,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 not"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post_controls_inner"
@@ -3178,7 +3178,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 not"))))));
+  }, "2.130 notes"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SectionThree);
