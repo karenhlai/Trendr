@@ -47,16 +47,19 @@ body {
   min-height: 100%;
   max-width: 100%;
 }
+
 h1 {
   color: white;
   font-size: 42px;
   font-family: Bookman Old Style Bold;
   font-weight: 900;
 } 
+
 h3, h4 {
   font-family: "Dosis", sans-serif;
   font-weight: bold;
 }
+
 p {
   font-family: "Dosis", sans-serif;
 }
@@ -135,10 +138,6 @@ button {
   font-size: 80px;
   font-weight: bolder;
   text-align: center;
-  text-align: center;
-  margin: auto auto 0px auto;
-  width: 232px;
-  height: 50px;
 }
 
 .splash-sub {
@@ -251,21 +250,20 @@ input[type="submit"] {
 //Session-One//
 //Login//
 
-.login-form h1 {
-  font-style: Bookman Old Style Bold;
-  text-align: center;
-  margin: auto auto 15% auto;
-  width: 232px;
-  height: 50px;
-  padding: 0px;
-}
+// .login-form-container h1 {
+//   font-style: Bookman Old Style Bold;
+//   text-align: center;
+//   width: 232px;
+//   height: 50px;
+//   padding: 0px;
+// }
 
 .login-form-container {
-  margin: auto;
-  text-align: center;
-  width: 20%;
-  padding-top: 15%;
-  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12%;
+  
 }
 
 .section-one-button {
@@ -301,11 +299,11 @@ input[type="submit"] {
 }
 
 .content-text p {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 .session-two-header {
-  font-size: 50px;
+  font-size: 45px;
   margin-bottom: 15px;
 }
 
@@ -332,11 +330,11 @@ input[type="submit"] {
 }
 .section-three-content h3 {
   padding: 0px;
-  font-size: 22px;
+  font-size: 20px;
   color: white;
 }
 .session-three-header {
-  font-size: 60px;
+  font-size: 45px;
 }
 .section-three p {
   padding: 10px 0px 0px 5%;
@@ -496,7 +494,7 @@ input[type="submit"] {
 
 .session-four-header {
   padding-top: 40%;
-  font-size: 50px;
+  font-size: 45px;
 }
 .session-four-paragraph {
   color: white;
@@ -517,12 +515,12 @@ input[type="submit"] {
   color: #fff;
 }
 .create-graphic i {
-  font-size: 90px;
+  font-size: 80px;
   padding: 20px;
 }
 .create-graphic h3 {
   font-size: 30px;
-  padding: 10px 35px 10px 35px;
+  padding: 0px 35px 0px 35px;
   display: inline-block;
 }
 .section-five-content {
@@ -535,11 +533,11 @@ input[type="submit"] {
   line-height: 1;
 }
 .session-five-header {
-  font-size: 60px;
+  font-size: 45px;
   padding: 10px;
 }
 .section-five-content h3 {
-  font-size: 22px;
+  font-size: 20px;
   padding: 10px;
 }
 .section-five-icon {

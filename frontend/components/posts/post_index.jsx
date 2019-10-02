@@ -19,7 +19,7 @@ class PostIndex extends React.Component {
   postDeleteHandler(id) {
     // merge new posts in old posts Object.assign
     // set this.state posts to new obj 
-    debugger
+    // debugger
     this.deletePost(id).then( () => {
       let posts = this.state.posts.filter(post => id !== post.id);
 
@@ -32,7 +32,7 @@ class PostIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
+    // debugger
     if (nextProps.posts) {
       this.setState({ posts: nextProps.posts})
     }
