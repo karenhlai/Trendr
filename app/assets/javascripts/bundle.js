@@ -2781,26 +2781,24 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-container"
+        className: "login-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "splash-header"
       }, "trendr"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
         className: "splash-sub"
-      }, "Come for what you love.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Stay for what you discover."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "center"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Come for what you love.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Stay for what you discover."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "home-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "register-button"
-      }, "Get Started"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "session-button"
+      }, "Get Started"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "home-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/login"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "login-button"
-      }, "Log In")))));
+        className: "session-button"
+      }, "Log In"))));
     }
   }]);
 
@@ -3366,7 +3364,7 @@ function (_React$Component) {
 
       if (this.props.formType === "Log In") {
         demoButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "demo-button",
+          className: "session-button",
           onClick: this.loginDemo
         }, "Demo Login");
       } //button sign in demo (onClick, callback)
@@ -3398,7 +3396,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "renderErrors"
       }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "session-submit",
+        className: "session-button",
         type: "submit",
         value: this.props.formType
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), demoButton)));
@@ -3541,7 +3539,9 @@ function (_React$Component) {
             className: "section section-one"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "loginform"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
             path: "/login",
             component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
@@ -3550,15 +3550,15 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
             path: "/",
             component: _landing_page__WEBPACK_IMPORTED_MODULE_1__["default"]
-          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "popup bottom-slider"
+          }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "popup footer-slider"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             className: "section-one-button",
             onClick: function onClick() {
               return fullpageApi.moveSectionDown();
             }
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-            className: "session-one-bottom"
+            className: "session-one-footer"
           }, "What is Trendr?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-two"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3574,7 +3574,9 @@ function (_React$Component) {
             src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             className: "session-six-header"
-          }, "Okay, it's not actually hard to explain."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+          }, "Okay, it's not actually hard to explain."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "loginform"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
             path: "/login",
             component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
@@ -3583,7 +3585,7 @@ function (_React$Component) {
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
             path: "/",
             component: _landing_page__WEBPACK_IMPORTED_MODULE_1__["default"]
-          }))));
+          })))));
         }
       }));
     }

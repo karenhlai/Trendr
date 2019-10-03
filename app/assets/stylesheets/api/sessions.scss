@@ -121,73 +121,48 @@ button {
 }
 //Session-One//
 //Home//
-
-.home-container {
-  margin: 15% auto auto auto;
-  width: 20%;
-  padding: 10px;
-}
-
-.center {
-  text-align: center;
-}
+// .center {
+//   text-align: center;
+// }
 
 .splash-header {
   font-style: Bookman Old Style Bold;
   color: white;
   font-size: 80px;
-  font-weight: bolder;
   text-align: center;
 }
 
 .splash-sub {
-  margin: 13% auto 5% auto;
   text-align: center;
-  font-size: 15px;
-  color: white;
-}
-.home-button {
-  background-color: transparent;
-  margin: 8px;
-}
-
-.home-button p {
-  width: 18vw;
-  text-align: center;
-  font-weight: bold;
   font-size: 16px;
-  padding: 11px;
-}
-
-.register-button {
   color: white;
-  background-color: #00b8ff;
-  border: 1px solid #00b8ff;
-  border-radius: 5px;
-  z-index: 2;
 }
 
-.login-button {
-  color: #444;
-  border: 1px solid white;
-  background-color: white;
-  border-radius: 5px;
-  z-index: 2;
-}
-.demo-button {
+// .home-button {
+//   background-color: transparent;
+//   margin: 8px;
+// }
+
+// .home-button p {
+//   width: 20vw;
+//   text-align: center;
+//   font-weight: bold;
+//   font-size: 16px;
+//   padding: 10px;
+// }
+
+.session-button,
+ input[type="submit"] {
     width: 300px;
     margin-top: 10px;
     text-align: center;
-    color: white;
     font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+    color: white;
     font-weight: 700;
-    box-sizing: border-box;
-    border: 1px solid #00b8ff;
+    border-radius: 5px;
+    border: 1px solid #919a9e;
     background-color: #00b8ff;
     padding: 11px 10px 11px 13px;
-}
-.session-submit {
-  border-radius: 7px;
 }
 
 input[type="text"],
@@ -197,19 +172,6 @@ input[type="password"] {
   font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   border: 1px solid #d5d9dd;
-  padding: 11px 10px 11px 13px;
-}
-
-input[type="submit"] {
-  width: 300px;
-  margin-top: 10px;
-  text-align: center;
-  color: white;
-  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  box-sizing: border-box;
-  border: 1px solid #00b8ff;
-  background-color: #00b8ff;
   padding: 11px 10px 11px 13px;
 }
 
@@ -239,31 +201,15 @@ input[type="submit"] {
   border-radius: 0;
   border: 1px solid #00cf35;
 }
-.bottom-slider {
-  animation: 1s ease-out 0s 1 slideIn;
-}
-.session-one-bottom {
-  color: white;
-  padding: 10px;
-  font-size: 20px;
-}
+
 //Session-One//
 //Login//
-
-// .login-form-container h1 {
-//   font-style: Bookman Old Style Bold;
-//   text-align: center;
-//   width: 232px;
-//   height: 50px;
-//   padding: 0px;
-// }
 
 .login-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 12%;
-  
 }
 
 //What is tumblr?
@@ -281,6 +227,16 @@ input[type="submit"] {
   z-index: -1;
   width: 100%;
   height: 100%;
+}
+
+.footer-slider {
+  animation: 1s ease-out 0s 1 slideIn;
+}
+
+.session-one-footer {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
 }
 
 //Session-Two//

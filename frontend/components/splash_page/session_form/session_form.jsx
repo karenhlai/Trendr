@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
 		
 		let demoButton;
 		if (this.props.formType === "Log In") {
-			demoButton = <button className="demo-button" onClick={this.loginDemo}>Demo Login</button>
+			demoButton = <button className="session-button" onClick={this.loginDemo}>Demo Login</button>
 		}
 
 		//button sign in demo (onClick, callback)
@@ -117,7 +117,7 @@ class SessionForm extends React.Component {
 						<div className="renderErrors">
 							{this.renderErrors()}
 						</div>
-						<input className="session-submit" type="submit" value={this.props.formType} />
+						<input className="session-button" type="submit" value={this.props.formType} />
 						<br/>
 							{demoButton}
 					</div>

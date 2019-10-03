@@ -29,16 +29,16 @@ class SplashPage extends React.Component {
             <ReactFullpage.Wrapper>
               <div className="section section-one">
                 <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
-                {/* <div className="loginform"> */}
+                <div className="loginform">
                   <Switch>
                     <AuthRoute path="/login" component={LoginFormContainer} />
                     <AuthRoute path="/signup" component={SignupFormContainer} />
                     <AuthRoute path="/" component={LandingPage} />
                   </Switch>
-                {/* </div> */}
-                <div className="popup bottom-slider">
+                </div>
+                <div className="popup footer-slider">
                 <button className="section-one-button" onClick={() => fullpageApi.moveSectionDown()}>
-                    <p className="session-one-bottom">What is Trendr?</p>
+                    <p className="session-one-footer">What is Trendr?</p>
                 </button>
                 </div>
               </div>
@@ -64,13 +64,13 @@ class SplashPage extends React.Component {
               <div className="section section-six">
                 <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
                 <h1 className="session-six-header">Okay, it's not actually hard to explain.</h1>
-                {/* <div className="loginform"> */}
+                <div className="loginform">
                   <Switch>
                     <AuthRoute path="/login" component={LoginFormContainer} />
                     <AuthRoute path="/signup" component={SignupFormContainer} />
                     <AuthRoute path="/" component={LandingPage} />
                   </Switch>
-                {/* </div> */}
+                </div>
 
               </div>
              
