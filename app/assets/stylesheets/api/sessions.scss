@@ -213,8 +213,11 @@ input[type="password"] {
 }
 
 //What is tumblr?
-.section-one-button {
+.section-one-footer {
   background-color: #00cf35;
+  color: #fff;
+  padding: 8px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   width: 100%;
@@ -231,12 +234,6 @@ input[type="password"] {
 
 .footer-slider {
   animation: 1s ease-out 0s 1 slideIn;
-}
-
-.session-one-footer {
-  color: white;
-  padding: 10px;
-  font-size: 20px;
 }
 
 //Session-Two//

@@ -3553,13 +3553,11 @@ function (_React$Component) {
           }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "popup footer-slider"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            className: "section-one-button",
+            className: "section-one-footer",
             onClick: function onClick() {
               return fullpageApi.moveSectionDown();
             }
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-            className: "session-one-footer"
-          }, "What is Trendr?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What is Trendr?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "section section-two"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "content-text"

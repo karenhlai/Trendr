@@ -37,8 +37,8 @@ class SplashPage extends React.Component {
                   </Switch>
                 </div>
                 <div className="popup footer-slider">
-                <button className="section-one-button" onClick={() => fullpageApi.moveSectionDown()}>
-                    <p className="session-one-footer">What is Trendr?</p>
+                <button className="section-one-footer" onClick={() => fullpageApi.moveSectionDown()}>
+                    <p>What is Trendr?</p>
                 </button>
                 </div>
               </div>
