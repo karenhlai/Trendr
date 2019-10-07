@@ -49,12 +49,6 @@ body {
   color: #fff;
 }
 
-
-
-
-
-
-
 //account-dropdown
 .account-dropdown {
   position: relative;
@@ -73,10 +67,6 @@ body {
   position: relative;
 }
 
-// .account-dropdown .account-dropdown-content div:hover {
-//   background-color: red;
-// }
-
 .account-dropdown-content button, 
 .account-dropdown-content a, 
 .account-dropdown-content p {
@@ -91,8 +81,6 @@ body {
   border-bottom: 1px solid #e7e7e7;
   border-radius: 3px;
 }
-
-
 
 // Alternate Create Post Bar
  .alt-modal-child {
@@ -212,18 +200,21 @@ body {
   width: 100%;
   border: none;
 }
+
 .form input[name=body] {
   font-size: 20px;
   padding-bottom: 100px;
   width: 100%;
   border: none;
 }
+
 .form input[type=submit] {
   position: relative;
   right: -350px;
   width: 150px;
   cursor: pointer;
 }
+
 .form button {
   position: relative;
   right: 150px;
