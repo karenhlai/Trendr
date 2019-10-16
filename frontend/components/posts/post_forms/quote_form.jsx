@@ -6,12 +6,18 @@ class QuoteForm extends React.Component {
     super(props);
     // this.state = this.props.post;
     this.state = { content: "quote", title: "", body: "" };
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  update(field) {
-    return e => this.setState({ [field]: e.target.value, });
-  };
+  // update(field) {
+  //   return e => this.setState({ [field]: e.target.value, });
+  // };
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -23,8 +29,8 @@ class QuoteForm extends React.Component {
       <div>
         <div className="form-author">{this.props.currentUser.username}</div>
         <form className="form" onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.title} name="title" onChange={this.update("title")} placeholder={"Quote"} />
-          <input type="text" value={this.state.body} name="body" onChange={this.update("body")} placeholder={"Source"} />
+          <input type="text" value={this.state.title} name="title" onChange={this.handleChange} placeholder={"Quote"} />
+          <input type="text" value={this.state.body} name="body" onChange={this.handleChange} placeholder={"Source"} />
           <input type="submit" value="Post" />
           <button onClick={() => this.props.closeModal()}>Close</button>
         </form>

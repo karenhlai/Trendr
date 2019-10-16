@@ -9,6 +9,7 @@ class LinkForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //a;ternatively update state without handleChange
   update(field) {
     return e => this.setState({ [field]: e.target.value, });
   };

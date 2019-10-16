@@ -6,6 +6,7 @@ class PhotoForm extends React.Component {
     super(props);
     // this.state = this.props.post;
     this.state = { content: "photo", title: "", body: "" };
+    
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }

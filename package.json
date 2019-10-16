@@ -2,13 +2,13 @@
   "name": "trendr",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.4.3",
+    "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
     "@fullpage/react-fullpage": "^0.1.14",
     "aos": "^2.3.4",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^8.0.6",
     "jshint": "^2.10.2",
     "lodash": "^4.17.15",
     "materialize-css": "^1.0.0",
@@ -41,5 +41,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running."
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
 }
