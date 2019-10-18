@@ -9,7 +9,10 @@ const SectionSix = () => {
   return (
     <div className="section section-six">
       <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
-      <h1 className="session-six-header">Okay, it's not actually hard to explain.</h1>
+      <h1 className="session-six-header">
+        Okay, it's not actually hard to explain.
+      </h1>
+      
       <div className="loginform">
         <Switch>
           <AuthRoute path="/login" component={LoginFormContainer} />

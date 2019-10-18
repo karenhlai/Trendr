@@ -4,7 +4,7 @@ import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container';
 import { Route, Redirect, Switch, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
-import ReactFullpage from '@fullpage/react-fullpage';
+import ReactFullpage from '@fullpage/react-fullpage'; //slider 
 
 const SectionOne = () => {
   return (
@@ -17,11 +17,13 @@ const SectionOne = () => {
           <AuthRoute path="/" component={LandingPage} />
         </Switch>
       </div>
+
       <div className="popup footer-slider">
         <button className="section-one-footer" onClick={() => fullpageApi.moveSectionDown()}>
           <p>What is Trendr?</p>
         </button>
       </div>
+      
     </div>
   )
 }
