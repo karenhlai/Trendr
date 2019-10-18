@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-const AltCreatePost = ({openModal}) => {
+const AltCreatePost = ({ openModal }) => {
   return (
     <div>
       <ul data-aos="fade-down" className="alt-create-bar">

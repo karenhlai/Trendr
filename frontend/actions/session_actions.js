@@ -17,10 +17,12 @@ export const logoutCurrentUser = () => ({
     //no payload, logout currentUser
 });
 
-export const receiveErrors = errors => ({
-    type: RECEIVE_SESSION_ERRORS,
-    errors
-});
+export const receiveErrors = errors => {
+    return ({
+        type: RECEIVE_SESSION_ERRORS,
+        errors
+    })
+};
 
 export const removeSessionErrors = () => ({
     type: REMOVE_SESSION_ERRORS,
