@@ -10,6 +10,7 @@ import SectionTwo from './section_two';
 import SectionThree from './section_three';
 import SectionFour from './section_four';
 import SectionFive from './section_five';
+import SectionSix from './section_six';
 
 class SplashPage extends React.Component {
   render () {
@@ -32,20 +33,8 @@ class SplashPage extends React.Component {
               <SectionThree />
               <SectionFour />
               <SectionFive />
-              <div className="section section-six">
-                <img src="http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg" />
-                <h1 className="session-six-header">Okay, it's not actually hard to explain.</h1>
-                <div className="loginform">
-                  <Switch>
-                    <AuthRoute path="/login" component={LoginFormContainer} />
-                    <AuthRoute path="/signup" component={SignupFormContainer} />
-                    <AuthRoute path="/" component={LandingPage} />
-                  </Switch>
-                </div>
-
-              </div>
-             
-          </ReactFullpage.Wrapper>
+              <SectionSix />
+            </ReactFullpage.Wrapper>
           }
         />
       </div>

@@ -3029,6 +3029,54 @@ var SectionOne = function SectionOne() {
 
 /***/ }),
 
+/***/ "./frontend/components/splash_page/section_six.jsx":
+/*!*********************************************************!*\
+  !*** ./frontend/components/splash_page/section_six.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _landing_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./landing_page */ "./frontend/components/splash_page/landing_page.jsx");
+/* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/splash_page/session_form/login_form_container.jsx");
+/* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/splash_page/session_form/signup_form_container.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/route_util */ "./frontend/util/route_util.jsx");
+
+
+
+
+
+
+
+var SectionSix = function SectionSix() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "section section-six"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "session-six-header"
+  }, "Okay, it's not actually hard to explain."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "loginform"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+    path: "/login",
+    component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+    path: "/signup",
+    component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+    path: "/",
+    component: _landing_page__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SectionSix);
+
+/***/ }),
+
 /***/ "./frontend/components/splash_page/section_three.jsx":
 /*!***********************************************************!*\
   !*** ./frontend/components/splash_page/section_three.jsx ***!
@@ -3562,6 +3610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _section_three__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./section_three */ "./frontend/components/splash_page/section_three.jsx");
 /* harmony import */ var _section_four__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./section_four */ "./frontend/components/splash_page/section_four.jsx");
 /* harmony import */ var _section_five__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./section_five */ "./frontend/components/splash_page/section_five.jsx");
+/* harmony import */ var _section_six__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./section_six */ "./frontend/components/splash_page/section_six.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3579,6 +3628,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -3620,24 +3670,7 @@ function (_React$Component) {
         licenseKey: "05881909-CC18460F-993ADDFD-EF6A380A",
         render: function render(_ref) {
           var fullpageApi = _ref.fullpageApi;
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fullpage_react_fullpage__WEBPACK_IMPORTED_MODULE_6___default.a.Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_one__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_two__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_three__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_four__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_five__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "section section-six"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: "http://cdn.artwallpaperhi.com/2560x1600/20121025/nature%20flowers%20bokeh%20red%20flowers%20poppies%202560x1600%20wallpaper_www.artwallpaperhi.com_12.jpg"
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-            className: "session-six-header"
-          }, "Okay, it's not actually hard to explain."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "loginform"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
-            path: "/login",
-            component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
-            path: "/signup",
-            component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
-            path: "/",
-            component: _landing_page__WEBPACK_IMPORTED_MODULE_1__["default"]
-          })))));
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fullpage_react_fullpage__WEBPACK_IMPORTED_MODULE_6___default.a.Wrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_one__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_two__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_three__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_four__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_five__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_section_six__WEBPACK_IMPORTED_MODULE_12__["default"], null));
         }
       }));
     }
