@@ -25,9 +25,9 @@ class App extends React.Component {
     return(
      <div> 
       <Switch>
+        <Route path="/" component={SplashPage} /> 
         <ProtectedRoute path="/posts" component={DashboardContainer} />
         <ProtectedRoute path="/following" component={FollowingIndexContainer} />
-        <Route path="/" component={SplashPage} /> 
       </Switch>
     </div>
   )};
