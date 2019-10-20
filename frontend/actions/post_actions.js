@@ -35,7 +35,6 @@ export const removePost = (postId) => ({
 // });
 
 
-
 //thunks
 export const fetchPosts = () => (dispatch) => 
   PostAPIUtil.fetchPosts().then( payload => dispatch(receivePosts(payload)));
