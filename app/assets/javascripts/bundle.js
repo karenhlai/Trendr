@@ -125,7 +125,8 @@ var removeFollow = function removeFollow(follow) {
     type: REMOVE_FOLLOW,
     follow: follow
   };
-};
+}; //thunks action
+
 var follow = function follow(followingId) {
   return function (dispatch) {
     return _util_follow_api_util__WEBPACK_IMPORTED_MODULE_0__["follow"](followingId).then(function (follow) {
@@ -1290,7 +1291,7 @@ function PostFormModal(_ref) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    modal: state.ui.modal,
+    modal: state.modal,
     currentUser: state.entities.users[state.session.id]
   };
 };
@@ -3916,7 +3917,7 @@ var sessionReducer = function sessionReducer() {
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return {
-        id: action.currentUser.id
+        id: action.currentUser.user.id
       };
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
@@ -3963,7 +3964,7 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
-      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.currentUser.user.id, action.currentUser.user));
       return nextState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_ALL_USERS"]:

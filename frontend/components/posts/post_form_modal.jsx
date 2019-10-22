@@ -69,7 +69,7 @@ function PostFormModal({ modal, closeModal }) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal,
+    modal: state.modal,
     currentUser: state.entities.users[state.session.id],
   };
 };

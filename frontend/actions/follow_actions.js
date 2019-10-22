@@ -26,6 +26,7 @@ export const removeFollow = (follow) => {
   }
 };
 
+//thunks action
 export const follow = (followingId) => dispatch => 
   FollowAPIUtil.follow(followingId).then((follow) => dispatch(receiveFollow(follow)));
 
