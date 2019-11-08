@@ -5,41 +5,6 @@
 
 // -- INPUTS, BUTTONS, AND ALINKS --
 
-
-.sessionOptButtons { //sessionOptButtons
-  position: absolute;
-  z-index: 20;
-  top: 10px;
-  right: 20px;
-  font-weight: 700;
-  line-height: 22px;
-  width: 80px;
-  text-align: center;
-  box-sizing: border-box;
-  border-radius: 2px;
-  border: 1px solid white;
-  background-color: white;
-  padding: 5px 5px 5px 5px;
-}
-
-.sessionOptButtons:active {
-  opacity: 0.8;
-}
-
-//  -- session form ERRORS -- 
-// .section .renderErrors { //need to add transition to slide errors down, once cliking submit button
-//   text-align: center;
-//   padding: 14px 15px;
-//   font-family: Helvetica, sans-serif;
-//   font-size: 14px;
-//   color: white;
-//   line-height: 16px;
-//   background: rgba(0,0,0,0.33);
-// }
-
-// --h1 for each sections -- 
-
-
 //clear fix//
 @import url("https://fonts.googleapis.com/css?family=Dosis|Fira+Sans");
 
@@ -74,8 +39,8 @@ button {
   vertical-align: initial;
 }
 
-// Navbar //
 
+/* ========== SPLASH - Nav ========== */
 .navbar-header {
   position: fixed;
   top: 0;
@@ -91,8 +56,7 @@ button {
   width: auto;
   padding-left: 200px;
 }
-//navagation//
-// -- NAV ANIMATIONS --
+/* ========== SPLASH - Nav animations ========== */
 // resource used: https://github.com/alvarotrigo/react-fullpage#examples
 #fp-nav ul li:hover a.active span,
 #fp-nav ul li a.active span,
@@ -119,12 +83,43 @@ button {
   left: 15px;
   width: 10px;
 }
-//Session-One//
-//Home//
-// .center {
-//   text-align: center;
-// }
 
+/* ========== SECTION 1 - Landing ========== */
+.sessionOptButtons {
+  position: absolute;
+  z-index: 20;
+  top: 10px;
+  right: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  width: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+}
+
+.sessionOptButtons:active {
+  opacity: 0.8;
+}
+
+.popup {
+  background-color: #00cf35;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ========== SECTION 1 - Session Forms ========== */
 .splash-header {
   font-style: Bookman Old Style Bold;
   color: white;
@@ -137,19 +132,6 @@ button {
   font-size: 16px;
   color: white;
 }
-
-// .home-button {
-//   background-color: transparent;
-//   margin: 8px;
-// }
-
-// .home-button p {
-//   width: 20vw;
-//   text-align: center;
-//   font-weight: bold;
-//   font-size: 16px;
-//   padding: 10px;
-// }
 
 .session-button,
  input[type="submit"] {
@@ -190,33 +172,7 @@ input[type="password"] {
   opacity: 1;
 }
 
-.popup {
-  background-color: #00cf35;
-  color: red;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  // padding: 8px;
-  text-align: center;
-}
-
-//What is tumblr?
-.popup p {
-//   border-radius: 0;
-//   background-color: #00cf35;
-  color: #fff;
-  padding: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  // text-align: center;
-//   width: 100%;
-  z-index: -1;
-}
-
-//Session-One//
-//Login//
+/* ========== SECTION 1 - Login ========== */
 
 .login-form-container {
   display: flex;
@@ -238,7 +194,7 @@ input[type="password"] {
   animation: 1s ease-out 0s 1 slideIn;
 }
 
-//Session-Two//
+/* ========== SECTION 2 - content ========== */
 .section-two {
   background-color: #00cf35;
 }
@@ -272,8 +228,7 @@ input[type="password"] {
   z-index: 20;
   margin: 0px auto 0px auto;
 }
-
-//Session Three//
+/* ========== SECTION 3 - content ========== */
 .section-three {
   background-color: #7c5cff;
 }
@@ -302,19 +257,22 @@ input[type="password"] {
   top: 35%;
 }
 
-.blog-post-column {
+.blogs-graphic section {
   float: left;
   margin-left: 10px;
   width: 21vw;
 }
+
 .blog-post {
   background-color: white;
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 .ui-avatar {
   height: 25px;
 }
+
 .avatar {
   height: 100%;
   width: auto;
@@ -323,27 +281,32 @@ input[type="password"] {
   border-radius: 5px;
   float: left;
 }
+
 .post-image {
   width: 21vw;
   height: auto;
 }
+
 .blogs-graphic p {
   color: black;
   padding-top: 5px;
 }
+
 .post-bottom {
   height: 30px;
 }
+
 .ui-notes {
   float: left;
   padding: 5px;
 }
+
 .post-bottom i {
   float: right;
   padding: 5px;
 }
 
-//Session-Four//
+/* ========== SECTION 4 - content ========== */
 .section-four {
   background-color: #001935;
 }
@@ -457,8 +420,9 @@ input[type="password"] {
   font-size: 22px;
   padding-top: 10px;
 }
-//Session-Five//
 
+
+/* ========== SECTION 5 - content ========== */
 .section-five {
   background-color: #ff8a00;
 }
@@ -488,7 +452,7 @@ input[type="password"] {
   color: #fff;
   line-height: 1;
 }
-.session-five-content h1 {
+.section-five-content h1 {
   font-size: 45px;
   padding: 10px;
 }
@@ -505,6 +469,9 @@ input[type="password"] {
   display: inline-block;
   margin: 0px auto 0px auto;
 }
+
+
+/* ========== SECTION 6 - content ========== */
 .section-six img {
   position: absolute;
   top: 0;

@@ -3090,8 +3090,8 @@ var SectionThree = function SectionThree() {
     className: "section-three-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Trendr is blogs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Turns out that when you make it easy to create interesting things,", " ", "that\u2019s exactly what people do. All those great, random blogs your", " ", "friends send you, those are Trendr blogs. We\u2019ll help you find and", " ", "follow blogs like that, and we\u2019ll help other people find and follow", " ", "yours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blogs-graphic"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "blog-post-column column-one"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "blog-post-column"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3125,7 +3125,7 @@ var SectionThree = function SectionThree() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-avatar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "http://sportsvape.net/wp-content/uploads/2014/09/Green-Apple.jpg",
+    src: "https://cdn.dribbble.com/users/2328503/screenshots/4683829/cat_icon_color_400_by_400.png",
     className: "avatar"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "gr33n_apple"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "https://pixel.nymag.com/imgs/daily/vulture/2016/02/12/recaps/12-bobs-burgers.w700.h700.jpg",
@@ -3134,8 +3134,8 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "blog-post-column column-two"
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "blog-post-column"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3178,8 +3178,8 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "blog-post-column column-three"
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "blog-post-column"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3222,8 +3222,8 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "blog-post-column column-four"
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "blog-post-column"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

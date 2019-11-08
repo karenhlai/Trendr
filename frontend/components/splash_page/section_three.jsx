@@ -15,7 +15,7 @@ const SectionThree = () => {
       </div>
 
       <div className="blogs-graphic">
-        <div className="blog-post-column column-one">
+        <section className="blog-post-column">
           <div className="blog-post">
             <div className="post-top">
               <div className="ui-avatar">
@@ -42,7 +42,7 @@ const SectionThree = () => {
             <div className="post-top">
               <div className="ui-avatar">
                 <img
-                  src="http://sportsvape.net/wp-content/uploads/2014/09/Green-Apple.jpg"
+                  src="https://cdn.dribbble.com/users/2328503/screenshots/4683829/cat_icon_color_400_by_400.png"
                   className="avatar"
                 />
                 <p>gr33n_apple</p>
@@ -56,8 +56,8 @@ const SectionThree = () => {
               <div className="ui-notes">2.130 notes</div>
             </div>
           </div>
-        </div>
-        <div className="blog-post-column column-two">
+        </section>
+        <section className="blog-post-column">
           <div className="blog-post">
             <div className="post-top">
               <div className="ui-avatar">
@@ -98,8 +98,8 @@ const SectionThree = () => {
               <div className="ui-notes">2.130 notes</div>
             </div>
           </div>
-        </div>
-        <div className="blog-post-column column-three">
+        </section>
+        <section className="blog-post-column">
           <div className="blog-post">
             <div className="post-top">
               <div className="ui-avatar">
@@ -143,8 +143,8 @@ const SectionThree = () => {
               <div className="ui-notes">2.130 notes</div>
             </div>
           </div>
-        </div>
-        <div className="blog-post-column column-four">
+        </section>
+        <section className="blog-post-column">
           <div className="blog-post">
             <div className="post-top">
               <div className="ui-avatar">
@@ -188,7 +188,7 @@ const SectionThree = () => {
               <div className="ui-notes">2.130 notes</div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

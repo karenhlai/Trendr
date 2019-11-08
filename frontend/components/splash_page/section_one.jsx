@@ -18,11 +18,9 @@ const SectionOne = () => {
         </Switch>
       </div>
 
-      {/* <div className="popup footer-slider"> */}
-        <button className="popup footer-slider" onClick={() => fullpage_api.moveSectionDown() }>
-          <p>What is Trendr?</p>
-        </button>
-      {/* </div> */}
+      <button className="popup footer-slider" onClick={() => fullpage_api.moveSectionDown() }>
+        <p>What is Trendr?</p>
+      </button>
       
     </div>
   )
