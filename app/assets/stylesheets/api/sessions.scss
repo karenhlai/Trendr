@@ -301,6 +301,7 @@ input[type="password"] {
   left: 10%;
   top: 35%;
 }
+
 .blog-post-column {
   float: left;
   margin-left: 10px;
@@ -352,7 +353,6 @@ input[type="password"] {
   position: relative;
   top: 10%;
   left: 15%;
-  // display: inline block;
 }
 // .pictures {
 //   position: absolute;
@@ -488,12 +488,13 @@ input[type="password"] {
   color: #fff;
   line-height: 1;
 }
-.session-five-header {
+.session-five-content h1 {
   font-size: 45px;
   padding: 10px;
 }
 .section-five-content h3 {
   font-size: 20px;
+  line-height: 120%;
   padding: 10px;
 }
 .section-five-icon {

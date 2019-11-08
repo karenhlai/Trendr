@@ -2835,9 +2835,7 @@ var SectionFive = function SectionFive() {
     className: "fas fa-video"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Chat"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Audio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Video")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "section-five-content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "session-five-header"
-  }, "Seriously, put anything ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "you want here."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Seven post types to get you started. Your brain can do the rest. This thing is yours. ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Use it however you like.")));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Seriously, put anything", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "you want here."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Seven post types to get you started. Your brain can do the rest. This thing is yours.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Use it however you like.")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SectionFive);

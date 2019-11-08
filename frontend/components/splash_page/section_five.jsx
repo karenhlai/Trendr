@@ -4,7 +4,6 @@ const SectionFive = () => {
   return(
     <div className="section section-five">
       <div className="create-graphic">
-
         <i className="fas fa-font" />
         <i className="fas fa-camera" />
         <i className="fas fa-quote-right" />
@@ -23,11 +22,18 @@ const SectionFive = () => {
         <h3>Audio</h3>
         <h3>Video</h3>
       </div>
+
       <div className="section-five-content">
-        <h1 className="session-five-header">Seriously, put anything <br />
-        you want here.</h1>
-        <h3>Seven post types to get you started. Your brain can do the rest. This thing is yours. <br/>
-        Use it however you like.
+        <h1>
+          Seriously, put anything 
+          <br />
+          you want here.
+        </h1>
+
+        <h3>
+          Seven post types to get you started. Your brain can do the rest. This thing is yours. 
+          <br/>
+          Use it however you like.
         </h3>
       </div>
   
