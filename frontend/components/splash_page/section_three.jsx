@@ -4,18 +4,16 @@ const SectionThree = () => {
   return (
     <div className="section section-three">
       <div className="section-three-content">
-        <h1 className="session-three-header">Trendr is blogs.</h1>
-        <h3>
+        <h1>Trendr is blogs.</h1>
+        <p>
           Turns out that when you make it easy to create interesting things,{" "}
-          <br />
           that’s exactly what people do. All those great, random blogs your{" "}
-          <br />
           friends send you, those are Trendr blogs. We’ll help you find and{" "}
-          <br />
           follow blogs like that, and we’ll help other people find and follow{" "}
-          <br />
           yours.
-      </h3></div>
+        </p>
+      </div>
+
       <div className="blogs-graphic">
         <div className="blog-post-column column-one">
           <div className="blog-post">

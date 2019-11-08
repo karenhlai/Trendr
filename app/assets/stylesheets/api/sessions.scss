@@ -189,17 +189,30 @@ input[type="password"] {
   padding: 10px;
   opacity: 1;
 }
+
 .popup {
   background-color: #00cf35;
+  color: red;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
+  // padding: 8px;
+  text-align: center;
 }
-.popup button {
-  border-radius: 0;
-  border: 1px solid #00cf35;
+
+//What is tumblr?
+.popup p {
+//   border-radius: 0;
+//   background-color: #00cf35;
+  color: #fff;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  // text-align: center;
+//   width: 100%;
+  z-index: -1;
 }
 
 //Session-One//
@@ -210,17 +223,6 @@ input[type="password"] {
   flex-direction: column;
   align-items: center;
   padding-top: 12%;
-}
-
-//What is tumblr?
-.section-one-footer {
-  background-color: #00cf35;
-  color: #fff;
-  padding: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
 }
 
 .section-one img {
@@ -281,18 +283,19 @@ input[type="password"] {
   left: 10%;
   top: 7%;
 }
-.section-three-content h3 {
-  padding: 0px;
-  font-size: 20px;
-  color: white;
-}
-.session-three-header {
+
+.section-three-content h1 {
   font-size: 45px;
 }
-.section-three p {
-  padding: 10px 0px 0px 5%;
+
+.section-three-content p {
+  padding: 0px;
+  width: 70%;
+  font-size: 20px;
+  font-weight: bold;
   color: white;
 }
+
 .blogs-graphic {
   position: absolute;
   left: 10%;

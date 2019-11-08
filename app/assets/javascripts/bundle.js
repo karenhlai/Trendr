@@ -3012,14 +3012,12 @@ var SectionOne = function SectionOne() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
     path: "/",
     component: _landing_page__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "popup footer-slider"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "section-one-footer",
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "popup footer-slider",
     onClick: function onClick() {
-      return fullpageApi.moveSectionDown();
+      return fullpage_api.moveSectionDown();
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What is Trendr?"))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What is Trendr?")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SectionOne);
@@ -3092,9 +3090,7 @@ var SectionThree = function SectionThree() {
     className: "section section-three"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "section-three-content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "session-three-header"
-  }, "Trendr is blogs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Turns out that when you make it easy to create interesting things,", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "that\u2019s exactly what people do. All those great, random blogs your", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "friends send you, those are Trendr blogs. We\u2019ll help you find and", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "follow blogs like that, and we\u2019ll help other people find and follow", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "yours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Trendr is blogs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Turns out that when you make it easy to create interesting things,", " ", "that\u2019s exactly what people do. All those great, random blogs your", " ", "friends send you, those are Trendr blogs. We\u2019ll help you find and", " ", "follow blogs like that, and we\u2019ll help other people find and follow", " ", "yours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blogs-graphic"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post-column column-one"
