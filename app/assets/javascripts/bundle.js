@@ -3090,9 +3090,7 @@ var SectionThree = function SectionThree() {
     className: "section-three-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Trendr is blogs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Turns out that when you make it easy to create interesting things,", " ", "that\u2019s exactly what people do. All those great, random blogs your", " ", "friends send you, those are Trendr blogs. We\u2019ll help you find and", " ", "follow blogs like that, and we\u2019ll help other people find and follow", " ", "yours.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blogs-graphic"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "blog-post-column"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post-top"
@@ -3134,9 +3132,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "blog-post-column"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post-top"
@@ -3178,9 +3174,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "blog-post-column"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post-top"
@@ -3222,9 +3216,7 @@ var SectionThree = function SectionThree() {
     className: "post-bottom"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui-notes"
-  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "blog-post-column"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "2.130 notes")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "blog-post"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post-top"

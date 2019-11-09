@@ -15,7 +15,7 @@ const SectionThree = () => {
       </div>
 
       <div className="blogs-graphic">
-        <section className="blog-post-column">
+        <section>
           <div className="blog-post">
             <div className="post-top">
               <div className="ui-avatar">
@@ -57,7 +57,7 @@ const SectionThree = () => {
             </div>
           </div>
         </section>
-        <section className="blog-post-column">
+        <section>
           <div className="blog-post">
             <div className="post-top">
               <div className="ui-avatar">
@@ -99,7 +99,7 @@ const SectionThree = () => {
             </div>
           </div>
         </section>
-        <section className="blog-post-column">
+        <section>
           <div className="blog-post">
             <div className="post-top">
               <div className="ui-avatar">
@@ -144,7 +144,7 @@ const SectionThree = () => {
             </div>
           </div>
         </section>
-        <section className="blog-post-column">
+        <section>
           <div className="blog-post">
             <div className="post-top">
               <div className="ui-avatar">

@@ -230,9 +230,12 @@ input[type="password"] {
 /* ========== SECTION 3 - content ========== */
 .section-three {
   background-color: #7c5cff;
+  position: absolute;
 }
 
 .section-three-content {
+  // display: flex;
+  // flex-direction: column;
   position: absolute;
   left: 10%;
   top: 7%;
@@ -240,6 +243,7 @@ input[type="password"] {
 
 .section-three-content h1 {
   font-size: 45px;
+  // margin: 50px 0px 10px 150px;
 }
 
 .section-three-content p {
@@ -248,9 +252,13 @@ input[type="password"] {
   font-size: 20px;
   font-weight: bold;
   color: white;
+  // margin: 20px 0px 10px 150px;
 }
 
 .blogs-graphic {
+  // display: flex;
+  // flex-direction: row;
+  // margin: 20px 0px 10px 140px;
   position: absolute;
   left: 10%;
   top: 35%;
