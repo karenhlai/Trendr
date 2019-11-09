@@ -825,7 +825,7 @@ function (_React$Component) {
       var currentUser = this.props.currentUser;
       var recommended = this.props.users.map(function (user) {
         // if (currentUser.id != user.id && !user.followers.includes(currentUser.id)) {
-        if (currentUser.id != user.id && !currentUser.followings.includes(user.id)) {
+        if (currentUser.id !== user.id && !currentUser.followings.includes(user.id)) {
           var recAvatar = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             className: "rec-avatar",
             src: user.avatarUrl
@@ -3465,7 +3465,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger
       var username;
 
       if (this.props.formType === 'Sign Up') {
@@ -3909,8 +3908,9 @@ var sessionReducer = function sessionReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
+      // return { id: action.currentUser.user.id };
       return {
-        id: action.currentUser.user.id
+        id: action.currentUser.id
       };
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
@@ -3957,7 +3957,8 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
-      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.currentUser.user.id, action.currentUser.user));
+      // nextState = merge({}, state, {[action.currentUser.user.id]: action.currentUser.user } );
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
       return nextState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["RECEIVE_ALL_USERS"]:

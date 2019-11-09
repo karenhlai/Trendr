@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
 
     let recommended = this.props.users.map(user => {
       // if (currentUser.id != user.id && !user.followers.includes(currentUser.id)) {
-      if (currentUser.id != user.id && !currentUser.followings.includes(user.id)) {
+      if (currentUser.id !== user.id && !currentUser.followings.includes(user.id)) {
         let recAvatar = <img className="rec-avatar" src={user.avatarUrl} />;
         let recUsername = user.username;
         let recName = `${user.username}.trendr.com`;
