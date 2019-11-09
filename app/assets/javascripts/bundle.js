@@ -427,10 +427,10 @@ var receiveAllUsers = function receiveAllUsers(users) {
   };
 };
 
-var receiveUser = function receiveUser(user) {
+var receiveUser = function receiveUser(currentUser) {
   return {
     type: RECEIVE_USER,
-    user: user
+    currentUser: currentUser
   };
 };
 var fetchAllUsers = function fetchAllUsers() {
@@ -442,8 +442,8 @@ var fetchAllUsers = function fetchAllUsers() {
 };
 var fetchUser = function fetchUser(id) {
   return function (dispatch) {
-    return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchUser"](id).then(function (user) {
-      return dispatch(receiveUser(user));
+    return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchUser"](id).then(function (currentUser) {
+      return dispatch(receiveUser(currentUser));
     });
   };
 };
@@ -3326,9 +3326,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
-  // debugger
   return {
-    errors: errors.session,
+    errors: errors.sessionErrors,
     formType: 'Log In',
     navLink: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/signup"
@@ -3555,7 +3554,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   // debugger
   return {
-    errors: errors.session,
+    errors: errors.sessionErrors,
     formType: 'Sign Up',
     navLink: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/login"

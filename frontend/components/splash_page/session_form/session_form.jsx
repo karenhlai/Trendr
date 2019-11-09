@@ -19,6 +19,7 @@ class SessionForm extends React.Component {
 		this.props.clearErrors();
 		// debugger
 	}
+	
 	// componentDidUpdate(oldProps) {
 	// 	debugger
 	// 	if (this.props.formType !== oldProps.formType) {

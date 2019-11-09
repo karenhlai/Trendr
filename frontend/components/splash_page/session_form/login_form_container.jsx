@@ -5,9 +5,8 @@ import { login, removeSessionErrors } from '../../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = ({ errors }) => {
-    // debugger
     return {
-        errors: errors.session,
+        errors: errors.sessionErrors,
         formType: 'Log In',
         navLink: <Link to="/signup">Sign Up</Link>,
     };
