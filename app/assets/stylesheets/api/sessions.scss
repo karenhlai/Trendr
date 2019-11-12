@@ -38,8 +38,8 @@ p {
 
 button {
   font: 14px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
-  border-radius: 7px;
-  cursor: pointer;
+  // border-radius: 7px;
+  // cursor: pointer;
 }
 
 .section .fp-tableCell {
@@ -93,7 +93,7 @@ button {
 }
 
 /* ========== SECTION 1 - Landing ========== */
-.sessionOptButtons {
+.sessionNavButtons {
   position: absolute;
   z-index: 20;
   top: 10px;
@@ -106,10 +106,10 @@ button {
   border-radius: 2px;
   border: 1px solid white;
   background-color: white;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
 }
 
-.sessionOptButtons:active {
+.sessionNavButtons:active {
   opacity: 0.8;
 }
 
@@ -142,7 +142,6 @@ button {
 .session-button,
  input[type="submit"] {
     width: 300px;
-    margin-top: 10px;
     text-align: center;
     font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
     color: white;
@@ -151,7 +150,9 @@ button {
     border: 1px solid #919a9e;
     background-color: #00b8ff;
     padding: 11px 10px 11px 13px;
+    cursor: pointer;
 }
+
 
 input[type="text"],
 input[type="password"] {
@@ -164,11 +165,11 @@ input[type="password"] {
 }
 
 .renderErrors {
+  position: static;
   width: 300px;
-  margin: 10px auto 0px auto;
+  margin: 10px auto 10px auto;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0.7;
-
 }
 
 .renderErrors ul li {
@@ -179,6 +180,10 @@ input[type="password"] {
 }
 
 /* ========== SECTION 1 - Login ========== */
+.login-form {
+  positon: static;
+}
+
 
 .login-form-container {
   display: flex;
@@ -187,11 +192,16 @@ input[type="password"] {
   padding-top: 12%;
 }
 
+.login-form-container a,
+  button {
+  margin-top: 10px;
+}
+
 .section-one img {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -1;
+  z-index: -2;
   width: 100%;
   height: 100%;
 }

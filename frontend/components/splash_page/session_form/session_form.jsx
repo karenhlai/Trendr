@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container">
 				
-				<div className="sessionOptButtons">
+				<div className="sessionNavButtons">
 					{/* Please {this.props.formType} or  */}
 					{this.props.navLink}
 				</div>

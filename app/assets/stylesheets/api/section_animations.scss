@@ -21,10 +21,10 @@
 }
 
 .section-one > .fp-tableCell .popup {
-    transform: translateY(1000px);
+  transform: translateY(1000px);
   opacity: 0;
   transition: transform 0.66s cubic-bezier(0.16, 0.68, 0.43, 0.99),
-    opacity 0.66s ease-in-out;
+  opacity 0.66s ease-in-out;
 }
 
 .section-one.active > .fp-tableCell h1 {
