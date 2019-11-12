@@ -15,17 +15,10 @@ body {
 
 h1 {
   color: white;
-  font-size: 42px;
+  font-size: 80px;
   font-family: Bookman Old Style Bold;
   font-weight: 900;
 } 
-
-// .section-three-content h1 {
-//   color: white;
-//   font-size: 42px;
-//   font-family: Bookman Old Style Bold;
-//   font-weight: 900;
-// }
 
 h3, h4 {
   font-family: "Dosis", sans-serif;
@@ -44,6 +37,8 @@ button {
 
 .section .fp-tableCell {
   vertical-align: initial;
+  position: absolute;
+  top: 0;
 }
 
 
@@ -63,7 +58,7 @@ button {
   width: auto;
   padding-left: 200px;
 }
-/* ========== SPLASH - Nav animations ========== */
+/* ========== LANDING CONTAINER - Nav animations ========== */
 // resource used: https://github.com/alvarotrigo/react-fullpage#examples
 #fp-nav ul li:hover a.active span,
 #fp-nav ul li a.active span,
@@ -92,27 +87,7 @@ button {
   width: 10px;
 }
 
-/* ========== SECTION 1 - Landing ========== */
-.sessionNavButtons {
-  position: absolute;
-  z-index: 20;
-  top: 10px;
-  right: 20px;
-  font-weight: 700;
-  line-height: 22px;
-  width: 80px;
-  text-align: center;
-  box-sizing: border-box;
-  border-radius: 2px;
-  border: 1px solid white;
-  background-color: white;
-  padding: 5px;
-}
-
-.sessionNavButtons:active {
-  opacity: 0.8;
-}
-
+/* ========== SECTION 1 - Holds SessionForms ========== */
 .popup {
   width: 100%;
   position: absolute;
@@ -125,34 +100,72 @@ button {
   font-weight: bold;
 }
 
-/* ========== SECTION 1 - Session Forms ========== */
-.splash-header {
-  font-style: Bookman Old Style Bold;
-  color: white;
-  font-size: 80px;
-  text-align: center;
-}
-
-.splash-sub {
+/* ========== SECTION 1 - Splash ========== */
+.splash-container h5 {
   text-align: center;
   font-size: 16px;
   color: white;
+  padding-bottom: 10px;
 }
 
-.session-button,
- input[type="submit"] {
-    width: 300px;
-    text-align: center;
-    font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
-    color: white;
-    font-weight: 700;
-    border-radius: 5px;
-    border: 1px solid #919a9e;
-    background-color: #00b8ff;
-    padding: 11px 10px 11px 13px;
-    cursor: pointer;
+.section-one img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
 }
 
+.footer-slider {
+  animation: 1s ease-out 0s 1 slideIn;
+}
+
+/* ========== SECTION 1 - Session Forms ========== */
+.login-form {
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12%;
+}
+
+//TOP RIGHT
+.login-form-container a {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  width: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.login-form-container a:active {
+  opacity: 0.8;
+}
+
+
+#session-button,
+input[type="submit"] {
+  margin-top: 10px;
+  width: 300px;
+  text-align: center;
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px solid #919a9e;
+  background-color: #00b8ff;
+  padding: 11px 10px 11px 13px;
+  cursor: pointer;
+}
 
 input[type="text"],
 input[type="password"] {
@@ -179,37 +192,6 @@ input[type="password"] {
   opacity: 1;
 }
 
-/* ========== SECTION 1 - Login ========== */
-.login-form {
-  position: static;
-}
-
-
-.login-form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 12%;
-}
-
-.login-form-container a,
-  .login-form-container button {
-  margin-top: 10px;
-}
-
-.section-one img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-}
-
-.footer-slider {
-  animation: 1s ease-out 0s 1 slideIn;
-}
-
 /* ========== SECTION 2 - content ========== */
 .section-two {
   background-color: #00cf35;
@@ -225,16 +207,16 @@ input[type="password"] {
   line-height: 1;
 }
 
-.content-text p {
-  font-size: 20px;
-}
-
-.session-two-header {
+.content-text h1 {
   font-size: 45px;
   margin-bottom: 15px;
 }
 
-.babybird {
+.content-text p {
+  font-size: 20px;
+}
+
+.section-two img {
   position: absolute;
   height: 30%;
   width: auto;
@@ -496,6 +478,15 @@ input[type="password"] {
 
 
 /* ========== SECTION 6 - content ========== */
+.section-six h2 {
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Bookman Old Style Bold;
+}
+
 .section-six img {
   position: absolute;
   top: 0;
@@ -503,15 +494,6 @@ input[type="password"] {
   z-index: -1;
   width: 100%;
   height: 100%;
-}
-.session-six-header {
-  position: absolute;
-  bottom: 15vh;
-  left: 0px;
-  right: 0px;
-  text-align: center;
-  color: #fff;
-  line-height: 1;
 }
 
 @keyframes slideIn {
