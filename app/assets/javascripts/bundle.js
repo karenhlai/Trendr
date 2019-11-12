@@ -3504,7 +3504,7 @@ function (_React$Component) {
         id: "session-button",
         type: "submit",
         value: this.props.formType
-      }), demoButton));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), demoButton));
     }
   }]);
 
@@ -3616,7 +3616,7 @@ function (_React$Component) {
         to: "/signup"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         id: "session-button"
-      }, "Get Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Get Started")), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/login"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         id: "session-button"

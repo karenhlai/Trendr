@@ -12,7 +12,7 @@ class SplashPage extends React.Component {
           Stay for what you discover.
         </h5>
 
-        <Link to="/signup"><p id="session-button">Get Started</p></Link>
+        <Link to="/signup"><p id="session-button">Get Started</p></Link> <br />
         <Link to="/login"><p id="session-button">Log In</p></Link>
       </div>
     )
