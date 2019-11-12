@@ -3,7 +3,7 @@ import React from "react";
 const SectionFour = () => {
   return (
     <div className="section section-four">
-      <div className="nav-col pictures">
+      <div className="nav-col">
         <div className="nav-row">
           <div className="nav-avatar">
             <img

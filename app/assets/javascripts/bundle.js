@@ -2867,7 +2867,7 @@ var SectionFour = function SectionFour() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "section section-four"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav-col pictures"
+    className: "nav-col"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
