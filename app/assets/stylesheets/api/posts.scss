@@ -37,49 +37,45 @@ body {
   padding-right: 50px;
 }
 
-.navbar-right-container > li > i,
-.navbar-right-container > li > a > i {
+.navbar-right-container > div, 
+.navbar-right-container i {
   display: inline-block;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 10px 0px 10px;
   color: lightgray;
 }
 
-.navbar-right-container > li > i:hover,
-.navbar-right-container > li > a > i:hover {
+.navbar-right-container i {
+  cursor: pointer;
+}
+
+.navbar-right-container i:hover {
   color: #fff;
 }
 
 //account-dropdown
-.account-dropdown {
+.account-dd-header {
   position: relative;
   display: inline-block;
 }
 
-.account-dropdown-content {
-  display: none;
+.account-dd-content {
   position: absolute;
-}
-
-.account-dropdown:hover .account-dropdown-content {
-  display: block;
-  background-color: #fff;
+  text-align: center;
+  color: darkslategrey;
+  background: white;
+  border: 1px solid lightgrey;
   border-radius: 3px;
-  position: relative;
+  z-index: 2;
 }
 
-.account-dropdown-content button, 
-.account-dropdown-content a, 
-.account-dropdown-content p {
-  display: block;
-  color: #444;
-  font-size: 15px;
-  padding-top: 1px;
+ul.account-dd-content li {
+  display: flex;
+  padding: 5px 10px 5px 10px;
+  color: #000;
 }
 
-.account-dropdown-content > div:first-child {
-  background-color: #f2f2f2;
-  border-bottom: 1px solid #e7e7e7;
-  border-radius: 3px;
+ul.account-dd-content li :hover {
+  background-color: lightblue;
 }
 
 // Alternate Create Post Bar

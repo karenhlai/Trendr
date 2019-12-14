@@ -178,14 +178,14 @@ class PostIndexItem extends React.Component {
     return (
       <div className="post-index-item-row">
         {/* sideprofile */}
-        <SideProfileContainer targetUser={post.user} />
-        <a href="#" data-target="slide-out" className="sidenav-trigger">
+        {/* <SideProfileContainer targetUser={post.user} /> */}
+        {/* <a href="#" data-target="slide-out" className="sidenav-trigger"> */}
           <img
             className="post-author-icon"
             src={authorAvatar}
             data-aos="fade-right"
           />
-        </a>
+        {/* </a> */}
 
         <div className="post-index-item" data-aos="fade-up">
           <h2 className="post-author-username">
