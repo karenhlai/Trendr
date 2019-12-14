@@ -21,9 +21,9 @@ nav.nav-extended .nav-content {
   line-height: normal;
 }
 
-nav a {
+/* nav a {
   color: #fff;
-}
+} */
 
 nav i,
 nav [class^="mdi-"], nav [class*="mdi-"],

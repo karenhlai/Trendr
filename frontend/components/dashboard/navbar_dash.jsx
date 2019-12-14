@@ -13,16 +13,18 @@ class NavbarDash extends React.Component {
     const list = [
       {
         id: 0,
-        label: <button onClick={() => this.props.logout()}>
-                Logout
-              </button>,
+        label:
+          <button onClick={() => this.props.logout()}>
+            Logout
+          </button>,
       },
       {
         id: 1,
-        label: <Link to="/following" >
-                <i className="fas fa-user-friends"></i>
-                Follows
-              </Link>,
+        label: 
+          <Link to="/following" >
+            <i className="fas fa-user-friends" />
+            Following
+          </Link>,
       }
     ];
 
