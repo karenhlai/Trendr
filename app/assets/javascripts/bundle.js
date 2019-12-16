@@ -2510,11 +2510,14 @@ function (_React$Component) {
         case 'link':
           var linkStr; // if (this.props.post.title.includes("https://")) {
 
-          linkStr = post.title; // } else {
+          linkStr = post.body; // } else {
           // linkStr = `http://${this.props.post.title}`;
           // }
 
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          var linkTitle = post.title;
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+            className: "post-index-title"
+          }, linkTitle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
             href: linkStr
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "post-index-body"
