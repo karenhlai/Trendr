@@ -49,7 +49,6 @@ class Dashboard extends React.Component {
         )
       }
     });
-    debugger
 
     return (
       <div>

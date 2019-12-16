@@ -31,8 +31,13 @@ class FollowingIndex extends React.Component {
             </button>
           </div>
         )
-      }
+      };
     });
+
+    if (following.every(user => user === undefined)) {
+      following = <center>Not following any users!</center>
+    };
+    
     // debugger
     return (
       <div>

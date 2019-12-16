@@ -959,7 +959,6 @@ function (_React$Component) {
           }, recUsername), recName)), recButton);
         }
       });
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_dash_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1243,7 +1242,17 @@ function (_React$Component) {
             }
           }, "Unfollow"));
         }
-      }); // debugger
+
+        ;
+      });
+
+      if (following.every(function (user) {
+        return user === undefined;
+      })) {
+        following = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("center", null, "Not following any users!");
+      }
+
+      ; // debugger
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_navbar_dash_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "following-index-container"
