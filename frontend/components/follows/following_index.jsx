@@ -9,7 +9,7 @@ class FollowingIndex extends React.Component {
   componentDidMount() {
     this.props.fetchAllUsers();
   }
-
+  
   render () {
     const users = this.props.users; 
     const currentUser = this.props.currentUser;
@@ -20,9 +20,8 @@ class FollowingIndex extends React.Component {
         let followingAvatar = <img src={user.avatarUrl} />;
         return (
           <div key={user.id}>
-            <div className="following-avatar">
               {followingAvatar}
-            </div>
+
             <div className="following-name">
               {followingName}
             </div>
@@ -33,24 +32,22 @@ class FollowingIndex extends React.Component {
           </div>
         )
       }
-    })
-
+    });
+    // debugger
     return (
       <div>
         <NavbarDashContainer />
-      <div className="following-index-container">
-        <h2>
-          Following
-        </h2>
-       
-       
-        <div className="following-index">
-          {following}
+        <div className="following-index-container">
+          <h2>
+            Following Users
+          </h2>
+        
+          <div className="following-index">
+            {following}
+          </div>
+
+          {/* <i className="fas fa-angle-down"></i> */}
         </div>
-
-
-        <i className="fas fa-angle-down"></i>
-      </div>
       </div>
     );
   }

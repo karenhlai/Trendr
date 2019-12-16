@@ -4,13 +4,13 @@ export const RECEIVE_USER_FOLLOWS = 'RECEIVE_USER_FOLLOWS';
 export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
 export const REMOVE_FOLLOW = 'REMOVE_FOLLOW';
 
-// const receiveUserFollows = (userId, follows) => {
-//   return {
-//     type: RECEIVE_USER_FOLLOWS, 
-//     userId, 
-//     follows
-//   }
-// }; 
+export const receiveUserFollows = (followings) => {
+  // debugger
+  return {
+    type: RECEIVE_USER_FOLLOWS, 
+    followings
+  }
+}; 
 
 export const receiveFollow = (follow) => {
   return {
@@ -27,6 +27,13 @@ export const removeFollow = (follow) => {
 };
 
 //thunks action
+export const fetchFollowings = (userId) => (dispatch) => {
+  return FollowAPIUtil.fetchFollowings(userId).then((followings) => {
+    // debugger
+    return dispatch(receiveUserFollows(followings));
+  });
+};
+
 export const follow = (followingId) => dispatch => 
   FollowAPIUtil.follow(followingId).then((follow) => dispatch(receiveFollow(follow)));
 

@@ -65,19 +65,24 @@ i.follow-plus:hover,
 .following-index-container {
   background: white;
   border-radius: 10px;
-  width: 75%;
-  height: 400px;
-  // display: flex;
-  // flex-direction: column;
-  margin-top: 150px;
-  margin-left: 200px;
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  // height: 400px;
   text-align: center;
-  // justify-content: center;
-  overflow-y: auto;
- 
+  // overflow-y: auto;
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+.following-index {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-bottom: 25px;
 }
 
 .following-index-container h2 {
@@ -85,6 +90,7 @@ i.follow-plus:hover,
   top: 0;
   font-weight: bolder;
   margin-bottom: 50px;
+  padding-top: 10px;
   font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
   font-size: 18px;
 }
@@ -95,22 +101,13 @@ i.follow-plus:hover,
   font-size: 18px;
 }
 
-.following-index-container img {
+.following-index img {
   float: left;
-  height: 45px;
-  width: 45px;
-  border-radius: 4px;
-  padding-left: 150px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-}
-
-.following-index {
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- text-align: left;
+  height: 50px;
+  width: 50px;
+  border-radius: 20%;
+  padding: 10px;
+  margin-left: 70px;
 }
 
 .following-name {

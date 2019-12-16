@@ -2,12 +2,13 @@ import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_POSTS } from '../actions/post_actions';
 import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/user_actions';
-import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
+import { RECEIVE_USER_FOLLOWS, RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState;
     let followerId;
+    let followings;
     
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
@@ -36,6 +37,9 @@ const usersReducer = (state = {}, action) => {
             const followIdx = nextState[followerId].followings.indexOf(action.follow.following_id);
             nextState[followerId].followings.splice(followIdx, 1);
             return nextState;
+        // case RECEIVE_USER_FOLLOWS:
+        //     nextState = merge({}, state, action.followings);
+        //     return nextState;
         default:
             return state;
     }

@@ -90,7 +90,7 @@
 /*!********************************************!*\
   !*** ./frontend/actions/follow_actions.js ***!
   \********************************************/
-/*! exports provided: RECEIVE_USER_FOLLOWS, RECEIVE_FOLLOW, REMOVE_FOLLOW, receiveFollow, removeFollow, follow, unfollow */
+/*! exports provided: RECEIVE_USER_FOLLOWS, RECEIVE_FOLLOW, REMOVE_FOLLOW, receiveUserFollows, receiveFollow, removeFollow, fetchFollowings, follow, unfollow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,22 +98,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER_FOLLOWS", function() { return RECEIVE_USER_FOLLOWS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_FOLLOW", function() { return RECEIVE_FOLLOW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FOLLOW", function() { return REMOVE_FOLLOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUserFollows", function() { return receiveUserFollows; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveFollow", function() { return receiveFollow; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeFollow", function() { return removeFollow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFollowings", function() { return fetchFollowings; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "follow", function() { return follow; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unfollow", function() { return unfollow; });
 /* harmony import */ var _util_follow_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/follow_api_util */ "./frontend/util/follow_api_util.js");
 
 var RECEIVE_USER_FOLLOWS = 'RECEIVE_USER_FOLLOWS';
 var RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
-var REMOVE_FOLLOW = 'REMOVE_FOLLOW'; // const receiveUserFollows = (userId, follows) => {
-//   return {
-//     type: RECEIVE_USER_FOLLOWS, 
-//     userId, 
-//     follows
-//   }
-// }; 
-
+var REMOVE_FOLLOW = 'REMOVE_FOLLOW';
+var receiveUserFollows = function receiveUserFollows(followings) {
+  // debugger
+  return {
+    type: RECEIVE_USER_FOLLOWS,
+    followings: followings
+  };
+};
 var receiveFollow = function receiveFollow(follow) {
   return {
     type: RECEIVE_FOLLOW,
@@ -127,6 +129,14 @@ var removeFollow = function removeFollow(follow) {
   };
 }; //thunks action
 
+var fetchFollowings = function fetchFollowings(userId) {
+  return function (dispatch) {
+    return _util_follow_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchFollowings"](userId).then(function (followings) {
+      // debugger
+      return dispatch(receiveUserFollows(followings));
+    });
+  };
+};
 var follow = function follow(followingId) {
   return function (dispatch) {
     return _util_follow_api_util__WEBPACK_IMPORTED_MODULE_0__["follow"](followingId).then(function (follow) {
@@ -1218,9 +1228,7 @@ function (_React$Component) {
           });
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             key: user.id
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "following-avatar"
-          }, followingAvatar), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, followingAvatar, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "following-name"
           }, followingName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             className: "following-button",
@@ -1229,14 +1237,13 @@ function (_React$Component) {
             }
           }, "Unfollow"));
         }
-      });
+      }); // debugger
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_navbar_dash_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "following-index-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Following"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Following Users"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "following-index"
-      }, following), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-angle-down"
-      })));
+      }, following)));
     }
   }]);
 
@@ -1264,12 +1271,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ // import { selectUserFollowings } from '../../selectors/users_selectors';
 
 var mapStateToProps = function mapStateToProps(state) {
   var currentUser = state.entities.users[state.session.id];
-  var users = Object.values(state.entities.users); // debugger
-
+  var users = Object.values(state.entities.users);
   return {
     currentUser: currentUser,
     users: users
@@ -1277,13 +1283,15 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  // debugger
   return {
     unfollow: function unfollow(userId) {
       return dispatch(Object(_actions_follow_actions__WEBPACK_IMPORTED_MODULE_1__["unfollow"])(userId));
     },
     fetchAllUsers: function fetchAllUsers() {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAllUsers"])());
-    }
+    } // fetchFollowings: (userId) => dispatch(fetchFollowings(userId))
+
   };
 };
 
@@ -4030,6 +4038,7 @@ var usersReducer = function usersReducer() {
   Object.freeze(state);
   var nextState;
   var followerId;
+  var followings;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
@@ -4062,6 +4071,9 @@ var usersReducer = function usersReducer() {
       var followIdx = nextState[followerId].followings.indexOf(action.follow.following_id);
       nextState[followerId].followings.splice(followIdx, 1);
       return nextState;
+    // case RECEIVE_USER_FOLLOWS:
+    //     nextState = merge({}, state, action.followings);
+    //     return nextState;
 
     default:
       return state;
@@ -4160,15 +4172,15 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!******************************************!*\
   !*** ./frontend/util/follow_api_util.js ***!
   \******************************************/
-/*! exports provided: fetchFollows, follow, unfollow */
+/*! exports provided: fetchFollowings, follow, unfollow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFollows", function() { return fetchFollows; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFollowings", function() { return fetchFollowings; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "follow", function() { return follow; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unfollow", function() { return unfollow; });
-var fetchFollows = function fetchFollows(userId) {
+var fetchFollowings = function fetchFollowings(userId) {
   return $.ajax({
     method: 'get',
     url: "api/users/".concat(userId, "/follows")
@@ -55599,7 +55611,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
