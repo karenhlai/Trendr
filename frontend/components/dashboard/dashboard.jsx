@@ -9,11 +9,18 @@ import PostIndexContainer from '../posts/post_index_container';
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleFollow = this.handleFollow.bind(this);
   };
 
-  handleFollow() {
-    this.props.follow(user.id)
+  componentDidMount() {
+    this.props.fetchAllUsers();
   }
+
+  handleFollow() {
+    this.props.follow(user.id);
+  }
+
 
   render() {
     let currentUser = this.props.currentUser;
@@ -42,7 +49,7 @@ class Dashboard extends React.Component {
         )
       }
     });
-
+    debugger
 
     return (
       <div>
@@ -80,15 +87,11 @@ const mapStateToProps = state => {
   const currentUser = state.entities.users[state.session.id];
   const users = Object.values(state.entities.users);
   const posts = Object.values(state.entities.posts);
-  // const radar = posts.filter(post => post.post_likes.length >= 1 && post.author_id !== currentUser.id);
-  // const currentRadar = radar[Math.floor(Math.random() * radar.length)];
-  // debugger
+  debugger
   return ({
     currentUser,
     users, 
     posts, 
-    // radar,
-    // currentRadar,
   });
 };
 
