@@ -986,7 +986,6 @@ var mapStateToProps = function mapStateToProps(state) {
   var currentUser = state.entities.users[state.session.id];
   var users = Object.values(state.entities.users);
   var posts = Object.values(state.entities.posts);
-  debugger;
   return {
     currentUser: currentUser,
     users: users,

@@ -86,7 +86,6 @@ const mapStateToProps = state => {
   const currentUser = state.entities.users[state.session.id];
   const users = Object.values(state.entities.users);
   const posts = Object.values(state.entities.posts);
-  debugger
   return ({
     currentUser,
     users, 
