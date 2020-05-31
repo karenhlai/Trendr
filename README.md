@@ -30,7 +30,12 @@ The goal is to pixel perfectly replicate Tumblr's website
 - The landing page, where users will sign up or sign in, will showcase majority of this app's animation implementation. It will contain section scrolling, and navigation buttons that will direct user to a specific section upon clicking. A user can sign in or sign up on the first or last sections.
 
 <!-- place splash animation here -->
-<video src="./app/assets/images/trendr_shot.mp4" ></video>
+<!-- <video src="./app/assets/images/trendr_shot.mp4" ></video> -->
+
+<video width="320" height="240" controls>
+  <source src="./app/assets/images/trendr_shot.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 - Upon signing in or signing up, the user's dashboard will render with posts created by themselves, other users they are following, as well as recommended posts. Posts will render according based on chronological order, starting with the newest post on top.
 
