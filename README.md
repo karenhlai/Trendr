@@ -21,7 +21,7 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
 - Integrating full CRUD functionality, allowing users to create, update, and delete posts on their dashboard
 - Organizing Landing, Dashboard Index, Sign Up, Sign In, Create / Edit Post components with React and Redux 
 
-<h3>Code Highlights</h3>
+<!-- <h3>Code Highlights</h3> -->
 <!-- place a code snippet here -->
 
 <h3>UI/UX</h3>
@@ -33,7 +33,7 @@ The goal is to pixel perfectly replicate Tumblr's website
 <!-- <video src="./app/assets/images/trendr_shot.mp4" ></video> -->
 
 <video width="320" height="240" controls>
-  <source src="./app/assets/images/trendr_shot.mp4" type="video/mp4">
+  <source src="app/assets/images/trendr_shot.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
