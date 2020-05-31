@@ -24,6 +24,7 @@
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
+/config/*
 /config/master.key
 
 node_modules/
