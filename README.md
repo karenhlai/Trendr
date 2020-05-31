@@ -30,6 +30,8 @@ The goal is to pixel perfectly replicate Tumblr's website
 - The landing page, where users will sign up or sign in, will showcase majority of this app's animation implementation. It will contain section scrolling, and navigation buttons that will direct user to a specific section upon clicking. A user can sign in or sign up on the first or last sections.
 
 <!-- place splash animation here -->
+[![trendr_shot](app/assets/images/trendr_shot.mp4)]
+
 <video width="320" height="240" controls>
   <source src="app/assets/images/trendr_shot.mp4" type="video/mp4">
   Your browser does not support the video tag.
