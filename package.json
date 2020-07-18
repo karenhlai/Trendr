@@ -10,7 +10,7 @@
     "aos": "^2.3.4",
     "babel-loader": "^8.0.6",
     "jshint": "^2.10.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "materialize-css": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
