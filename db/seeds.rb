@@ -16,7 +16,11 @@ demoUser = User.create(
   email: "demoUser@email.com",
   password: "password"
 );
+<<<<<<< HEAD
 demoUserAvatar = open("https://trendr-prod.s3-us-west-1.amazonaws.com/bulbasaur.png");
+=======
+demoUserAvatar = open('https://trendr-prod.s3-us-west-1.amazonaws.com/bulbasaur.png');
+>>>>>>> 9b1595b6d0619e97caff5effe31cd8602c2f51fc
 demoUser.avatar.attach(io: demoUserAvatar, filename: 'bulbasaur');
 
 karen = User.create(
