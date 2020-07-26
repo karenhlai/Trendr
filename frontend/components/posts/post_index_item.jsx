@@ -63,19 +63,22 @@ class PostIndexItem extends React.Component {
           </div>
         );
       case 'link':
-        let linkStr;
-        // if (this.props.post.title.includes("https://")) {
-          linkStr = post.body;
-        // } else {
-          // linkStr = `http://${this.props.post.title}`;
-        // }
-          let linkTitle = post.title;
+        let linkTitle;
+        if (this.props.post.title.includes("https://")) {
+          linkTitle = post.title;
+        } else {
+          linkTitle = `http://${post.title}`;
+        }
+        
+        let linkBody = post.body;
         return (
           <div>
-            <h2 className="post-index-title">{linkTitle}</h2>
-            <a href={linkStr}>
-              <p className="post-index-body">{linkStr}</p>
-            </a>
+            <h2 className="post-index-title">
+              <a href={linkTitle}> 
+              {linkTitle}
+              </a>
+            </h2>
+            <p className="post-index-body">{linkBody}</p>
           </div>
         );
     }
