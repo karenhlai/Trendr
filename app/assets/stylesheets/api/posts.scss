@@ -1,0 +1,402 @@
+// Place all the styles related to the api/posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "https://assets.tumblr.com/client/prod/app/global.build.css?_v=795c9b285a874a67e02195907325544e";
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Playfair+Display');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body {
+  background-color: #001935;
+  // overflow: hidden;
+}
+
+.navbar-dash {
+  position: sticky !important;
+  top: 0;
+  background-color: #001935;
+  border-bottom: 0.3px solid hsla(0, 0%, 100%, .65);
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar-left-container > a {
+  padding-left: 50px;
+  font-family: 'Bookman Old Style';
+  font-weight: bolder;
+  font-size: 55px;
+  line-height: 55px;
+  margin: 0px 15px 0px 15px;
+  color: #fff;
+}
+
+.navbar-right-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-right: 50px;
+}
+
+.navbar-right-container > div, 
+.navbar-right-container i {
+  display: inline-block;
+  margin: 0px 8px;
+  color: lightgray;
+}
+
+.navbar-right-container i {
+  cursor: pointer;
+}
+
+// .navbar-right-container i:hover {
+//   color: #fff;
+// }
+
+//account-dropdown
+.account-dd-header {
+  position: relative;
+  display: inline-block;
+}
+
+.account-dd-content {
+  position: absolute;
+  left: 0;
+  min-width: -webkit-fill-available;
+  // text-align: center;
+  color: darkslategrey;
+  background: white;
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+ul.account-dd-content i {
+  color: #444;
+}
+
+ul.account-dd-content li, a {
+  color: #444;
+  line-height: 42px;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+ul.account-dd-content li:first-of-type {
+  color: #444;
+  background-color: #f2f2f2;
+  line-height: 30px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.account-dd-content li:hover, Link:hover {
+  // color: #444;
+  background-color: lightblue;
+}
+
+// Alternate Create Post Bar
+ .alt-modal-child {
+   background-color: transparent;
+ }
+
+.alt-create-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 250px auto;
+}
+
+.alt-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50%;
+  padding: 25px;
+  margin-bottom: 10px;
+}
+
+.alt-bar.icon_post_text {
+  color: #001935;
+  background-color: whitesmoke;
+  font-size: 65px;
+}
+
+.alt-bar.icon_post_photo {
+  color: #001935;
+  background-color: tomato;
+  font-size: 65px;
+}
+
+.alt-bar.icon_post_link {
+  color: #001935;
+  background-color: orange;
+  font-size: 65px;
+}
+
+.alt-bar.icon_post_quote {
+  color: #001935;
+  background-color: lime;
+  font-size: 65px;
+}
+
+.alt_new_post_label_text {
+  color: #ffffff;
+  font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  // padding-top: 5px
+}
+
+// dashboard
+.dashboard-main {
+  display: flex;
+  flex-direction: row;
+  background-color: #001935;
+}
+
+.dashboard-main-left {
+  display: flex;
+  flex-direction: column;
+  // position: relative;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  min-height: 100%;
+  padding-top: 35px;
+}
+
+.dashboard-main-right {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: white;
+  background-color: transparent;
+  padding: 35px 0 0 35px;
+}
+
+.dashboard-main-right h2 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid hsla(0, 0%, 100%, .13);
+}
+  
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  // background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 25, 53, 0.95); //credit: using Tumblr bg modal color
+  z-index: 10;
+}
+
+.modal-child {
+  margin: 108px 0px 0px 350px;
+  width: 500px;
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.form-author {
+  font-weight: bold;
+  padding-left: 11px;
+}
+
+.form input[name=title] {
+  font-size: 40px;
+  width: 100%;
+  border: none;
+}
+
+.form input[name=body] {
+  font-size: 20px;
+  padding-bottom: 100px;
+  width: 100%;
+  border: none;
+}
+
+.form input[type=submit] {
+  position: relative;
+  right: -350px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.form button {
+  position: relative;
+  right: 150px;
+  widows: 100px;
+}
+
+.form button {
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin: 5px;
+  color: white;
+  padding: 11px 10px 11px 13px;
+  border: 1px solid gray;
+  background-color: gray;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.post-index-item-row {
+  padding: 20px 0px 0px 0px;
+  margin: 0px 0px 0px 350px;
+}
+
+.post-index-item {
+  width: 540px;
+  font-size: 14px;
+  background: #fff;
+  padding: 12px 0 0 0;
+  word-wrap: break-word;
+  border-radius: 3px;    
+}
+
+.post-author-icon {
+  position: sticky;
+  float: left;
+  top: 75px;
+  margin: 0px 0px 0px -80px;
+  height: 65px;
+  width: 65px;
+  border-radius: 4px;
+}
+
+.post-author-username {
+  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #444;
+  padding-left: 20px;
+}
+
+.post-index-title {
+  font-family: 'Merriweather', serif;
+  font-size: 32px;
+  line-height: 42px;
+  margin: 12px 18px 12px 18px;
+  color: black;
+ }
+
+.post-index-item-media {
+  width: 100%;
+}
+
+.post-index-body {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+//create post navbar modal icons 
+//add className to navbar icons later to make just navbar icons float
+.modal-create-bar-container img {
+  height: 65px;
+  width: 65px;
+  border-radius: 4px;
+  position: relative;
+  float: left;
+  margin-left: 270px;
+}
+
+.modal-create-bar {
+  margin: 0px 0px 0px 350px;
+  width: 540px;
+  border-radius: 3px;
+  background: white;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.modal-create-bar button {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.322);
+  //border fade
+}
+
+.modal-create-bar i:hover {
+  transform: translateY(-2px);
+}
+
+i.icon_post_text {
+  color: #000;
+  font-size: 50px;
+}
+
+i.icon_post_photo {
+  color: #ff492f;
+  font-size: 50px;
+}
+
+i.icon_post_quote {
+  color: #ff8a00;
+  font-size: 50px;
+}
+
+i.icon_post_link {
+  color: #00cf35;
+  font-size: 50px;
+}
+
+i.icon_post_chat {
+  color: #00b8ff;
+  font-size: 50px;
+}
+
+i.icon_post_audio {
+  color: #7c5cff;
+  font-size: 50px;
+}
+
+i.icon_post_video {
+  color: #ff62ce;
+  font-size: 50px;
+}
+
+//
+i.post-settings {
+  color: grey;
+  font-size: 20px;
+  margin: 15px 20px 15px 15px;
+}
+
+i.post-settings-unliked {
+  color: grey;
+  font-size: 20px;
+  margin: 15px 20px 15px 15px;
+}
+
+i.post-settings-liked {
+  color: red;
+  font-size: 20px;
+  margin: 15px 20px 15px 15px;
+}
+
+li.post-settings {
+  position: absolute;
+  text-align: center;
+  color: darkslategrey;
+  background: white;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+li.post-settings ul {
+  display: flex;
+  padding: 10px 20px 10px 20px;
+}
+
+li.post-settings ul:hover {
+  background-color: lightblue;
+}

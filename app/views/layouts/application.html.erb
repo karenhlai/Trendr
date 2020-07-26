@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trendr</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,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" sizes="16x16">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <%= yield %> 
+    <!-- CREDIT: https://html-tutorials.tumblr.com/post/29312393200/rainbow-hover> <!-->
+    <!-- <script type='text/javascript'>
+    //<![CDATA[
+    var rate = 50;
+    if (document.getElementById)
+    window.onerror=new Function("return true")
+    
+    var objActive; // The object which event occured in
+    var act = 0; // Flag during the action
+    var elmH = 0; // Hue
+    var elmS = 128; // Saturation
+    var elmV = 255; // Value
+    var clrOrg; // A color before the change
+    var TimerID; // Timer ID
+    if (document.all) {
+    document.onmouseover = doRainbowAnchor;
+    document.onmouseout = stopRainbowAnchor;
+    }
+    else if (document.getElementById) {
+    document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT);
+    document.onmouseover = Mozilla_doRainbowAnchor;
+    document.onmouseout = Mozilla_stopRainbowAnchor;
+    }
+    function doRainbow(obj)
+    {
+    if (act == 0) {
+    act = 1;
+    if (obj)
+    objActive = obj;
+    else
+    objActive = event.srcElement;
+    clrOrg = objActive.style.color;
+    TimerID = setInterval("ChangeColor()",100);
+    }
+    }
+    function stopRainbow()
+    {
+    if (act) {
+    objActive.style.color = clrOrg;
+    clearInterval(TimerID);
+    act = 0;
+    }
+    }
+    function doRainbowAnchor()
+    {
+    if (act == 0) {
+    var obj = event.srcElement;
+    while (obj.tagName != 'A' && obj.tagName != 'BODY') {
+    obj = obj.parentElement;
+    if (obj.tagName == 'A' || obj.tagName == 'BODY')
+    break;
+    }
+    if (obj.tagName == 'A' && obj.href != '') {
+    objActive = obj;
+    act = 1;
+    clrOrg = objActive.style.color;
+    TimerID = setInterval("ChangeColor()",100);
+    }
+    }
+    }
+    function stopRainbowAnchor()
+    {
+    if (act) {
+    if (objActive.tagName == 'A') {
+    objActive.style.color = clrOrg;
+    clearInterval(TimerID);
+    act = 0;
+    }
+    }
+    }
+    function Mozilla_doRainbowAnchor(e)
+    {
+    if (act == 0) {
+    obj = e.target;
+    while (obj.nodeName != 'A' && obj.nodeName != 'BODY') {
+    obj = obj.parentNode;
+    if (obj.nodeName == 'A' || obj.nodeName == 'BODY')
+    break;
+    }
+    if (obj.nodeName == 'A' && obj.href != '') {
+    objActive = obj;
+    act = 1;
+    clrOrg = obj.style.color;
+    TimerID = setInterval("ChangeColor()",100);
+    }
+    }
+    }
+    function Mozilla_stopRainbowAnchor(e)
+    {
+    if (act) {
+    if (objActive.nodeName == 'A') {
+    objActive.style.color = clrOrg;
+    clearInterval(TimerID);
+    act = 0;
+    }
+    }
+    }
+    function ChangeColor()
+    {
+    objActive.style.color = makeColor();
+    }
+    function makeColor()
+    {
+    // Don't you think Color Gamut to look like Rainbow?
+    // HSVtoRGB
+    if (elmS == 0) {
+    elmR = elmV; elmG = elmV; elmB = elmV;
+    }
+    else {
+    t1 = elmV;
+    t2 = (255 - elmS) * elmV / 255;
+    t3 = elmH % 60;
+    t3 = (t1 - t2) * t3 / 60;
+    if (elmH < 60) {
+    elmR = t1; elmB = t2; elmG = t2 + t3;
+    }
+    else if (elmH < 120) {
+    elmG = t1; elmB = t2; elmR = t1 - t3;
+    }
+    else if (elmH < 180) {
+    elmG = t1; elmR = t2; elmB = t2 + t3;
+    }
+    else if (elmH < 240) {
+    elmB = t1; elmR = t2; elmG = t1 - t3;
+    }
+    else if (elmH < 300) {
+    elmB = t1; elmG = t2; elmR = t2 + t3;
+    }
+    else if (elmH < 360) {
+    elmR = t1; elmG = t2; elmB = t1 - t3;
+    }
+    else {
+    elmR = 0; elmG = 0; elmB = 0;
+    }
+    }
+    elmR = Math.floor(elmR).toString(16);
+    elmG = Math.floor(elmG).toString(16);
+    elmB = Math.floor(elmB).toString(16);
+    if (elmR.length == 1) elmR = "0" + elmR;
+    if (elmG.length == 1) elmG = "0" + elmG;
+    if (elmB.length == 1) elmB = "0" + elmB
+    elmH = elmH + rate;
+    if (elmH >= 360)
+    elmH = 0;
+    return '#' + elmR + elmG + elmB;
+    }
+    //]]>
+    </script>
+    -->
+    
+  </body>
+</html>

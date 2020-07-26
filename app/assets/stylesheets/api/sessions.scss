@@ -1,0 +1,497 @@
+// Place all the styles related to the Api::Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// -- INPUTS, BUTTONS, AND ALINKS --
+
+//clear fix//
+@import url("https://fonts.googleapis.com/css?family=Dosis|Fira+Sans");
+
+body {
+  min-height: 100%;
+  max-width: 100%;
+}
+
+h1 {
+  color: white;
+  font-size: 80px;
+  font-family: Bookman Old Style Bold;
+  font-weight: 900;
+} 
+
+h3, h4 {
+  font-family: "Dosis", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Dosis", sans-serif;
+}
+
+button {
+  font: 14px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  // border-radius: 7px;
+  // cursor: pointer;
+}
+
+.section .fp-tableCell {
+  vertical-align: initial;
+  position: absolute;
+  top: 0;
+}
+
+
+/* ========== SPLASH - Nav ========== */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5%;
+  z-index: 1;
+  padding: 15px 5px 5px 15px;
+}
+
+//tumblr logo on top left
+.navbar-header img {
+  height: 70%;
+  width: auto;
+  padding-left: 200px;
+}
+/* ========== LANDING CONTAINER - Nav animations ========== */
+// resource used: https://github.com/alvarotrigo/react-fullpage#examples
+#fp-nav ul li:hover a.active span,
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span { 
+  background-color: white !important;
+  border: 3px solid white !important;
+}
+
+// Need to refactor by putting this after css on page so I can remove !important//
+#fp-nav ul li a span {
+  border: 3px solid gray !important;
+  background-color: transparent !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 !important;
+}
+
+#fp-nav ul li {
+  padding: 3px;
+}
+
+#fp-nav {
+  position: absolute;
+  left: 15px;
+  width: 10px;
+}
+
+/* ========== SECTION 1 - Holds SessionForms ========== */
+.popup {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 8px;
+  background-color: #00cf35;
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ========== SECTION 1 - Splash ========== */
+.splash-container h5 {
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.section-one img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-slider {
+  animation: 1s ease-out 0s 1 slideIn;
+}
+
+/* ========== SECTION 1 - Session Forms ========== */
+.login-form {
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12%;
+}
+
+//TOP RIGHT
+.login-form-container a {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  width: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.login-form-container a:active {
+  opacity: 0.8;
+}
+
+#session-button,
+input[type="submit"] {
+  width: 300px;
+  text-align: center;
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px solid #919a9e;
+  background-color: #00b8ff;
+  padding: 11px 10px 11px 13px;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 300px;
+  text-align: left;
+  font: 16px/1.4 "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  border: 1px solid #d5d9dd;
+  padding: 11px 10px 11px 13px;
+}
+
+.renderErrors {
+  position: static;
+  width: 300px;
+  margin: 10px auto 10px auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+}
+
+.renderErrors ul li {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  opacity: 1;
+}
+
+/* ========== SECTION 2 - content ========== */
+.section-two {
+  background-color: #00cf35;
+}
+
+.content-text {
+  position: absolute;
+  bottom: 15vh;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+}
+
+.content-text h1 {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.content-text p {
+  font-size: 20px;
+}
+
+.section-two img {
+  position: absolute;
+  height: 30%;
+  width: auto;
+  top: 30%;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin: 0px auto 0px auto;
+}
+/* ========== SECTION 3 - content ========== */
+.section-three {
+  background-color: #7c5cff;
+  position: absolute;
+}
+
+.section-three-content {
+  position: absolute;
+  left: 10%;
+  top: 7%;
+}
+
+.section-three-content h1 {
+  font-size: 45px;
+}
+
+.section-three-content p {
+  padding: 0px;
+  width: 70%;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  // margin: 20px 0px 10px 150px;
+}
+
+.blogs-graphic {
+  // display: flex;
+  // flex-direction: row;
+  // margin: 20px 0px 10px 140px;
+  position: absolute;
+  left: 10%;
+  top: 35%;
+}
+
+.blogs-graphic section {
+  float: left;
+  margin-left: 10px;
+  width: 21vw;
+}
+
+.blog-post {
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.ui-avatar {
+  height: 25px;
+}
+
+.avatar {
+  height: 100%;
+  width: auto;
+  padding: 2px;
+  margin-left: 2px;
+  border-radius: 5px;
+  float: left;
+}
+
+.post-image {
+  width: 21vw;
+  height: auto;
+}
+
+.blogs-graphic p {
+  color: black;
+  padding-top: 5px;
+}
+
+.post-bottom {
+  height: 30px;
+}
+
+.ui-notes {
+  float: left;
+  padding: 5px;
+}
+
+.post-bottom i {
+  float: right;
+  padding: 5px;
+}
+
+/* ========== SECTION 4 - content ========== */
+.section-four {
+  background-color: #001935;
+}
+
+.nav-col {
+  float: left;
+  position: relative;
+  top: 10%;
+  left: 15%;
+}
+
+.nav-row {
+  padding-bottom: 20px;
+}
+.first-avatar {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.nav-avatar {
+  margin: 80px 0px 0px 80px;
+}
+.big-avatar {
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+  float: left;
+}
+.nav-section {
+  margin: 0px 30px 0px 10px;
+  background-color: white;
+  border-radius: 2px;
+  float: left;
+  width: 550px;
+}
+.icon-clear-fix {
+  padding: 0 1px 0 7px;
+}
+.icon-label {
+  float: left;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 20px;
+  padding: 61px 1px 18px 0;
+  color: #696969;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 15px;
+  opacity: 0.9;
+  font-weight: normal;
+  text-decoration: none;
+}
+.icon-label i {
+  position: absolute;
+  text-align: left;
+  top: 5px;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  padding: 0 14px;
+  margin: 0 auto;
+  font-size: 48px;
+  text-align: center;
+  line-height: 62px;
+}
+.icon-label span {
+  display: block;
+  width: 75px;
+  text-align: center;
+}
+.nav-top h4 {
+  padding: 5px 0px 5px 20px;
+  font-size: 20px;
+}
+.nav-post {
+  float: left;
+  width: 550px;
+  border-radius: 2px;
+  margin: 20px 30px 0px 10px;
+  background-color: white;
+}
+.nav-avatar p {
+  padding-left: 20px;
+}
+.nav-image {
+  width: 550px;
+}
+.nav-bottom {
+  height: 20px;
+}
+.nav-notes {
+  float: left;
+  padding: 10px;
+}
+.nav-bottom i {
+  float: right;
+  padding: 10px;
+}
+
+.session-four-header {
+  padding-top: 40%;
+  font-size: 45px;
+}
+.session-four-paragraph {
+  color: white;
+  font-size: 22px;
+  padding-top: 10px;
+}
+
+
+/* ========== SECTION 5 - content ========== */
+.section-five {
+  background-color: #ff8a00;
+}
+.create-graphic {
+  position: absolute;
+  bottom: 42vh;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  color: #fff;
+}
+.create-graphic i {
+  font-size: 80px;
+  padding: 20px;
+}
+.create-graphic h3 {
+  font-size: 30px;
+  padding: 0px 35px 0px 35px;
+  display: inline-block;
+}
+.section-five-content {
+  position: absolute;
+  bottom: 15vh;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+}
+.section-five-content h1 {
+  font-size: 45px;
+  padding: 10px;
+}
+.section-five-content h3 {
+  font-size: 20px;
+  line-height: 120%;
+  padding: 10px;
+}
+.section-five-icon {
+  position: absolute;
+  top: 30%;
+  left:0px;
+  right:0px;
+  display: inline-block;
+  margin: 0px auto 0px auto;
+}
+
+
+/* ========== SECTION 6 - content ========== */
+.section-six h2 {
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Bookman Old Style Bold;
+}
+
+.section-six img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
