@@ -14,7 +14,7 @@ body {
   position: sticky !important;
   top: 0;
   background-color: #001935;
-  border-bottom: 0.3px solid hsla(0, 0%, 100%, .65);
+  box-shadow: 0 30px 40px rgba(0, 0, 0, .3);
   z-index: 2;
   display: flex;
   flex-direction: row;
