@@ -31,7 +31,7 @@ class CreateBar extends React.Component {
             <span className="new_post_label_text">Link</span>
           </button>
 
-          <button>
+          {/* <button>
             <i className="icon_post_chat"></i>
             <span className="new_post_label_text">Chat</span>
           </button>
@@ -44,7 +44,7 @@ class CreateBar extends React.Component {
           <button>
             <i className="icon_post_video"></i>
             <span className="new_post_label_text">Video</span>
-          </button>
+          </button> */}
         </nav>
         
       </div>
