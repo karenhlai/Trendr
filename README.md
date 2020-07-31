@@ -22,6 +22,7 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
 - Organizing Landing, Dashboard Index, Sign Up, Sign In, Create / Edit Post components with React and Redux 
 
 <!-- <h3>Code Highlights</h3> -->
+
 <!-- place a code snippet here -->
 
 <h3>UI/UX</h3>
