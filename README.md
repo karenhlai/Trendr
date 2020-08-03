@@ -2,17 +2,17 @@
 
 <a href="https://the-trendr-app.herokuapp.com">Live Demo!</a>
 
-<h3>Background and Overview</h3>
+<h2>Background and Overview</2>
 Trendr is a platform suitable for anyone who likes to express their creativity through blogging. Backed by Rails and PostGresSQL, and implementing Amazon Web Services (AWS) to easily store media on the cloud, Trendr operates with React.js and Redux tools on the front-end. This application is currently in the works, anything viable as of now was built within a 10-day time frame. Potential features may be added and updated in the future.
 
-<h3>Functionality and Features</h3>
+<h2>Functionality and Features</h2>
 
 - Standard User Authentication utilizing Rails encryption pattern and BCrypt methods
 - Users can create, edit, and delete posts that include types: text, quote, link, photo
 - Users are able to like posts, and access their like feed
 - Users are able to follow other users, and access their follows page
 
-<h3>Implementation Methods and Technologies</h3>
+<2>Implementation Methods and Technologies</2>
   Backend: Rails
   <br />
   Frontend: React.js, Redux
@@ -21,18 +21,33 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
 - Integrating full CRUD functionality, allowing users to create, update, and delete posts on their dashboard
 - Organizing Landing, Dashboard Index, Sign Up, Sign In, Create / Edit Post components with React and Redux 
 
-<!-- <h3>Code Highlights</h3> -->
+<h2>Code Highlights</h2>
+<h3>Adding file uploads to ajax requests </h3>
 
 <pre>
-    <code>
-        Whatever code you want to show
-    </code>
+  <code>
+    export const createPost = (post) => {
+      const request = {
+        method: 'post',
+        url: 'api/posts', 
+        data: {post},
+      }
+
+      if (post.getAll) {
+        request.data = post; 
+        request.contentType = false;
+        request.processData = false;
+      }
+
+      return $.ajax(request);
+    };
+  </code>
 </pre>
 
 
 <!-- place a code snippet here -->
 
-<h3>UI/UX</h3>
+<h2>UI/UX</h2>
 The goal is to pixel perfectly replicate Tumblr's website
 
 - The landing page, where users will sign up or sign in, will showcase majority of this app's animation implementation. It will contain section scrolling, and navigation buttons that will direct user to a specific section upon clicking. A user can sign in or sign up on the first or last sections.
