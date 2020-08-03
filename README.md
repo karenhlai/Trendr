@@ -2,7 +2,7 @@
 
 <a href="https://the-trendr-app.herokuapp.com">Live Demo!</a>
 
-<h2>Background and Overview</2>
+<h2>Background and Overview</h2>
 Trendr is a platform suitable for anyone who likes to express their creativity through blogging. Backed by Rails and PostGresSQL, and implementing Amazon Web Services (AWS) to easily store media on the cloud, Trendr operates with React.js and Redux tools on the front-end. This application is currently in the works, anything viable as of now was built within a 10-day time frame. Potential features may be added and updated in the future.
 
 <h2>Functionality and Features</h2>
@@ -12,7 +12,7 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
 - Users are able to like posts, and access their like feed
 - Users are able to follow other users, and access their follows page
 
-<2>Implementation Methods and Technologies</2>
+<h2>Implementation Methods and Technologies</h2>
   Backend: Rails
   <br />
   Frontend: React.js, Redux
