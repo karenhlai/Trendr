@@ -23,7 +23,11 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
 
 <!-- <h3>Code Highlights</h3> -->
 
-
+<pre>
+    <code>
+        Whatever code you want to show
+    </code>
+</pre>
 
 
 <!-- place a code snippet here -->
