@@ -27,23 +27,23 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
 ```javascript
 /frontend/util/post_api_util.js
 
-    export const createPost = (post) => {
-      const request = {
-        method: 'post',
-        url: 'api/posts', 
-        data: {post},
-      }
+export const createPost = (post) => {
+  const request = {
+    method: 'post',
+    url: 'api/posts', 
+    data: {post},
+  }
 
-      if (post.getAll) {
-        request.data = post; 
-        request.contentType = false;
-        request.processData = false;
-      }
+  if (post.getAll) {
+    request.data = post; 
+    request.contentType = false;
+    request.processData = false;
+  }
 
-      return $.ajax(request);
-    };
+  return $.ajax(request);
+};
 ```
-
+Adding photo data in ajax reqeusts proved to be an initial challenge. While able to pass in destructured post data to the request when createPost did not involve photo uplaods, this did not work when our event handlers invovled photo data. Hence, I invovled a conditional check to pass in post data (not wrapped with {}) to populate the reqeust with the media as well.
 
 <!-- place a code snippet here -->
 
