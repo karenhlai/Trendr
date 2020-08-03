@@ -5,23 +5,20 @@
 <h2>Background and Overview</h2>
 Trendr is a platform suitable for anyone who likes to express their creativity through blogging. Backed by Rails and PostGresSQL, and implementing Amazon Web Services (AWS) to easily store media on the cloud, Trendr operates with React.js and Redux tools on the front-end. This application is currently in the works, anything viable as of now was built within a 10-day time frame. Potential features may be added and updated in the future.
 
+<h2>Implementation Technologies and Methods</h2>
+- Backend: PostgreSQL, Ruby on Rails
+- Frontend: React.js, Redux, JavaScript
+  
+- Building and implementing a thorough database scheme with Rails backend RESTful Routes to store users, posts, likes, and follows
+- Integrating full CRUD functionality, allowing users to create, update, and delete posts on their dashboard
+- Organizing Landing, Dashboard Index, Sign Up, Sign In, Create / Edit Post components with React and Redux 
+
 <h2>Functionality and Features</h2>
 
 - Standard User Authentication utilizing Rails encryption pattern and BCrypt methods
 - Users can create, edit, and delete posts that include types: text, quote, link, photo
 - Users are able to like posts, and access their like feed
 - Users are able to follow other users, and access their follows page
-
-<h2>Implementation Methods and Technologies</h2>
-  DB: PostgreSQL
-  <br />
-  Backend: Ruby on Rails
-  <br />
-  Frontend: React.js, Redux
-  
-- Building and implementing a thorough database scheme with Rails backend RESTful Routes to store users, posts, likes, and follows
-- Integrating full CRUD functionality, allowing users to create, update, and delete posts on their dashboard
-- Organizing Landing, Dashboard Index, Sign Up, Sign In, Create / Edit Post components with React and Redux 
 
 <h2>Code Highlights</h2>
 <h3>Adding file uploads to ajax requests </h3>
