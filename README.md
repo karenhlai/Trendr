@@ -43,7 +43,7 @@ export const createPost = (post) => {
   return $.ajax(request);
 };
 ```
-Adding photo data in ajax reqeusts proved to be an initial challenge. While able to pass in destructured post data to the request when createPost did not involve photo uplaods, this did not work when our event handlers invovled photo data. Hence, I invovled a conditional check to pass in post data (not wrapped with {}) to populate the reqeust with the media as well.
+Adding photo data in ajax reqeusts proved to be an initial challenge. While able to pass in destructured post data to the request when createPost did not involve photo uploads, this did not work when our event handlers invovled media(photo) data. Hence, I invovled a conditional check to pass in post data (not wrapped with {}) to populate the reqeust with the media as well.
 
 <!-- place a code snippet here -->
 
