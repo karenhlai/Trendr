@@ -37,14 +37,16 @@ The goal is to pixel perfectly replicate Tumblr's website
 ![trendr_gif](app/assets/images/trendr_gif.gif)
 
 - Upon signing in or signing up, the user's dashboard will render with posts created by themselves, other users they are following, as well as recommended posts. Posts will render according based on chronological order, starting with the newest post on top.
-![trendr_gif](app/assets/images/trendr-dashboard.gif)
 
 <!-- place dashboard animation here -->
+![trendr_gif](app/assets/images/trendr-dashboard.gif)
+
 
 - Upon clicking on the create post mavigatoin bar, an appropiate modal form will render based on the type of action the user has chosen, i.e. a 'create text' modal will differ from the 'create photo' modal.
-![trendr_gif](app/assets/images/trendr-photo-upload.gif)
 
 <!-- place animation of photo upload here -->
+![trendr_gif](app/assets/images/trendr-photo-upload.gif)
+
 
 <h3>Bonus Features:</h3>
 
