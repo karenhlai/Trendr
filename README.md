@@ -24,8 +24,10 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
 <h2>Code Highlights</h2>
 <h3>Adding file uploads to ajax requests </h3>
 
-<pre>
+<!-- <pre> -->
   <code>
+  /frontend/util/post_api_util.js
+  
     export const createPost = (post) => {
       const request = {
         method: 'post',
@@ -42,7 +44,7 @@ Trendr is a platform suitable for anyone who likes to express their creativity t
       return $.ajax(request);
     };
   </code>
-</pre>
+<!-- </pre> -->
 
 
 <!-- place a code snippet here -->
